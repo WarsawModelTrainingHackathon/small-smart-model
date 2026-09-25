@@ -1,0 +1,257 @@
+{
+  "description": "Matura z historii (poziom rozszerzony), official CKE papers + zasady oceniania; one item per scored (sub)task, essays split per topic.",
+  "source_pages": {
+    "2023": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2023/arkusze/",
+    "2015": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/arkusze/",
+    "md23": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2023/materialy-dodatkowe/",
+    "md15": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/materialy-dodatkowe/"
+  },
+  "user_agent": "Mozilla/5.0 (compatible; matura-historia-dataset/1.0; educational research)",
+  "formulas": {
+    "2015": "formuła 2015 (2015–2023)",
+    "2023": "formuła 2023 (2023–)"
+  },
+  "split_policy": "Whole sessions held out: test = 2026-maj + 2025-maj (two most recent May sessions, formula 2023); dev = 2024-maj; train = all other sessions (formula 2015 May papers, mock/diagnostic/demo papers, 2023-maj).",
+  "split_sessions": {
+    "train": [
+      "2015-maj-f2015",
+      "2016-maj-f2015",
+      "2017-maj-f2015",
+      "2018-maj-f2015",
+      "2019-maj-f2015",
+      "2020-kwiecien-probny-f2015",
+      "2020-maj-f2015",
+      "2021-maj-f2015",
+      "2021-marzec-diagnostyczny-f2015",
+      "2022-grudzien-diagnostyczny",
+      "2022-maj-f2015",
+      "2022-marzec-pokazowy",
+      "2023-maj",
+      "2023-maj-f2015",
+      "2024-grudzien-diagnostyczny",
+      "2026-styczen-probny"
+    ],
+    "dev": [
+      "2024-maj"
+    ],
+    "test": [
+      "2025-maj",
+      "2026-maj"
+    ]
+  },
+  "counts": {
+    "train": 620,
+    "dev": 42,
+    "test": 81
+  },
+  "type_counts": {
+    "train": {
+      "open_short": 426,
+      "open_long": 6,
+      "true_false": 40,
+      "closed_abcd": 66,
+      "essay": 70,
+      "matching": 12
+    },
+    "dev": {
+      "open_short": 32,
+      "closed_abcd": 3,
+      "matching": 1,
+      "true_false": 2,
+      "open_long": 1,
+      "essay": 3
+    },
+    "test": {
+      "open_short": 57,
+      "matching": 3,
+      "closed_abcd": 6,
+      "true_false": 7,
+      "open_long": 2,
+      "essay": 6
+    }
+  },
+  "needs_visual": {
+    "train": 345,
+    "dev": 30,
+    "test": 49
+  },
+  "auto_gradable": {
+    "train": 103,
+    "dev": 6,
+    "test": 15
+  },
+  "points": {
+    "train": 1528,
+    "dev": 90,
+    "test": 180
+  },
+  "sessions": {
+    "2015-maj-f2015": {
+      "items": 35,
+      "zasady_tasks": 31,
+      "arkusz_sha256": "c98d10a84f1d410bac74715528ff7f9485226bce93cd421b2793a8ba397f286d",
+      "zasady_sha256": "cd9482100637e067057f4df89854693dff5ea2abe3a55047e96ce3fa296dbf93"
+    },
+    "2016-maj-f2015": {
+      "items": 36,
+      "zasady_tasks": 32,
+      "arkusz_sha256": "80ce4290fee272b2070d271d1e61a4ec6b5ed1dbbc71b7e0f6042afd741c8b2b",
+      "zasady_sha256": "3fe4447b7d518223768168c140caa4e0831c58fef2b1e463bf483637780f7478"
+    },
+    "2017-maj-f2015": {
+      "items": 38,
+      "zasady_tasks": 34,
+      "arkusz_sha256": "158d8baa717b2c75dbd9a9d460146b729c26d233119551c85d55b3daa888700d",
+      "zasady_sha256": "a138a77300d075a90356b92f0254a16a73eb7350b073c15ac103a4930a4cc9ff"
+    },
+    "2018-maj-f2015": {
+      "items": 40,
+      "zasady_tasks": 36,
+      "arkusz_sha256": "21ba48aa594cb57f861eba4d0db26954fbff40f978408801f0fae286d406cdc7",
+      "zasady_sha256": "d032a391262f6f4182e509255648ba9b5c38886f0ae15f7fd3123b6c55b56273"
+    },
+    "2019-maj-f2015": {
+      "items": 39,
+      "zasady_tasks": 35,
+      "arkusz_sha256": "3695964ab4e29766df2ccae5f6e8129d212d59ebf20c5c55981b214ea8b860c3",
+      "zasady_sha256": "78c982a573a7aad0218f6b74750a7c3198884c4d69a5fda3c72db22427f42253"
+    },
+    "2020-kwiecien-probny-f2015": {
+      "items": 38,
+      "zasady_tasks": 34,
+      "arkusz_sha256": "5fc31fc9b3e78da0cbfd9729d3730960b105abf62553559bd7f10d8482e464ff",
+      "zasady_sha256": "d96d20fc04f82dea67a00b005b2500e272dbc7b9287617731a0e5d477a408e18"
+    },
+    "2020-maj-f2015": {
+      "items": 42,
+      "zasady_tasks": 38,
+      "arkusz_sha256": "d09d02f223d3de788b8c2854044912db32dda33a8578a6dca02e22faae34cf96",
+      "zasady_sha256": "373b15f3c8c6fe70860ad412ded94cf22b21ee10b086dd08b6f1a0a057766804"
+    },
+    "2021-marzec-diagnostyczny-f2015": {
+      "items": 42,
+      "zasady_tasks": 38,
+      "arkusz_sha256": "c3684d79164c185b512df7672f5de460021637c4bc117e843bd7f8f735a0cf20",
+      "zasady_sha256": "9db977ddc01f8f16d0aeac16f816890a94b12410e58cb380047a010be172e930"
+    },
+    "2021-maj-f2015": {
+      "items": 40,
+      "zasady_tasks": 36,
+      "arkusz_sha256": "52774eda5b8f7d3991b6c8c185707a6d32ef20ab8b73e3278a44726439d4a056",
+      "zasady_sha256": "e5801328b77db543794b768bf6a24670e65381a50a175d1397e13944cbd9aebd"
+    },
+    "2022-maj-f2015": {
+      "items": 40,
+      "zasady_tasks": 36,
+      "arkusz_sha256": "a5f66e51a0b8c3e55df2a1eea99c8748cfbc05686d65749002c0db2b75124702",
+      "zasady_sha256": "543f92f310db22646ef68b9c17ac6db0b526f95c07f2f7b81a372d7963a51084"
+    },
+    "2023-maj-f2015": {
+      "items": 37,
+      "zasady_tasks": 33,
+      "arkusz_sha256": "d343e49b95f60d554a0eac1ce59c6223a8f3da20317f499def965ae713515da8",
+      "zasady_sha256": "32eb6f6036f1192e14f3d1daa6c1db4e574c62e79f3ff00b4f649cb146b18044"
+    },
+    "2022-marzec-pokazowy": {
+      "items": 37,
+      "zasady_tasks": 35,
+      "arkusz_sha256": "32c76fcb5175a23cb6ae7ac024bb9289b03a2c965de90d9fd0e1e1c22fecacbb",
+      "zasady_sha256": "560876ff0bf6cfb903411928315a79fbcbb16e08a7a52c65b48c24e880b70c67"
+    },
+    "2022-grudzien-diagnostyczny": {
+      "items": 38,
+      "zasady_tasks": 36,
+      "arkusz_sha256": "526b40f90aeee06fcf98245eac1f0ab3c13a9e7c12d912dc0a3ebced3cefee85",
+      "zasady_sha256": "66e5ccd8238d6f933aa9b8080552eca416cf7dde6a9bcca345aa3ce1330fab35"
+    },
+    "2023-maj": {
+      "items": 39,
+      "zasady_tasks": 37,
+      "arkusz_sha256": "17926d105216589b23a5630eca0a179b8c8d957dcc3b1b88713b399da645a61e",
+      "zasady_sha256": "64acaefce9554c67434bca06045224154fc8079e84cc557f0a3a42d30eb5f9ae"
+    },
+    "2024-maj": {
+      "items": 42,
+      "zasady_tasks": 40,
+      "arkusz_sha256": "ad66a7c4f212ee1248661141971afae21060a28586086cc57460247a64463d21",
+      "zasady_sha256": "95c275b9546611c1f8cd45b7973c436625fd0ee5643b778dcc8bb566db56cd4c"
+    },
+    "2024-grudzien-diagnostyczny": {
+      "items": 39,
+      "zasady_tasks": 37,
+      "arkusz_sha256": "68ce10f00ccd95d14e891a25627060fff8043052244036c71f9e9e2c8eed72d5",
+      "zasady_sha256": "23a2296ecd65b325faff9d40d6509b000589ddfe5a60007f0da6e6466b693682"
+    },
+    "2025-maj": {
+      "items": 40,
+      "zasady_tasks": 38,
+      "arkusz_sha256": "622f0aca89b8698af852d3a35a19dc7e12664ffefbf4846c8e931252a58f1b0c",
+      "zasady_sha256": "8803887d6713c470fa49b05f1cfbd18edbd14e7ec280685d44f9a019c47d14bf"
+    },
+    "2026-styczen-probny": {
+      "items": 40,
+      "zasady_tasks": 38,
+      "arkusz_sha256": "1ddeca5760a0d93bb3020904bc6faff5d668cd62c78973fb344f086194c1bb2f",
+      "zasady_sha256": "272c40d0524a815acc75f829f707a4fb8ce69740cc6f5e6a01d9370401045856"
+    },
+    "2026-maj": {
+      "items": 41,
+      "zasady_tasks": 39,
+      "arkusz_sha256": "c0a15c43154232e8ad393574f83c31cab14948bb891c908bfae3b895fbb6d401",
+      "zasady_sha256": "89acbcf197ac39fa0095c3b36f4c4aa8ebb8c6a02a95b4d5e6442f8eb19d5d5d"
+    }
+  },
+  "parse_warnings": [
+    "2017-maj-f2015: zad 20 points: arkusz 1, zasady header 2, zasady scoring levels max 1; kept arkusz",
+    "2017-maj-f2015: zad 21 points: arkusz 1, zasady header 2, zasady scoring levels max 1; kept arkusz",
+    "2020-kwiecien-probny-f2015: zad 21 points: arkusz 1, zasady header 1, zasady scoring levels max 2; kept arkusz",
+    "2020-kwiecien-probny-f2015: essay is zad 27 in arkusz but zad 26@12 in zasady (matched)",
+    "2022-marzec-pokazowy: zad 11.2 points: arkusz 2, zasady header 1, zasady scoring levels max 2; kept arkusz",
+    "2022-marzec-pokazowy: zad 15.1 points: arkusz 2, zasady header 1, zasady scoring levels max 2; kept arkusz",
+    "2025-maj: essay is zad 25 in arkusz but zad 26 in zasady (matched)",
+    "2026-styczen-probny: zad 7.1 points: arkusz 2, zasady header 1, zasady scoring levels max 2; kept arkusz",
+    "2026-styczen-probny: zad 23 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz"
+  ],
+  "adapted_660_versions": {
+    "2021-marzec-diagnostyczny-f2015": {
+      "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2021/EHIP-R0-660-2103.docx",
+      "status": "not used: numbering differs (24 task/point mismatches)"
+    },
+    "2022-marzec-pokazowy": {
+      "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/pokazowe/Historia/MHIP-R0-660-2305.docx",
+      "status": "not used: numbering differs (25 task/point mismatches)"
+    },
+    "2022-grudzien-diagnostyczny": {
+      "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/diagnostyczne_12/historia/MHIP-R0-660-2212.docx",
+      "status": "used (task numbering/points identical)"
+    },
+    "2023-maj": {
+      "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/Historia/MHIP-R0-660-2305.docx",
+      "status": "used (task numbering/points identical)"
+    },
+    "2024-grudzien-diagnostyczny": {
+      "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2024/Historia/MHIP-R0-660-A-2412-arkusz.docx",
+      "status": "used (task numbering/points identical)"
+    }
+  },
+  "adapted_660_items": 59,
+  "not_available": "CKE publishes only main-term (May) papers plus mock/diagnostic/demo papers; June (dodatkowy) and August (poprawkowy) historia papers are not on cke.gov.pl. Formula 2015 and 2023 historia exist only at poziom rozszerzony.",
+  "fields": {
+    "context": "shared sources for the task group + sources preceding the instruction (text; [OBRAZ] marks a figure)",
+    "question": "instruction and answer scaffold (dotted answer lines removed)",
+    "answer": "raw solution / accepted answers text from zasady oceniania",
+    "answer_key": "normalized key for closed types (letter, list, or {statement/item: value}); null if not parsed",
+    "scoring": "raw scoring rule text (points per criterion) from zasady oceniania",
+    "images": "PNG crops (150 dpi) of the task region(s) containing figures, relative to dataset dir",
+    "adapted_660_text": "only some visual items: text of the same task group from the official adapted paper for blind students (660), where figures are described in words (\"Opis ...\"); wording may differ slightly"
+  },
+  "known_issues": [
+    "Text order follows PDF layout; tables are linearized cell by cell and can be hard to read (figure crops include them).",
+    "context/question split is heuristic (first instruction line after the last source citation); a few items keep a lead sentence in context or question.",
+    "needs_visual = raster figure (or multi-colour vector chart, or Mapa/Wykres/Diagram/Schemat heading) inside the task group; flagged for every subtask of a group with a figure, even when a given subtask can be answered from the text alone.",
+    "type is heuristic: open_short vs open_long is by points (>=3 -> open_long); closed tasks that also demand a justification have requires_justification=true and auto_gradable=false.",
+    "matching keys can be free text with alternatives (\"A / B\") and optional parts in [brackets]; grade them with normalisation, not exact match.",
+    "Essays (wypracowanie) are split one item per topic; answer is empty and the full scoring block (requirements + criteria, raw text) is in scoring_raw.",
+    "max_points comes from the arkusz; CKE zasady contain a few inconsistent point headers/levels (listed in parse_warnings). With arkusz points every session sums to exactly 50 (formula 2015) or 60 (formula 2023)."
+  ]
+}
