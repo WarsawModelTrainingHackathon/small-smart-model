@@ -36,8 +36,9 @@ Most points are in open questions, so a real score needs rubric grading (e.g. an
 
 ## Item fields
 
-`id, session_key, year, session, formula, exam_date, level, task, group, max_points, type, context, question, options / statements, requires_justification, answer, answer_key, scoring, scoring_notes, scoring_raw, auto_gradable, needs_visual, visual_reason, images, adapted_660_text, source, split`
+`id, session_key, year, session, formula, exam_date, level, task, group, topic (essays), choice_group, max_points, type, context, question, options / statements, requires_justification, answer, answer_key, scoring, scoring_notes, scoring_raw, auto_gradable, needs_visual, visual_reason, images, adapted_660_text, source, split`
 
+- `choice_group`: `null` for normal items. Items the examinee chooses between share one string: every essay topic of a session gets `"<session_key>-essay"` (e.g. `"2024-maj-essay"`). The examinee writes ONE of them, so **a session score counts one item per `choice_group`** (e.g. the best- or the actually-chosen topic), never the sum of all topics. Counted this way every session totals exactly 60 points (formula 2023) or 50 (formula 2015); the build fails otherwise. Essay topics are the only choose-one tasks in these papers.
 - `answer_key`: exact key for closed items (e.g. `"C"`). `auto_gradable` is false when the task also asks for a justification (*uzasadnij*).
 - `answer`: the example answer from the zasady oceniania for open items. Essays have no answer; their full criteria are in `scoring_raw`.
 - `images`: paths relative to this folder (`images/<item-id>-<n>.png`, 150 dpi crops of the figure with its title and legend).

@@ -570,8 +570,13 @@ def build_session(key, spec, raw, img_dir, report):
             if len(topics) < 2:
                 W.append(f'{key}: essay {tid} topics not split')
                 topics = [question]
+            n_decl = re.search(r'Zadanie zawiera (\w+) temat', intro)
+            n_decl = {'dwa': 2, 'trzy': 3, 'cztery': 4, 'pięć': 5}.get(n_decl.group(1)) if n_decl else None
+            if n_decl != len(topics):
+                raise SystemExit(f'{key}: essay {tid} declares {n_decl} topics, parsed {len(topics)}')
             for k, t in enumerate(topics, 1):
-                item = dict(base, id=f'{base["id"]}-t{k}', topic=k, context=join_text(mats.get(k, [])),
+                item = dict(base, id=f'{base["id"]}-t{k}', topic=k, choice_group=f'{key}-essay',
+                            context=join_text(mats.get(k, [])),
                             question=(intro + '\n' + f'Temat {k}. ' + t).strip() if intro else t,
                             answer=answer, answer_key=None, scoring=z['scoring'] if z else '',
                             scoring_notes=z['notes'] if z else '', scoring_raw=z['raw'] if z else '',
@@ -582,7 +587,7 @@ def build_session(key, spec, raw, img_dir, report):
                 item['split'] = SPLIT.get(key, 'train')
                 items.append(item)
             continue
-        item = dict(base, context=context, question=question)
+        item = dict(base, choice_group=None, context=context, question=question)
         if typ == 'closed_abcd':
             item['options'] = options
         if typ in ('closed_abcd', 'true_false', 'matching', 'ordering'):
@@ -601,12 +606,41 @@ def build_session(key, spec, raw, img_dir, report):
         item['source'] = dict(src, pages=sorted({l['page'] + 1 for l in ctx_lines + qlines}))
         item['split'] = SPLIT.get(key, 'train')
         items.append(item)
-    report['sessions'][key] = dict(items=len(items), zasady_tasks=len(zas),
+    report['sessions'][key] = dict(items=len(items), zasady_tasks=len(zas), max_points=session_score_max(items),
                                    arkusz_sha256=sha(raw / f'{key}-arkusz.pdf'), zasady_sha256=sha(raw / f'{key}-zasady.pdf'))
     missing = set(zas) - used_z
     if missing:
         W.append(f'{key}: zasady tasks not found in arkusz: {sorted(missing)}')
     return items
+
+
+OFFICIAL_MAX = {'2015': 50, '2023': 60}
+
+
+def session_score_max(items):
+    """Max score of one session: items with the same choice_group are alternatives (the examinee writes ONE
+    essay topic), so each choice_group counts once (its max over members); other items count individually."""
+    groups = defaultdict(int)
+    total = 0
+    for d in items:
+        if d['choice_group']:
+            groups[d['choice_group']] = max(groups[d['choice_group']], d['max_points'])
+        else:
+            total += d['max_points']
+    return total + sum(groups.values())
+
+
+def check_totals(data):
+    by = defaultdict(list)
+    for d in data:
+        by[d['session_key']].append(d)
+    bad = []
+    for key, its in by.items():
+        got, want = session_score_max(its), OFFICIAL_MAX[its[0]['formula']]
+        if got != want:
+            bad.append(f'{key}: {got} pts (one item per choice_group), official max {want}')
+    if bad:
+        raise SystemExit('session point totals differ from the official maximum:\n  ' + '\n  '.join(bad))
 
 
 def main():
@@ -634,6 +668,7 @@ def main():
     data = []
     for key in keys:
         data.extend(build_session(key, SESSIONS[key], raw, img_dir, report))
+    check_totals(data)
     if not a.only:  # drop stale renders
         keep = {Path(p).name for d in data for p in d['images']}
         for f in img_dir.glob('*.png'):
@@ -651,12 +686,15 @@ def main():
         needs_visual={s: sum(d['needs_visual'] for d in v) for s, v in splits.items()},
         auto_gradable={s: sum(d['auto_gradable'] for d in v) for s, v in splits.items()},
         points={s: sum(d['max_points'] or 0 for d in v) for s, v in splits.items()},
+        session_max_points={k: v['max_points'] for k, v in report['sessions'].items()},
         sessions=report['sessions'], parse_warnings=report['warnings'],
         adapted_660_versions={k: dict(url=v[6], status=report['adapted_660'].get(k)) for k, v in SESSIONS.items() if v[6]},
         adapted_660_items=sum('adapted_660_text' in d for d in data),
         not_available='CKE publishes only main-term (May) papers plus mock/diagnostic/demo papers; June (dodatkowy) and '
                       'August (poprawkowy) historia papers are not on cke.gov.pl. Formula 2015 and 2023 historia exist only at poziom rozszerzony.',
-        fields={'context': 'shared sources for the task group + sources preceding the instruction (text; [OBRAZ] marks a figure)',
+        fields={'choice_group': 'null for normal items; the same string (e.g. "2024-maj-essay") for alternative items of which '
+                                'the examinee answers ONE (the essay topics). A session score counts one item per choice_group.',
+                'context': 'shared sources for the task group + sources preceding the instruction (text; [OBRAZ] marks a figure)',
                 'question': 'instruction and answer scaffold (dotted answer lines removed)',
                 'answer': 'raw solution / accepted answers text from zasady oceniania',
                 'answer_key': 'normalized key for closed types (letter, list, or {statement/item: value}); null if not parsed',
@@ -671,7 +709,7 @@ def main():
             'type is heuristic: open_short vs open_long is by points (>=3 -> open_long); closed tasks that also demand a justification have requires_justification=true and auto_gradable=false.',
             'matching keys can be free text with alternatives ("A / B") and optional parts in [brackets]; grade them with normalisation, not exact match.',
             'Essays (wypracowanie) are split one item per topic; answer is empty and the full scoring block (requirements + criteria, raw text) is in scoring_raw.',
-            'max_points comes from the arkusz; CKE zasady contain a few inconsistent point headers/levels (listed in parse_warnings). With arkusz points every session sums to exactly 50 (formula 2015) or 60 (formula 2023).',
+            'max_points comes from the arkusz; CKE zasady contain a few inconsistent point headers/levels (listed in parse_warnings). Counting one item per choice_group, every session sums to exactly 50 (formula 2015) or 60 (formula 2023); the build fails otherwise.',
         ],
     )
     OUT.mkdir(parents=True, exist_ok=True)
