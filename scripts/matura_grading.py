@@ -349,6 +349,11 @@ def report_markdown(summary, meta=None):
     for k in ('model', 'adapter', 'load_4bit', 'split', 'text_only', 'thinking', 'judge', 'n_items'):
         if k in meta:
             lines.append(f'- **{k}**: {meta[k]}')
+    if meta.get('rag'):  # only RAG runs get this line; plain reports are unchanged
+        rag, st = meta['rag'], meta.get('rag_stats') or {}
+        lines.append(f"- **rag**: Wikipedia k={rag['k']}, max_chars={rag['max_chars']}, index={rag['index']}"
+                     + (f"; query={st['query_source']}, passages used/item={st['mean_used']}, "
+                        f"block chars/item={st['mean_block_chars']}, mean top score={st['mean_top_score']}" if st else ''))
     lines += ['', f"**Total (graded): {t['points']}/{t['max']} = {t['pct']}%**  (paper max of evaluated items: "
               f"{summary['exam_max']}, ungraded units: {t['ungraded']}; one essay per session, policy={summary['essay_policy']})", '',
               f"Closed items (auto): {summary['closed_items']['points']}/{summary['closed_items']['max']} = {summary['closed_items']['pct']}%  ",

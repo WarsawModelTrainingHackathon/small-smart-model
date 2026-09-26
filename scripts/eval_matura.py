@@ -16,9 +16,12 @@ Examples (see docs/eval.md):
   uv run scripts/eval_matura.py --model google/gemma-4-12B-it --load-4bit --split test \
       --data /tmp/mh/data/matura-historia/data.json --label base-4bit --judge openai
   uv run scripts/eval_matura.py --output runs/eval/base-4bit --regrade --judge openai
+  # optional Wikipedia RAG (local index built by scripts/wiki_rag.py; label gets a -rag5 suffix):
+  uv run scripts/eval_matura.py --model google/gemma-4-12B-it --load-4bit --split test \
+      --data /tmp/mh/data/matura-historia/data.json --rag-index /team/wiki/index --rag-k 5 --rag-max-chars 3000
 
 Outputs in --output: run.json (config), generations.jsonl (resumable), graded.jsonl,
-report.json, report.md.
+report.json, report.md; with --rag-index also retrieval.jsonl (query + passages per item).
 """
 from __future__ import annotations
 
@@ -27,6 +30,7 @@ import gc
 import hashlib
 import json
 import os
+import re
 import sys
 import time
 from pathlib import Path
@@ -112,10 +116,16 @@ def load_images(item):
     return out
 
 
-def encode(processor, items, text_only=False, thinking=False, image_max_soft_tokens=560, device='cpu'):
-    """Batch-encode prompts (left padding). All items in a batch must agree on having images."""
+def encode(processor, items, text_only=False, thinking=False, image_max_soft_tokens=560, device='cpu',
+           passages=None, rag_max_chars=mf.DEFAULT_RAG_MAX_CHARS):
+    """Batch-encode prompts (left padding). All items in a batch must agree on having images.
+
+    `passages`: optional {item id: retrieval hits} -> Wikipedia block in the prompt (see mf.user_text).
+    """
     text_only = text_only or not supports_images(processor)
-    prompts = [mf.render_prompt(processor, it, text_only=text_only, thinking=thinking) for it in items]
+    passages = passages or {}
+    prompts = [mf.render_prompt(processor, it, text_only=text_only, thinking=thinking,
+                                passages=passages.get(it['id']), rag_max_chars=rag_max_chars) for it in items]
     with_images = not text_only and all(it.get('images') for it in items)
     if not text_only and any(it.get('images') for it in items) and not with_images:
         raise ValueError('mixed image / no-image batch; group items with batches()')
@@ -158,8 +168,11 @@ def budget(item, a):
 
 
 def generate(model, processor, items, max_new_tokens, batch_size=4, text_only=False, thinking=False,
-             image_max_soft_tokens=560, on_batch=None):
-    """Greedy generation for items -> [{id, output, new_tokens, seconds}] (also used by training dev eval)."""
+             image_max_soft_tokens=560, on_batch=None, passages=None, rag_max_chars=mf.DEFAULT_RAG_MAX_CHARS):
+    """Greedy generation for items -> [{id, output, new_tokens, seconds}] (also used by training dev eval).
+
+    `passages`: optional {item id: retrieval hits} prepended to the prompts (RAG); None = plain prompts.
+    """
     import torch
     device = next(p.device for p in model.parameters() if p.device.type != 'meta')
     budget_of = max_new_tokens if callable(max_new_tokens) else (lambda it: max_new_tokens)
@@ -169,7 +182,7 @@ def generate(model, processor, items, max_new_tokens, batch_size=4, text_only=Fa
     eos += [tok.eos_token_id] if tok.eos_token_id is not None else []
     for batch in batches(items, batch_size, text_only, key=budget_of):
         t0 = time.time()
-        enc, _ = encode(processor, batch, text_only, thinking, image_max_soft_tokens, device)
+        enc, _ = encode(processor, batch, text_only, thinking, image_max_soft_tokens, device, passages, rag_max_chars)
         with torch.no_grad():
             out = model.generate(**enc, max_new_tokens=budget_of(batch[0]), do_sample=False,
                                  eos_token_id=sorted(set(eos)) or None, pad_token_id=tok.pad_token_id)
@@ -196,6 +209,90 @@ def closed_dev_score(items, generations):
         mx += r['max_points']
         unparsed += not r['parse_ok']
     return dict(points=pts, max=mx, pct=round(100 * pts / mx, 2) if mx else None, unparseable=unparsed, n=len(generations))
+
+
+# --------------------------------------------------------------------------- retrieval (optional RAG)
+
+def fallback_query(item, max_chars=1000):
+    """Query used when scripts/wiki_rag.py has no build_query: the question (names the topic), then the sources."""
+    text = ' '.join(x for x in (item.get('question'), item.get('context')) if x)
+    return re.sub(r'\s+', ' ', text).strip()[:max_chars]
+
+
+def open_rag_index(index_dir):
+    """(index, build_query, query_source). scripts/wiki_rag.py is imported only here, i.e. only with --rag-index."""
+    try:
+        import wiki_rag
+    except ImportError as e:
+        raise SystemExit(f'--rag-index needs scripts/wiki_rag.py and its dependencies: {e}') from e
+    index = wiki_rag.WikiIndex(str(index_dir))
+    for owner, name in ((index, 'WikiIndex.build_query'), (wiki_rag, 'wiki_rag.build_query')):
+        fn = getattr(owner, 'build_query', None)
+        if callable(fn):
+            return index, fn, name
+    return index, fallback_query, 'fallback'
+
+
+def _hit(h):
+    get = h.get if isinstance(h, dict) else (lambda key, default=None: getattr(h, key, default))
+    score = get('score')
+    return dict(title=str(get('title') or ''), text=str(get('text') or ''),
+                score=None if score is None else round(float(score), 4))
+
+
+def retrieve(items, index_dir, k, out):
+    """Retrieve once per item, before any generation -> {id: [{title, text, score}, ...]} (rank order).
+
+    Records (query + full passages) are appended to out/retrieval.jsonl and reused on resume, so an item is
+    never retrieved twice. The index is released before the LLM is loaded.
+    """
+    path = out / 'retrieval.jsonl'
+    cache = {r['id']: r for r in read_jsonl(path)}
+    need = [it for it in items if it['id'] not in cache]
+    if need:
+        t0 = time.time()
+        index, build_query, source = open_rag_index(index_dir)
+        print(f'rag: index {index_dir} opened in {time.time() - t0:.0f}s (query: {source}, k={k})', flush=True)
+        with open(path, 'a', encoding='utf-8') as f:
+            for it in need:
+                t1 = time.time()
+                query = build_query(it)
+                hits = [_hit(h) for h in (index.search(query, k=k) or [])][:k]
+                rec = dict(id=it['id'], query=query, query_source=source, k=k, seconds=round(time.time() - t1, 3),
+                           passages=hits)
+                f.write(json.dumps(rec, ensure_ascii=False) + '\n')
+                f.flush()
+                cache[it['id']] = rec
+        del index, build_query
+        gc.collect()
+        print(f'rag: retrieved passages for {len(need)} items in {time.time() - t0:.0f}s -> {path}', flush=True)
+    return {it['id']: cache[it['id']]['passages'] for it in items}
+
+
+def rag_row(passages, max_chars):
+    """What generations.jsonl records per item: retrieved titles + scores, how many passages / chars made it in."""
+    return dict(hits=[dict(title=p['title'], score=p['score']) for p in passages],
+                used=len(mf.fit_passages(passages, max_chars)), chars=len(mf.passages_block(passages, max_chars)))
+
+
+def rag_stats(out, item_ids, max_chars):
+    keep = set(item_ids)
+    recs = [r for r in read_jsonl(out / 'retrieval.jsonl') if r['id'] in keep]
+    if not recs:
+        return None
+    rows = [rag_row(r['passages'], max_chars) for r in recs]
+    top = [r['passages'][0]['score'] for r in recs if r['passages'] and r['passages'][0].get('score') is not None]
+    return dict(n_items=len(recs), query_source=','.join(sorted({str(r.get('query_source')) for r in recs})),
+                mean_hits=round(sum(len(r['passages']) for r in recs) / len(recs), 2),
+                mean_used=round(sum(r['used'] for r in rows) / len(rows), 2),
+                mean_block_chars=round(sum(r['chars'] for r in rows) / len(rows), 1),
+                mean_top_score=round(sum(top) / len(top), 4) if top else None,
+                retrieval_seconds=round(sum(r.get('seconds', 0) for r in recs), 1))
+
+
+def rag_config_key(rag):
+    """What must match to resume a run dir: RAG on/off, k, char budget, index (by folder name)."""
+    return None if not rag else (Path(rag['index']).name, rag['k'], rag['max_chars'])
 
 
 # --------------------------------------------------------------------------- io
@@ -284,22 +381,43 @@ def main(argv=None):
     p.add_argument('--judge-4bit', action='store_true')
     p.add_argument('--attn', default='sdpa')
     p.add_argument('--device')
+    p.add_argument('--rag-index', help='local Wikipedia index dir (scripts/wiki_rag.py WikiIndex): retrieve passages once '
+                                       'per item and prepend them to the prompt; the label gets a -rag<k> suffix')
+    p.add_argument('--rag-k', type=int, default=5, help='passages retrieved per item')
+    p.add_argument('--rag-max-chars', type=int, default=mf.DEFAULT_RAG_MAX_CHARS,
+                   help='max characters of the Wikipedia block in the prompt (header included)')
     a = p.parse_args(argv)
+    if a.rag_index:
+        if a.rag_k < 1:
+            p.error('--rag-k must be >= 1')
+        if a.rag_max_chars < len(mf.RAG_HEADER) + mf.MIN_RAG_TRUNCATED_CHARS:
+            p.error(f'--rag-max-chars must be >= {len(mf.RAG_HEADER) + mf.MIN_RAG_TRUNCATED_CHARS}')
+        if not a.regrade and not Path(a.rag_index).exists():
+            raise SystemExit(f'--rag-index {a.rag_index} does not exist')
 
+    rag_tag = None
+    if a.rag_index:
+        rag_tag = f'rag{a.rag_k}' + ('' if a.rag_max_chars == mf.DEFAULT_RAG_MAX_CHARS else f'c{a.rag_max_chars}')
     label = a.label or '-'.join(x for x in [Path(a.model).name, Path(a.adapter).name if a.adapter else None,
                                              '4bit' if a.load_4bit else None, a.split,
-                                             'text' if a.text_only else None, 'think' if a.thinking == 'on' else None] if x)
+                                             'text' if a.text_only else None, 'think' if a.thinking == 'on' else None,
+                                             rag_tag] if x)
+    if rag_tag and a.label and 'rag' not in a.label.lower():
+        label = f'{a.label}-{rag_tag}'  # RAG runs are always distinguishable by label
     out = Path(a.output or f'runs/eval/{label}')
     out.mkdir(parents=True, exist_ok=True)
     items = select_items(a)
+    rag = dict(index=str(Path(a.rag_index).resolve()), k=a.rag_k, max_chars=a.rag_max_chars) if a.rag_index else None
     run = dict(label=label, model=a.model, adapter=a.adapter, load_4bit=a.load_4bit, split=a.split,
                text_only=a.text_only, thinking=a.thinking, image_max_soft_tokens=a.image_max_soft_tokens,
                max_new_tokens=a.max_new_tokens, essay_max_new_tokens=a.essay_max_new_tokens, essays=a.essays,
                data=str(a.data), data_sha256=hashlib.sha256(Path(a.data).read_bytes()).hexdigest(),
-               item_ids=[it['id'] for it in items])
+               item_ids=[it['id'] for it in items], rag=rag)
     if a.regrade:
         if not (out / 'generations.jsonl').exists():
             raise SystemExit(f'--regrade: no {out}/generations.jsonl')
+        if a.rag_index:
+            print('--regrade: grading saved generations; no retrieval (RAG config is read from run.json)', flush=True)
         return grade_and_report(a, items, out)
 
     old = json.loads((out / 'run.json').read_text(encoding='utf-8')) if (out / 'run.json').exists() else None
@@ -307,10 +425,18 @@ def main(argv=None):
         for k in ('model', 'adapter', 'load_4bit', 'text_only', 'thinking', 'split'):
             if old.get(k) != run[k]:
                 raise SystemExit(f'{out} holds a run with {k}={old.get(k)!r}, not {run[k]!r}; use another --output')
+        if rag_config_key(old.get('rag')) != rag_config_key(rag):
+            raise SystemExit(f'{out} holds a run with rag={old.get("rag")!r}, not {rag!r}; use another --output')
     write_json(out / 'run.json', run)
     done = {g['id'] for g in read_jsonl(out / 'generations.jsonl')}
     todo = [it for it in items if it['id'] not in done]
     print(f'{len(items)} items, {len(done & set(run["item_ids"]))} already generated, {len(todo)} to go -> {out}', flush=True)
+    passages = None
+    if rag:
+        if todo:
+            passages = retrieve(todo, a.rag_index, a.rag_k, out)  # all retrieval happens before the LLM is loaded
+        run['rag_stats'] = rag_stats(out, run['item_ids'], a.rag_max_chars)
+        write_json(out / 'run.json', run)
     if todo:
         import torch
         t0 = time.time()
@@ -323,13 +449,15 @@ def main(argv=None):
 
         def save(rows):
             for r in rows:
+                if passages is not None:
+                    r['rag'] = rag_row(passages[r['id']], a.rag_max_chars)
                 f.write(json.dumps(r, ensure_ascii=False) + '\n')
             f.flush()
             n[0] += len(rows)
             print(f'  {n[0]}/{len(items)} generated ({time.time() - t0:.0f}s)', flush=True)
 
         generate(model, processor, todo, lambda it: budget(it, a), a.batch_size, a.text_only, a.thinking == 'on',
-                 a.image_max_soft_tokens, on_batch=save)
+                 a.image_max_soft_tokens, on_batch=save, passages=passages, rag_max_chars=a.rag_max_chars)
         f.close()
         run['peak_vram_gb'] = round(torch.cuda.max_memory_allocated() / 1e9, 2) if torch.cuda.is_available() else None
         write_json(out / 'run.json', run)
