@@ -80,11 +80,12 @@ INSTR = re.compile(r'^(Rozstrzygnij|Podaj|Wyjaśnij|Oceń|Dokończ|Zaznacz|Przyp
 VISUAL_WORDS = re.compile(r'\b(map[aęyie]|mapk|wykres|diagram|ilustracj|fotografi|zdjęci|plakat|karykatur|rysun|schemat|'
                           r'znacz(ek|ki|ka)|monet|banknot|obraz|rycin|infografik|kadr|drzeworyt|relief|grafik|herb|pieczę|medal|'
                           r'fresk|mozaik|miniatur|rzeźb|portret|widokówk|pocztówk|ulotk|okładk|plan\b|szkic|tablic)', re.I)
-SCORING_M = re.compile(r'^(Zasady oceniania|Schemat punktowania|Schemat oceniania|Kryteria oceniania( wypowiedzi)?|Zasady przyznawania punktów)\s*:?\s*$')
+SCORING_M = re.compile(r'^(Zasady oceniania|Schemat punktowania|Schemat oceniania|Kryteria oceniania( wypowiedzi( argumentacyjnej)?)?|'
+                       r'Zasady przyznawania punktów)\s*:?\s*$', re.I)  # re.I: 'KRYTERIA OCENIANIA WYPOWIEDZI ARGUMENTACYJNEJ'
 SOLUTION_M = re.compile(r'^(Rozwiązanie|Rozwiązania|Poprawna odpowiedź|Poprawne odpowiedzi|Prawidłowa odpowiedź|'
-                        r'Prawidłowe odpowiedzi|Odpowiedź poprawna|Odpowiedzi poprawne)\s*:?\s*(.*)$')
+                        r'Prawidłowe odpowiedzi|Odpowiedź poprawna|Odpowiedzi poprawne)\b\s*:?\s*(.*)$')  # \b: not 'Rozwiązaniem greckim'
 EXAMPLE_M = re.compile(r'^Przykładow\w+(\s+\w+){0,2}\s*:?\s*$|^Przykładow\w+(\s+\w+){0,2}\s*:')
-NOTE_M = re.compile(r'^(Uwaga|Uwagi)\s*[:.]?\s*(.*)$')
+NOTE_M = re.compile(r'^(Uwaga|Uwagi)\b\s*[:.!]?\s*(.*)$')
 REQ_M = re.compile(r'^Wymagani[ea] (ogólne|szczegółowe)\s*$')
 
 
@@ -104,11 +105,11 @@ def download(url, dest):
 
 
 def clean(s):
-    s = s.replace(' ', ' ').replace('­', '').replace('', '•')
+    s = s.replace(' ', ' ').replace('­', '').replace('', '•').replace('\uf085', '†')  # Symbol-font PUA dagger (genealogy trees)
     return re.sub(r'[ \t]+', ' ', s).strip()
 
 
-def page_lines(doc, start_page=0):
+def page_lines(doc, start_page=0, key=None):
     """Yield content lines (and significant image markers) in reading order with positions."""
     out = []
     for pno in range(start_page, len(doc)):
@@ -121,7 +122,8 @@ def page_lines(doc, start_page=0):
         for b in imgs:
             x0, y0, x1, y1 = b['bbox']
             cx = (x0 + x1) / 2
-            if x1 - x0 >= 40 and y1 - y0 >= 30 and 60 < cx < W - 60 and y0 > 45 and y1 < H - 45:
+            # flat wide blocks too: genealogy boxes drawn as images (2025-maj zad5 top box is 136x29 pt)
+            if (x1 - x0 >= 40 and y1 - y0 >= 30 or x1 - x0 >= 80 and y1 - y0 >= 18) and 60 < cx < W - 60 and y0 > 45 and y1 < H - 45:
                 big.append(pymupdf.Rect(b['bbox']))
         # vector charts/maps: several filled shapes in >=2 saturated colours -> one pseudo-image (union bbox)
         vec = []
@@ -157,16 +159,94 @@ def page_lines(doc, start_page=0):
                 t = clean(''.join(s['text'] for s in l['spans']))
                 if not t or PAGE_JUNK.match(t):
                     continue
-                items.append(dict(page=pno, y0=y0, y1=y1, x0=x0, text=t, img=False))
+                items.append(dict(page=pno, y0=y0, y1=y1, x0=x0, x1=x1, text=t, img=False))
         for r in big:
-            items.append(dict(page=pno, y0=r.y0, y1=r.y1, x0=r.x0, text='[OBRAZ]', img=True, rect=[r.x0, r.y0, r.x1, r.y1]))
+            items.append(dict(page=pno, y0=r.y0, y1=r.y1, x0=r.x0, x1=r.x1, text='[OBRAZ]', img=True, rect=[r.x0, r.y0, r.x1, r.y1]))
         # stable reading order: text order from pymupdf sort, images inserted by y
         text_items = [i for i in items if not i['img']]
+        for ov in LAYOUT_OVERRIDES.get((key, pno + 1), []):
+            text_items = apply_layout_override(pg, ov, text_items, [i for i in items if i['img']])
         for im in (i for i in items if i['img']):
             k = next((n for n, t in enumerate(text_items) if t['y0'] > im['y0'] + 1), len(text_items))
             text_items.insert(k, im)
         out.extend(text_items)
     return out
+
+
+# Explicit per-page layout overrides for text that pymupdf's reading order mangles, verified against the PDF block
+# coordinates (1-based page numbers; y bands in pt). Inside a band the text is rebuilt from words:
+#  - 'columns': two side-by-side columns, split at x; left column first, then right, each top to bottom.
+#  - 'boxes': a genealogy tree drawn as boxes (drawn rectangles / image blocks); one line per row of boxes,
+#    "[box] | [box]", rows top to bottom; the box images in the band give a single [OBRAZ] marker.
+LAYOUT_OVERRIDES = {
+    # zad15: Wersja A (x 76-294, the critical mazurka) and Wersja B (x 303-522) printed side by side; pymupdf
+    # interleaved them so the A text followed the "Wersja B:" label (key 15.2 = A looked wrong).
+    ('2024-maj', 18): [dict(y=(270, 462), mode='columns', split=298)],
+    # zad11: tree of French kings (boxes y 91-347, legend box x 416-524); dates were detached from rulers.
+    ('2024-maj', 14): [dict(y=(88, 350), mode='boxes')],
+    # zad5: Przemyślid tree, boxes are image blocks y 116-632 (11 [OBRAZ] markers, dates detached from rulers).
+    ('2025-maj', 8): [dict(y=(110, 635), mode='boxes')],
+    # zad13: stamp captions B (x 71-224) and C (x 252-508) on one physical line at y 466.
+    ('2026-maj', 14): [dict(y=(463, 491), mode='columns', split=240, labels=('B', 'C'), join=True)],
+}
+
+
+def apply_layout_override(pg, ov, text_items, img_items):
+    y0, y1 = ov['y']
+    keep = [t for t in text_items if not (y0 <= t['y0'] <= y1)]
+    pos = next((n for n, t in enumerate(text_items) if y0 <= t['y0'] <= y1), len(text_items))
+    pos = sum(1 for t in text_items[:pos] if not (y0 <= t['y0'] <= y1))
+    words = [w for w in pg.get_text('words') if y0 <= w[1] <= y1 and 60 < (w[0] + w[2]) / 2 < pg.rect.width - 58]
+    pno = text_items[0]['page'] if text_items else pg.number
+
+    def lines_of(ws):
+        g = defaultdict(list)
+        for w in ws:
+            g[(w[5], w[6])].append(w)
+        out = []
+        for ls in g.values():
+            ls.sort(key=lambda w: w[0])
+            out.append(dict(page=pno, y0=min(w[1] for w in ls), y1=max(w[3] for w in ls), x0=ls[0][0],
+                            x1=ls[-1][2], text=clean(' '.join(w[4] for w in ls)), img=False, nl=True))
+        return sorted(out, key=lambda l: (round(l['y0']), l['x0']))
+
+    if ov['mode'] == 'columns':
+        cols = [lines_of([w for w in words if (w[0] + w[2]) / 2 < ov['split']]),
+                lines_of([w for w in words if (w[0] + w[2]) / 2 >= ov['split']])]
+        if ov.get('join'):  # each column is one caption
+            cols = [[dict(c[0], text=' '.join(l['text'] for l in c))] if c else [] for c in cols]
+        for lab, col in zip(ov.get('labels', ()), cols):  # caption columns belong to figures labelled e.g. B, C
+            if col:
+                col[0]['text'] = f'{lab} – {col[0]["text"]}'
+        new = cols[0] + cols[1]
+    else:
+        rects = [d['rect'] for d in pg.get_drawings() if d['rect'].width > 30 and d['rect'].height > 12 and
+                 y0 <= d['rect'].y0 <= y1] + [i and pymupdf.Rect(i['rect']) for i in img_items if y0 <= i['y0'] <= y1]
+        boxes, loose = defaultdict(list), []
+        for w in words:
+            c = pymupdf.Point((w[0] + w[2]) / 2, (w[1] + w[3]) / 2)
+            inr = [r for r in rects if c in r]
+            if inr:
+                r = min(inr, key=lambda r: r.width * r.height)
+                boxes[(round(r.x0), round(r.y0))].append(w)
+            else:
+                loose.append(w)
+        bl = []
+        for (bx, by), ws in boxes.items():
+            t = ' '.join(l['text'] for l in lines_of(ws))
+            bl.append(dict(page=pno, y0=by, y1=by, x0=bx, x1=bx, text=f'[{t}]', img=False, nl=True))
+        rows = []
+        for b in sorted(bl, key=lambda b: b['y0']):
+            if rows and b['y0'] - rows[-1][0]['y0'] < 10:
+                rows[-1].append(b)
+            else:
+                rows.append([b])
+        new = [dict(r[0], text=' | '.join(b['text'] for b in sorted(r, key=lambda b: b['x0']))) for r in rows]
+        new = sorted(new + lines_of(loose), key=lambda l: l['y0'])
+        band_imgs = sorted((i for i in img_items if y0 <= i['y0'] <= y1), key=lambda i: i['y0'])
+        for i in band_imgs[1:]:
+            i['hide'] = True  # the boxes themselves; one [OBRAZ] for the whole tree
+    return keep[:pos] + new + keep[pos:]
 
 
 def strip_answer_lines(lines):
@@ -187,18 +267,25 @@ def strip_answer_lines(lines):
 
 def join_text(lines):
     """Join physical lines into paragraphs-ish text; keep list-like lines on their own."""
-    out = []
+    out, last_nl = [], False
     for l in lines:
         t = l['text']
+        prev_nl, last_nl = last_nl, l.get('nl', False)  # lines from a layout override stand on their own
         if l['img']:
-            out.append('\n[OBRAZ]\n')
+            if not l.get('hide'):
+                out.append('\n[OBRAZ]\n')
             continue
         if out and not out[-1].endswith('\n'):
             prev = out[-1]
             if prev.endswith('-') and not prev.endswith(' -') and re.match(r'[a-ząćęłńóśźż]', t):
                 out[-1] = prev[:-1] + t
                 continue
-            if re.match(r'^([A-F]\.|\d+\.|•|–|Źródło|Fragment|Temat|Rozstrzygnięcie|Uzasadnienie|P$|F$|Tak$|Nie$)', t) or \
+            if prev.endswith('-') and re.match(r'-[a-ząćęłńóśźż]', t):  # Polish repeated hyphen: 'królewsko-\n-hiszpański'
+                out[-1] = prev + t[1:]
+                continue
+            if l.get('nl') or prev_nl or re.fullmatch(r'\n?(P|F|Tak|Nie)', prev) or \
+               re.match(r'^Źródło\s*\d+\.\s.{0,90}$', prev.strip()) and not re.search(r'[,–-]$', prev) or \
+               re.match(r'^(Na podstawie|Źródło:)', t) or re.match(r'^([A-F]\.|\d+\.|•|–|Źródło|Fragment|Temat|Rozstrzygnięcie|Uzasadnienie|P$|F$|Tak$|Nie$)', t) or \
                re.search(r'[.:;!?”"]$', prev) and (t[:1].isupper() or t[:1].isdigit()):
                 out.append('\n' + t)
             else:
@@ -227,19 +314,44 @@ def max_points(p):
     return int(re.findall(r'\d+', p)[-1]) if p else None
 
 
+def footnote_y(blocks, H):
+    """Top of the page-bottom footnote area (legal references to the Rozporządzenie / Dz.U. and the note
+    'Zwracamy uwagę, że w liceum ...'), recognised by a line starting with a superscript number in the lower
+    half of the page; H if there is none. Everything from there down belongs to the footnotes."""
+    ys = []
+    for b in blocks:
+        if b['type'] != 0:
+            continue
+        for l in b['lines']:
+            sp = [s for s in l['spans'] if s['text'].strip()]
+            if len(sp) >= 2 and re.fullmatch(r'\d{1,2}', sp[0]['text'].strip()) and sp[0]['size'] <= 8.5 and \
+               max(s['size'] for s in sp[1:]) > sp[0]['size'] + 0.4 and l['bbox'][1] > H * 0.45 and l['bbox'][0] < 80:
+                ys.append(l['bbox'][1])
+    return min(ys) if ys else H
+
+
 def parse_zasady(path):
     doc = pymupdf.open(path)
     lines = []
     for pno, pg in enumerate(doc):
         H = pg.rect.height
-        for b in pg.get_text('dict')['blocks']:  # native order: two-column requirement tables stay intact
+        blocks = pg.get_text('dict')['blocks']
+        cut = footnote_y(blocks, H)
+        for b in blocks:  # native order: two-column requirement tables stay intact
             if b['type'] != 0:
                 continue
             for l in b['lines']:
                 t = clean(''.join(s['text'] for s in l['spans']))
-                if not t or PAGE_JUNK.match(t) or l['bbox'][1] > H - 40:
+                if not t or PAGE_JUNK.match(t) or l['bbox'][1] > H - 40 or l['bbox'][1] >= cut - 1:
                     continue
                 lines.append(t)
+    merged = []  # a bullet drawn as its own text line ('•' then the item text): keep them together
+    for t in lines:
+        if merged and merged[-1] in ('•', '–') and not HEADER_RE.match(t):
+            merged[-1] += ' ' + t
+        else:
+            merged.append(t)
+    lines = merged
     tasks = {}
     cur = None
     for t in lines:
@@ -389,7 +501,9 @@ def render_regions(doc, regs, stem, img_dir):
     paths = []
     for n, (pno, r) in enumerate(regs, 1):
         pg = doc[pno]
-        clip = pymupdf.Rect(45, max(r[1] - 8, 30), pg.rect.width - 45, min(r[3] + 8, pg.rect.height - 30))
+        W, H = pg.rect.width, pg.rect.height
+        # at least the text column (x 45..W-45), wider when the figure or its captions stick out into the margin
+        clip = pymupdf.Rect(max(min(45, r[0] - 4), 5), max(r[1], 30), min(max(W - 45, r[2] + 4), W - 5), min(r[3], H - 30))
         data = pg.get_pixmap(dpi=DPI, clip=clip).tobytes('png')
         p = img_dir / f'{stem}-{n}.png'
         if not p.exists() or p.read_bytes() != data:  # rewrite only on change (friendlier to synced folders)
@@ -398,10 +512,17 @@ def render_regions(doc, regs, stem, img_dir):
     return paths
 
 
+# a line that starts something new below a figure: next source, next task, the question itself
+STOP_BELOW = re.compile(r'^(Źródło\s*\d|Zadanie\b|Tabela\b|Mapa\b|Wykres|Tekst\b|Fragment\b|Materiał|Temat\b)')
+
+
 def regions(seg_lines, only_with_images):
-    """Page crops for an item: around its figures (union of figure boxes + margin for title/legend),
-    or the whole text region when the item is visual only by heading keyword. Sibling subtasks sharing
-    the same figures get byte-identical crops (deduplicated by git)."""
+    """Page crops for an item: around its figures, or the whole source text region when the item is visual
+    only by heading keyword. Sibling subtasks sharing the same figures get byte-identical crops (deduplicated by git).
+
+    Figure crops: vertically the union of the figure boxes, plus the title lines directly above (no gap, <= 50 pt) and the
+    caption/legend lines that follow the figure without a gap, up to the next source, task header or instruction
+    (no half-cut lines, no next source); horizontally the text column, widened to any figure/caption in the margin."""
     by_page = defaultdict(list)
     for l in seg_lines:
         by_page[l['page']].append(l)
@@ -411,9 +532,34 @@ def regions(seg_lines, only_with_images):
         if only_with_images:
             if not imgs:
                 continue
-            regs.append((pno, [0, min(l['y0'] for l in imgs) - 30, 0, max(l['y1'] for l in imgs) + 45]))
+            top, bot = min(l['y0'] for l in imgs), max(l['y1'] for l in imgs)
+            txt = [l for l in ls if not l['img']]
+            above, first = [], top
+            for l in sorted((l for l in txt if l['y1'] <= top + 2), key=lambda l: -l['y1']):
+                if first - l['y1'] > 20 or top - l['y0'] > 55 or CITATION.search(l['text']):
+                    break  # title lines sit right above the figure; stop at a gap or the previous source's citation
+                above.append(l)
+                first = min(first, l['y0'])
+            top = first
+            inside = [l for l in txt if l['y0'] >= top - 1 and l['y0'] <= bot]  # incl. captions overlapping the box
+            last = max([bot] + [l['y1'] for l in inside])
+            below = sorted((l for l in txt if l['y0'] > bot), key=lambda l: l['y0'])
+            nxt = None
+            for l in below:
+                if l['y0'] - last > 16 or l['y1'] - bot > 90 or STOP_BELOW.match(l['text']) or INSTR.match(l['text']) \
+                   or QWORD.match(l['text']):
+                    nxt = l
+                    break
+                inside.append(l)
+                last = max(last, l['y1'])
+            prev = max((l['y1'] for l in txt if l['y1'] <= top), default=0)
+            # 4 pt padding, but never into the neighbouring line (no half-cut next heading / previous line)
+            bot = min(last + 4, nxt['y0'] - 1) if nxt else last + 4
+            xs = imgs + inside + above
+            regs.append((pno, [min(l['x0'] for l in xs), max(top - 4, prev + 1), max(l['x1'] for l in xs), bot]))
         else:
-            regs.append((pno, [0, min(l['y0'] for l in ls), 0, max(l['y1'] for l in ls)]))
+            regs.append((pno, [min(l['x0'] for l in ls), min(l['y0'] for l in ls) - 4, max(l['x1'] for l in ls),
+                               max(l['y1'] for l in ls) + 4]))
     return regs
 
 
@@ -480,6 +626,37 @@ def split_essay(qlines):
     return intro, topics, mats
 
 
+ESSAY_CRIT = re.compile(r'^(Kryteria oceniania|Zasady oceniania|KRYTERIA OCENIANIA|Poziom IV\b)')
+
+
+def essay_scoring(z, n_topics, formula):
+    """Per-topic (scoring, scoring_raw) for an essay from its zasady block.
+
+    Formula 2015: each topic has its own block (requirements + 'Kryteria oceniania' levels + notes), starting at a
+    'Temat N' line (2021-03: at 'Wymagania egzaminacyjne'); scoring = the topic's criteria, scoring_raw = its block.
+    Formula 2023: per-topic requirements, then ONE criteria table shared by all topics; scoring = shared criteria
+    (from 'Zasady oceniania' / 'KRYTERIA OCENIANIA ...' to the end), scoring_raw = whole block."""
+    L = z['lines']
+    if formula == '2015':
+        starts = [i for i, l in enumerate(L) if re.match(r'^Temat\b', l)]
+        if len(starts) != n_topics:
+            starts = [i for i, l in enumerate(L) if re.match(r'^Wymagania egzaminacyjne', l)]
+        if len(starts) != n_topics:
+            return None
+        out = []
+        for k, a in enumerate(starts):
+            blk = L[a:starts[k + 1] if k + 1 < n_topics else len(L)]
+            c = next((i for i, l in enumerate(blk) if ESSAY_CRIT.match(l)), None)
+            if c is None:
+                return None
+            out.append(('\n'.join(blk[c:]).strip(), '\n'.join(blk).strip()))
+        return out
+    c = next((i for i, l in enumerate(L) if SCORING_M.match(l) or re.match(r'^A\. NARRACJA', l)), None)
+    if c is None:
+        return None
+    return [('\n'.join(L[c:]).strip(), z['raw'])] * n_topics
+
+
 def parse_660(path):
     """Adapted paper for blind students (arkusz 660, .docx): figures are replaced by text descriptions ("Opis ...").
     Returns ({(task, max_points)}, {group: text})."""
@@ -501,7 +678,7 @@ def parse_660(path):
 def build_session(key, spec, raw, img_dir, report):
     year, session, formula, date, a_url, z_url, _ = spec
     doc = pymupdf.open(raw / f'{key}-arkusz.pdf')
-    lines = page_lines(doc)
+    lines = page_lines(doc, key=key)
     first = next(i for i, l in enumerate(lines) if HEADER_RE.match(l['text']) and HEADER_RE.match(l['text']).group(1) == '1')
     lines = strip_answer_lines(lines[first:])
     segs = split_tasks(lines)
@@ -519,14 +696,16 @@ def build_session(key, spec, raw, img_dir, report):
     seen, used_z = set(), set()
     W = report['warnings']
 
-    def visuals(item, vis_lines, heading_text):
+    def visuals(item, vis_lines, heading_text, crop_lines=None):
         has_img = any(l['img'] for l in vis_lines)
         kw = bool(re.search(r'\b(Mapa|Wykres|Wykresy|Diagram|Schemat|Infografika|Plan)\b', heading_text))
         item['needs_visual'] = has_img or kw
         item['visual_reason'] = 'image_in_task' if has_img else ('heading_keyword' if kw else None)
         item['images'] = []
         if item['needs_visual']:
-            item['images'] = render_regions(doc, regions(vis_lines, only_with_images=has_img), item['id'], img_dir)
+            # keyword-only visuals (vector chart/table without a raster image): crop the sources, not the question
+            src = vis_lines if has_img or not crop_lines else crop_lines
+            item['images'] = render_regions(doc, regions(src, only_with_images=has_img), item['id'], img_dir)
 
     for num, sub, pts, ls in segs:
         if pts is None and sub is None:  # group header: shared sources
@@ -570,11 +749,19 @@ def build_session(key, spec, raw, img_dir, report):
             if len(topics) < 2:
                 W.append(f'{key}: essay {tid} topics not split')
                 topics = [question]
+            n_decl = re.search(r'Zadanie zawiera (\w+) temat', intro)
+            n_decl = {'dwa': 2, 'trzy': 3, 'cztery': 4, 'pięć': 5}.get(n_decl.group(1)) if n_decl else None
+            if n_decl != len(topics):
+                raise SystemExit(f'{key}: essay {tid} declares {n_decl} topics, parsed {len(topics)}')
+            esc = essay_scoring(z, len(topics), formula) if z else None
+            if not esc or not all(sc for sc, _ in esc):
+                raise SystemExit(f'{key}: essay {tid}: scoring criteria not found per topic')
             for k, t in enumerate(topics, 1):
-                item = dict(base, id=f'{base["id"]}-t{k}', topic=k, context=join_text(mats.get(k, [])),
+                item = dict(base, id=f'{base["id"]}-t{k}', topic=k, choice_group=f'{key}-essay',
+                            context=join_text(mats.get(k, [])),
                             question=(intro + '\n' + f'Temat {k}. ' + t).strip() if intro else t,
-                            answer=answer, answer_key=None, scoring=z['scoring'] if z else '',
-                            scoring_notes=z['notes'] if z else '', scoring_raw=z['raw'] if z else '',
+                            answer=answer, answer_key=None, scoring=esc[k - 1][0],
+                            scoring_notes=z['notes'], scoring_raw=esc[k - 1][1],
                             auto_gradable=False)
                 ml = mats.get(k, [])
                 visuals(item, ml, join_text(ml))
@@ -582,7 +769,7 @@ def build_session(key, spec, raw, img_dir, report):
                 item['split'] = SPLIT.get(key, 'train')
                 items.append(item)
             continue
-        item = dict(base, context=context, question=question)
+        item = dict(base, choice_group=None, context=context, question=question)
         if typ == 'closed_abcd':
             item['options'] = options
         if typ in ('closed_abcd', 'true_false', 'matching', 'ordering'):
@@ -595,18 +782,47 @@ def build_session(key, spec, raw, img_dir, report):
         item['auto_gradable'] = bool(key_norm) and typ in ('closed_abcd', 'true_false', 'matching', 'ordering') and \
             not item.get('requires_justification')
         heads = '\n'.join(l['text'] for l in ctx_lines + qlines if not l['img'] and re.match(r'^(Źródło|Fragment|Mapa|Wykres|Schemat|Tabela|Diagram|Infografika|Plan)', l['text']))
-        visuals(item, ctx_lines + qlines, heads)
+        visuals(item, ctx_lines + qlines, heads, crop_lines=ctx_lines or None)
         if adapted and item['needs_visual'] and 'Opis' in adapted.get(num, ''):
             item['adapted_660_text'] = adapted[num]
         item['source'] = dict(src, pages=sorted({l['page'] + 1 for l in ctx_lines + qlines}))
         item['split'] = SPLIT.get(key, 'train')
         items.append(item)
-    report['sessions'][key] = dict(items=len(items), zasady_tasks=len(zas),
+    report['sessions'][key] = dict(items=len(items), zasady_tasks=len(zas), max_points=session_score_max(items),
                                    arkusz_sha256=sha(raw / f'{key}-arkusz.pdf'), zasady_sha256=sha(raw / f'{key}-zasady.pdf'))
     missing = set(zas) - used_z
     if missing:
         W.append(f'{key}: zasady tasks not found in arkusz: {sorted(missing)}')
     return items
+
+
+OFFICIAL_MAX = {'2015': 50, '2023': 60}
+
+
+def session_score_max(items):
+    """Max score of one session: items with the same choice_group are alternatives (the examinee writes ONE
+    essay topic), so each choice_group counts once (its max over members); other items count individually."""
+    groups = defaultdict(int)
+    total = 0
+    for d in items:
+        if d['choice_group']:
+            groups[d['choice_group']] = max(groups[d['choice_group']], d['max_points'])
+        else:
+            total += d['max_points']
+    return total + sum(groups.values())
+
+
+def check_totals(data):
+    by = defaultdict(list)
+    for d in data:
+        by[d['session_key']].append(d)
+    bad = []
+    for key, its in by.items():
+        got, want = session_score_max(its), OFFICIAL_MAX[its[0]['formula']]
+        if got != want:
+            bad.append(f'{key}: {got} pts (one item per choice_group), official max {want}')
+    if bad:
+        raise SystemExit('session point totals differ from the official maximum:\n  ' + '\n  '.join(bad))
 
 
 def main():
@@ -634,6 +850,7 @@ def main():
     data = []
     for key in keys:
         data.extend(build_session(key, SESSIONS[key], raw, img_dir, report))
+    check_totals(data)
     if not a.only:  # drop stale renders
         keep = {Path(p).name for d in data for p in d['images']}
         for f in img_dir.glob('*.png'):
@@ -651,12 +868,15 @@ def main():
         needs_visual={s: sum(d['needs_visual'] for d in v) for s, v in splits.items()},
         auto_gradable={s: sum(d['auto_gradable'] for d in v) for s, v in splits.items()},
         points={s: sum(d['max_points'] or 0 for d in v) for s, v in splits.items()},
+        session_max_points={k: v['max_points'] for k, v in report['sessions'].items()},
         sessions=report['sessions'], parse_warnings=report['warnings'],
         adapted_660_versions={k: dict(url=v[6], status=report['adapted_660'].get(k)) for k, v in SESSIONS.items() if v[6]},
         adapted_660_items=sum('adapted_660_text' in d for d in data),
         not_available='CKE publishes only main-term (May) papers plus mock/diagnostic/demo papers; June (dodatkowy) and '
                       'August (poprawkowy) historia papers are not on cke.gov.pl. Formula 2015 and 2023 historia exist only at poziom rozszerzony.',
-        fields={'context': 'shared sources for the task group + sources preceding the instruction (text; [OBRAZ] marks a figure)',
+        fields={'choice_group': 'null for normal items; the same string (e.g. "2024-maj-essay") for alternative items of which '
+                                'the examinee answers ONE (the essay topics). A session score counts one item per choice_group.',
+                'context': 'shared sources for the task group + sources preceding the instruction (text; [OBRAZ] marks a figure)',
                 'question': 'instruction and answer scaffold (dotted answer lines removed)',
                 'answer': 'raw solution / accepted answers text from zasady oceniania',
                 'answer_key': 'normalized key for closed types (letter, list, or {statement/item: value}); null if not parsed',
@@ -671,7 +891,7 @@ def main():
             'type is heuristic: open_short vs open_long is by points (>=3 -> open_long); closed tasks that also demand a justification have requires_justification=true and auto_gradable=false.',
             'matching keys can be free text with alternatives ("A / B") and optional parts in [brackets]; grade them with normalisation, not exact match.',
             'Essays (wypracowanie) are split one item per topic; answer is empty and the full scoring block (requirements + criteria, raw text) is in scoring_raw.',
-            'max_points comes from the arkusz; CKE zasady contain a few inconsistent point headers/levels (listed in parse_warnings). With arkusz points every session sums to exactly 50 (formula 2015) or 60 (formula 2023).',
+            'max_points comes from the arkusz; CKE zasady contain a few inconsistent point headers/levels (listed in parse_warnings). Counting one item per choice_group, every session sums to exactly 50 (formula 2015) or 60 (formula 2023); the build fails otherwise.',
         ],
     )
     OUT.mkdir(parents=True, exist_ok=True)
