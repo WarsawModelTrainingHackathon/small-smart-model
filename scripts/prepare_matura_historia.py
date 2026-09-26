@@ -80,11 +80,12 @@ INSTR = re.compile(r'^(Rozstrzygnij|Podaj|Wyjaśnij|Oceń|Dokończ|Zaznacz|Przyp
 VISUAL_WORDS = re.compile(r'\b(map[aęyie]|mapk|wykres|diagram|ilustracj|fotografi|zdjęci|plakat|karykatur|rysun|schemat|'
                           r'znacz(ek|ki|ka)|monet|banknot|obraz|rycin|infografik|kadr|drzeworyt|relief|grafik|herb|pieczę|medal|'
                           r'fresk|mozaik|miniatur|rzeźb|portret|widokówk|pocztówk|ulotk|okładk|plan\b|szkic|tablic)', re.I)
-SCORING_M = re.compile(r'^(Zasady oceniania|Schemat punktowania|Schemat oceniania|Kryteria oceniania( wypowiedzi)?|Zasady przyznawania punktów)\s*:?\s*$')
+SCORING_M = re.compile(r'^(Zasady oceniania|Schemat punktowania|Schemat oceniania|Kryteria oceniania( wypowiedzi( argumentacyjnej)?)?|'
+                       r'Zasady przyznawania punktów)\s*:?\s*$', re.I)  # re.I: 'KRYTERIA OCENIANIA WYPOWIEDZI ARGUMENTACYJNEJ'
 SOLUTION_M = re.compile(r'^(Rozwiązanie|Rozwiązania|Poprawna odpowiedź|Poprawne odpowiedzi|Prawidłowa odpowiedź|'
-                        r'Prawidłowe odpowiedzi|Odpowiedź poprawna|Odpowiedzi poprawne)\s*:?\s*(.*)$')
+                        r'Prawidłowe odpowiedzi|Odpowiedź poprawna|Odpowiedzi poprawne)\b\s*:?\s*(.*)$')  # \b: not 'Rozwiązaniem greckim'
 EXAMPLE_M = re.compile(r'^Przykładow\w+(\s+\w+){0,2}\s*:?\s*$|^Przykładow\w+(\s+\w+){0,2}\s*:')
-NOTE_M = re.compile(r'^(Uwaga|Uwagi)\s*[:.]?\s*(.*)$')
+NOTE_M = re.compile(r'^(Uwaga|Uwagi)\b\s*[:.!]?\s*(.*)$')
 REQ_M = re.compile(r'^Wymagani[ea] (ogólne|szczegółowe)\s*$')
 
 
@@ -227,17 +228,35 @@ def max_points(p):
     return int(re.findall(r'\d+', p)[-1]) if p else None
 
 
+def footnote_y(blocks, H):
+    """Top of the page-bottom footnote area (legal references to the Rozporządzenie / Dz.U. and the note
+    'Zwracamy uwagę, że w liceum ...'), recognised by a line starting with a superscript number in the lower
+    half of the page; H if there is none. Everything from there down belongs to the footnotes."""
+    ys = []
+    for b in blocks:
+        if b['type'] != 0:
+            continue
+        for l in b['lines']:
+            sp = [s for s in l['spans'] if s['text'].strip()]
+            if len(sp) >= 2 and re.fullmatch(r'\d{1,2}', sp[0]['text'].strip()) and sp[0]['size'] <= 8.5 and \
+               max(s['size'] for s in sp[1:]) > sp[0]['size'] + 0.4 and l['bbox'][1] > H * 0.45 and l['bbox'][0] < 80:
+                ys.append(l['bbox'][1])
+    return min(ys) if ys else H
+
+
 def parse_zasady(path):
     doc = pymupdf.open(path)
     lines = []
     for pno, pg in enumerate(doc):
         H = pg.rect.height
-        for b in pg.get_text('dict')['blocks']:  # native order: two-column requirement tables stay intact
+        blocks = pg.get_text('dict')['blocks']
+        cut = footnote_y(blocks, H)
+        for b in blocks:  # native order: two-column requirement tables stay intact
             if b['type'] != 0:
                 continue
             for l in b['lines']:
                 t = clean(''.join(s['text'] for s in l['spans']))
-                if not t or PAGE_JUNK.match(t) or l['bbox'][1] > H - 40:
+                if not t or PAGE_JUNK.match(t) or l['bbox'][1] > H - 40 or l['bbox'][1] >= cut - 1:
                     continue
                 lines.append(t)
     tasks = {}
@@ -480,6 +499,37 @@ def split_essay(qlines):
     return intro, topics, mats
 
 
+ESSAY_CRIT = re.compile(r'^(Kryteria oceniania|Zasady oceniania|KRYTERIA OCENIANIA|Poziom IV\b)')
+
+
+def essay_scoring(z, n_topics, formula):
+    """Per-topic (scoring, scoring_raw) for an essay from its zasady block.
+
+    Formula 2015: each topic has its own block (requirements + 'Kryteria oceniania' levels + notes), starting at a
+    'Temat N' line (2021-03: at 'Wymagania egzaminacyjne'); scoring = the topic's criteria, scoring_raw = its block.
+    Formula 2023: per-topic requirements, then ONE criteria table shared by all topics; scoring = shared criteria
+    (from 'Zasady oceniania' / 'KRYTERIA OCENIANIA ...' to the end), scoring_raw = whole block."""
+    L = z['lines']
+    if formula == '2015':
+        starts = [i for i, l in enumerate(L) if re.match(r'^Temat\b', l)]
+        if len(starts) != n_topics:
+            starts = [i for i, l in enumerate(L) if re.match(r'^Wymagania egzaminacyjne', l)]
+        if len(starts) != n_topics:
+            return None
+        out = []
+        for k, a in enumerate(starts):
+            blk = L[a:starts[k + 1] if k + 1 < n_topics else len(L)]
+            c = next((i for i, l in enumerate(blk) if ESSAY_CRIT.match(l)), None)
+            if c is None:
+                return None
+            out.append(('\n'.join(blk[c:]).strip(), '\n'.join(blk).strip()))
+        return out
+    c = next((i for i, l in enumerate(L) if SCORING_M.match(l) or re.match(r'^A\. NARRACJA', l)), None)
+    if c is None:
+        return None
+    return [('\n'.join(L[c:]).strip(), z['raw'])] * n_topics
+
+
 def parse_660(path):
     """Adapted paper for blind students (arkusz 660, .docx): figures are replaced by text descriptions ("Opis ...").
     Returns ({(task, max_points)}, {group: text})."""
@@ -574,12 +624,15 @@ def build_session(key, spec, raw, img_dir, report):
             n_decl = {'dwa': 2, 'trzy': 3, 'cztery': 4, 'pięć': 5}.get(n_decl.group(1)) if n_decl else None
             if n_decl != len(topics):
                 raise SystemExit(f'{key}: essay {tid} declares {n_decl} topics, parsed {len(topics)}')
+            esc = essay_scoring(z, len(topics), formula) if z else None
+            if not esc or not all(sc for sc, _ in esc):
+                raise SystemExit(f'{key}: essay {tid}: scoring criteria not found per topic')
             for k, t in enumerate(topics, 1):
                 item = dict(base, id=f'{base["id"]}-t{k}', topic=k, choice_group=f'{key}-essay',
                             context=join_text(mats.get(k, [])),
                             question=(intro + '\n' + f'Temat {k}. ' + t).strip() if intro else t,
-                            answer=answer, answer_key=None, scoring=z['scoring'] if z else '',
-                            scoring_notes=z['notes'] if z else '', scoring_raw=z['raw'] if z else '',
+                            answer=answer, answer_key=None, scoring=esc[k - 1][0],
+                            scoring_notes=z['notes'], scoring_raw=esc[k - 1][1],
                             auto_gradable=False)
                 ml = mats.get(k, [])
                 visuals(item, ml, join_text(ml))
