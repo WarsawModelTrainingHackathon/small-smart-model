@@ -22,12 +22,12 @@ Sessions (all -> split 'train'):
 A session is kept only if its points (one item per choice_group) equal the official maximum and every arkusz task
 matches the zasady (numbering and points); otherwise it is skipped as a whole.
 
-Leak check: every new item whose question or context is a near-duplicate of a dev/test item (difflib ratio >= 0.8 on
-normalised text of >= 80 chars, or a shared passage >= 200 chars) is dropped.
+Leak check (scripts/check_matura_historia_leaks.py): every TRAIN item, core and archival, whose question or context is a
+near-duplicate of a dev/test item (difflib ratio >= 0.8 on normalised text of >= 80 chars, or a shared passage >= 200
+chars) is dropped; an archival session with >= 50% leaking items is dropped whole.
 """
 import argparse
 from collections import Counter, defaultdict
-import difflib
 import json
 from pathlib import Path
 import re
@@ -36,6 +36,7 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import prepare_matura_historia as P  # noqa: E402
+import check_matura_historia_leaks as L  # noqa: E402
 
 CKE = 'https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015'
 # stem in the archive: (year, session, formula, level, arkusz url, arkusz sha256, zasady url, zasady sha256)
@@ -541,6 +542,26 @@ def fix_key(d):
     for f in ('answer', 'scoring', 'scoring_notes', 'scoring_raw'):  # section headings of the zasady ('Część II')
         if d.get(f):
             d[f] = re.sub(r'(\n\s*(Część|CZĘŚĆ)\s+I{1,3}\.?\s*)+$', '', d[f])
+    if d['type'] == 'closed_abcd' and not isinstance(d['answer_key'], dict):
+        # 'Zaznacz poprawne dokończenie zdań.' with two unnumbered stems, each with its own A-D (2016 P): the core
+        # normaliser keeps only the last option block and collapses the key ('D.\nD.' -> 'D'). Use the core format
+        # for numbered sentences: options {'1': {'stem', 'A', ...}, ...}, answer_key {'1': 'B', '2': 'D'}.
+        blocks, stem = [], None
+        for x in d['question'].split('\n')[1:]:
+            m = re.match(r'^([A-F])\.\s+(\S.*)$', x)
+            if m and m.group(1) == 'A' and stem is not None:
+                blocks.append({'stem': stem, 'A': m.group(2)})
+            elif m and blocks and m.group(1) == chr(ord(max(k for k in blocks[-1] if len(k) == 1)) + 1):
+                blocks[-1][m.group(1)] = m.group(2)
+            else:
+                stem = x
+        keys = re.findall(r'(?m)^\s*([A-F])\.?\s*$', d['answer'])
+        if len(blocks) >= 2 and len(keys) == len(blocks) and len(re.findall(r'(?m)^\s*\S', d['answer'])) == len(blocks) \
+                and all(k in b for k, b in zip(keys, blocks)):
+            d['options'] = {str(n): b for n, b in enumerate(blocks, 1)}
+            d['answer_key'] = {str(n): k for n, k in enumerate(keys, 1)}
+            d['auto_gradable'] = not d.get('requires_justification')
+        return
     if d['type'] == 'ordering':  # the core normaliser reads only the first answer line; rebuild from 'A. ... n' pairs
         pairs = re.findall(r'(?m)^\s*([A-F])\.[^\n]*\n\s*(\d)\s*$', d['answer'])
         opts = re.findall(r'(?m)^\s*([A-F])\.\s', d['question'])
@@ -566,53 +587,11 @@ def fix_key(d):
         d['auto_gradable'] = not d.get('requires_justification')
 
 
-# ---------- leak check ----------
+# ---------- leak check (rule and implementation shared with scripts/check_matura_historia_leaks.py) ----------
 
-def norm(s):
-    s = (s or '').lower().replace('[obraz]', ' ')
-    s = re.sub(r'[^0-9a-ząćęłńóśźżäöüéè]+', ' ', s)
-    return re.sub(r'\s+', ' ', s).strip()
-
-
-def leak_check(new, held):
-    """Drop new items that near-duplicate any dev/test item. Returns (kept, dropped[(id, held_id, why)])."""
-    H = []
-    for h in held:
-        H.append((h['id'], norm(h['question']), norm(h['context']), norm(h['context'] + ' ' + h['question'])))
-    SH = 60
-    shingles = defaultdict(set)
-    for n, (_, _, _, full) in enumerate(H):
-        for i in range(0, max(1, len(full) - SH + 1), 5):
-            shingles[full[i:i + SH]].add(n)
-    kept, dropped = [], []
-    for d in new:
-        q, c = norm(d['question']), norm(d['context'])
-        full = norm(d['context'] + ' ' + d['question'])
-        hit = None
-        cands = set()
-        for i in range(0, max(1, len(full) - SH + 1)):
-            cands |= shingles.get(full[i:i + SH], set())
-        for n in cands:
-            sm = difflib.SequenceMatcher(None, full, H[n][3], autojunk=False)
-            m = sm.find_longest_match(0, len(full), 0, len(H[n][3]))
-            if m.size >= 200:
-                hit = (H[n][0], f'shared passage {m.size} chars')
-                break
-        if not hit:
-            for hid, hq, hc, _ in H:
-                for a, b, what in ((q, hq, 'question'), (c, hc, 'context')):
-                    if len(a) >= 80 and len(b) >= 80 and difflib.SequenceMatcher(None, a, b).quick_ratio() >= 0.8:
-                        r = difflib.SequenceMatcher(None, a, b, autojunk=False).ratio()
-                        if r >= 0.8:
-                            hit = (hid, f'{what} ratio {r:.2f}')
-                            break
-                if hit:
-                    break
-        if hit:
-            dropped.append((d['id'], *hit))
-        else:
-            kept.append(d)
-    return kept, dropped
+LEAK_RULE = ('drop a train item if its normalised question or context has difflib ratio >= 0.8 with the question or '
+             'context of a dev/test item (texts >= 80 chars), or its context+question shares a passage >= 200 chars '
+             'with a dev/test item.')
 
 
 def main():
@@ -684,7 +663,10 @@ def main():
         print(f'{key}: {len(items)} items, {got} pts')
         new.extend(items)
     held = data['dev'] + data['test']
-    kept, dropped = leak_check(new, held)
+    res = [r for r in L.check(new, held) if r['leak']]
+    hit = {r['id'] for r in res}
+    kept = [d for d in new if d['id'] not in hit]
+    dropped = [(r['id'], r['held_out'], f'{r["kind"]} {r["value"]}') for r in res]
     # a session that mostly re-uses held-out sources (2024-maj-f2015 = same exam day as dev 2024-maj) is dropped whole:
     # its remaining items share themes/sources with dev even where the text check does not fire
     n_sess = Counter(d['session_key'] for d in new)
@@ -701,10 +683,22 @@ def main():
         print('LEAK drop', *d)
     if a.only:
         return
+    # the same rule over the core train items (prepare_matura_historia.py holds out whole sessions only)
+    core_res = [r for r in L.check(data['train'], held) if r['leak']]
+    core_hit = {r['id'] for r in core_res}
+    for r in core_res:
+        print('LEAK drop (core train)', r['id'], r['held_out'], r['kind'], r['value'])
+    core_dropped = [d for d in data['train'] if d['id'] in core_hit]
+    # re-run without a fresh core build: items dropped by the previous run are no longer in data['train']
+    prev = manifest.get('leak_check', {}).get('core_dropped_items', [])
+    core_items = [x for x in prev if x['id'] not in {d['id'] for d in data['train']}] + \
+        [dict(id=r['id'], held_out=r['held_out'], why=f'{r["kind"]} {r["value"]}') for r in core_res]
+    data['train'] = [d for d in data['train'] if d['id'] not in core_hit]
     # drop crops of leaked items (unless shared with a kept item)
     keep_imgs = {p for d in data['train'] + data['dev'] + data['test'] + kept for p in d['images']}
+    stale = {p for d in core_dropped for p in d['images']} - keep_imgs
     for f in img_dir.glob('*.png'):  # stale crops of archival sessions (leaked, dropped or renamed items)
-        if f.name.startswith(tuple(f'{k}-' for k in arch_keys)) and f'images/{f.name}' not in keep_imgs:
+        if (f.name.startswith(tuple(f'{k}-' for k in arch_keys)) and f'images/{f.name}' not in keep_imgs) or f'images/{f.name}' in stale:
             f.unlink()
     data['train'] = data['train'] + kept
     splits = data
@@ -725,10 +719,15 @@ def main():
         era_level_counts={e: dict(sorted(Counter(d['level'] for d in kept if era(d) == e).items())) for e in sorted({era(d) for d in kept})},
         formula_counts=dict(Counter(d['formula'] for d in kept)),
         needs_visual=sum(d['needs_visual'] for d in kept), auto_gradable=sum(d['auto_gradable'] for d in kept),
-        leak_check=dict(rule='drop a new item if its normalised question or context has difflib ratio >= 0.8 with a dev/test '
-                             'item (texts >= 80 chars), or it shares a passage >= 200 chars with a dev/test item',
-                        checked=len(new), dropped=len(dropped), dropped_items=[dict(id=i, held_out=h, why=w) for i, h, w in dropped]),
+        leak_check=dict(rule=LEAK_RULE, checked=len(new), dropped=len(dropped),
+                        dropped_items=[dict(id=i, held_out=h, why=w) for i, h, w in dropped]),
     )
+    manifest['leak_check'] = dict(
+        rule=LEAK_RULE + ' Applied to every TRAIN item (core + archival) by prepare_matura_historia_archiwum.py; '
+                         're-check with scripts/check_matura_historia_leaks.py.',
+        core_train_checked=len(core_items) + len(data['train']) - len(kept), core_train_dropped=len(core_items),
+        core_dropped_items=core_items,
+        archival_checked=len(new), archival_dropped=len(dropped))
     tr = splits['train']
     manifest['split_sessions']['train'] = sorted({d['session_key'] for d in tr})
     manifest['counts']['train'] = len(tr)
@@ -736,6 +735,8 @@ def main():
     manifest['needs_visual']['train'] = sum(d['needs_visual'] for d in tr)
     manifest['auto_gradable']['train'] = sum(d['auto_gradable'] for d in tr)
     manifest['points']['train'] = sum(d['max_points'] or 0 for d in tr)
+    manifest['split_policy'] = manifest['split_policy'].split(' Train items that')[0] + \
+        ' Train items that near-duplicate a dev/test item are dropped (see leak_check).'
     for k in arch_keys:  # idempotent re-run: no stale entries of skipped sessions
         manifest['session_max_points'].pop(k, None)
     for k, v in status.items():
@@ -744,7 +745,7 @@ def main():
     print(json.dumps({k: manifest['archival'][k] for k in ('items', 'points', 'type_counts', 'level_counts', 'formula_counts')},
                      ensure_ascii=False))
     print('skipped:', json.dumps(skipped, ensure_ascii=False, indent=1))
-    print('leak check: checked', len(new), 'dropped', len(dropped))
+    print('leak check: archival checked', len(new), 'dropped', len(dropped), '| core train dropped', len(core_dropped))
 
 
 if __name__ == '__main__':

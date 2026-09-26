@@ -11,7 +11,7 @@
     "2015": "formuła 2015 (2015–2023)",
     "2023": "formuła 2023 (2023–)"
   },
-  "split_policy": "Whole sessions held out: test = 2026-maj + 2025-maj (two most recent May sessions, formula 2023); dev = 2024-maj; train = all other sessions (formula 2015 May papers, mock/diagnostic/demo papers, 2023-maj).",
+  "split_policy": "Whole sessions held out: test = 2026-maj + 2025-maj (two most recent May sessions, formula 2023); dev = 2024-maj; train = all other sessions (formula 2015 May papers, mock/diagnostic/demo papers, 2023-maj). Train items that near-duplicate a dev/test item are dropped (see leak_check).",
   "split_sessions": {
     "train": [
       "2010-maj-stara-P",
@@ -64,18 +64,18 @@
     ]
   },
   "counts": {
-    "train": 1704,
+    "train": 1672,
     "dev": 42,
     "test": 81
   },
   "type_counts": {
     "train": {
-      "open_short": 1280,
-      "open_long": 86,
+      "open_short": 1256,
+      "open_long": 82,
       "true_false": 62,
-      "closed_abcd": 125,
+      "closed_abcd": 124,
       "essay": 94,
-      "matching": 52,
+      "matching": 49,
       "ordering": 5
     },
     "dev": {
@@ -96,17 +96,17 @@
     }
   },
   "needs_visual": {
-    "train": 708,
+    "train": 691,
     "dev": 30,
     "test": 49
   },
   "auto_gradable": {
-    "train": 205,
+    "train": 201,
     "dev": 6,
     "test": 15
   },
   "points": {
-    "train": 3564,
+    "train": 3519,
     "dev": 90,
     "test": 180
   },
@@ -669,30 +669,30 @@
       "2019-maj-stara-R: zasady zad 8.2 is arkusz zad 8 (single sub-task number; matched)",
       "2019-maj-stara-R: zad 26: essay has no topic-count line; added the standard one (2 topics)"
     ],
-    "items": 1084,
-    "points": 2036,
+    "items": 1078,
+    "points": 2024,
     "type_counts": {
-      "open_short": 854,
+      "open_short": 850,
       "matching": 40,
-      "open_long": 80,
+      "open_long": 78,
       "essay": 24,
       "ordering": 5,
       "closed_abcd": 59,
       "true_false": 22
     },
     "level_counts": {
-      "podstawowy": 738,
+      "podstawowy": 732,
       "rozszerzony": 346
     },
     "era_counts": {
-      "stara 2010-2014": 565,
-      "stara 2015-2020 (retake sessions)": 519
+      "stara 2010-2014": 564,
+      "stara 2015-2020 (retake sessions)": 514
     },
     "era_type_counts": {
       "stara 2010-2014": {
         "essay": 12,
         "matching": 23,
-        "open_long": 37,
+        "open_long": 36,
         "open_short": 490,
         "ordering": 3
       },
@@ -700,221 +700,251 @@
         "closed_abcd": 59,
         "essay": 12,
         "matching": 17,
-        "open_long": 43,
-        "open_short": 364,
+        "open_long": 42,
+        "open_short": 360,
         "ordering": 2,
         "true_false": 22
       }
     },
     "era_level_counts": {
       "stara 2010-2014": {
-        "podstawowy": 392,
+        "podstawowy": 391,
         "rozszerzony": 173
       },
       "stara 2015-2020 (retake sessions)": {
-        "podstawowy": 346,
+        "podstawowy": 341,
         "rozszerzony": 173
       }
     },
     "formula_counts": {
-      "stara": 1084
+      "stara": 1078
     },
-    "needs_visual": 363,
+    "needs_visual": 360,
     "auto_gradable": 102,
     "leak_check": {
-      "rule": "drop a new item if its normalised question or context has difflib ratio >= 0.8 with a dev/test item (texts >= 80 chars), or it shares a passage >= 200 chars with a dev/test item",
+      "rule": "drop a train item if its normalised question or context has difflib ratio >= 0.8 with the question or context of a dev/test item (texts >= 80 chars), or its context+question shares a passage >= 200 chars with a dev/test item.",
       "checked": 1127,
-      "dropped": 43,
+      "dropped": 49,
       "dropped_items": [
         {
           "id": "2024-maj-f2015-R-zad1",
           "held_out": "2024-maj-R-zad1",
-          "why": "shared passage 743 chars"
+          "why": "shared text 743"
         },
         {
           "id": "2024-maj-f2015-R-zad2",
           "held_out": "2024-maj-R-zad2",
-          "why": "shared passage 890 chars"
+          "why": "shared text 890"
         },
         {
           "id": "2024-maj-f2015-R-zad3",
-          "held_out": "2024-maj-R-zad3.1",
-          "why": "shared passage 608 chars"
+          "held_out": "2024-maj-R-zad3.2",
+          "why": "shared text 683"
         },
         {
           "id": "2024-maj-f2015-R-zad4",
           "held_out": "2024-maj-R-zad4",
-          "why": "shared passage 253 chars"
+          "why": "shared text 253"
         },
         {
           "id": "2024-maj-f2015-R-zad5",
           "held_out": "2024-maj-R-zad5.1",
-          "why": "shared passage 952 chars"
+          "why": "shared text 952"
         },
         {
           "id": "2024-maj-f2015-R-zad6",
           "held_out": "2024-maj-R-zad6",
-          "why": "shared passage 258 chars"
+          "why": "shared text 258"
         },
         {
           "id": "2024-maj-f2015-R-zad7",
           "held_out": "2024-maj-R-zad7",
-          "why": "shared passage 1277 chars"
+          "why": "shared text 1277"
         },
         {
           "id": "2024-maj-f2015-R-zad8.1",
           "held_out": "2024-maj-R-zad8.1",
-          "why": "shared passage 364 chars"
+          "why": "shared text 742"
         },
         {
           "id": "2024-maj-f2015-R-zad8.2",
           "held_out": "2024-maj-R-zad8.1",
-          "why": "shared passage 364 chars"
+          "why": "shared text 742"
         },
         {
           "id": "2024-maj-f2015-R-zad9",
           "held_out": "2024-maj-R-zad9",
-          "why": "shared passage 496 chars"
+          "why": "shared text 496"
         },
         {
           "id": "2024-maj-f2015-R-zad10",
           "held_out": "2024-maj-R-zad10",
-          "why": "shared passage 320 chars"
+          "why": "shared text 320"
         },
         {
           "id": "2024-maj-f2015-R-zad11.1",
           "held_out": "2024-maj-R-zad11.1",
-          "why": "shared passage 874 chars"
+          "why": "shared text 1225"
         },
         {
           "id": "2024-maj-f2015-R-zad11.2",
           "held_out": "2024-maj-R-zad11.1",
-          "why": "shared passage 874 chars"
+          "why": "shared text 1225"
         },
         {
           "id": "2024-maj-f2015-R-zad12.1",
-          "held_out": "2024-maj-R-zad12.2",
-          "why": "shared passage 670 chars"
+          "held_out": "2024-maj-R-zad12.1",
+          "why": "shared text 710"
         },
         {
           "id": "2024-maj-f2015-R-zad12.2",
           "held_out": "2024-maj-R-zad12.2",
-          "why": "shared passage 768 chars"
+          "why": "shared text 768"
         },
         {
           "id": "2024-maj-f2015-R-zad12.3",
-          "held_out": "2024-maj-R-zad12.2",
-          "why": "shared passage 664 chars"
+          "held_out": "2024-maj-R-zad12.3",
+          "why": "shared text 874"
         },
         {
           "id": "2024-maj-f2015-R-zad13",
           "held_out": "2024-maj-R-zad13",
-          "why": "shared passage 211 chars"
+          "why": "shared text 211"
         },
         {
           "id": "2024-maj-f2015-R-zad14",
           "held_out": "2024-maj-R-zad14.1",
-          "why": "shared passage 921 chars"
+          "why": "shared text 921"
         },
         {
           "id": "2024-maj-f2015-R-zad15.1",
           "held_out": "2024-maj-R-zad15.1",
-          "why": "shared passage 756 chars"
+          "why": "shared text 1273"
         },
         {
           "id": "2024-maj-f2015-R-zad15.2",
           "held_out": "2024-maj-R-zad15.1",
-          "why": "shared passage 756 chars"
+          "why": "shared text 1273"
         },
         {
           "id": "2024-maj-f2015-R-zad16",
           "held_out": "2024-maj-R-zad16.1",
-          "why": "shared passage 1251 chars"
+          "why": "shared text 1251"
         },
         {
           "id": "2024-maj-f2015-R-zad17.1",
           "held_out": "2024-maj-R-zad17.1",
-          "why": "shared passage 785 chars"
+          "why": "shared text 785"
         },
         {
           "id": "2024-maj-f2015-R-zad17.2",
-          "held_out": "2024-maj-R-zad17.1",
-          "why": "shared passage 595 chars"
+          "held_out": "2024-maj-R-zad17.2",
+          "why": "shared text 635"
         },
         {
           "id": "2024-maj-f2015-R-zad18",
           "held_out": "2024-maj-R-zad18",
-          "why": "shared passage 254 chars"
+          "why": "shared text 254"
         },
         {
           "id": "2024-maj-f2015-R-zad19.1",
           "held_out": "2024-maj-R-zad19.1",
-          "why": "shared passage 647 chars"
+          "why": "shared text 647"
         },
         {
           "id": "2024-maj-f2015-R-zad19.2",
-          "held_out": "2024-maj-R-zad19.1",
-          "why": "shared passage 245 chars"
+          "held_out": "2024-maj-R-zad19.2",
+          "why": "shared text 357"
         },
         {
           "id": "2024-maj-f2015-R-zad20.1",
           "held_out": "2024-maj-R-zad20.1",
-          "why": "shared passage 735 chars"
+          "why": "shared text 1305"
         },
         {
           "id": "2024-maj-f2015-R-zad20.2",
-          "held_out": "2024-maj-R-zad20.2",
-          "why": "shared passage 735 chars"
+          "held_out": "2024-maj-R-zad20.1",
+          "why": "shared text 1305"
         },
         {
           "id": "2024-maj-f2015-R-zad21",
           "held_out": "2024-maj-R-zad21",
-          "why": "shared passage 226 chars"
+          "why": "shared text 226"
         },
         {
           "id": "2024-maj-f2015-R-zad22.1",
           "held_out": "2024-maj-R-zad22.1",
-          "why": "shared passage 2794 chars"
+          "why": "shared text 2794"
         },
         {
           "id": "2024-maj-f2015-R-zad22.2",
-          "held_out": "2024-maj-R-zad22.1",
-          "why": "shared passage 2729 chars"
+          "held_out": "2024-maj-R-zad22.2",
+          "why": "shared text 3003"
         },
         {
           "id": "2024-maj-f2015-R-zad23.1",
           "held_out": "2024-maj-R-zad23.1",
-          "why": "shared passage 202 chars"
+          "why": "shared text 202"
         },
         {
           "id": "2024-maj-f2015-R-zad23.2",
-          "held_out": "2024-maj-R-zad23.1",
-          "why": "shared passage 202 chars"
+          "held_out": "2024-maj-R-zad23.2",
+          "why": "shared text 267"
         },
         {
           "id": "2024-maj-f2015-R-zad24",
           "held_out": "2024-maj-R-zad24",
-          "why": "shared passage 898 chars"
+          "why": "shared text 898"
         },
         {
           "id": "2012-czerwiec-stara-P-zad10.1",
           "held_out": "2024-maj-R-zad5.1",
-          "why": "shared passage 492 chars"
+          "why": "shared text 492"
         },
         {
           "id": "2012-czerwiec-stara-P-zad10.2",
           "held_out": "2024-maj-R-zad5.1",
-          "why": "shared passage 492 chars"
+          "why": "shared text 492"
         },
         {
           "id": "2012-czerwiec-stara-P-zad10.3",
           "held_out": "2024-maj-R-zad5.1",
-          "why": "shared passage 492 chars"
+          "why": "shared text 492"
+        },
+        {
+          "id": "2012-czerwiec-stara-P-zad17",
+          "held_out": "2024-maj-R-zad8.1",
+          "why": "shared text 322"
+        },
+        {
+          "id": "2016-maj-stara-P-zad17",
+          "held_out": "2025-maj-R-zad9.1",
+          "why": "shared text 382"
+        },
+        {
+          "id": "2018-maj-stara-P-zad9.1",
+          "held_out": "2024-maj-R-zad7",
+          "why": "shared text 317"
+        },
+        {
+          "id": "2018-maj-stara-P-zad9.2",
+          "held_out": "2024-maj-R-zad7",
+          "why": "shared text 317"
+        },
+        {
+          "id": "2018-maj-stara-P-zad9.3",
+          "held_out": "2024-maj-R-zad7",
+          "why": "shared text 317"
         },
         {
           "id": "2019-maj-stara-R-zad2.1",
           "held_out": "2025-maj-R-zad7.1",
-          "why": "question ratio 0.83"
+          "why": "question ratio 0.829"
+        },
+        {
+          "id": "2020-maj-stara-P-zad10",
+          "held_out": "2024-maj-R-zad7",
+          "why": "shared text 278"
         },
         {
           "id": "2024-maj-f2015-R-zad25-t1",
@@ -943,5 +973,144 @@
         }
       ]
     }
+  },
+  "leak_check": {
+    "rule": "drop a train item if its normalised question or context has difflib ratio >= 0.8 with the question or context of a dev/test item (texts >= 80 chars), or its context+question shares a passage >= 200 chars with a dev/test item. Applied to every TRAIN item (core + archival) by prepare_matura_historia_archiwum.py; re-check with scripts/check_matura_historia_leaks.py.",
+    "core_train_checked": 620,
+    "core_train_dropped": 26,
+    "core_dropped_items": [
+      {
+        "id": "2015-maj-f2015-R-zad12",
+        "held_out": "2024-maj-R-zad15.1",
+        "why": "shared text 428"
+      },
+      {
+        "id": "2017-maj-f2015-R-zad6",
+        "held_out": "2024-maj-R-zad7",
+        "why": "shared text 416"
+      },
+      {
+        "id": "2017-maj-f2015-R-zad10",
+        "held_out": "2025-maj-R-zad7.1",
+        "why": "question ratio 0.831"
+      },
+      {
+        "id": "2019-maj-f2015-R-zad2.1",
+        "held_out": "2026-maj-R-zad17",
+        "why": "question ratio 0.839"
+      },
+      {
+        "id": "2019-maj-f2015-R-zad10",
+        "held_out": "2025-maj-R-zad23",
+        "why": "question ratio 0.875"
+      },
+      {
+        "id": "2020-kwiecien-probny-f2015-R-zad7",
+        "held_out": "2025-maj-R-zad9.1",
+        "why": "shared text 242"
+      },
+      {
+        "id": "2020-kwiecien-probny-f2015-R-zad13.1",
+        "held_out": "2024-maj-R-zad16.1",
+        "why": "shared text 424"
+      },
+      {
+        "id": "2020-kwiecien-probny-f2015-R-zad13.2",
+        "held_out": "2024-maj-R-zad16.1",
+        "why": "shared text 424"
+      },
+      {
+        "id": "2021-marzec-diagnostyczny-f2015-R-zad2.1",
+        "held_out": "2026-maj-R-zad3.1",
+        "why": "question ratio 0.819"
+      },
+      {
+        "id": "2021-marzec-diagnostyczny-f2015-R-zad4.1",
+        "held_out": "2026-maj-R-zad17",
+        "why": "question ratio 0.931"
+      },
+      {
+        "id": "2021-marzec-diagnostyczny-f2015-R-zad24.2",
+        "held_out": "2026-maj-R-zad17",
+        "why": "question ratio 0.887"
+      },
+      {
+        "id": "2021-maj-f2015-R-zad15",
+        "held_out": "2026-maj-R-zad17",
+        "why": "question ratio 0.84"
+      },
+      {
+        "id": "2022-maj-f2015-R-zad4",
+        "held_out": "2026-maj-R-zad17",
+        "why": "question ratio 0.853"
+      },
+      {
+        "id": "2022-maj-f2015-R-zad5.1",
+        "held_out": "2024-maj-R-zad7",
+        "why": "shared text 450"
+      },
+      {
+        "id": "2022-maj-f2015-R-zad5.2",
+        "held_out": "2024-maj-R-zad7",
+        "why": "shared text 450"
+      },
+      {
+        "id": "2022-maj-f2015-R-zad7.1",
+        "held_out": "2025-maj-R-zad5.1",
+        "why": "question ratio 0.914"
+      },
+      {
+        "id": "2022-maj-f2015-R-zad13",
+        "held_out": "2026-maj-R-zad17",
+        "why": "question ratio 0.924"
+      },
+      {
+        "id": "2022-maj-f2015-R-zad21.1",
+        "held_out": "2026-maj-R-zad17",
+        "why": "question ratio 0.938"
+      },
+      {
+        "id": "2022-marzec-pokazowy-R-zad6.1",
+        "held_out": "2024-maj-R-zad7",
+        "why": "shared text 411"
+      },
+      {
+        "id": "2022-marzec-pokazowy-R-zad6.2",
+        "held_out": "2024-maj-R-zad7",
+        "why": "shared text 411"
+      },
+      {
+        "id": "2022-marzec-pokazowy-R-zad10",
+        "held_out": "2025-maj-R-zad23",
+        "why": "question ratio 0.882"
+      },
+      {
+        "id": "2022-marzec-pokazowy-R-zad20",
+        "held_out": "2026-maj-R-zad24",
+        "why": "question ratio 0.981"
+      },
+      {
+        "id": "2022-grudzien-diagnostyczny-R-zad14.1",
+        "held_out": "2024-maj-R-zad11.1",
+        "why": "question ratio 0.929"
+      },
+      {
+        "id": "2024-grudzien-diagnostyczny-R-zad18",
+        "held_out": "2024-maj-R-zad18",
+        "why": "question ratio 0.941"
+      },
+      {
+        "id": "2024-grudzien-diagnostyczny-R-zad19.1",
+        "held_out": "2025-maj-R-zad12",
+        "why": "question ratio 0.805"
+      },
+      {
+        "id": "2026-styczen-probny-R-zad16",
+        "held_out": "2025-maj-R-zad18",
+        "why": "question ratio 0.973"
+      }
+    ],
+    "archival_checked": 1127,
+    "archival_dropped": 49
   }
 }

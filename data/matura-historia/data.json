@@ -541,38 +541,6 @@
       "split": "train"
     },
     {
-      "id": "2015-maj-f2015-R-zad12",
-      "session_key": "2015-maj-f2015",
-      "year": 2015,
-      "session": "maj",
-      "formula": "2015",
-      "exam_date": "2015-05",
-      "level": "rozszerzony",
-      "task": "12",
-      "group": 12,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Źródło 1. Rajnold Suchodolski,\nŹródło 2. Mazur [...]\nPolonez Kościuszki (ulotka anonimowa) Nasz Chłopicki wojak dzielny, śmiały Wykonywać rozkazy i szturmem brać wały, Lecz by całym wojskiem władać, Trzeba coś więcej posiadać.\nWięc bez niego w imię Boga Pobijemy wroga!\nPatrz, Kościuszko, na nas z nieba, Jak w krwi wrogów będziem brodzić, Twego miecza nam potrzeba, By ojczyznę oswobodzić! [...] Z naszym duchem i orężem Polak ziemię oswobodzi.\nZdrajca pierzchnie, my zwyciężym, Bo Chłopicki nam przewodzi!\nTylko razem, tylko w zgodzie, A powstańców będziem wzorem.\nWszak dyktator przy narodzie, Cały naród z dyktatorem!\nSześć tygodni siedział, dumał, drzymał, Bez granic dyktaturę w słabym ręku trzymał I z Lubeckim będąc w zmowie, Oczekiwał, co Car powie;\nA tymczasem, ach dlaboga!, Puścił z kraju wroga.\nNa podstawie: Poezja powstania listopadowego, oprac. A. Zieliński, Wrocław 1971, s. 35–36, 233.",
-      "question": "Udowodnij, że z treści fragmentów utworów wynika, że źródło 2. powstało później niż źródło 1.",
-      "answer": "Przykładowa odpowiedź\nW pierwszym wierszu wyrażona jest nadzieja, że dzięki objęciu dyktatury przez Chłopickiego\nuda się pokonać Rosję, a w drugim – wyraźne jest rozczarowanie jego postawą, gdyż okazało\nsię, że dyktator chce jak najszybciej zakończyć walkę i pojednać się z Rosją. Wysłał w tej\nsprawie poselstwo z Druckim-Lubeckim do cara, sześć tygodni sprawował dyktaturę\ni pozwolił na wycofanie się wroga.",
-      "answer_key": null,
-      "scoring": "1 p. – za poprawną odpowiedź z odwołaniem do obu źródeł.\n0 p. – za odpowiedź niepełną lub błędną albo za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": false,
-      "visual_reason": null,
-      "images": [],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_od_2015/MHI-R1_1P-152.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_od_2015/odpowiedzi/MHI-R1-N.pdf",
-        "pages": [
-          15
-        ]
-      },
-      "split": "train"
-    },
-    {
       "id": "2015-maj-f2015-R-zad13.1",
       "session_key": "2015-maj-f2015",
       "year": 2015,
@@ -2765,38 +2733,6 @@
       "split": "train"
     },
     {
-      "id": "2017-maj-f2015-R-zad6",
-      "session_key": "2017-maj-f2015",
-      "year": 2017,
-      "session": "maj",
-      "formula": "2015",
-      "exam_date": "2017-05",
-      "level": "rozszerzony",
-      "task": "6",
-      "group": 6,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Anonim tzw. Gall, Kronika polska [fragmenty]\nFragment 1.\nJak zaś doszło do wypędzenia króla […], długo byłoby o tym mówić; tyle wszakże można powiedzieć, że sam będąc pomazańcem [Bożym,] nie powinien był [drugiego pomazańca] za żaden grzech karać cieleśnie. Wiele mu to bowiem zaszkodziło, gdy przeciw grzechowi grzech zastosował i za zdradę wydał biskupa na obcięcie członków. My zaś ani nie usprawiedliwiamy biskupa-zdrajcy, ani nie zalecamy króla, który tak szpetnie dochodził swych praw.\nFragment 2.\nI choć tak wielkie krzywdy i klęski znosiła Polska od obcych, to jeszcze nierozsądniej i sromotniej dręczona była przez własnych mieszkańców. Albowiem niewolnicy powstali na panów, wyzwoleńcy przeciw szlachetnie urodzonym, sami się do rządów wynosząc […].\nNadto jeszcze, porzucając wiarę katolicką – czego nie możemy wypowiedzieć bez płaczu i lamentu – podnieśli bunt przeciw biskupom i kapłanom Bożym.\nAnonim tzw. Gall, Kronika polska, Wrocław 1989, s. 42, 64.",
-      "question": "Rozstrzygnij, czy sytuacja opisana we fragmencie 2. była skutkiem wydarzeń opisanych we fragmencie 1. Odpowiedź uzasadnij.\nRozstrzygnięcie:\nUzasadnienie:",
-      "answer": "Rozstrzygnięcie: Nie\nPrzykładowe uzasadnienie:\n• Fragment 1. odnosi się do sporu króla Bolesława Śmiałego z biskupem Stanisławem,\na fragment 2. dotyczy buntu ludowego [reakcji pogańskiej] z końca lat 30. XI wieku.\n• Fragment 2. traktuje o wydarzeniach wcześniejszych.",
-      "answer_key": null,
-      "scoring": "1 p. – za prawidłowe rozstrzygnięcie wraz z uzasadnieniem.\n0 p. – za odpowiedź błędną, niepełną lub za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": false,
-      "visual_reason": null,
-      "images": [],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_od_2015/historia/MHI-R1_1P-172.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_od_2015/zasady_oceniania/MHI-R1-N.pdf",
-        "pages": [
-          6
-        ]
-      },
-      "split": "train"
-    },
-    {
       "id": "2017-maj-f2015-R-zad7.1",
       "session_key": "2017-maj-f2015",
       "year": 2017,
@@ -2957,40 +2893,6 @@
         "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_od_2015/zasady_oceniania/MHI-R1-N.pdf",
         "pages": [
           9
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2017-maj-f2015-R-zad10",
-      "session_key": "2017-maj-f2015",
-      "year": 2017,
-      "session": "maj",
-      "formula": "2015",
-      "exam_date": "2017-05",
-      "level": "rozszerzony",
-      "task": "10",
-      "group": 10,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Źródło 1. Fragment opracowania historycznego\nUnia bowiem wzmocniła pozycję możnowładców i utrudniła przeprowadzenie dalszych reform, bo Litwini byli im zdecydowanie przeciwni. Wspólny sejm stał się ciałem mniej zwartym i trudniejszym do pokierowania, a także bardziej podatnym na intrygi i wpływy magnackie. […] Można żałować, że energii, którą włożono w dzieło unii, nie zużytkowano na przeprowadzenie dalszych reform egzekucyjnych. Unia zepchnęła owe problemy na później, z wielką szkodą dla polskich interesów. Trzeba […] stwierdzić, że przez pozyskanie sporej części szlachty litewskiej, zdecydowany nacisk ze strony króla, a zwłaszcza odłączenie kilku województw, wymuszono na Litwie przystąpienie do unii.\nS. Cynarski, […], Wrocław 1988, s. 117–118.\nŹródło 2. Fotografia pomnika [fragmenty]\n[OBRAZ]\n[OBRAZ]\n[OBRAZ]\nwww.panoramio.com",
-      "question": "Rozstrzygnij, czy pomnik i tekst odnoszą się do tego samego wydarzenia. Odpowiedź uzasadnij, odwołując się do obu źródeł.\nRozstrzygnięcie:\nUzasadnienie:",
-      "answer": "Rozstrzygnięcie: Tak\nPrzykładowe uzasadnienie:\nŹródło 1. zawiera informacje potrzebne do identyfikacji unii lubelskiej, np. wspólny sejm,\nprzyłączenie kilku województw do Korony, ruch egzekucyjny, opór możnowładztwa\nlitewskiego wobec unii. Źródło 2. zawiera łaciński zapis daty – 1569 r., co w zestawieniu\nz symboliką płaskorzeźby (personifikacje Korony i Litwy, godła obu państw) jednoznacznie\nwskazuje na unię lubelską.",
-      "answer_key": null,
-      "scoring": "1 p. – za poprawne rozstrzygnięcie i uzasadnienie z odwołaniem do obu źródeł.\n0 p. – za odpowiedź błędną, niepełną lub za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": true,
-      "visual_reason": "image_in_task",
-      "images": [
-        "images/2017-maj-f2015-R-zad10-1.png"
-      ],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_od_2015/historia/MHI-R1_1P-172.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_od_2015/zasady_oceniania/MHI-R1-N.pdf",
-        "pages": [
-          10
         ]
       },
       "split": "train"
@@ -5438,39 +5340,6 @@
       "split": "train"
     },
     {
-      "id": "2019-maj-f2015-R-zad2.1",
-      "session_key": "2019-maj-f2015",
-      "year": 2019,
-      "session": "maj",
-      "formula": "2015",
-      "exam_date": "2019-05",
-      "level": "rozszerzony",
-      "task": "2.1",
-      "group": 2,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Źródło 1. Fragment dzieła Tukidydesa\nZ największym zapałem przemawiał za wyprawą Alkibiades […]. Ciesząc się […] poważaniem obywateli, pragnął roztaczać przepych – żył ponad stan […] i trwonił pieniądze. To właśnie w niemałej mierze przyczyniło się do upadku państwa […]. Wielu bowiem obywateli, przerażonych ogromem zbytku, jaki w życiu prywatnym roztaczał […], powzięło podejrzenie, że dąży do tyranii. Ludzie ci stali się jego wrogami i mimo że w życiu publicznym miał wielkie zasługi jako strateg, […] powierzali sprawy wojskowe innym […]. Niektórzy metojkowie […] donosili o tym, że w domach prywatnych odbywają się parodie misteriów. O udział w tym obwiniano Alkibiadesa. Wówczas […] jego wrogowie […] wołali, że […] zmierza do obalenia demokracji.\nTukidydes, Wojna peloponeska, Warszawa 1988, s. 353–354, 360–361.\nŹródło 2. Fragment dzieła Plutarcha\nPoczątek rozkładu i słabości stosunków w [państwie] datuje się mniej więcej od czasu, kiedy [po wygraniu wojny] obłowili się złotem i srebrem. Atoli oparty na równości porządek, dotyczący gospodarstw domowych, których liczbę Likurg oznaczył i zarazem zawarował […], utrzymywał się i ratował państwo od skutków innych błędów. Kiedy zaś pewien wpływowy mąż […] został eforem, […] postawił wniosek, ażeby wolno było darować za życia i rozporządzać w testamencie domem i działem. […] Inni zaś z chciwości przyjęli wniosek i nadali mu moc prawną, przez co zniszczyli najlepsze urządzenie. […] W krótkim czasie bogactwo skupiło się w niewielu rękach, w państwie zaś zapanowało ubóstwo, pociągające za sobą deprawację, zawiść i niechęć do posiadających.\nPlutarch z Cheronei, Żywoty sławnych mężów, t. II, Wrocław 2004, s. 315–316.",
-      "question": "Rozstrzygnij, czy w źródłach 1. i 2. opisano tę samą polis grecką. Odpowiedź uzasadnij, odwołując się do treści obu źródeł.\nRozstrzygnięcie:\nUzasadnienie:",
-      "answer": "Rozstrzygnięcie: Nie\nPrzykładowe uzasadnienie:\nW źródle 1. opisano starożytne Ateny, o czym świadczą informacje np.: o ustroju\ndemokratycznym, urzędzie stratega, metojkach, Alkibiadesie, natomiast w źródle 2.\nzamieszczono opis starożytnej Sparty, o czym świadczą informacje np.: o prawodawcy\nLikurgu, urzędzie efora.",
-      "answer_key": null,
-      "scoring": "1 p. – za prawidłowe rozstrzygnięcie wraz z uzasadnieniem.\n0 p. – za odpowiedź niepełną lub błędną albo za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": false,
-      "visual_reason": null,
-      "images": [],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_od_2015/historia/MHI-R1_1P-192.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_od_2015/Zasady_oceniania/MHI-R1_1P-192_model.pdf",
-        "pages": [
-          2,
-          3
-        ]
-      },
-      "split": "train"
-    },
-    {
       "id": "2019-maj-f2015-R-zad2.2",
       "session_key": "2019-maj-f2015",
       "year": 2019,
@@ -5851,40 +5720,6 @@
         "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_od_2015/Zasady_oceniania/MHI-R1_1P-192_model.pdf",
         "pages": [
           9
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2019-maj-f2015-R-zad10",
-      "session_key": "2019-maj-f2015",
-      "year": 2019,
-      "session": "maj",
-      "formula": "2015",
-      "exam_date": "2019-05",
-      "level": "rozszerzony",
-      "task": "10",
-      "group": 10,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Fotografia rzeźby przedstawiającej błogosławioną Ludwikę Albertoni\n[OBRAZ]\n[OBRAZ]\nhttp://roma-nonpertutti.com",
-      "question": "Podaj nazwę stylu w sztuce, który reprezentuje rzeźba przedstawiona na ilustracji.\nOdpowiedź uzasadnij, charakteryzując jedną widoczną cechę tego stylu.\nNazwa stylu:\nUzasadnienie:",
-      "answer": "Nazwa: styl barokowy\nPrzykładowe uzasadnienie:\nRzeźba łączy tematykę religijną z przedstawieniem zmysłowym, emocjonalnym (kontrast),\nepatuje dynamiką.",
-      "answer_key": null,
-      "scoring": "1 p. – za podanie prawidłowej nazwy wraz z uzasadnieniem.\n0 p. – za odpowiedź niepełną lub błędną albo za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": true,
-      "visual_reason": "image_in_task",
-      "images": [
-        "images/2019-maj-f2015-R-zad10-1.png"
-      ],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_od_2015/historia/MHI-R1_1P-192.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_od_2015/Zasady_oceniania/MHI-R1_1P-192_model.pdf",
-        "pages": [
-          10
         ]
       },
       "split": "train"
@@ -7146,38 +6981,6 @@
       "split": "train"
     },
     {
-      "id": "2020-kwiecien-probny-f2015-R-zad7",
-      "session_key": "2020-kwiecien-probny-f2015",
-      "year": 2020,
-      "session": "kwiecien-probny",
-      "formula": "2015",
-      "exam_date": "2020-04",
-      "level": "rozszerzony",
-      "task": "7",
-      "group": 7,
-      "max_points": 2,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Fragment aktu prawnego A iż w Rzeczypospolitej naszej jest niezgoda niemała w sprawie religii chrześcijańskiej, zabiegając temu, aby się z tej przyczyny między ludźmi rozterka jaka szkodliwa nie wszczęła, którą po innych królestwach jaśnie widzimy, obiecujemy to sobie wspólnie, za nas i potomków naszych, iż którzy jesteśmy różni w wierze, pokój między sobą zachować a dla różnej wiary i odmiany w kościołach krwi nie przelewać, ani nie karać konfiskatą dóbr, [utratą czci], więzieniem i wygnaniem i zwierzchności żadnej ani urzędowi do takowego postępowania żadnym sposobem nie pomagać.\nŹródła i materiały do nauczania historii, oprac. S. Sierpowski, Warszawa 1998, s. 101–102.",
-      "question": "Podaj stosowaną w historiografii nazwę cytowanego dokumentu i wyjaśnij okoliczności jego uchwalenia.\nNazwa:\nOkoliczności uchwalenia:",
-      "answer": "Nazwa: Akt konfederacji warszawskiej [konfederacja warszawska]\nPrzykładowe wyjaśnienie okoliczności:\nTrwało bezkrólewie po śmierci Zygmunta Augusta i istniało niebezpieczeństwo walk\nwewnętrznych pomiędzy stronnictwami szlacheckimi reprezentującymi różne wyznania.",
-      "answer_key": null,
-      "scoring": "2 p. – za podanie nazwy dokumentu oraz wyjaśnienie okoliczności jego uchwalenia.\n1 p. – za podanie nazwy dokumentu albo wyjaśnienie okoliczności jego uchwalenia.\n0 p. – za odpowiedź błędną albo za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": false,
-      "visual_reason": null,
-      "images": [],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2020/MHI-R1_1P.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2020/MHI-R1-zasady.pdf",
-        "pages": [
-          6
-        ]
-      },
-      "split": "train"
-    },
-    {
       "id": "2020-kwiecien-probny-f2015-R-zad8",
       "session_key": "2020-kwiecien-probny-f2015",
       "year": 2020,
@@ -7415,74 +7218,6 @@
         "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2020/MHI-R1-zasady.pdf",
         "pages": [
           10
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2020-kwiecien-probny-f2015-R-zad13.1",
-      "session_key": "2020-kwiecien-probny-f2015",
-      "year": 2020,
-      "session": "kwiecien-probny",
-      "formula": "2015",
-      "exam_date": "2020-04",
-      "level": "rozszerzony",
-      "task": "13.1",
-      "group": 13,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Źródło 1. Doktryna Monroe z grudnia 1823 r. [fragment]\nZe względu na nasze sumienie oraz przyjacielskie stosunki istniejące między mocarstwami a Stanami Zjednoczonymi oświadczamy, że będziemy uważać wszelkie próby rozszerzenia ich systemu na drugą część tej półkuli za niebezpieczną dla naszego spokoju i bezpieczeństwa. […] Polityka, jaką prowadzimy w stosunku do Europy, od początku wojen, które tak długo zaprzątały tę część globu, pozostała ta sama: polegała ona na niewtrącaniu się w sprawy wewnętrzne jakiegokolwiek państwa […]. Jednakże, w sprawach dotyczących [kontynentów amerykańskich] zmieniają się okoliczności. Jest niemożliwe, aby mocarstwa sprzymierzone chciały narzucić swój system polityczny jakiejś części tych kontynentów bez zagrożenia naszemu szczęściu i naszemu pokojowi.\nNa podstawie: Wiek XIX w źródłach. Wybór tekstów źródłowych z propozycjami metodycznymi dla nauczycieli historii, studentów, oprac. M. Sobańska-Bondaruk, S.B. Lenard, Warszawa 2001, s. 93–94.\nŹródło 2. Amerykańska moneta półdolarowa, 1923 r. [rewers]\n[OBRAZ]\nTłumaczenie napisu: STULECIE DOKTRYNY MONROE. www.coincommunity.com",
-      "question": "Na podstawie źródła 1. i własnej wiedzy wyjaśnij symbolikę zaprezentowanej monety.",
-      "answer": "Przykładowa odpowiedź\nMoneta została wybita z okazji stulecia doktryny Monroe, która zakładała koncentrację polityki\nzagranicznej USA na obu kontynentach amerykańskich i jednoczesną izolację od\nwewnętrznych spraw Europy. Na monecie oba kontynenty amerykańskie zostały\nupersonifikowane pod postaciami kobiet. Kobieta symbolizująca Amerykę Północną [USA]\nwyciąga w geście pomocy rękę z gałązką [pokoju] w kierunku kobiety symbolizującej Amerykę\nPłd. Jest to symboliczne ukazanie troski USA o młode państwa Ameryki Płd.",
-      "answer_key": null,
-      "scoring": "1 p. – za wyjaśnienie symboliki.\n0 p. – za odpowiedź błędną albo za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": true,
-      "visual_reason": "image_in_task",
-      "images": [
-        "images/2020-kwiecien-probny-f2015-R-zad13.1-1.png"
-      ],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2020/MHI-R1_1P.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2020/MHI-R1-zasady.pdf",
-        "pages": [
-          11
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2020-kwiecien-probny-f2015-R-zad13.2",
-      "session_key": "2020-kwiecien-probny-f2015",
-      "year": 2020,
-      "session": "kwiecien-probny",
-      "formula": "2015",
-      "exam_date": "2020-04",
-      "level": "rozszerzony",
-      "task": "13.2",
-      "group": 13,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Źródło 1. Doktryna Monroe z grudnia 1823 r. [fragment]\nZe względu na nasze sumienie oraz przyjacielskie stosunki istniejące między mocarstwami a Stanami Zjednoczonymi oświadczamy, że będziemy uważać wszelkie próby rozszerzenia ich systemu na drugą część tej półkuli za niebezpieczną dla naszego spokoju i bezpieczeństwa. […] Polityka, jaką prowadzimy w stosunku do Europy, od początku wojen, które tak długo zaprzątały tę część globu, pozostała ta sama: polegała ona na niewtrącaniu się w sprawy wewnętrzne jakiegokolwiek państwa […]. Jednakże, w sprawach dotyczących [kontynentów amerykańskich] zmieniają się okoliczności. Jest niemożliwe, aby mocarstwa sprzymierzone chciały narzucić swój system polityczny jakiejś części tych kontynentów bez zagrożenia naszemu szczęściu i naszemu pokojowi.\nNa podstawie: Wiek XIX w źródłach. Wybór tekstów źródłowych z propozycjami metodycznymi dla nauczycieli historii, studentów, oprac. M. Sobańska-Bondaruk, S.B. Lenard, Warszawa 2001, s. 93–94.\nŹródło 2. Amerykańska moneta półdolarowa, 1923 r. [rewers]\n[OBRAZ]\nTłumaczenie napisu: STULECIE DOKTRYNY MONROE. www.coincommunity.com",
-      "question": "Wskaż, kiedy USA po raz pierwszy zerwały z zasadami polityki względem Europy opisanymi w doktrynie Monroe.",
-      "answer": "Podczas I wojny światowej [w 1917 roku], kiedy USA włączyły się do konfliktu po stronie\nententy.",
-      "answer_key": null,
-      "scoring": "1 p. – za prawidłową odpowiedź.\n0 p. – za odpowiedź błędną albo za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": true,
-      "visual_reason": "image_in_task",
-      "images": [
-        "images/2020-kwiecien-probny-f2015-R-zad13.2-1.png"
-      ],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2020/MHI-R1_1P.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2020/MHI-R1-zasady.pdf",
-        "pages": [
-          11
         ]
       },
       "split": "train"
@@ -9711,41 +9446,6 @@
       "split": "train"
     },
     {
-      "id": "2021-marzec-diagnostyczny-f2015-R-zad2.1",
-      "session_key": "2021-marzec-diagnostyczny-f2015",
-      "year": 2021,
-      "session": "marzec-diagnostyczny",
-      "formula": "2015",
-      "exam_date": "2021-03",
-      "level": "rozszerzony",
-      "task": "2.1",
-      "group": 2,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Źródło 1. Plan bitwy\n[OBRAZ]\nZ. Ryniewicz, Leksykon bitew świata, Warszawa 2008, s. 325.\nŹródło 2. Fragment dzieła starożytnego historyka\nZaprowadziwszy w Grecji spokój, Filip kazał zwołać do Koryntu przedstawicieli wszystkich państw w celu uregulowania aktualnych spraw. Tam ustanowił dla Grecji prawa pokoju, w zależności od zasług każdego państwa. Spośród nich wybrał ogólną radę […]. Ustalono następnie dla każdego państwa kontyngent wojskowy, który miał wspierać króla w razie jakiegoś ataku albo pod jego wodzą iść na wojnę przeciw innym. Nie ulegało bowiem wątpliwości, że te przygotowania są skierowane przeciw imperium perskiemu.\nG. Chomicki, S. Sprawski, Starożytność. Teksty źródłowe, Kraków 2001, s. 150–151.",
-      "question": "Rozstrzygnij, czy wydarzenia przedstawione w źródle 2. były konsekwencją bitwy przedstawionej w źródle 1. Odpowiedź uzasadnij, odwołując się do obu źródeł.\nRozstrzygnięcie:\nUzasadnienie:",
-      "answer": "Rozstrzygnięcie: Nie\nPrzykładowe uzasadnienie: W tekście jest mowa sytuacji w Grecji po bitwie pod Cheroneą,\nkiedy Filip Macedoński narzucił państwom greckim hegemonię. Plan natomiast odnosi się do\nbitwy pod Maratonem z okresu wojen perskich w V w. p.n.e.",
-      "answer_key": null,
-      "scoring": "1 pkt – za poprawne rozstrzygnięcie wraz z uzasadnieniem.\n0 pkt – za odpowiedź niepoprawną lub niepełną albo brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": true,
-      "visual_reason": "image_in_task",
-      "images": [
-        "images/2021-marzec-diagnostyczny-f2015-R-zad2.1-1.png"
-      ],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2021/EHIP-R0-100-2103.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2021/EHIP-R0-100-2103-zasady.pdf",
-        "pages": [
-          2,
-          3
-        ]
-      },
-      "split": "train"
-    },
-    {
       "id": "2021-marzec-diagnostyczny-f2015-R-zad2.2",
       "session_key": "2021-marzec-diagnostyczny-f2015",
       "year": 2021,
@@ -9817,39 +9517,6 @@
         "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2021/EHIP-R0-100-2103-zasady.pdf",
         "pages": [
           4
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2021-marzec-diagnostyczny-f2015-R-zad4.1",
-      "session_key": "2021-marzec-diagnostyczny-f2015",
-      "year": 2021,
-      "session": "marzec-diagnostyczny",
-      "formula": "2015",
-      "exam_date": "2021-03",
-      "level": "rozszerzony",
-      "task": "4.1",
-      "group": 4,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Źródło 1. Fragment źródła z epoki\nOwego dnia najświętszego narodzenia Pana, gdy król podczas mszy przed ołtarzem błogosławionego Piotra apostoła powstał do modlitwy, papież Leon włożył koronę na jego głowę i cały lud rzymski zawołał: „Karolowi Augustowi przez Boga koronowanemu, potężnemu i pokojowemu cesarzowi rzymskiemu, życie i zwycięstwo”.\nWiek V–XV w źródłach. […], oprac. M. Sobańska-Bondaruk, S.B. Lenard, Warszawa 1997, s. 69.\nŹródło 2. Fragment źródła z epoki\nSkarb i rządy państwem należały do przełożonych pałacu, zwanych majordomami, którzy posiadali najwyższą władzę. Królowi nie pozostawało nic więcej, jak zadowolić się samym tytułem, nosić długie włosy i nieostrzyżoną brodę, zasiadać na tronie i udawać panującego; wysłuchiwał posłów przybywających zewsząd i na odchodnym udzielał im odpowiedzi jakoby na mocy własnej woli, lecz to, co mówił, było wyuczone albo nakazane. Poza bezużytecznym mianem króla i niepewnym utrzymaniem, które mu wyznaczał przełożony dworu według własnego widzimisię, jedyną jego własnością była posiadłość ziemska przynosząca bardzo mały dochód.\nD. Ostapowicz, S. Suchodolski, D. Szymikowski, Od Hammurabiego […], t. 1, Gdańsk 1999, s. 51.",
-      "question": "Rozstrzygnij, czy źródła 1. i 2. dotyczą dziejów tego samego państwa. Odpowiedź uzasadnij, odwołując się do obu źródeł.\nRozstrzygnięcie:\nUzasadnienie:",
-      "answer": "Rozstrzygnięcie: Tak\nPrzykładowe uzasadnienie: Źródło 1. opisuje koronację Karola Wielkiego – władcy Franków –\nna cesarza, a źródło 2. przedstawia sytuację w państwie Franków za panowania dynastii\nMerowingów, o czym świadczy informacja na temat roli majordomów.",
-      "answer_key": null,
-      "scoring": "1 pkt – za poprawne rozstrzygnięcie wraz z uzasadnieniem zawierającym odwołanie do obu\nźródeł.\n0 pkt – za odpowiedź niepoprawną lub niepełną albo brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": false,
-      "visual_reason": null,
-      "images": [],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2021/EHIP-R0-100-2103.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2021/EHIP-R0-100-2103-zasady.pdf",
-        "pages": [
-          4,
-          5
         ]
       },
       "split": "train"
@@ -10905,41 +10572,6 @@
       "split": "train"
     },
     {
-      "id": "2021-marzec-diagnostyczny-f2015-R-zad24.2",
-      "session_key": "2021-marzec-diagnostyczny-f2015",
-      "year": 2021,
-      "session": "marzec-diagnostyczny",
-      "formula": "2015",
-      "exam_date": "2021-03",
-      "level": "rozszerzony",
-      "task": "24.2",
-      "group": 24,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Źródło 1. Mapa\n[OBRAZ]\n[OBRAZ]\nhttps://epodreczniki.pl\nŹródło 2. Fragment wypowiedzi sowieckiego polityka\nMyśl o zainstalowaniu rakiet z głowicami jądrowymi […] przyszła mi do głowy podczas wizyty w Bułgarii. […] Myślałem tak: jeśli zainstalujemy rakiety potajemnie oraz jeśli Stany Zjednoczone odkryją te rakiety po ich zainstalowaniu i przygotowaniu do ataku, Amerykanie pomyślą dwa razy, zanim spróbują zlikwidować nasze instalacje za pomocą środków militarnych.\nA. Radziwiłł, W. Roszkowski, Historia […], Wrocław 1999, s. 17.",
-      "question": "Rozstrzygnij, czy źródła 1. i 2. dotyczą tego samego konfliktu z okresu zimnej wojny.\nOdpowiedź uzasadnij, odwołując się do obu źródeł.\nRozstrzygnięcie:\nUzasadnienie:",
-      "answer": "Rozstrzygnięcie: Nie\nPrzykładowe uzasadnienie: Mapa pokazuje działania zbrojne podczas wojny koreańskiej,\nnatomiast wypowiedź Chruszczowa wskazuje na kryzys kubański, ponieważ mówi\no zainstalowaniu rakiet i przygotowaniu ich do ataku na USA.",
-      "answer_key": null,
-      "scoring": "1 pkt – za poprawne rozstrzygnięcie wraz z uzasadnieniem.\n0 pkt – za odpowiedź niepoprawną lub niepełną albo brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": true,
-      "visual_reason": "image_in_task",
-      "images": [
-        "images/2021-marzec-diagnostyczny-f2015-R-zad24.2-1.png"
-      ],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2021/EHIP-R0-100-2103.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2021/EHIP-R0-100-2103-zasady.pdf",
-        "pages": [
-          24,
-          25
-        ]
-      },
-      "split": "train"
-    },
-    {
       "id": "2021-marzec-diagnostyczny-f2015-R-zad25",
       "session_key": "2021-marzec-diagnostyczny-f2015",
       "year": 2021,
@@ -11859,38 +11491,6 @@
       "split": "train"
     },
     {
-      "id": "2021-maj-f2015-R-zad15",
-      "session_key": "2021-maj-f2015",
-      "year": 2021,
-      "session": "maj",
-      "formula": "2015",
-      "exam_date": "2021-05",
-      "level": "rozszerzony",
-      "task": "15",
-      "group": 15,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Źródło 1. Sytuacja przemysłowa w jednym z zaborów\nRopa naftowa, od dawna służąca chłopom [tego regionu] do różnych celów gospodarskich, zaczęła od wynalazku Łukasiewicza […] stanowić ważny produkt przemysłowy, zaspokajający potrzeby […] miast, kolei i przemysłu. W 1867 r. użyto pierwszego silnika parowego do napędu urządzenia wiertniczego, a w 1884 r. wprowadzono nowoczesną kanadyjską metodę udarową.\nNowe metody techniczne wymagały kapitałów. Większość z nich napływała z zagranicy […]. [N]a początku XX w. [region ten dostarczał] 5% światowego wydobycia ropy.\nA. Jezierski, C. Leszczyńska, Historia gospodarcza Polski, Warszawa 2002, s. 190.\nŹródło 2. Fragment wspomnień\nMoje pokolenie nie pamiętało już szkół niemieckich, […] węszących wszędzie zdradę i spisek [...], brania do wojska na dwanaście lat i powszechnego zakazu używania języka polskiego w każdym, nawet najniższym urzędzie. Chodziłem już do polskiej szkoły. Wprawdzie historia Polski była przedmiotem nadobowiązkowym i wykładanym w czasie wolnego od nauki popołudnia, ale uczono jej na podstawie źródeł polskich [...]. Czytywało się dzienniki polskie, a cenzura ich była dość łagodna, leczył polski lekarz, sędzia polski sądził, teatr polski nas bawił. Obchodziliśmy wszystkie święta narodowe, cóż więc dziwnego, że zacierała się w nas młodych [...] świadomość, że się jest poddanym obcego państwa.\nA. Wysocki, Sprzed pół wieku, Kraków 1958, s. 27–26.",
-      "question": "Rozstrzygnij, czy oba źródła dotyczą tego samego zaboru. Odpowiedź uzasadnij, odwołując się do zawartych w nich informacji.\nRozstrzygnięcie:\nUzasadnienie:",
-      "answer": "Rozstrzygnięcie: Tak\nPrzykładowe uzasadnienie:\nW źródle 1. przedstawiono opis dotyczący Galicji, czyli zaboru austriackiego – świadczą o tym\ninformacje np. o rozwoju przemysłu naftowego, o wynalazku Łukasiewicza (lampie naftowej).\nŹródło 2. również dotyczy zaboru austriackiego, który po uzyskaniu autonomii cieszył się\nnieporównywalnymi do innych zaborów swobodami np. polska edukacja, zgoda na\nobchodzenie świąt narodowych.",
-      "answer_key": null,
-      "scoring": "1 pkt – za prawidłowe rozstrzygnięcie wraz z uzasadnieniem zawierającym odwołanie do obu\nźródeł.\n0 pkt – za odpowiedź niepełną lub błędną albo za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": false,
-      "visual_reason": null,
-      "images": [],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2021/Historia/poziom_rozszerzony/EHIP-R0-100-2105.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2021/Zasady_Oceniania/EHIP-R0-100-2105-zasady.pdf",
-        "pages": [
-          17
-        ]
-      },
-      "split": "train"
-    },
-    {
       "id": "2021-maj-f2015-R-zad16",
       "session_key": "2021-maj-f2015",
       "year": 2021,
@@ -12688,111 +12288,6 @@
       "split": "train"
     },
     {
-      "id": "2022-maj-f2015-R-zad4",
-      "session_key": "2022-maj-f2015",
-      "year": 2022,
-      "session": "maj",
-      "formula": "2015",
-      "exam_date": "2022-05",
-      "level": "rozszerzony",
-      "task": "4",
-      "group": 4,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Źródło 1. Fragment opracowania historycznego\nDwór cesarski stanowił ośrodek potężnego i scentralizowanego aparatu administracyjnego, którym kierowała armia urzędników. Herakliusz przyjął […] tytuł basileusa, a despotyczny charakter maszynerii państwa uwidocznił się wyraźniej w jej orientalnym ceremoniale. […] Wprawdzie zachowały się pewne zewnętrzne formy dawnych rzymskich instytucji, ale całkowicie podporządkowano je władcy. Senat był zgromadzeniem osób piastujących urzędy, zorganizowanym według reguł ścisłej hierarchii. Przeciwwagę dla głównych urzędników państwowych, podlegających prefektowi […], urzędnikowi zajmującemu się administracją miasta […] i najwyższemu sędziemu […], stanowili urzędnicy dworscy […].\nN. Davies, Europa. Rozprawa historyka z historią, Kraków 2007, s. 283.\nŹródło 2. Dekoracja z bazyliki św. Witalisa w Rawennie\n[OBRAZ]\nhttps://www.metmuseum.org",
-      "question": "Rozstrzygnij, czy tekst i dekoracja dotyczą tego samego państwa. Odpowiedź uzasadnij, odwołując się do treści obu źródeł.\nRozstrzygnięcie:\nUzasadnienie:",
-      "answer": "Rozstrzygnięcie: Tak\nPrzykładowe uzasadnienie: Oba źródła dotyczą tego samego państwa [Cesarstwa\nBizantyjskiego]. W tekście mowa np. o cesarzu wzorującym się na perskim ceremoniale;\no scentralizowanym aparacie administracyjny typowym dla Cesarstwa Bizantyjskiego,\no zachowanych formach dawnych rzymskich instytucji: o senacie i prefektach. Dekoracja jest\nmozaiką, która ukazuje cesarza z aureolą na głowie w centrum, w otoczeniu urzędników,\nprzedstawicieli kościoła oraz wojska.",
-      "answer_key": null,
-      "scoring": "1 pkt – za prawidłowe rozstrzygnięcie wraz z uzasadnieniem zawierającym odwołanie do\ntreści obu źródeł.\n0 pkt – za odpowiedź niepełną lub błędną albo za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": true,
-      "visual_reason": "image_in_task",
-      "images": [
-        "images/2022-maj-f2015-R-zad4-1.png"
-      ],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Historia/poziom_rozszerzony/EHIP-R0-100-2205.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Zasady_oceniania/EHIP-R0-100-2205-zasady.pdf",
-        "pages": [
-          5
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2022-maj-f2015-R-zad5.1",
-      "session_key": "2022-maj-f2015",
-      "year": 2022,
-      "session": "maj",
-      "formula": "2015",
-      "exam_date": "2022-05",
-      "level": "rozszerzony",
-      "task": "5.1",
-      "group": 5,
-      "max_points": 1,
-      "type": "closed_abcd",
-      "choice_group": null,
-      "context": "Źródło 1. Fragment kroniki A\nJak zaś doszło do wypędzenia króla Bolesława z Polski, długo byłoby o tym mówić; tyle wszakże można powiedzieć, że sam będąc pomazańcem, nie powinien był pomazańca za żaden grzech karać cieleśnie. Wiele mu to bowiem zaszkodziło, gdy przeciw grzechowi grzech zastosował i za zdradę wydał biskupa na obcięcie członków. My zaś ani nie usprawiedliwiamy biskupa – zdrajcy, ani nie zalecamy króla, który tak szpetnie dochodził swych praw […].\nAnonim tzw. Gall, Kronika polska, Wrocław 1996, s. 54.\nŹródło 2. Fragment kroniki B\nPodwójnie bezecny jest ten, kto życie komuś odebrawszy, gdy nie może zabrać duszy, usiłuje zbrukać [jego dobrą] sławę, a nie mogąc prześladować rzeczywiście, prześladuje go słowami. […] Chociaż te kłamstwa w pojęciu ludzi nieświadomych przyniosły męczennikowi pewną ujmę, to jednak nie mogły go pozbawić powagi świętości. […] Wkrótce potem Bolesław dotknięty niezwykłą chorobą zadał sobie śmierć, a syn jego jedyny, Mieszko, zginął otruty w pierwszym rozkwicie męskości. Tak to cały ród Bolesława poniósł karę za świętego Stanisława […].\nMistrz Wincenty (tzw. Kadłubek), Kronika polska, Wrocław 2008, s. 78–79.",
-      "question": "Dokończ zdanie. Zaznacz właściwą odpowiedź spośród podanych.\nObaj kronikarze nawiązują do wydarzeń, które miały miejsce\nA. przed najazdem księcia Brzetysława na Polskę.\nB. po koronacji królewskiej Mieszka II.\nC. w czasie wojny z cesarzem Henrykiem V.\nD. podczas rządów Władysława Wygnańca.",
-      "options": {
-        "A": "przed najazdem księcia Brzetysława na Polskę.",
-        "B": "po koronacji królewskiej Mieszka II.",
-        "C": "w czasie wojny z cesarzem Henrykiem V.",
-        "D": "podczas rządów Władysława Wygnańca."
-      },
-      "requires_justification": false,
-      "answer": "B",
-      "answer_key": "B",
-      "scoring": "1 pkt – za odpowiedź poprawną.\n0 pkt – za odpowiedź błędną albo brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": true,
-      "needs_visual": false,
-      "visual_reason": null,
-      "images": [],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Historia/poziom_rozszerzony/EHIP-R0-100-2205.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Zasady_oceniania/EHIP-R0-100-2205-zasady.pdf",
-        "pages": [
-          6
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2022-maj-f2015-R-zad5.2",
-      "session_key": "2022-maj-f2015",
-      "year": 2022,
-      "session": "maj",
-      "formula": "2015",
-      "exam_date": "2022-05",
-      "level": "rozszerzony",
-      "task": "5.2",
-      "group": 5,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Źródło 1. Fragment kroniki A\nJak zaś doszło do wypędzenia króla Bolesława z Polski, długo byłoby o tym mówić; tyle wszakże można powiedzieć, że sam będąc pomazańcem, nie powinien był pomazańca za żaden grzech karać cieleśnie. Wiele mu to bowiem zaszkodziło, gdy przeciw grzechowi grzech zastosował i za zdradę wydał biskupa na obcięcie członków. My zaś ani nie usprawiedliwiamy biskupa – zdrajcy, ani nie zalecamy króla, który tak szpetnie dochodził swych praw […].\nAnonim tzw. Gall, Kronika polska, Wrocław 1996, s. 54.\nŹródło 2. Fragment kroniki B\nPodwójnie bezecny jest ten, kto życie komuś odebrawszy, gdy nie może zabrać duszy, usiłuje zbrukać [jego dobrą] sławę, a nie mogąc prześladować rzeczywiście, prześladuje go słowami. […] Chociaż te kłamstwa w pojęciu ludzi nieświadomych przyniosły męczennikowi pewną ujmę, to jednak nie mogły go pozbawić powagi świętości. […] Wkrótce potem Bolesław dotknięty niezwykłą chorobą zadał sobie śmierć, a syn jego jedyny, Mieszko, zginął otruty w pierwszym rozkwicie męskości. Tak to cały ród Bolesława poniósł karę za świętego Stanisława […].\nMistrz Wincenty (tzw. Kadłubek), Kronika polska, Wrocław 2008, s. 78–79.",
-      "question": "Wyjaśnij różnicę w ocenach postępowania obu stron konfliktu, zaprezentowanych w przytoczonych fragmentach kronik A i B.",
-      "answer": "Przykładowe rozwiązanie\nGall Anonim w swojej ocenie wydarzenia starał się zachować obiektywną postawę, tj. nie\nusprawiedliwiał ani nie zalecał zachowania żadnej ze stron konfliktu. W relacji Wincentego\nKadłubka widoczna jest jednostronnie pozytywna ocena postępowania biskupa (święty,\nmęczennik) oraz jednostronnie negatywna Bolesława (podwójnie bezecny).",
-      "answer_key": null,
-      "scoring": "1 pkt – za prawidłowe wyjaśnienie różnicy w ocenach.\n0 pkt – za odpowiedź niepełną lub błędną albo za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": false,
-      "visual_reason": null,
-      "images": [],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Historia/poziom_rozszerzony/EHIP-R0-100-2205.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Zasady_oceniania/EHIP-R0-100-2205-zasady.pdf",
-        "pages": [
-          6
-        ]
-      },
-      "split": "train"
-    },
-    {
       "id": "2022-maj-f2015-R-zad6",
       "session_key": "2022-maj-f2015",
       "year": 2022,
@@ -12822,44 +12317,6 @@
         "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Zasady_oceniania/EHIP-R0-100-2205-zasady.pdf",
         "pages": [
           7
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2022-maj-f2015-R-zad7.1",
-      "session_key": "2022-maj-f2015",
-      "year": 2022,
-      "session": "maj",
-      "formula": "2015",
-      "exam_date": "2022-05",
-      "level": "rozszerzony",
-      "task": "7.1",
-      "group": 7,
-      "max_points": 1,
-      "type": "matching",
-      "choice_group": null,
-      "context": "Źródło 1. Tablica genealogiczna [fragment]\nGiedymin w. ks. litewski od 1315 * ok. 1275 – † 1341 Kiejstut w. ks. litewski od 1345 Olgierd w. ks. litewski od 1345 *ok. 1297 – † 1382 * ok. 1300 – † 1377 Witold w. ks. litewski od 1401 Jagiełło – Władysław II w. ks. litewski od 1377, król Polski od 1386 * ok. 1354 – † 1430 * ok. 1351 – † 1434 Władysław III król Polski od 1434 i Węgier od 1440 Kazimierz IV Jagiellończyk w. ks. litewski od 1440, król Polski od 1447 * 1424 – † 1444 * 1427 – † 1492 Władysław Jagiellończyk król Czech od 1471 i Węgier od 1490 Jan Olbracht król Polski od 1492 Zygmunt I Stary w. ks. litewski i król * 1456 – † 1516 Aleksander Jagiellończyk w. ks. litewski od 1492 * 1459 – † 1501 król Polski od 1501 Polski od 1506 * 1467 – † 1548 * 1461 – † 1506 Ludwik Jagiellończyk król Czech i Węgier od 1516 Zygmunt II August * 1506 – † 1526 w. ks. litewski i król Polski od 1548 (1530) * 1520 – † 1572 Objaśnienia: w. ks. – wielki książę * – data urodzenia † – data śmierci\nNa podstawie: T. Jurek, E. Kizik, Historia Polski do 1572, Warszawa 2013, s. 746.\nŹródło 2. Fragmenty opracowania historycznego\nFragment A: 19 października […] podpisano uroczyście traktat pokojowy. Zwyciężony zakon zwracał Polsce Pomorze Gdańskie z ziemią chełmińską, michałowską i Warmię, czyli tereny zwane od tej pory Prusami Królewskimi. Krzyżakom pozostała […] część Prus ze stolicą w Królewcu – tzw. Prusy Zakonne. Wielki mistrz uznał się za lennika Polski […].\nFragment B: W odpowiedzi na [kampanię oszczerstw szerzonych przeciw Polsce przez Krzyżaków] rektor uniwersytetu krakowskiego […] przedstawił na forum soborowym Traktat o władzy papieża i cesarza nad niewiernymi, potępiający ostro wojny agresywne i podkreślający prawo wszystkich ludów do swobodnego życia na ziemi.\nFragment C: Na wzniesionym pośrodku rynku krakowskiego wysokim podium […] ustawiono tron królewski. Zasiadł na nim [król], otaczali go panowie polscy i […] goście zagraniczni.\nAlbrecht złożył polskiemu władcy hołd na klęczkach i przyjął od niego inwestyturę na nowe, świeckie państwo […].\nM. Bogucka, Historia Polski […], Warszawa 2009, s. 88, 101, 119.",
-      "question": "Każdemu wydarzeniu opisanemu we fragmentach A–C (źródło 2.) przyporządkuj władcę ze źródła 1., który był z tym wydarzeniem związany. Odpowiedzi zapisz poniżej.\nFragment A –\nFragment B –\nFragment C –",
-      "requires_justification": false,
-      "answer": "Fragment A – Kazimierz Jagiellończyk\nFragment B – Władysław Jagiełło\nFragment C – Zygmunt Stary",
-      "answer_key": {
-        "A": "Kazimierz Jagiellończyk",
-        "B": "Władysław Jagiełło",
-        "C": "Zygmunt Stary"
-      },
-      "scoring": "1 pkt – za odpowiedź zawierającą trzy prawidłowe wskazania.\n0 pkt – za odpowiedź niepełną lub błędną albo za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": true,
-      "needs_visual": false,
-      "visual_reason": null,
-      "images": [],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Historia/poziom_rozszerzony/EHIP-R0-100-2205.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Zasady_oceniania/EHIP-R0-100-2205-zasady.pdf",
-        "pages": [
-          8,
-          9
         ]
       },
       "split": "train"
@@ -13118,38 +12575,6 @@
         "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Zasady_oceniania/EHIP-R0-100-2205-zasady.pdf",
         "pages": [
           15
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2022-maj-f2015-R-zad13",
-      "session_key": "2022-maj-f2015",
-      "year": 2022,
-      "session": "maj",
-      "formula": "2015",
-      "exam_date": "2022-05",
-      "level": "rozszerzony",
-      "task": "13",
-      "group": 13,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Źródło 1. Fragment opracowania historycznego\nPoczątkowo rząd francuski [Ludwika Filipa] wyrażał gotowość przyjęcia polskich emigrantów i w tym duchu już w marcu […] minister skarbu […] złożył obietnice dyplomatycznemu przedstawicielowi Rządu Narodowego, generałowi Kniaziewiczowi […]. Gdy do Paryża nadeszły wiadomości o klęsce Polaków, doszło do licznych demonstracji antyrządowych, zwłaszcza w Paryżu. Przede wszystkim z tej przyczyny rząd nie chciał dopuścić do stolicy Francji głównej fali uchodźców polskich i kierował ich do miast prowincjonalnych.\nM. Zgórniak, Polska w czasach walk o niepodległość […], Kraków 2001, s. 151.\nŹródło 2. Fragment opracowania historycznego\nOrganizacyjnym centralnym ośrodkiem działalności emigracyjnej stała się Agencja zorganizowana w Paryżu. Agencja była kontynuacją oficjalnego poselstwa władz powstania […]. Kiedy do Paryża zaczęły napływać kolejne fale emigrantów, a pośród nich działacze radykalni i skłóceni po klęsce, z Agencji wyodrębniła się Deputacja, rodzaj kilkuosobowego rządu emigracyjnego. […] Niebawem dołączył do nich generał Jan Henryk Dąbrowski.\nS. Grodziski, Polska w czasach przełomu, Kraków 2004, s. 230–232.",
-      "question": "Rozstrzygnij, czy źródła 1. i 2. dotyczą skutków tego samego powstania. Odpowiedź uzasadnij, odwołując się do obu źródeł.\nRozstrzygnięcie:\nUzasadnienie:",
-      "answer": "Rozstrzygnięcie: Nie\nPrzykładowe uzasadnienie:\nŹródło 1. dotyczy emigracji po powstaniu listopadowym, o czym świadczy fakt, że we Francji\npanuje Ludwik Filip. Źródło 2. nawiązuje do sytuacji polskiej emigracji po powstaniu\nkościuszkowskim, co potwierdzają informacje o np. Agencji, Deputacji, Janie Henryku\nDąbrowskim.",
-      "answer_key": null,
-      "scoring": "1 pkt – za prawidłowe rozstrzygnięcie wraz z uzasadnieniem zawierającym odwołanie do obu\nźródeł.\n0 pkt – za odpowiedź niepełną lub błędną albo za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": false,
-      "visual_reason": null,
-      "images": [],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Historia/poziom_rozszerzony/EHIP-R0-100-2205.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Zasady_oceniania/EHIP-R0-100-2205-zasady.pdf",
-        "pages": [
-          16
         ]
       },
       "split": "train"
@@ -13461,40 +12886,6 @@
         "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Zasady_oceniania/EHIP-R0-100-2205-zasady.pdf",
         "pages": [
           21
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2022-maj-f2015-R-zad21.1",
-      "session_key": "2022-maj-f2015",
-      "year": 2022,
-      "session": "maj",
-      "formula": "2015",
-      "exam_date": "2022-05",
-      "level": "rozszerzony",
-      "task": "21.1",
-      "group": 21,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Źródło 1. Fragment rozmowy telefonicznej Hermanna Göringa (Berlin) z Joachimem\nvon Ribbentropem (Londyn) Göring: […] Panuje entuzjazm nie do opisania. Może pan to usłyszeć przez radio.\nRibbentrop: Jest to wprost fantastyczne, nieprawdaż?\nGöring: Oczywiście. Wydarzenie to całkowicie zaćmiło nasz ostatni marsz do Nadrenii.\nFührer był głęboko wzruszony, gdy ubiegłej nocy rozmawiał ze mną. Niech pan nie zapomina, że teraz po raz pierwszy ujrzał on znów swą ojczyznę.\nDokumenty i materiały z przedednia drugiej wojny światowej, t. 1, Warszawa 1949, s. 75.\nŹródło 2. Rysunek satyryczny\nREZERWAT ŚCISŁY\n[OBRAZ]\n[OBRAZ]\nAUSTRIACKA INTEGRALNOŚĆ UDANE POLOWANIE Mussolini: „Wszystko w porządku, Adolfie – w ogóle nie słyszałem strzału”. https://punch.photoshelter.com",
-      "question": "Rozstrzygnij, czy źródła 1. i 2. dotyczą wydarzeń z tego samego roku. Odpowiedź uzasadnij, odwołując się do obu źródeł.\nRozstrzygnięcie:\nUzasadnienie:",
-      "answer": "Rozstrzygnięcie: Tak\nPrzykładowe uzasadnienie:\nOba źródła dotyczą tzw. Anschlussu Austrii z 1938 roku (zajęcia Austrii przez III Rzeszę) –\nw źródle 1. wskazuje na to stwierdzenie, że Hitler ujrzał swoją ojczyznę (Hitler pochodził\nz Austrii); w źródle 2. – fakt „upolowania”, czyli zdobycia Austrii przez Hitlera.",
-      "answer_key": null,
-      "scoring": "1 pkt – za prawidłowe rozstrzygnięcie wraz z uzasadnieniem zawierającym odwołanie do obu\nźródeł.\n0 pkt – za odpowiedź niepełną lub błędną albo za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": true,
-      "visual_reason": "image_in_task",
-      "images": [
-        "images/2022-maj-f2015-R-zad21.1-1.png"
-      ],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Historia/poziom_rozszerzony/EHIP-R0-100-2205.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Zasady_oceniania/EHIP-R0-100-2205-zasady.pdf",
-        "pages": [
-          22
         ]
       },
       "split": "train"
@@ -15603,77 +14994,6 @@
       "split": "train"
     },
     {
-      "id": "2022-marzec-pokazowy-R-zad6.1",
-      "session_key": "2022-marzec-pokazowy",
-      "year": 2022,
-      "session": "marzec-pokazowy",
-      "formula": "2023",
-      "exam_date": "2022-03",
-      "level": "rozszerzony",
-      "task": "6.1",
-      "group": 6,
-      "max_points": 2,
-      "type": "matching",
-      "choice_group": null,
-      "context": "Źródło 1. Fragmenty kronik średniowiecznych\nFragment A:\nPo uwolnieniu tedy i odbiciu ojczyzny i po wygnaniu obcych ludów, nie mniejszy pozostał [temu władcy] trud orężnego pokonania własnego ludu i swoich prawowitych poddanych. Był bowiem pewien człowiek, imieniem Miecław, cześnik i sługa jego ojca […], a po śmierci tegoż we własnym przekonaniu książę i naczelnik Mazowszan. […] [Władca ten], oburzony, że sługa ojca i jego własny siłą zatrzymuje Mazowsze […], zebrał nieliczną wprawdzie, lecz zaprawioną w walkach garść wojowników i stoczył zbrojnie bitwę, w której Miecław poległ, a on tryumfalnie zdobył zwycięstwo, pokój i cały kraj.\nFragment B:\nW jaki zaś sposób był cesarz przez niego wówczas podejmowany i przez jego kraj aż do [stolicy] wiedziony, rzecz to nie do uwierzenia i wprost nie da się opowiedzieć. Widząc z daleka miasto upragnione szedł doń pobożnie bosymi stopami, a przyjęty z czcią niezwykłą przez biskupa tamecznego Ungera, wprowadzony został do kościoła, błagając zlany łzami wstawiennictwa świętego męczennika dla pozyskania sobie łaski Chrystusowej.\nI niezwłocznie ustanowił tam arcybiskupstwo […]. Archidiecezję tę powierzył bratu wspomnianego męczennika, Radzymowi […].\nFragment C:\nJak zaś doszło do wypędzenia [tego władcy] z Polski, długo byłoby o tym mówić; tyle wszakże można powiedzieć, że sam będąc pomazańcem [Bożym] nie powinien był [drugiego] pomazańca za żaden grzech karać cieleśnie. Wiele mu to bowiem zaszkodziło, gdy przeciw grzechowi grzech zastosował i za zdradę wydał biskupa na obcięcie członków.\nMy zaś ani nie usprawiedliwiamy biskupa zdrajcy, ani nie zalecamy [władcy], który tak szpetnie dochodził swych praw – lecz pozostawmy te sprawy, a opowiedzmy, jak przyjęto go na Węgrzech.\nWiek V–XV w źródłach. Wybór tekstów źródłowych z propozycjami metodycznymi dla nauczycieli historii i studentów, oprac. M. Sobańska-Bondaruk, S.B. Lenard, Warszawa 1999, s. 102; Anonim tzw. Gall, Kronika polska, Wrocław 1982, s. 45, 50–51.\nMieszko I † 992 Bolesław I Chrobry † 1025 Bezprym Mieszko II † 1032 † 1034 Kazimierz I Odnowiciel † 1058 Bolesław II Śmiały Władysław I Herman † 1082 † 1102 Bolesław III Krzywousty † 1113 † 1138 Zbigniew\nŹródło 2. Tablica genealogiczna Piastów [fragment]\n† – data śmierci\nNa podstawie: T. Jurek, E. Kizik, Historia Polski do 1572, Warszawa 2013, s. 740.",
-      "question": "Fragmentowi każdej kroniki ze źródła 1. przyporządkuj przedstawiciela dynastii Piastów ze źródła 2., który był uczestnikiem wydarzeń tam opisanych. Odpowiedzi zapisz poniżej.\nFragment A –\nFragment B –\nFragment C –",
-      "requires_justification": false,
-      "answer": "Fragment A – Kazimierz Odnowiciel\nFragment B – Bolesław Chrobry\nFragment C – Bolesław Śmiały [Szczodry]",
-      "answer_key": {
-        "A": "Kazimierz Odnowiciel",
-        "B": "Bolesław Chrobry",
-        "C": "Bolesław Śmiały [Szczodry]"
-      },
-      "scoring": "2 pkt – za trzy prawidłowe odpowiedzi.\n1 pkt – za dwie prawidłowe odpowiedzi.\n0 pkt – odpowiedź niepoprawna lub niepełna albo brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": true,
-      "needs_visual": false,
-      "visual_reason": null,
-      "images": [],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/pokazowe/Historia/MHIP-R0-100-2305.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/pokazowe/Historia/MHIP-R0-100-200-300-400-660-700-Q00-2203-zasady.pdf",
-        "pages": [
-          6,
-          7
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2022-marzec-pokazowy-R-zad6.2",
-      "session_key": "2022-marzec-pokazowy",
-      "year": 2022,
-      "session": "marzec-pokazowy",
-      "formula": "2023",
-      "exam_date": "2022-03",
-      "level": "rozszerzony",
-      "task": "6.2",
-      "group": 6,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Źródło 1. Fragmenty kronik średniowiecznych\nFragment A:\nPo uwolnieniu tedy i odbiciu ojczyzny i po wygnaniu obcych ludów, nie mniejszy pozostał [temu władcy] trud orężnego pokonania własnego ludu i swoich prawowitych poddanych. Był bowiem pewien człowiek, imieniem Miecław, cześnik i sługa jego ojca […], a po śmierci tegoż we własnym przekonaniu książę i naczelnik Mazowszan. […] [Władca ten], oburzony, że sługa ojca i jego własny siłą zatrzymuje Mazowsze […], zebrał nieliczną wprawdzie, lecz zaprawioną w walkach garść wojowników i stoczył zbrojnie bitwę, w której Miecław poległ, a on tryumfalnie zdobył zwycięstwo, pokój i cały kraj.\nFragment B:\nW jaki zaś sposób był cesarz przez niego wówczas podejmowany i przez jego kraj aż do [stolicy] wiedziony, rzecz to nie do uwierzenia i wprost nie da się opowiedzieć. Widząc z daleka miasto upragnione szedł doń pobożnie bosymi stopami, a przyjęty z czcią niezwykłą przez biskupa tamecznego Ungera, wprowadzony został do kościoła, błagając zlany łzami wstawiennictwa świętego męczennika dla pozyskania sobie łaski Chrystusowej.\nI niezwłocznie ustanowił tam arcybiskupstwo […]. Archidiecezję tę powierzył bratu wspomnianego męczennika, Radzymowi […].\nFragment C:\nJak zaś doszło do wypędzenia [tego władcy] z Polski, długo byłoby o tym mówić; tyle wszakże można powiedzieć, że sam będąc pomazańcem [Bożym] nie powinien był [drugiego] pomazańca za żaden grzech karać cieleśnie. Wiele mu to bowiem zaszkodziło, gdy przeciw grzechowi grzech zastosował i za zdradę wydał biskupa na obcięcie członków.\nMy zaś ani nie usprawiedliwiamy biskupa zdrajcy, ani nie zalecamy [władcy], który tak szpetnie dochodził swych praw – lecz pozostawmy te sprawy, a opowiedzmy, jak przyjęto go na Węgrzech.\nWiek V–XV w źródłach. Wybór tekstów źródłowych z propozycjami metodycznymi dla nauczycieli historii i studentów, oprac. M. Sobańska-Bondaruk, S.B. Lenard, Warszawa 1999, s. 102; Anonim tzw. Gall, Kronika polska, Wrocław 1982, s. 45, 50–51.\nMieszko I † 992 Bolesław I Chrobry † 1025 Bezprym Mieszko II † 1032 † 1034 Kazimierz I Odnowiciel † 1058 Bolesław II Śmiały Władysław I Herman † 1082 † 1102 Bolesław III Krzywousty † 1113 † 1138 Zbigniew\nŹródło 2. Tablica genealogiczna Piastów [fragment]\n† – data śmierci\nNa podstawie: T. Jurek, E. Kizik, Historia Polski do 1572, Warszawa 2013, s. 740.",
-      "question": "Spośród uwzględnionych w tablicy genealogicznej przedstawicieli dynastii Piastów wymień wszystkich, którzy byli królami.",
-      "answer": "Bolesław Chrobry, Mieszko II, Bolesław Śmiały [Szczodry]",
-      "answer_key": null,
-      "scoring": "1 pkt – za trzy prawidłowe odpowiedzi.\n0 pkt – odpowiedź niepoprawna lub niepełna albo brak odpowiedzi..",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": false,
-      "visual_reason": null,
-      "images": [],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/pokazowe/Historia/MHIP-R0-100-2305.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/pokazowe/Historia/MHIP-R0-100-200-300-400-660-700-Q00-2203-zasady.pdf",
-        "pages": [
-          6,
-          7
-        ]
-      },
-      "split": "train"
-    },
-    {
       "id": "2022-marzec-pokazowy-R-zad7",
       "session_key": "2022-marzec-pokazowy",
       "year": 2022,
@@ -15926,40 +15246,6 @@
         "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/pokazowe/Historia/MHIP-R0-100-200-300-400-660-700-Q00-2203-zasady.pdf",
         "pages": [
           10
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2022-marzec-pokazowy-R-zad10",
-      "session_key": "2022-marzec-pokazowy",
-      "year": 2022,
-      "session": "marzec-pokazowy",
-      "formula": "2023",
-      "exam_date": "2022-03",
-      "level": "rozszerzony",
-      "task": "10",
-      "group": 10,
-      "max_points": 2,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Jacques Louis David, Śmierć Sokratesa [obraz olejny]\n[OBRAZ]\nhttps://www.metmuseum.org",
-      "question": "Podaj nazwę stylu w sztuce, który reprezentuje przedstawiony obraz. Odpowiedź uzasadnij, charakteryzując dwie widoczne cechy tego stylu.\nNazwa stylu:\nUzasadnienie:",
-      "answer": "Nazwa: klasycyzm\nPrzykładowe uzasadnienie:\n• Tematyka antyczna – obraz nawiązuje do problematyki związanej ze starożytnością\n(Sokrates był greckim filozofem), co jest przejawem fascynacji antkiem w okresie\noświecenia.\n• Klasycyzm w malarstwie przejawiał się w umiarkowanym stosowaniu barw, bez zbytnich\nkontrastów, dbałości o realizm i właściwe (idealne) proporcje – co widać\nw prezentowanym obrazie.",
-      "answer_key": null,
-      "scoring": "2 pkt – odpowiedź zawierająca prawidłową nazwę i charakterystykę dwóch widocznych cech\nstylu.\n1 pkt – odpowiedź zawierająca prawidłową nazwę i charakterystykę jednej widocznej cechy\ntego stylu.\n0 pkt – odpowiedź niepoprawna lub niepełna albo brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": true,
-      "visual_reason": "image_in_task",
-      "images": [
-        "images/2022-marzec-pokazowy-R-zad10-1.png"
-      ],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/pokazowe/Historia/MHIP-R0-100-2305.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/pokazowe/Historia/MHIP-R0-100-200-300-400-660-700-Q00-2203-zasady.pdf",
-        "pages": [
-          11
         ]
       },
       "split": "train"
@@ -16484,40 +15770,6 @@
         "pages": [
           20,
           21
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2022-marzec-pokazowy-R-zad20",
-      "session_key": "2022-marzec-pokazowy",
-      "year": 2022,
-      "session": "marzec-pokazowy",
-      "formula": "2023",
-      "exam_date": "2022-03",
-      "level": "rozszerzony",
-      "task": "20",
-      "group": 20,
-      "max_points": 3,
-      "type": "open_long",
-      "choice_group": null,
-      "context": "Rysunek satyryczny z początku lat 80. XX wieku\n[OBRAZ]\nNapisy: AFGANISTAN, POLSKA\nNa podstawie: The Investigative Reporter, 1982.",
-      "question": "Wyjaśnij wymowę rysunku, interpretując jego elementy graficzne. W odpowiedzi uwzględnij kontekst historyczny.",
-      "answer": "Przykładowe rozwiązanie\nRysunek symbolizuje dylematy polityczne Związku Sowieckiego z początku lat 80. XX wieku,\nktóry nie wie jak ma się zachować wobec sytuacji w Polsce. ZSRS został na rysunku\nprzedstawiony jako uzbrojony w karabin niedźwiedź z głową Breżniewa (ówczesnego\nprzywódcy państwa), który ma dwie chore nogi – symbol słabości i kryzysu. Jedna,\nz napisem „Afganistan”, jest przestrzelona – stanowi to nawiązanie do interwencji wojsk\nsowieckich w tym państwie (1979 rok) i uwikłania się w długoletni, trudny konflikt. Druga\nnoga, z napisem „Polska”, jest zabandażowana – stanowi to nawiązanie do narodzin\n„Solidarności” i demokratycznych tendencji w społeczeństwie polskim (1980/1981).\nBreżniew, po negatywnych doświadczeniach interwencji w Afganistanie, zastanawia się czy\ninterweniować zbrojnie w Polsce.",
-      "answer_key": null,
-      "scoring": "3 pkt – odpowiedź zawierająca wyjaśnienie przesłania ulotki, poparte interpretacją dwóch\nelementów graficznych, i uwzględniająca kontekst historyczny.\n2 pkt – odpowiedź zawierająca wyjaśnienie przesłania ulotki, poparte interpretacją dwóch\nelementów graficznych, bez uwzględnienia kontekstu historycznego.\n1 pkt – odpowiedź zawierająca wyjaśnienie przesłania ulotki, niepoparte interpretacją dwóch\nelementów graficznych, i nieuwzględniająca kontekstu historycznego.\n0 pkt – odpowiedź niepoprawna lub niepełna albo brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": true,
-      "visual_reason": "image_in_task",
-      "images": [
-        "images/2022-marzec-pokazowy-R-zad20-1.png"
-      ],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/pokazowe/Historia/MHIP-R0-100-2305.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/pokazowe/Historia/MHIP-R0-100-200-300-400-660-700-Q00-2203-zasady.pdf",
-        "pages": [
-          22
         ]
       },
       "split": "train"
@@ -17240,44 +16492,6 @@
         "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/diagnostyczne_12/historia/MHIP-R0-100-200-300-400-660-700-Q00-Z00-2212-zasady.pdf",
         "pages": [
           15
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2022-grudzien-diagnostyczny-R-zad14.1",
-      "session_key": "2022-grudzien-diagnostyczny",
-      "year": 2022,
-      "session": "grudzien-diagnostyczny",
-      "formula": "2023",
-      "exam_date": "2022-12",
-      "level": "rozszerzony",
-      "task": "14.1",
-      "group": 14,
-      "max_points": 1,
-      "type": "matching",
-      "choice_group": null,
-      "context": "[OBRAZ]\nFryderyk I * 1657 † 1713 elektor brand. od 1688 (jako Fryderyk III) kr. pruski od 1701 Fryderyk Wilhelm I\n[OBRAZ]\n* 1688 † 1740 kr. pruski od 1713\n[OBRAZ]\n[OBRAZ]\nFryderyk II Wielki August Wilhelm * 1722 † 1758 * 1712 † 1786 kr. pruski od 1740\n[OBRAZ]\nFryderyk Wilhelm II * 1744 † 1797 kr. pruski 1786\nŹródło 1. Tablica genealogiczna Hohenzollernów [fragment]\nNa podstawie: Dynastie Europy, red. A. Mączak, Wrocław 2009, s. 114.\nŹródło 2. Fragmenty opracowania historycznego\nFragment A: Efektem nowego układu sił i determinacji sojuszników w blokowaniu wpływów państw zachodnich w Europie Środkowo-Wschodniej był tzw. traktat Löwenwolda […] – zwany także traktatem trzech czarnych orłów – przewidujący wykluczenie kandydatury do tronu polskiego zarówno Wettina, jak Leszczyńskiego, na rzecz „Piasta” lub infanta portugalskiego Emanuela. Porozumienie to […] ukazywało […] intencje sąsiadów wobec Rzeczypospolitej i było zapowiedzią, że dwór berliński dąży do przejęcia inicjatywy w czasie zbliżającego się bezkrólewia.\nFragment B: W tej sytuacji powstał w Berlinie pomysł uspokojenia sytuacji w Europie kosztem Rzeczypospolitej, sformułowany przez [króla Prus] […]. Powstrzymana na Bałkanach Rosja miała uzyskać rekompensatę, przez aneksję części terytorium państwa polsko-litewskiego i dopuścić do niej sojuszników. Cesarzowa Austrii Maria Teresa wahała się przed zagarnianiem cudzych terytoriów, ale przeważyło zdanie współrządzącego z nią syna Józefa II […].\nU. Augustyniak, Historia Polski […], Kraków 2008, s. 804, 859.",
-      "question": "Każdemu fragmentowi A–B ze źródła 2. przyporządkuj władcę Prus ze źródła 1., który panował w czasie wydarzeń tam opisanych. Odpowiedzi zapisz poniżej.\nFragment A –\nFragment B –",
-      "requires_justification": false,
-      "answer": "Fragment A – Fryderyk Wilhelm I\nFragment B – Fryderyk II Wielki",
-      "answer_key": {
-        "A": "Fryderyk Wilhelm I",
-        "B": "Fryderyk II Wielki"
-      },
-      "scoring": "1 pkt – za dwa poprawne elementy odpowiedzi.\n0 pkt – za odpowiedź niepełną lub błędną albo za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": true,
-      "needs_visual": true,
-      "visual_reason": "image_in_task",
-      "images": [
-        "images/2022-grudzien-diagnostyczny-R-zad14.1-1.png"
-      ],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/diagnostyczne_12/historia/MHIP-R0-100-2212.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/diagnostyczne_12/historia/MHIP-R0-100-200-300-400-660-700-Q00-Z00-2212-zasady.pdf",
-        "pages": [
-          16
         ]
       },
       "split": "train"
@@ -20254,76 +19468,6 @@
       "split": "train"
     },
     {
-      "id": "2024-grudzien-diagnostyczny-R-zad18",
-      "session_key": "2024-grudzien-diagnostyczny",
-      "year": 2024,
-      "session": "grudzien-diagnostyczny",
-      "formula": "2023",
-      "exam_date": "2024-12",
-      "level": "rozszerzony",
-      "task": "18",
-      "group": 18,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Rysunek satyryczny z okresu I wojny światowej\n[OBRAZ]\nhttps://actualites.musee-armee.fr",
-      "question": "Rozstrzygnij, która strona konfliktu – państwa centralne czy ententa – opublikowała zaprezentowany rysunek. Odpowiedź uzasadnij, odwołując się do elementów graficznych źródła.\nRozstrzygnięcie:\nUzasadnienie:",
-      "answer": "Rozstrzygnięcie: ententa\nPrzykładowe uzasadnienie: Na ilustracji przedstawiono władcę Niemiec (charakterystyczne\nnakrycie głowy – pikielhauba), który ugina się pod naporem sztandarów symbolizujących\npaństwa ententy. Władca Niemiec ma złamaną szablę, co symbolizuje klęskę militarną tego\npaństwa w wojnie.",
-      "answer_key": null,
-      "scoring": "1 pkt – za prawidłowe rozstrzygnięcie wraz z uzasadnieniem zawierającym odwołanie do\nźródła.\n0 pkt – za odpowiedź niepełną lub błędną albo za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": true,
-      "visual_reason": "image_in_task",
-      "images": [
-        "images/2024-grudzien-diagnostyczny-R-zad18-1.png"
-      ],
-      "adapted_660_text": "Zadanie 18. (0–1)\nRozstrzygnij, która strona konfliktu – państwa centralne czy ententa – opublikowała zaprezentowany rysunek. Odpowiedź uzasadnij, odwołując się do elementów graficznych źródła.\nRozstrzygnięcie\nUzasadnienie:\nOpis rysunek satyrycznego z okresu I wojny światowej\nNa pierwszym planie pochylona, klęcząca postać mężczyzny. Jego głowa opuszczona w dół, na niej pikielhauba. Na ramionach ma zarzuconą długą pelerynę. Spod płaszcza wystaje ręka trzymająca złamany miecz. Za klęczącą postacią i nad nią groźnie powiewają rozwiane w szyku bojowym liczne chorągwie i sztandary w różnych barwach narodowych, m.in: flaga trzykolorowa z poziomymi pasami niebiesko-biało-czerwona, flaga z poziomymi pasami na przemian czerwonymi i białymi, i białymi gwiazdami na niebieskim polu w lewym górnym rogu. W oddali unoszą się kłęby czarnego dymu.",
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2024/Historia/MHIP-R0-100-A-2412-arkusz.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2024/Historia/MHIP-R0-100-200-300-400-660-Q00-2412-zasady.pdf",
-        "pages": [
-          22
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2024-grudzien-diagnostyczny-R-zad19.1",
-      "session_key": "2024-grudzien-diagnostyczny",
-      "year": 2024,
-      "session": "grudzien-diagnostyczny",
-      "formula": "2023",
-      "exam_date": "2024-12",
-      "level": "rozszerzony",
-      "task": "19.1",
-      "group": 19,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Źródło 1. Fragmenty ustawy przyjętej przez Sejm II RP\nArt.1. Dla naprawy skarbu Państwa i przeprowadzenia reformy walutowej, postanawia się, co następuje: […]\n11. b) powołanie do życia banku emisyjnego na mocy specjalnego statutu, jako banku akcyjnego – z udziałem Państwa – podlegającego nadzorowi państwowemu […].\nNa podstawie: https://isap.sejm.gov.pl\nŹródło 2. Banknot z okresu międzywojennego\n[OBRAZ]\nhttps://muzeumpapiernictwa.pl",
-      "question": "Rozstrzygnij, czy banknot zamieszczony w źródle 2. wyemitowano wskutek reformy, o której mowa w źródle 1. Odpowiedź uzasadnij, odwołując się do obu źródeł.\nRozstrzygnięcie:\nUzasadnienie:",
-      "answer": "Rozstrzygnięcie: Nie\nPrzykładowe uzasadnienie: W tekście jest mowa o reformie walutowej, która wprowadzała\nw Polsce nową walutę – złotego. Na ilustracji został umieszczony banknot obowiązujący\nprzed opisaną reformą ze starą walutą – marką polską.",
-      "answer_key": null,
-      "scoring": "1 pkt – za prawidłowe rozstrzygnięcie wraz z uzasadnieniem zawierającym odwołanie do obu\nźródeł.\n0 pkt – za odpowiedź niepełną lub błędną albo za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": true,
-      "visual_reason": "image_in_task",
-      "images": [
-        "images/2024-grudzien-diagnostyczny-R-zad19.1-1.png"
-      ],
-      "adapted_660_text": "Zadanie 19.\nZadanie 19.1. (0–1)\nRozstrzygnij, czy banknot zamieszczony w źródle 2. wyemitowano wskutek reformy, o której mowa w źródle 1. Odpowiedź uzasadnij, odwołując się do obu źródeł.\nRozstrzygnięcie:\nUzasadnienie:\nZadanie 19.2. (0–1)\nDokończ zdanie. Wypisz właściwą odpowiedź spośród podanych A–D.\nAutorem reformy, o której mowa w źródle 1., był\nA. Hilary Minc.\nB. Władysław Grabski.\nC. Janusz Jędrzejewicz.\nD. Eugeniusz Kwiatkowski.\nŹródło 1. Fragmenty ustawy przyjętej przez Sejm II RP\nArt.1. Dla naprawy skarbu Państwa i przeprowadzenia reformy walutowej, postanawia się, co następuje: […]\n11. b) powołanie do życia banku emisyjnego na mocy specjalnego statutu, jako banku akcyjnego – z udziałem Państwa – podlegającego nadzorowi państwowemu […].\nŹródło 2. Opis banknotu z okresu międzywojennego\nBanknot o nominale 500000 marek polskich. W górnej części banknotu napis „POLSKA KRAJOWA KASA POŻYCZKOWA”. W centralnej części biały orzeł w koronie.",
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2024/Historia/MHIP-R0-100-A-2412-arkusz.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2024/Historia/MHIP-R0-100-200-300-400-660-Q00-2412-zasady.pdf",
-        "pages": [
-          23
-        ]
-      },
-      "split": "train"
-    },
-    {
       "id": "2024-grudzien-diagnostyczny-R-zad19.2",
       "session_key": "2024-grudzien-diagnostyczny",
       "year": 2024,
@@ -21562,40 +20706,6 @@
         "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/probny_egzamin/2026_styczen/Historia/MHIP-R0-100-2601-zasady.pdf",
         "pages": [
           17
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2026-styczen-probny-R-zad16",
-      "session_key": "2026-styczen-probny",
-      "year": 2026,
-      "session": "styczen-probny",
-      "formula": "2023",
-      "exam_date": "2026-01",
-      "level": "rozszerzony",
-      "task": "16",
-      "group": 16,
-      "max_points": 3,
-      "type": "open_long",
-      "choice_group": null,
-      "context": "Rysunek z listopada 1916 roku\n[OBRAZ]\n[OBRAZ]\nNa podstawie: „Mucha” 1916, nr 45, s. 1.",
-      "question": "Wyjaśnij przesłanie rysunku, interpretując jego dwa elementy graficzne. W odpowiedzi uwzględnij kontekst historyczny z roku powstania tego rysunku.",
-      "answer": "Przykładowe rozwiązanie\nRysunek zwraca krytycznym komentarzem do polityki Niemiec i Austro-Węgier wobec\nsprawy polskiej podczas I wojny światowej. Niemiec (pikielhauba) i Austriak próbują za\npomocą Polaków osiągnąć finalne zwycięstwo (napis na kasztanach w ogniu), dlatego\nogłosili tzw. akt 5 listopada 1916 roku. Celem tej proklamacji nie była chęć odtworzenia\npaństwowości polskiej, ale próba wykorzystania Polaków (parzące kasztany).",
-      "answer_key": null,
-      "scoring": "3 pkt – za prawidłowe wyjaśnienie wymowy rysunku wraz z interpretacją dwóch elementów\ngraficznych oraz przedstawienie kontekstu historycznego.\n2 pkt – za prawidłowe wyjaśnienie wymowy rysunku wraz z interpretacją dwóch elementów\ngraficznych bez przedstawienia kontekstu historycznego ALBO za prawidłowe\nwyjaśnienie wymowy rysunku wraz z interpretacją jednego elementu graficznego oraz\nprzedstawienie kontekstu historycznego.\n1 pkt – za prawidłowe wyjaśnienie wymowy rysunku wraz z interpretacją jednego elementu\ngraficznego bez przedstawienia kontekstu historycznego.\n0 pkt – za odpowiedź niepełną lub błędną albo za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": true,
-      "visual_reason": "image_in_task",
-      "images": [
-        "images/2026-styczen-probny-R-zad16-1.png"
-      ],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/probny_egzamin/2026_styczen/Historia/MHIP-R0-100-A-2601-arkusz.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/probny_egzamin/2026_styczen/Historia/MHIP-R0-100-2601-zasady.pdf",
-        "pages": [
-          18
         ]
       },
       "split": "train"
@@ -28901,38 +28011,6 @@
         "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/czerwiec/klucze/historia_06_pp_klucz.pdf",
         "pages": [
           11
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2012-czerwiec-stara-P-zad17",
-      "session_key": "2012-czerwiec-stara-P",
-      "year": 2012,
-      "session": "czerwiec",
-      "formula": "stara",
-      "exam_date": "2012-06",
-      "level": "podstawowy",
-      "task": "17",
-      "group": 17,
-      "max_points": 3,
-      "type": "open_long",
-      "choice_group": null,
-      "context": "",
-      "question": "Do fragmentów dokumentów dopisz odpowiednie nazwy. Odpowiedzi wybierz spośród podanych.\nArtykuły henrykowskie, Akt konfederacji warszawskiej, Konstytucja Nihil novi, Konstytucja 3 maja\nFragmenty dokumentów Nazwy dokumentów\n1. Ponieważ prawa ogólne i ustawy dotyczą nie pojedynczego człowieka, ale ogółu narodu, przeto na tym walnym sejmie radomskim [...] postanowiliśmy, iż odtąd na potomne czasy nic nowego [...] stanowionym być nie ma przez nas i naszych następców, bez wspólnego zezwolenia senatorów i posłów ziemskich [...].\n2. My, Rady Stanu, szlachta i rycerstwo Królestwa Polskiego, narodów tak polskiego, jako i litewskiego [...], to sobie [...] zastrzegamy, aby przyszły nasz książę i pan świeżo przez nas obrany był obowiązanym dać nam przywilej, czyli pismo […] zawierające w sobie pewne nasze prawa i prerogatywy [...]:\n1. [...] aby zawdy wiecznymi czasy po zejściu naszym i potomków naszych wolne obieranie zostało wszem stanom koronnym [...].\n9. Sejm walny koronny we dwie lecie najdalej ma być składan [...].\n3. Uznając, iż los nas wszystkich od ugruntowania i wydoskonalenia konstytucji narodowej jedynie zawisł, długim doświadczeniem poznawszy zadawnione rządu naszego wady, [...] wolni od hańbiących obcej przemocy nakazów, [...] dla dobra powszechnego, dla ugruntowania wolności, dla ocalenia ojczyzny naszej i jej granic [...] niniejszą Konstytucję uchwalamy [...]. [w:] Wiek XVI–XVII w źródłach. Wybór tekstów źródłowych z propozycjami metodycznymi dla nauczycieli historii i studentów, oprac. M. Sobańska-Bondaruk, S. B. Lenard, Warszawa 1997, s. 95, 108, 431.",
-      "answer": "1. Konstytucja Nihil novi\n2. Artykuły henrykowskie\n3. Konstytucja 3 maja",
-      "answer_key": null,
-      "scoring": "3 p. – za rozpoznanie trzech dokumentów\n1 p. – za każdą poprawną odpowiedź",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": false,
-      "visual_reason": null,
-      "images": [],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/czerwiec/historia/historia_pp.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/czerwiec/klucze/historia_06_pp_klucz.pdf",
-        "pages": [
-          12
         ]
       },
       "split": "train"
@@ -44263,14 +43341,27 @@
       "context": "Na podstawie tekstu źródłowego oraz własnej wiedzy wykonaj polecenia.\nJan Bażyński, O losie […] pod panowaniem krzyżackim [fragment] Nie tajno, miłościwy królu, tobie i twojej radzie […], ile krzywd i niegodziwości, ile zniewag […] naddziadowie1 i ojcowie nasi, a na koniec my sami wycierpieliśmy od mistrza i Zakonu Pruskiego. […] Komturowie i posiadacze zamków nie sromali się2, bez przeprowadzenia sprawy, bez złożenia sądu, zabierać nam dobra i majątki, żony w oczach mężów i córki wobec rodziców porywać […]. A tym, którzy się na takie krzywdy uskarżali, miasto3 wymierzenia sprawiedliwości, zdejmowano głowy albo wydzierano mienie. Przyciśnieni tak wielką niedolą, uczyniliśmy wszyscy między sobą związek, abyśmy się od tylu cierpień zasłonić mogli. […] Sprawa nasza wniesiona została przed sąd Fryderyka4 cesarza rzymskiego, rzeczony cesarz, odrzuciwszy najsłuszniejsze i jawnie za nami mówiące dowody, […] unieważniwszy wyrokiem swoim nasz związek skazał nas na sześćkroć sto tysięcy złotych kary i na wieczne poddaństwo mistrzowi i Zakonowi […]. Wyrok cesarza, tak niesłuszny i tyrański, spowodował nas do wypowiedzenia posłuszeństwa Krzyżakom i podniesienia przeciw nim oręża […]. Przeto udajemy się do Majestatu twego z prośbą, abyś nas raczył przyjąć za twoich i królestwa twego wieczystych poddanych i hołdowników, i wcielił do Królestwa Polskiego, od którego jesteśmy oderwani.\n1 Naddziad – pradziad, przodek.\n2 Nie sromali się – nie wstydzili się.\n3 Miasto – zamiast.\n4 Fryderyk III Habsburg – król Niemiec, Święty Cesarz Rzymski Narodu Niemieckiego.\nTeksty źródłowe do nauki historii w szkole, nr 12, Warszawa 1959, s. 32–33.",
       "question": "Zaznacz prawidłowe dokończenie zdań.\nMowa wygłoszona przez Jana Bażyńskiego była skierowana do króla\nA. Kazimierza Wielkiego.\nB. Władysława Jagiełły.\nC. Władysława Warneńczyka.\nD. Kazimierza Jagiellończyka.\nInkorporacja, o której mowa w tekście, stała się przyczyną wybuchu wojny\nA. północnej.\nB. kokoszej.\nC. trzydziestoletniej.\nD. trzynastoletniej.",
       "options": {
-        "A": "północnej.",
-        "B": "kokoszej.",
-        "C": "trzydziestoletniej.",
-        "D": "trzynastoletniej."
+        "1": {
+          "stem": "Mowa wygłoszona przez Jana Bażyńskiego była skierowana do króla",
+          "A": "Kazimierza Wielkiego.",
+          "B": "Władysława Jagiełły.",
+          "C": "Władysława Warneńczyka.",
+          "D": "Kazimierza Jagiellończyka."
+        },
+        "2": {
+          "stem": "Inkorporacja, o której mowa w tekście, stała się przyczyną wybuchu wojny",
+          "A": "północnej.",
+          "B": "kokoszej.",
+          "C": "trzydziestoletniej.",
+          "D": "trzynastoletniej."
+        }
       },
       "requires_justification": false,
       "answer": "D.\nD.",
-      "answer_key": "D",
+      "answer_key": {
+        "1": "D",
+        "2": "D"
+      },
       "scoring": "2 p. – za dwie poprawne odpowiedzi.\n1 p. – za jedną poprawną odpowiedź.\n0 p. – za odpowiedzi błędne lub za brak odpowiedzi.",
       "scoring_notes": "",
       "auto_gradable": true,
@@ -44396,39 +43487,6 @@
       "split": "train"
     },
     {
-      "id": "2016-maj-stara-P-zad17",
-      "session_key": "2016-maj-stara-P",
-      "year": 2016,
-      "session": "maj",
-      "formula": "stara",
-      "exam_date": "2016-05",
-      "level": "podstawowy",
-      "task": "17",
-      "group": 17,
-      "max_points": 2,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Na podstawie tekstów źródłowych oraz własnej wiedzy wykonaj polecenia.\nŹródło 1. Pokój religijny w Augsburgu z 1555 r. [fragment]\n3. Nie ma też Cesarski Majestat, My, ani elektorowie, ni książęta, ni stany świętego państwa, prześladować żadnego stanu państwa z powodu [wyznania] konfesji augsburskiej, ani inną drogą od tej religii wyznania augsburskiego, wiary, obrzędów kościelnych, zarządzeń i ceremonii [nie ma] odrywać [...].\n4. W zamian zaś stany, które należą do wyznania augsburskiego, w równej mierze mają pozostawić bez nagabywania przy ich religii rzymski Majestat Cesarski, Nas i elektorów, książąt i inne stany państwa świętego, które stoją przy starej religii.\n5. Jednak wszyscy inni, którzy do jednej z wyżej wymienionych religii nie należą, nie mają być niniejszym pokojem objęci, lecz zupełnie wyłączeni.\nWiek XVI–XVIII w źródłach. Wybór tekstów źródłowych z propozycjami metodycznymi dla nauczycieli historii i studentów, oprac. M. Sobańska-Bondaruk, S.B. Lenard, Warszawa 1997, s. 137.\nŹródło 2. Akt konfederacji generalnej warszawskiej z 28 stycznia 1573 r. [fragment]\nW Rzeczypospolitej naszej jest [...] różność niemała [...] w sprawie religii chrześcijańskiej, zabiegając temu, aby się z tej przyczyny między ludźmi saeditio [bunt] jaka szkodliwa nie wszczęła, którą po inszych królestwach jaśnie widzimy, obiecujemy to sobie spólnie [...] za nas i potomków naszych na wieczne czasy pod obowiązkiem przysięgi, wiarą, uczciwością, honorem i sumieniem naszym, iż którzy jesteśmy [...] rozróżnieni w wierze, pokój między sobą zachować, a dla różnej wiary i odmiany w kościele krwie nie przelewać ani się [...] karać konfiskatą dóbr [...], więzieniem i wygnaniem i zwierzchności żadnej ani urzędowi do takowego [...] postępowania żadnym sposobem nie pomagać [...].\nWiek XVI–XVIII w źródłach. Wybór tekstów źródłowych z propozycjami metodycznymi dla nauczycieli historii i studentów, oprac. M. Sobańska-Bondaruk, S.B. Lenard, Warszawa 1997, s. 146–147.",
-      "question": "Określ, w którym z dokumentów nadano szerszy zakres swobód wyznaniowych.\nOdpowiedź uzasadnij, odnosząc się do obu źródeł.",
-      "answer": "Szerszy zakres swobód wyznaniowych przyznano w źródle 2.\nPrzykładowe uzasadnienie\nPokój augsburski przyznawał wolność wyznania tylko katolikom i wyznawcom luteranizmu\n(ewangelikom augsburskim), natomiast konfederacja warszawska przyznawała wolność\nwyznania katolikom oraz przedstawicielom wszystkich wyznań reformowanych.",
-      "answer_key": null,
-      "scoring": "2 p. – za prawidłowe rozstrzygnięcie z odwołaniem do obu źródeł.\n1 p. – za prawidłowe rozstrzygnięcie z odwołaniem do jednego źródła.\n0 p. – za odpowiedź błędną lub brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": false,
-      "visual_reason": null,
-      "images": [],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/MHI-P1_1P-162.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/zasady_oceniania/MHI-P1-S.pdf",
-        "pages": [
-          14,
-          15
-        ]
-      },
-      "split": "train"
-    },
-    {
       "id": "2016-maj-stara-P-zad18",
       "session_key": "2016-maj-stara-P",
       "year": 2016,
@@ -44476,17 +43534,27 @@
       "context": "Na podstawie tekstu źródłowego oraz własnej wiedzy wykonaj polecenia.\nWespazjan Kochowski1, Dzieje Polski pod panowaniem króla Michała [fragment] Turek po wzięciu Kamieńca w dalszą wybrał się drogę […], wojska na dwie części rozdzielił: jedna leżała obozem pod […], tam był sam cesarz i do niego nareszcie przypuszczeni zostali komisarze [posłowie]; drugie wojsko oblegało Lwów, usilnie dobywając miasta. Przystępuję teraz do [opisania postanowień] traktatów. […]\n2. Co rok Najjaśniejszy król polski przez posłów swoich Najjaśniejszej Porcie przesyłać będzie w upominku 22 000 czerwonych złotych2, zaczynając – po skończeniu roku 1672 – od roku przyszłego, tj. 1673 dnia 5 listopada, tj. dnia św. Dymitra […].\n3. Podole wedle dawnych granic zostawać ma pod zwierzchnictwem Porty ottomańskiej […].\n4. Załogi polskie będące na Podolu wyjdą ze swymi sługami i dobrami ruchomymi i własną bronią. Zaś Porta ottomańska zatrzyma dla siebie zamki i miasta, które wzięte zostały lub poddały się, wyjąwszy województwo ruskie.\n1 Wespazjan Kochowski (1633–1700) – historyk i poeta doby polskiego baroku, autor Annalium Poloniae ab obitu Vladislai IV [łac. Roczników polskich od śmierci Władysława IV].\n2 Czerwony złoty – staropolskie określenie złotej monety.\nTeksty źródłowe do nauki historii w szkole, nr 17, Warszawa 1960, s. 13–14.",
       "question": "Zaznacz poprawne dokończenie zdań.\nTraktat, którego warunki wymieniono w tekście, został zawarty w\nA. Andruszowie.\nB. Buczaczu.\nC. Chocimiu.\nD. Karłowicach.\nWładca państwa, z którym strona polska podpisała traktat, nosił tytuł\nA. chana.\nB. emira.\nC. cara.\nD. sułtana.",
       "options": {
-        "A": "chana.",
-        "B": "emira.",
-        "C": "cara.",
-        "D": "sułtana."
+        "1": {
+          "stem": "Traktat, którego warunki wymieniono w tekście, został zawarty w",
+          "A": "Andruszowie.",
+          "B": "Buczaczu.",
+          "C": "Chocimiu.",
+          "D": "Karłowicach."
+        },
+        "2": {
+          "stem": "Władca państwa, z którym strona polska podpisała traktat, nosił tytuł",
+          "A": "chana.",
+          "B": "emira.",
+          "C": "cara.",
+          "D": "sułtana."
+        }
       },
       "requires_justification": false,
       "answer": "B.\nD.",
-      "answer_key": [
-        "B",
-        "D"
-      ],
+      "answer_key": {
+        "1": "B",
+        "2": "D"
+      },
       "scoring": "2 p. – za dwie poprawne odpowiedzi.\n1 p. – za jedną poprawną odpowiedź.\n0 p. – za odpowiedź błędną lub brak odpowiedzi.",
       "scoring_notes": "",
       "auto_gradable": true,
@@ -44550,17 +43618,27 @@
       "context": "Na podstawie tekstu źródłowego oraz własnej wiedzy wykonaj polecenie.\nDyplomata francuski Bonnac1 o reformach […] [fragment] Car […] przeto postanowił zmienić wszystkie zasady swych poprzedników, by dojść do zmiany obyczajów swego ludu. […] Zmusił swych poddanych do odbywania podróży i sam przepisał im rzeczy, których winni się uczyć: zarazem przez przywileje i nagrody ściągnął cudzoziemców do swego państwa. […] Wydał ogólny rozkaz, by wszyscy jego poddani golili się i nosili krótki ubiór na modłę francuską. By szybciej dojść do celu, ustanowił przy bramach głównych swych miast oddziały strażników, którzy ucinali nożycami ubrania i brody wszystkim wchodzącym i wychodzącym, którzy nie zastosowali się do rozkazu. […] Niektórzy [bojarzy] dla zachowania długiej brody i szat płacili do trzydziestu tysięcy rubli.\n1 Jean Louis de Bonnac (1672–1738) – dyplomata francuski w czasach Ludwika XIV. Pełnił funkcję przedstawiciela Francji na dworach Karola XII i Stanisława Leszczyńskiego. W swoich dziennikach zrelacjonował przebieg pierwszej dekady wielkiej wojny północnej.\nWiek XVI–XVIII w źródłach. Wybór tekstów źródłowych z propozycjami metodycznymi dla nauczycieli historii i studentów, oprac. M. Sobańska-Bondaruk, S.B. Lenard, Warszawa 1997, s. 379.",
       "question": "Zaznacz poprawne dokończenie zdań.\nOpisanej modernizacji państwa dokonano zgodnie z ideami\nA. reformacji.\nB. oświecenia.\nC. odrodzenia.\nD. liberalizmu.\nReformy, których dotyczy tekst, polegały na\nA. liberalizacji obyczajów.\nB. sekularyzacji obyczajów.\nC. europeizacji obyczajów.\nD. orientalizacji obyczajów.",
       "options": {
-        "A": "liberalizacji obyczajów.",
-        "B": "sekularyzacji obyczajów.",
-        "C": "europeizacji obyczajów.",
-        "D": "orientalizacji obyczajów."
+        "1": {
+          "stem": "Opisanej modernizacji państwa dokonano zgodnie z ideami",
+          "A": "reformacji.",
+          "B": "oświecenia.",
+          "C": "odrodzenia.",
+          "D": "liberalizmu."
+        },
+        "2": {
+          "stem": "Reformy, których dotyczy tekst, polegały na",
+          "A": "liberalizacji obyczajów.",
+          "B": "sekularyzacji obyczajów.",
+          "C": "europeizacji obyczajów.",
+          "D": "orientalizacji obyczajów."
+        }
       },
       "requires_justification": false,
       "answer": "B.\nC.",
-      "answer_key": [
-        "B",
-        "C"
-      ],
+      "answer_key": {
+        "1": "B",
+        "2": "C"
+      },
       "scoring": "2 p. – za dwie poprawne odpowiedzi.\n1 p. – za jedną poprawną odpowiedź.\n0 p. – za odpowiedź błędną lub brak odpowiedzi.",
       "scoring_notes": "",
       "auto_gradable": true,
@@ -44828,17 +43906,27 @@
       "context": "Na podstawie tekstu źródłowego oraz własnej wiedzy wykonaj polecenie.\nDziało się na posiedzeniu połączonych Izb Sejmowych [...] w Warszawie. [...] Długie cierpienia nasze znane światu całemu; [...] Naród polski od wierności dziś Panującemu uwalniają. [...] Wyrzeczone na koniec przez samego Cesarza […] słowa, że pierwszy z strony naszej wystrzał stanie się na zawsze zatracenia Polski hasłem, odejmując nam wszelką sprostowania krzywd naszych nadzieję, nie zostawują jak rozpacz szlachetną.\nNaród zatem polski, na Sejm zebrany, oświadcza: iż jest niepodległym ludem i że ma prawo temu koronę polską oddać, którego godnym jej uzna.\nT. Łepkowski, […], Warszawa 1987, s. 17.",
       "question": "Zaznacz prawidłowe dokończenie zdań.\nWydarzenia opisane w źródle miały miejsce podczas\nA. powstania kościuszkowskiego.\nB. powstania listopadowego.\nC. powstania krakowskiego.\nD. powstania styczniowego.\nCesarz, o którym mowa w tekście, to\nA. Aleksander I.\nB. Aleksander II.\nC. Mikołaj I.\nD. Mikołaj II.",
       "options": {
-        "A": "Aleksander I.",
-        "B": "Aleksander II.",
-        "C": "Mikołaj I.",
-        "D": "Mikołaj II."
+        "1": {
+          "stem": "Wydarzenia opisane w źródle miały miejsce podczas",
+          "A": "powstania kościuszkowskiego.",
+          "B": "powstania listopadowego.",
+          "C": "powstania krakowskiego.",
+          "D": "powstania styczniowego."
+        },
+        "2": {
+          "stem": "Cesarz, o którym mowa w tekście, to",
+          "A": "Aleksander I.",
+          "B": "Aleksander II.",
+          "C": "Mikołaj I.",
+          "D": "Mikołaj II."
+        }
       },
       "requires_justification": false,
       "answer": "B.\nC.",
-      "answer_key": [
-        "B",
-        "C"
-      ],
+      "answer_key": {
+        "1": "B",
+        "2": "C"
+      },
       "scoring": "2 p. – za dwie poprawne odpowiedzi.\n1 p. – za jedną poprawną odpowiedź.\n0 p. – za odpowiedź błędną lub brak odpowiedzi.",
       "scoring_notes": "",
       "auto_gradable": true,
@@ -45043,14 +44131,27 @@
       "context": "Na podstawie tekstu źródłowego oraz własnej wiedzy wykonaj polecenie\nFragment opracowania historycznego Tymczasem po drugiej stronie frontu, w Warszawie, powołana została do życia tajna organizacja wojskowa. Zainicjował ją […] Adam Koc, oficer „Strzelca” krakowskiego […].\nJuż w dniach 6–8 września odbyło się zebranie porozumiewawcze, zakończone uchwałą o utworzeniu organizacji oddającej się pod rozkazy Komendanta Głównego J. Piłsudskiego.\nRozpoczęto budowę sieci organizacyjnej, obsadzając jej okręgi i obwody w miarę nadających się na kierownicze stanowiska ludzi. […] Wreszcie 21 października 1914 r. przedostał się przez front i przybył do Warszawy porucznik Tadeusz Żuliński, oficer sztabu Komendanta, i z jego nominacji objął komendę naczelną.\nW. Pobóg-Malinowski, Najnowsza historia polityczna Polski, t. II, 1914–1939, Warszawa 2000, s. 29.",
       "question": "Zaznacz prawidłowe dokończenie zdań.\nOrganizacja, o której mowa w tekście, to\nA. Związek Walki Czynnej.\nB. Związek Walki Zbrojnej.\nC. Służba Zwycięstwu Polski.\nD. Polska Organizacja Wojskowa.\nOrganizacja ta nawiązywała do\nA. orientacji na Rosję.\nB. orientacji na Austro-Węgry.\nC. orientacji internacjonalistycznej (SDKPiL).\nD. orientacji niepodległościowej.",
       "options": {
-        "A": "orientacji na Rosję.",
-        "B": "orientacji na Austro-Węgry.",
-        "C": "orientacji internacjonalistycznej (SDKPiL).",
-        "D": "orientacji niepodległościowej."
+        "1": {
+          "stem": "Organizacja, o której mowa w tekście, to",
+          "A": "Związek Walki Czynnej.",
+          "B": "Związek Walki Zbrojnej.",
+          "C": "Służba Zwycięstwu Polski.",
+          "D": "Polska Organizacja Wojskowa."
+        },
+        "2": {
+          "stem": "Organizacja ta nawiązywała do",
+          "A": "orientacji na Rosję.",
+          "B": "orientacji na Austro-Węgry.",
+          "C": "orientacji internacjonalistycznej (SDKPiL).",
+          "D": "orientacji niepodległościowej."
+        }
       },
       "requires_justification": false,
       "answer": "D.\nD.",
-      "answer_key": "D",
+      "answer_key": {
+        "1": "D",
+        "2": "D"
+      },
       "scoring": "2 p. – za dwie poprawne odpowiedzi.\n1 p. – za jedną poprawną odpowiedź.\n0 p. – za odpowiedzi błędne lub za brak odpowiedzi.",
       "scoring_notes": "",
       "auto_gradable": true,
@@ -49998,111 +49099,6 @@
         "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/Zasady_ocenienia/MHI-P1_1P-182_zasady_oceniania.pdf",
         "pages": [
           8
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2018-maj-stara-P-zad9.1",
-      "session_key": "2018-maj-stara-P",
-      "year": 2018,
-      "session": "maj",
-      "formula": "stara",
-      "exam_date": "2018-05",
-      "level": "podstawowy",
-      "task": "9.1",
-      "group": 9,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Na podstawie źródeł oraz własnej wiedzy wykonaj polecenia.\nŹródło 1. Anonim tzw. Gall, Kronika polska [fragment]\nJak zaś doszło do wypędzenia króla Bolesława z Polski, długo byłoby o tym mówić; tyle wszakże można powiedzieć, że sam będąc pomazańcem [Bożym], nie powinien był [drugiego] pomazańca za żaden grzech karać cieleśnie. Wiele mu to bowiem zaszkodziło, gdy przeciw grzechowi grzech zastosował i za zdradę wydał biskupa na obcięcie członków.\nAnonim tzw. Gall, Kronika polska, Wrocław 1989, s. 54.\nŹródło 2. Fragmenty tzw. Drzwi Gnieźnieńskich\n[OBRAZ]\nT. Chrzanowski, Z. Żygulski jun., Polska. Skarby wieków, Kraków 2001, s. 134.",
-      "question": "Rozstrzygnij, czy źródło 2. jest ilustracją wydarzenia opisane w źródle 1. Odpowiedź uzasadnij.\nRozstrzygnięcie:\nUzasadnienie:",
-      "answer": "Nie, ponieważ w źródle 1. jest mowa o śmierci biskupa Stanisława, natomiast na Drzwiach\nGnieźnieńskich została upamiętniona męczeńska śmierć biskupa Wojciecha.",
-      "answer_key": null,
-      "scoring": "1 p. – za poprawną odpowiedź.\n0 p. – za odpowiedź błędną lub za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": true,
-      "visual_reason": "image_in_task",
-      "images": [
-        "images/2018-maj-stara-P-zad9.1-1.png"
-      ],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/historia/MHI-P1_1P-182.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/Zasady_ocenienia/MHI-P1_1P-182_zasady_oceniania.pdf",
-        "pages": [
-          8,
-          9
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2018-maj-stara-P-zad9.2",
-      "session_key": "2018-maj-stara-P",
-      "year": 2018,
-      "session": "maj",
-      "formula": "stara",
-      "exam_date": "2018-05",
-      "level": "podstawowy",
-      "task": "9.2",
-      "group": 9,
-      "max_points": 2,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Na podstawie źródeł oraz własnej wiedzy wykonaj polecenia.\nŹródło 1. Anonim tzw. Gall, Kronika polska [fragment]\nJak zaś doszło do wypędzenia króla Bolesława z Polski, długo byłoby o tym mówić; tyle wszakże można powiedzieć, że sam będąc pomazańcem [Bożym], nie powinien był [drugiego] pomazańca za żaden grzech karać cieleśnie. Wiele mu to bowiem zaszkodziło, gdy przeciw grzechowi grzech zastosował i za zdradę wydał biskupa na obcięcie członków.\nAnonim tzw. Gall, Kronika polska, Wrocław 1989, s. 54.\nŹródło 2. Fragmenty tzw. Drzwi Gnieźnieńskich\n[OBRAZ]\nT. Chrzanowski, Z. Żygulski jun., Polska. Skarby wieków, Kraków 2001, s. 134.",
-      "question": "Podaj przydomek władcy, o którym pisze kronikarz, oraz imię biskupa wspomnianego w źródle 1.\nPrzydomek władcy:\nImię biskupa:",
-      "answer": "• Śmiały / Szczodry\n• Stanisław",
-      "answer_key": null,
-      "scoring": "2 p. – za odpowiedź zawierającą dwa elementy.\n1 p. – za odpowiedź zawierającą jeden element.\n0 p. – za odpowiedź błędną lub za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": true,
-      "visual_reason": "image_in_task",
-      "images": [
-        "images/2018-maj-stara-P-zad9.2-1.png"
-      ],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/historia/MHI-P1_1P-182.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/Zasady_ocenienia/MHI-P1_1P-182_zasady_oceniania.pdf",
-        "pages": [
-          8,
-          9
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2018-maj-stara-P-zad9.3",
-      "session_key": "2018-maj-stara-P",
-      "year": 2018,
-      "session": "maj",
-      "formula": "stara",
-      "exam_date": "2018-05",
-      "level": "podstawowy",
-      "task": "9.3",
-      "group": 9,
-      "max_points": 1,
-      "type": "open_short",
-      "choice_group": null,
-      "context": "Na podstawie źródeł oraz własnej wiedzy wykonaj polecenia.\nŹródło 1. Anonim tzw. Gall, Kronika polska [fragment]\nJak zaś doszło do wypędzenia króla Bolesława z Polski, długo byłoby o tym mówić; tyle wszakże można powiedzieć, że sam będąc pomazańcem [Bożym], nie powinien był [drugiego] pomazańca za żaden grzech karać cieleśnie. Wiele mu to bowiem zaszkodziło, gdy przeciw grzechowi grzech zastosował i za zdradę wydał biskupa na obcięcie członków.\nAnonim tzw. Gall, Kronika polska, Wrocław 1989, s. 54.\nŹródło 2. Fragmenty tzw. Drzwi Gnieźnieńskich\n[OBRAZ]\nT. Chrzanowski, Z. Żygulski jun., Polska. Skarby wieków, Kraków 2001, s. 134.",
-      "question": "Wyjaśnij, dlaczego w XIII w. politycznego znaczenia nabrała legenda o cudownym zrośnięciu się członków biskupa, o którym mowa w źródle 1.",
-      "answer": "Przykładowa odpowiedź\nBiskup Stanisław stał się symbolem idei zjednoczenia państwa polskiego w XIII w. Wierzono,\nże rozbita na dzielnice Polska zjednoczy się tak, jak według legendy, w cudowny sposób zrosły\nsię członki zamordowanego biskupa.",
-      "answer_key": null,
-      "scoring": "1 p. – za poprawną odpowiedź.\n0 p. – za odpowiedź błędną lub za brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": true,
-      "visual_reason": "image_in_task",
-      "images": [
-        "images/2018-maj-stara-P-zad9.3-1.png"
-      ],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/historia/MHI-P1_1P-182.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/Zasady_ocenienia/MHI-P1_1P-182_zasady_oceniania.pdf",
-        "pages": [
-          8,
-          9
         ]
       },
       "split": "train"
@@ -56207,38 +55203,6 @@
       "images": [
         "images/2020-maj-stara-P-zad9-1.png"
       ],
-      "source": {
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/historia/MHI-P1_1P-202s.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/Zasady_oceniania/MHI-PP-202s_zasady.pdf",
-        "pages": [
-          5
-        ]
-      },
-      "split": "train"
-    },
-    {
-      "id": "2020-maj-stara-P-zad10",
-      "session_key": "2020-maj-stara-P",
-      "year": 2020,
-      "session": "maj",
-      "formula": "stara",
-      "exam_date": "2020-05",
-      "level": "podstawowy",
-      "task": "10",
-      "group": 10,
-      "max_points": 3,
-      "type": "open_long",
-      "choice_group": null,
-      "context": "",
-      "question": "Na podstawie tekstów rozpoznaj władców Polski. Wpisz właściwe imiona.\nFragment Kroniki polskiej Galla Anonima Władca Polski\n1. Jak zaś doszło do wypędzenia króla [...] z Polski, długo byłoby o tym mówić; tyle wszakże można powiedzieć, że sam będąc pomazańcem [Bożym] nie powinien był [drugiego] pomazańca za żaden grzech karać cieleśnie. [...] My zaś ani nie usprawiedliwiamy biskupa-zdrajcy ani nie zalecamy króla, który tak szpetnie dochodził swych praw.\n2. Dotychczas jednak w takich był pogrążony błędach pogaństwa, że wedle swego zwyczaju siedmiu żon zażywał.\nW końcu zażądał w małżeństwo jednej bardzo dobrej chrześcijanki z Czech. [...] Pani owa przybyła do Polski z wielkim orszakiem dostojników świeckich i duchownych.\n3. Również i to uważamy za godne przekazania pamięci, że za jego czasów cesarz Otto [...] przybył do [grobu] św. Wojciecha dla modlitwy i pojednania, a zarazem w celu poznania sławnego [władcy], jak o tym można dokładnie przeczytać w księdze o męczeństwie tego świętego.\nAnonim, tzw. Gall, Kronika polska, Wrocław 1982, s. 17, 19, 50–51.",
-      "answer": "1. Bolesław Śmiały (Szczodry)\n2. Mieszko I\n3. Bolesław Chrobry",
-      "answer_key": null,
-      "scoring": "3 pkt – za trzy poprawne odpowiedzi.\n2 pkt – za dwie poprawne odpowiedzi.\n1 pkt – za jedną poprawną odpowiedź.\n0 pkt – za błędną odpowiedź lub brak odpowiedzi.",
-      "scoring_notes": "",
-      "auto_gradable": false,
-      "needs_visual": false,
-      "visual_reason": null,
-      "images": [],
       "source": {
         "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/historia/MHI-P1_1P-202s.pdf",
         "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/Zasady_oceniania/MHI-PP-202s_zasady.pdf",
