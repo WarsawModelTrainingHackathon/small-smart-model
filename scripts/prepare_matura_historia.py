@@ -280,7 +280,12 @@ def join_text(lines):
             if prev.endswith('-') and not prev.endswith(' -') and re.match(r'[a-ząćęłńóśźż]', t):
                 out[-1] = prev[:-1] + t
                 continue
-            if l.get('nl') or prev_nl or re.match(r'^([A-F]\.|\d+\.|•|–|Źródło|Fragment|Temat|Rozstrzygnięcie|Uzasadnienie|P$|F$|Tak$|Nie$)', t) or \
+            if prev.endswith('-') and re.match(r'-[a-ząćęłńóśźż]', t):  # Polish repeated hyphen: 'królewsko-\n-hiszpański'
+                out[-1] = prev + t[1:]
+                continue
+            if l.get('nl') or prev_nl or re.fullmatch(r'\n?(P|F|Tak|Nie)', prev) or \
+               re.match(r'^Źródło\s*\d+\.\s.{0,90}$', prev.strip()) and not re.search(r'[,–-]$', prev) or \
+               re.match(r'^(Na podstawie|Źródło:)', t) or re.match(r'^([A-F]\.|\d+\.|•|–|Źródło|Fragment|Temat|Rozstrzygnięcie|Uzasadnienie|P$|F$|Tak$|Nie$)', t) or \
                re.search(r'[.:;!?”"]$', prev) and (t[:1].isupper() or t[:1].isdigit()):
                 out.append('\n' + t)
             else:
@@ -340,6 +345,13 @@ def parse_zasady(path):
                 if not t or PAGE_JUNK.match(t) or l['bbox'][1] > H - 40 or l['bbox'][1] >= cut - 1:
                     continue
                 lines.append(t)
+    merged = []  # a bullet drawn as its own text line ('•' then the item text): keep them together
+    for t in lines:
+        if merged and merged[-1] in ('•', '–') and not HEADER_RE.match(t):
+            merged[-1] += ' ' + t
+        else:
+            merged.append(t)
+    lines = merged
     tasks = {}
     cur = None
     for t in lines:
