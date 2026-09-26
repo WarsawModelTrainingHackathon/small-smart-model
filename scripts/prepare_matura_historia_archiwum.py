@@ -9,9 +9,9 @@ Run AFTER scripts/prepare_matura_historia.py (it rewrites data.json/manifest.jso
     uv run scripts/prepare_matura_historia.py --offline
     uv run scripts/prepare_matura_historia_archiwum.py [--archive-dir DIR] [--offline]
 
-Archival PDFs are NOT committed: they are cached in data/matura-historia/raw-archiwum/ (git-ignored), copied from
---archive-dir if present there (files named as in the archive manifest), otherwise downloaded from the CKE source
-URLs below; every file is verified against its SHA-256.
+The PDFs of the parsed sessions are committed in data/matura-historia/raw-archiwum/ (named by session_key); missing
+ones are copied from --archive-dir (the full archive, data/matura-historia/archiwum-src/, files named as in its
+manifest.json) or downloaded from the CKE source URLs below. Every file is verified against its SHA-256.
 
 Sessions (all -> split 'train'):
   * formula 2015 extras: grudzień 2013 przykładowy, grudzień 2014 próbny, maj 2024 (EHIP, formula 2015 retake).
@@ -68,6 +68,15 @@ ARCHIVE = {
     '2020-maj-stara-P': (2020, 'maj', 'stara', 'P', f'{CKE}/Arkusze_egzaminacyjne/2020/formula_do_2014/historia/MHI-P1_1P-202s.pdf', '3cf6c53ddd3c3af4d98a395be9343411acfb70c122d508bb1d85fb34a96e2265', f'{CKE}/Arkusze_egzaminacyjne/2020/formula_do_2014/Zasady_oceniania/MHI-PP-202s_zasady.pdf', '8aec1531767607762d0fb97c32a4fd9a0a4221acf2152175a1a90f425fa6a3e7'),
     '2020-maj-stara-R': (2020, 'maj', 'stara', 'R', f'{CKE}/Arkusze_egzaminacyjne/2020/formula_do_2014/historia/MHI-R1_1R-202s.pdf', '449e9d235c85ea0e0fe1ce1b065a38f46b840750ad86a95347f41ecbbcc7482f', f'{CKE}/Arkusze_egzaminacyjne/2020/formula_do_2014/Zasady_oceniania/MHI-PR-202s_zasady.pdf', '3ac087cd901f5331441b0f3d44613506c31df5db2928bec9fb33d1bbbfe82dc2'),
 }
+# sessions parsed but NOT shipped (validation failed); reported in manifest['archival']['skipped']
+EXCLUDE = {
+    '2013-grudzien-przykladowy-f2015-R': 'multi-part tasks: sub-tasks N.1/N.2 are inline lines in the arkusz and grouped '
+        'under one Rozwiązanie/Schemat block in the zasady; the parser merged them into one item per task (empty context, '
+        'mixed types); not validated, dropped',
+    '2014-grudzien-probny-f2015-R': 'multi-part tasks: sub-tasks N.1/N.2 are inline lines in the arkusz and in the '
+        'zasady; the parser merged them into one item per task (empty context, mixed types); not validated, dropped',
+}
+PUA = str.maketrans({'\uf020': ' ', '\uf02d': '–', '\uf0fc': '•', '\uf0d8': '•', '\uf0b7': '•', '\uf0a7': '•', 'ĳ': 'ij'})  # Symbol/Wingdings bullets; 'ĳ' ligature (2010 R)
 OFFICIAL_MAX = {('f2015', 'R'): 50, ('stara', 'R'): 50, ('stara', 'P'): 100}
 LEVEL = {'P': 'podstawowy', 'R': 'rozszerzony'}
 EXAM_MONTH = {'maj': '05', 'czerwiec': '06', 'grudzien-przykladowy': '12', 'grudzien-probny': '12'}
@@ -111,7 +120,8 @@ SUB_LINE = re.compile(r'^(\d+)\.(\d+)\.?(?:\s+(.*))?$')  # '2.1. Podaj' (also '6
 ROMAN_TOPIC = re.compile(r'^Temat\s+(I{1,3}|IV)\b\.?\s*(.*)$')  # 2018 R: 'Temat I' / 'Temat II'
 # essay criteria headings of old-formula zasady (2020: 'Kryteria szczegółowe dla poszczególnych poziomów')
 # old-formula zasady introduce answers with 'Przykłady poprawnych odpowiedzi' (kept as the answer, label included)
-P.EXAMPLE_M = re.compile(P.EXAMPLE_M.pattern + r'|^Przykłady?\s+poprawn\w+\s+odpowiedzi\w*\s*:?\s*$')
+# ... also 'Przykład poprawnej odpowiedź' (CKE typo, 2011 P / 2013 R), 'Przykłady poprawnych argumentów/cech:' (2013-2014 R)
+P.EXAMPLE_M = re.compile(P.EXAMPLE_M.pattern + r'|^Przykłady?\s+(poprawn|prawidłow)\w+\s+\w+\s*:?\s*$')
 P.SOLUTION_M = re.compile(P.SOLUTION_M.pattern.replace('|Prawidłowa odpowiedź|', '|Prawidłowa odpowiedź|Poprawna podpowiedź|'))  # CKE typo, 2012 P
 P.ESSAY_CRIT = re.compile(P.ESSAY_CRIT.pattern[:-1] + r'|Kryteri(a|um) szczegółowe\b|Poziom I{1,3}\b)')
 
@@ -141,6 +151,7 @@ def points_table(pdf):
             if near and abs(near[0] - cx) < 20:
                 res[t.rstrip('.')] = int(near[1])
     return res
+CARD = re.compile(r'PESEL|WYPE[ŁL£]NIA\s+(ZDAJ|EGZAM)')
 JUNK = re.compile(r'^(TEMAT:.*|Poziom (rozszerzony|podstawowy)|CZĘŚĆ\s+I{1,3}\b.*|Część\s+I{1,3}\b.*|Egzamin maturalny z historii.*)$')
 SRC_LETTER = re.compile(r'^Źródło\s+([A-L])\b\.?\s*(.*)$')
 SRC_INSTR = re.compile(r'^(Na podstawie|Wykorzystując|Korzystając z|Odwołując się do)\s+źród\w+\s+(.*)$')
@@ -159,7 +170,8 @@ def mk(l, text):
 
 # ---------- 2010-2014 ('Kryteria oceniania odpowiedzi'): sub-parts 'A. (0–1)' in the zasady, 'A. Podaj ...' in the arkusz
 
-SUBPART_Z = re.compile(r'^([A-F])\.\s*\(\s*0\s*[–−-]\s*(\d+)\s*\)$')
+SUBPART_Z = re.compile(r'^([A-F])\.\s*\(?\s*0\s*[–−-]\s*(\d+)\s*\)$')
+AREA = re.compile(r'^(Korzystanie z informacji|Wiadomości i rozumienie|Tworzenie informacji)$')
 SCORE_LINE = re.compile(r'^\d+\s*(p|pkt|punkt\w*)\.?\s*[–-]')
 ZJUNK = re.compile(r'^(Kryteria oceniania odpowiedzi.*|Obszar standardów|Opis wymagań|Obszar standardów\s+Opis wymagań|\d{1,2})$')
 
@@ -192,7 +204,14 @@ def bucketize(lines):
         if SCORE_LINE.match(t) and state in ('solution', 'req'):
             state = 'scoring'
         b[state].append(t)
-    return {k: '\n'.join(b[v]).strip() for k, v in (('scoring', 'scoring'), ('answer', 'solution'), ('notes', 'notes'))}
+    r = {k: '\n'.join(b[v]).strip() for k, v in (('scoring', 'scoring'), ('answer', 'solution'), ('notes', 'notes'))}
+    if not r['answer']:  # 2010 keys state the answer only in the scoring rule ('1 p. – za podkreślenie imienia Klejstenes
+        # (3)'), or split a table task into '1. Przykładowe odpowiedzi' / '2. Poprawna odpowiedź ...': the key text as
+        # printed, from the first scoring rule on, is the answer
+        i = next((n for n, t in enumerate(lines) if SCORE_LINE.match(t)), None)
+        if i is not None:
+            r['answer'] = re.sub(r'(\n\s*(Część|CZĘŚĆ)\s+I{1,3}\.?\s*)+$', '', '\n'.join(lines[i:]).strip())
+    return r
 
 
 def parse_zasady_old(path):
@@ -226,14 +245,19 @@ def parse_zasady_old(path):
     out = {}
     for k, t in tasks.items():
         subs, pre = [], []
-        for x in t['lines']:
+        for j, x in enumerate(t['lines']):
             m = SUBPART_Z.match(x)
             if m and m.group(1) == chr(65 + len(subs)):
                 subs.append(dict(points=int(m.group(2)), lines=[]))
+            elif x == f'{chr(65 + len(subs))}.' and AREA.match(t['lines'][j + 1] if j + 1 < len(t['lines']) else ''):
+                subs.append(dict(points=None, lines=[]))  # 2010: bare 'A.' + standards area; points from its scoring rule
             elif subs:
                 subs[-1]['lines'].append(x)
             else:
                 pre.append(x)
+        for sp in subs:
+            if sp['points'] is None:
+                sp['points'] = max((int(m.group(1)) for x in sp['lines'] for m in [re.match(r'^(\d+)\s*p\.?\s*[–-]', x)] if m), default=0)
         if subs:
             if sum(sp['points'] for sp in subs) != t['points']:
                 raise Skip(f'zasady zad {k}: sub-parts sum {sum(sp["points"] for sp in subs)} != {t["points"]}')
@@ -318,10 +342,25 @@ def stara_hook(level, report_w, key, table, lettered=False):
 
     def run(lines, zas):
         zas_[0] = zas
+        # 2010-2011: the karta odpowiedzi (PESEL box, score grid) follows the last task on its own page and its text
+        # is merged into the last line of the paper: cut there and drop everything after it
+        # (the cover page also has a PESEL box: search only after the first task header)
+        h1 = next((i for i, l in enumerate(lines) if not l['img'] and OLD_HEAD.match(l['text'])), len(lines))
+        k = next((i for i, l in enumerate(lines) if i > h1 and not l['img'] and CARD.search(l['text'])), None)
+        if k is not None:
+            head = lines[k]['text'][:CARD.search(lines[k]['text']).start()].strip()
+            card_page = lines[k]['page']
+            lines = lines[:k] + ([mk(lines[k], head)] if head else [])
+            report_w.append(f'{key}: karta odpowiedzi text from p.{card_page + 1} dropped')
         ls = []
+        theme = False
         for l in lines:
             if not l['img'] and re.fullmatch(r'\d{1,2}', l['text']) and l['y0'] < 70:  # page number (2010-2014)
                 continue
+            # R part II theme heading 'TEMAT: ...' wraps onto a second all-caps line ('OD STAROŻYTNOŚCI DO XX W.')
+            if theme and not l['img'] and not re.search(r'[a-ząćęłńóśźż]', l['text']) and re.search(r'[A-ZĄĆĘŁŃÓŚŹŻ]{3}', l['text']):
+                continue
+            theme = not l['img'] and l['text'].startswith('TEMAT:')
             m = None if l['img'] else ROMAN_TOPIC.match(l['text'])
             if m:
                 l = mk(l, f'Temat {"I II III IV".split().index(m.group(1)) + 1}. {m.group(2)}'.strip())
@@ -592,12 +631,16 @@ def main():
     arch_keys = {session_key(s) for s in ARCHIVE}
     data['train'] = [d for d in data['train'] if d['session_key'] not in arch_keys]  # idempotent re-run
     report = dict(sessions={}, warnings=[], adapted_660={})
-    new, skipped, status, no_answer = [], {}, {}, []
+    new, skipped, status = [], {}, {}
     for stem in a.only or ARCHIVE:
         year, session, formula, level = ARCHIVE[stem][:4]
         key = session_key(stem)
         spec = (year, session, '2015', f'{year}-{EXAM_MONTH[session]}', ARCHIVE[stem][4], ARCHIVE[stem][6], None)
         w0 = len(report['warnings'])
+        if stem in EXCLUDE:
+            skipped[key] = EXCLUDE[stem]
+            print('SKIP', key, '-', skipped[key])
+            continue
         try:
             fetch(stem, raw, a.archive_dir, a.offline)
             if formula == 'f2015':
@@ -617,17 +660,21 @@ def main():
             bad = [w for w in report['warnings'][w0:] if 'no zasady' in w or 'not found in arkusz' in w or 'duplicate header' in w]
             if bad:
                 raise Skip('; '.join(bad))
+            empty = [d['id'] for d in items if d['type'] != 'essay' and not d['answer'].strip()]
+            if empty:  # the key text did not land in 'answer': the session would ship without keys, so it is not shipped
+                raise Skip(f'{len(empty)} items without a parsed answer: {empty}')
         except (Skip, SystemExit, StopIteration) as e:
             skipped[key] = str(e) or type(e).__name__
             report['sessions'].pop(key, None)
             print('SKIP', key, '-', skipped[key])
             continue
-        empty = [d['id'] for d in items if d['type'] != 'essay' and not d['answer'].strip()]
-        if empty:  # the key text did not land in 'answer' (answer inside the scoring table etc.): not shipped
-            report['warnings'].append(f'{key}: dropped {len(empty)} items without a parsed answer: {empty}')
-            no_answer.extend(empty)
-            items = [d for d in items if d['id'] not in empty]
         for d in items:
+            for f in ('context', 'question', 'answer', 'scoring', 'scoring_notes', 'scoring_raw', 'visual_reason'):
+                if isinstance(d.get(f), str):
+                    d[f] = d[f].translate(PUA)
+            for f in ('options', 'statements'):
+                if isinstance(d.get(f), dict):
+                    d[f] = {k: v.translate(PUA) if isinstance(v, str) else v for k, v in d[f].items()}
             fix_key(d)
             d['formula'] = 'stara' if formula == 'stara' else '2015'
             d['level'] = LEVEL[level]
@@ -662,14 +709,20 @@ def main():
     data['train'] = data['train'] + kept
     splits = data
     (out / 'data.json').write_text(json.dumps(splits, ensure_ascii=False, indent=2), encoding='utf-8', newline='\n')
-    by_era = lambda d: 'formula 2015 extras' if d['formula'] == '2015' else f'stara {d["year"]}'  # noqa: E731
+    def era(d):
+        if d['formula'] == '2015':
+            return 'formula 2015 extras'
+        return 'stara 2010-2014' if d['year'] < 2015 else 'stara 2015-2020 (retake sessions)'
     manifest['archival'] = dict(
-        description='Archival CKE papers added to TRAIN only by scripts/prepare_matura_historia_archiwum.py. PDFs are not '
-                    'committed (cache: raw-archiwum/, git-ignored); URLs and SHA-256 per session below.',
+        description='Archival CKE papers added to TRAIN only by scripts/prepare_matura_historia_archiwum.py. PDFs of the '
+                    'parsed sessions are in raw-archiwum/ (full archive: archiwum-src/); URLs and SHA-256 per session below.',
         sessions=status, skipped=skipped, parse_warnings=report['warnings'][:],
-        items=len(kept), points=sum(d['max_points'] for d in kept), dropped_no_answer=no_answer,
+        items=len(kept), points=sum(d['max_points'] for d in kept),
         type_counts=dict(Counter(d['type'] for d in kept)),
         level_counts=dict(Counter(d['level'] for d in kept)),
+        era_counts=dict(sorted(Counter(era(d) for d in kept).items())),
+        era_type_counts={e: dict(sorted(Counter(d['type'] for d in kept if era(d) == e).items())) for e in sorted({era(d) for d in kept})},
+        era_level_counts={e: dict(sorted(Counter(d['level'] for d in kept if era(d) == e).items())) for e in sorted({era(d) for d in kept})},
         formula_counts=dict(Counter(d['formula'] for d in kept)),
         needs_visual=sum(d['needs_visual'] for d in kept), auto_gradable=sum(d['auto_gradable'] for d in kept),
         leak_check=dict(rule='drop a new item if its normalised question or context has difflib ratio >= 0.8 with a dev/test '
@@ -683,6 +736,8 @@ def main():
     manifest['needs_visual']['train'] = sum(d['needs_visual'] for d in tr)
     manifest['auto_gradable']['train'] = sum(d['auto_gradable'] for d in tr)
     manifest['points']['train'] = sum(d['max_points'] or 0 for d in tr)
+    for k in arch_keys:  # idempotent re-run: no stale entries of skipped sessions
+        manifest['session_max_points'].pop(k, None)
     for k, v in status.items():
         manifest['session_max_points'][k] = v['max_points']
     (out / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding='utf-8', newline='\n')

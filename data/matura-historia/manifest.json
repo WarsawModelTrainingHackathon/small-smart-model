@@ -22,10 +22,8 @@
       "2012-czerwiec-stara-R",
       "2012-maj-stara-P",
       "2012-maj-stara-R",
-      "2013-grudzien-przykladowy-f2015",
       "2013-maj-stara-P",
       "2013-maj-stara-R",
-      "2014-grudzien-probny-f2015",
       "2014-maj-stara-P",
       "2014-maj-stara-R",
       "2015-maj-f2015",
@@ -66,18 +64,18 @@
     ]
   },
   "counts": {
-    "train": 1727,
+    "train": 1704,
     "dev": 42,
     "test": 81
   },
   "type_counts": {
     "train": {
-      "open_short": 1268,
-      "open_long": 99,
+      "open_short": 1280,
+      "open_long": 86,
       "true_false": 62,
-      "closed_abcd": 136,
-      "essay": 104,
-      "matching": 53,
+      "closed_abcd": 125,
+      "essay": 94,
+      "matching": 52,
       "ordering": 5
     },
     "dev": {
@@ -98,17 +96,17 @@
     }
   },
   "needs_visual": {
-    "train": 730,
+    "train": 708,
     "dev": 30,
     "test": 49
   },
   "auto_gradable": {
-    "train": 210,
+    "train": 205,
     "dev": 6,
     "test": 15
   },
   "points": {
-    "train": 3759,
+    "train": 3564,
     "dev": 90,
     "test": 180
   },
@@ -132,20 +130,6 @@
     "2025-maj": 60,
     "2026-styczen-probny": 60,
     "2026-maj": 60,
-    "2013-grudzien-przykladowy-f2015": 50,
-    "2014-grudzien-probny-f2015": 50,
-    "2015-maj-stara-P": 100,
-    "2015-maj-stara-R": 50,
-    "2016-maj-stara-P": 100,
-    "2016-maj-stara-R": 50,
-    "2017-maj-stara-P": 100,
-    "2017-maj-stara-R": 50,
-    "2018-maj-stara-P": 100,
-    "2018-maj-stara-R": 50,
-    "2019-maj-stara-P": 100,
-    "2019-maj-stara-R": 50,
-    "2020-maj-stara-P": 100,
-    "2020-maj-stara-R": 50,
     "2010-maj-stara-P": 100,
     "2010-maj-stara-R": 50,
     "2011-maj-stara-P": 100,
@@ -157,7 +141,19 @@
     "2013-maj-stara-P": 100,
     "2013-maj-stara-R": 50,
     "2014-maj-stara-P": 100,
-    "2014-maj-stara-R": 50
+    "2014-maj-stara-R": 50,
+    "2015-maj-stara-P": 100,
+    "2015-maj-stara-R": 50,
+    "2016-maj-stara-P": 100,
+    "2016-maj-stara-R": 50,
+    "2017-maj-stara-P": 100,
+    "2017-maj-stara-R": 50,
+    "2018-maj-stara-P": 100,
+    "2018-maj-stara-R": 50,
+    "2019-maj-stara-P": 100,
+    "2019-maj-stara-R": 50,
+    "2020-maj-stara-P": 100,
+    "2020-maj-stara-R": 50
   },
   "sessions": {
     "2015-maj-f2015": {
@@ -349,35 +345,11 @@
     "max_points comes from the arkusz; CKE zasady contain a few inconsistent point headers/levels (listed in parse_warnings). Counting one item per choice_group, every session sums to exactly 50 (formula 2015) or 60 (formula 2023); the build fails otherwise."
   ],
   "archival": {
-    "description": "Archival CKE papers added to TRAIN only by scripts/prepare_matura_historia_archiwum.py. PDFs are not committed (cache: raw-archiwum/, git-ignored); URLs and SHA-256 per session below.",
+    "description": "Archival CKE papers added to TRAIN only by scripts/prepare_matura_historia_archiwum.py. PDFs of the parsed sessions are in raw-archiwum/ (full archive: archiwum-src/); URLs and SHA-256 per session below.",
     "sessions": {
-      "2013-grudzien-przykladowy-f2015": {
-        "items": 28,
-        "zasady_tasks": 24,
-        "max_points": 50,
-        "arkusz_sha256": "76440a5cddbbe78cfebf0262afbbbdf7f867d7bdf1f20d0af86171749965c596",
-        "zasady_sha256": "b3be058ff1c363062f770f2dcc624e187c267fd5311fcdc387fa929ce4f681d8",
-        "formula": "2015",
-        "level": "rozszerzony",
-        "official_max": 50,
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Przykladowe_arkusze/2015/historia_PR/historia_PR_A1.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Przykladowe_arkusze/2015/historia_PR/historia_model_PR_A1_A2_A3_A4_A7.pdf"
-      },
-      "2014-grudzien-probny-f2015": {
-        "items": 28,
-        "zasady_tasks": 24,
-        "max_points": 50,
-        "arkusz_sha256": "a1fcfca265c19e78b9f7cc44ab92d28d8410055e9c1d384a3f271b0b8c616614",
-        "zasady_sha256": "def8a547476f0ef7db9641b6661a6c301bc58ae583d2c16a254773dec4ed49c6",
-        "formula": "2015",
-        "level": "rozszerzony",
-        "official_max": 50,
-        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/egzamin_probny_2015/historia_pr/A1Historia_PR_arkusz.pdf",
-        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/egzamin_probny_2015/historia_pr/A1A2A3A4A7Historia_PR_model_odpowiedzi.pdf"
-      },
       "2010-maj-stara-P": {
-        "items": 37,
-        "zasady_tasks": 37,
+        "items": 63,
+        "zasady_tasks": 63,
         "max_points": 100,
         "arkusz_sha256": "87919b436d766290f03545982ff7e79f42ab6a0e2d4724fc579f53703f12d71f",
         "zasady_sha256": "610aa187e6d60dd35bdc2a1e4756dacf7ba759af437a143006f16a7e13674eec",
@@ -388,8 +360,8 @@
         "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Historia/historia_klucz_pp.pdf"
       },
       "2010-maj-stara-R": {
-        "items": 25,
-        "zasady_tasks": 24,
+        "items": 29,
+        "zasady_tasks": 28,
         "max_points": 50,
         "arkusz_sha256": "5c90d0d343897ba069b8c16d9c84e57055210f5d3cf21cdaf521c50d3edd8b9d",
         "zasady_sha256": "60249af7e727a134296476f0b85dd7ade2b4f09b51fdcb28d795af9ceec2daa9",
@@ -424,8 +396,8 @@
         "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/kryteria/historia_model_pr.pdf"
       },
       "2012-czerwiec-stara-P": {
-        "items": 64,
-        "zasady_tasks": 64,
+        "items": 65,
+        "zasady_tasks": 65,
         "max_points": 100,
         "arkusz_sha256": "0d4b9ff8ec80d9de364c8fdfbb9160a029f68e15d146f2ba7dfe8fdc3f54441b",
         "zasady_sha256": "27bdb33ea21cc4f3da18e967dd49d9a4c814f31d681f494012b30a3c57c2cf87",
@@ -448,8 +420,8 @@
         "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/czerwiec/klucze/historia_06_pr_klucz.pdf"
       },
       "2012-maj-stara-P": {
-        "items": 66,
-        "zasady_tasks": 66,
+        "items": 67,
+        "zasady_tasks": 67,
         "max_points": 100,
         "arkusz_sha256": "68e61a3df2c367cd606b2e93d15318c13eeac6c42519d28937898c6039f30a8c",
         "zasady_sha256": "b7d6798dd35469617586551369edbc303c770788acc542a9be6fc9dc004258b9",
@@ -665,60 +637,15 @@
       }
     },
     "skipped": {
+      "2013-grudzien-przykladowy-f2015": "multi-part tasks: sub-tasks N.1/N.2 are inline lines in the arkusz and grouped under one Rozwiązanie/Schemat block in the zasady; the parser merged them into one item per task (empty context, mixed types); not validated, dropped",
+      "2014-grudzien-probny-f2015": "multi-part tasks: sub-tasks N.1/N.2 are inline lines in the arkusz and in the zasady; the parser merged them into one item per task (empty context, mixed types); not validated, dropped",
       "2024-maj-f2015": "leak check: 34/39 items near-duplicate dev/test items (same sources as dev 2024-maj); whole session dropped"
     },
     "parse_warnings": [
-      "2013-grudzien-przykladowy-f2015: zad 3 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2013-grudzien-przykladowy-f2015: zad 4 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2013-grudzien-przykladowy-f2015: zad 6 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2013-grudzien-przykladowy-f2015: zad 8 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2013-grudzien-przykladowy-f2015: zad 9 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2013-grudzien-przykladowy-f2015: zad 10 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2013-grudzien-przykladowy-f2015: zad 11 points: arkusz 3, zasady header 3, zasady scoring levels max 1; kept arkusz",
-      "2013-grudzien-przykladowy-f2015: zad 12 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2013-grudzien-przykladowy-f2015: zad 15 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2013-grudzien-przykladowy-f2015: zad 17 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2013-grudzien-przykladowy-f2015: zad 23 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2014-grudzien-probny-f2015: zad 2 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2014-grudzien-probny-f2015: zad 4 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2014-grudzien-probny-f2015: zad 5 points: arkusz 3, zasady header 3, zasady scoring levels max 1; kept arkusz",
-      "2014-grudzien-probny-f2015: zad 6 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2014-grudzien-probny-f2015: zad 8 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2014-grudzien-probny-f2015: zad 9 points: arkusz 3, zasady header 3, zasady scoring levels max 1; kept arkusz",
-      "2014-grudzien-probny-f2015: zad 10 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2014-grudzien-probny-f2015: zad 12 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2014-grudzien-probny-f2015: zad 16 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2014-grudzien-probny-f2015: zad 17 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2014-grudzien-probny-f2015: zad 18 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2014-grudzien-probny-f2015: zad 22 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2010-maj-stara-P: zad 1 points: arkusz 3, zasady header 3, zasady scoring levels max 2; kept arkusz",
-      "2010-maj-stara-P: zad 2 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2010-maj-stara-P: zad 3 points: arkusz 4, zasady header 4, zasady scoring levels max 2; kept arkusz",
-      "2010-maj-stara-P: zad 4 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2010-maj-stara-P: zad 5 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2010-maj-stara-P: zad 7 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2010-maj-stara-P: zad 11 points: arkusz 4, zasady header 4, zasady scoring levels max 2; kept arkusz",
-      "2010-maj-stara-P: zad 13 points: arkusz 3, zasady header 3, zasady scoring levels max 1; kept arkusz",
-      "2010-maj-stara-P: zad 14 points: arkusz 3, zasady header 3, zasady scoring levels max 2; kept arkusz",
-      "2010-maj-stara-P: zad 17 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2010-maj-stara-P: zad 18 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2010-maj-stara-P: zad 19 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2010-maj-stara-P: zad 20 points: arkusz 4, zasady header 4, zasady scoring levels max 2; kept arkusz",
-      "2010-maj-stara-P: zad 21 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2010-maj-stara-P: zad 23 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2010-maj-stara-P: zad 25 points: arkusz 3, zasady header 3, zasady scoring levels max 1; kept arkusz",
-      "2010-maj-stara-P: zad 28 points: arkusz 3, zasady header 3, zasady scoring levels max 2; kept arkusz",
-      "2010-maj-stara-P: zad 29 points: arkusz 3, zasady header 3, zasady scoring levels max 2; kept arkusz",
-      "2010-maj-stara-P: zad 30 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2010-maj-stara-P: zad 31 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2010-maj-stara-P: zad 32 points: arkusz 3, zasady header 3, zasady scoring levels max 2; kept arkusz",
-      "2010-maj-stara-P: zad 36 points: arkusz 3, zasady header 3, zasady scoring levels max 1; kept arkusz",
-      "2010-maj-stara-R: zad 1 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2010-maj-stara-R: zad 7 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2010-maj-stara-R: zad 9 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2010-maj-stara-R: zad 12 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
-      "2012-czerwiec-stara-P: zad 18 points: arkusz 3, zasady header 3, zasady scoring levels max 2; kept arkusz",
-      "2012-maj-stara-P: zad 18 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz",
+      "2010-maj-stara-P: karta odpowiedzi text from p.29 dropped",
+      "2010-maj-stara-R: karta odpowiedzi text from p.25 dropped",
+      "2011-maj-stara-P: karta odpowiedzi text from p.29 dropped",
+      "2011-maj-stara-R: karta odpowiedzi text from p.25 dropped",
       "2016-maj-stara-P: zad 6.1 points: score box 1, zasady header 3, scoring levels 1; kept 1",
       "2016-maj-stara-P: zad 6.1 points: score box 1, zasady header 3, scoring levels 1; kept 1",
       "2016-maj-stara-P: zad 6.1 points: arkusz 1, zasady header 3, zasady scoring levels max 1; kept arkusz",
@@ -742,37 +669,63 @@
       "2019-maj-stara-R: zasady zad 8.2 is arkusz zad 8 (single sub-task number; matched)",
       "2019-maj-stara-R: zad 26: essay has no topic-count line; added the standard one (2 topics)"
     ],
-    "items": 1107,
-    "points": 2231,
+    "items": 1084,
+    "points": 2036,
     "type_counts": {
-      "open_short": 842,
-      "open_long": 93,
-      "closed_abcd": 70,
-      "matching": 41,
-      "essay": 34,
+      "open_short": 854,
+      "matching": 40,
+      "open_long": 80,
+      "essay": 24,
       "ordering": 5,
+      "closed_abcd": 59,
       "true_false": 22
     },
     "level_counts": {
-      "rozszerzony": 397,
-      "podstawowy": 710
+      "podstawowy": 738,
+      "rozszerzony": 346
+    },
+    "era_counts": {
+      "stara 2010-2014": 565,
+      "stara 2015-2020 (retake sessions)": 519
+    },
+    "era_type_counts": {
+      "stara 2010-2014": {
+        "essay": 12,
+        "matching": 23,
+        "open_long": 37,
+        "open_short": 490,
+        "ordering": 3
+      },
+      "stara 2015-2020 (retake sessions)": {
+        "closed_abcd": 59,
+        "essay": 12,
+        "matching": 17,
+        "open_long": 43,
+        "open_short": 364,
+        "ordering": 2,
+        "true_false": 22
+      }
+    },
+    "era_level_counts": {
+      "stara 2010-2014": {
+        "podstawowy": 392,
+        "rozszerzony": 173
+      },
+      "stara 2015-2020 (retake sessions)": {
+        "podstawowy": 346,
+        "rozszerzony": 173
+      }
     },
     "formula_counts": {
-      "2015": 55,
-      "stara": 1052
+      "stara": 1084
     },
-    "needs_visual": 385,
-    "auto_gradable": 107,
+    "needs_visual": 363,
+    "auto_gradable": 102,
     "leak_check": {
       "rule": "drop a new item if its normalised question or context has difflib ratio >= 0.8 with a dev/test item (texts >= 80 chars), or it shares a passage >= 200 chars with a dev/test item",
-      "checked": 1151,
-      "dropped": 44,
+      "checked": 1127,
+      "dropped": 43,
       "dropped_items": [
-        {
-          "id": "2014-grudzien-probny-f2015-R-zad7",
-          "held_out": "2025-maj-R-zad9.1",
-          "why": "shared passage 273 chars"
-        },
         {
           "id": "2024-maj-f2015-R-zad1",
           "held_out": "2024-maj-R-zad1",
