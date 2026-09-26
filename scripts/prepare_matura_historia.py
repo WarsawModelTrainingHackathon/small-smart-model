@@ -122,7 +122,8 @@ def page_lines(doc, start_page=0):
         for b in imgs:
             x0, y0, x1, y1 = b['bbox']
             cx = (x0 + x1) / 2
-            if x1 - x0 >= 40 and y1 - y0 >= 30 and 60 < cx < W - 60 and y0 > 45 and y1 < H - 45:
+            # flat wide blocks too: genealogy boxes drawn as images (2025-maj zad5 top box is 136x29 pt)
+            if (x1 - x0 >= 40 and y1 - y0 >= 30 or x1 - x0 >= 80 and y1 - y0 >= 18) and 60 < cx < W - 60 and y0 > 45 and y1 < H - 45:
                 big.append(pymupdf.Rect(b['bbox']))
         # vector charts/maps: several filled shapes in >=2 saturated colours -> one pseudo-image (union bbox)
         vec = []
@@ -158,9 +159,9 @@ def page_lines(doc, start_page=0):
                 t = clean(''.join(s['text'] for s in l['spans']))
                 if not t or PAGE_JUNK.match(t):
                     continue
-                items.append(dict(page=pno, y0=y0, y1=y1, x0=x0, text=t, img=False))
+                items.append(dict(page=pno, y0=y0, y1=y1, x0=x0, x1=x1, text=t, img=False))
         for r in big:
-            items.append(dict(page=pno, y0=r.y0, y1=r.y1, x0=r.x0, text='[OBRAZ]', img=True, rect=[r.x0, r.y0, r.x1, r.y1]))
+            items.append(dict(page=pno, y0=r.y0, y1=r.y1, x0=r.x0, x1=r.x1, text='[OBRAZ]', img=True, rect=[r.x0, r.y0, r.x1, r.y1]))
         # stable reading order: text order from pymupdf sort, images inserted by y
         text_items = [i for i in items if not i['img']]
         for im in (i for i in items if i['img']):
@@ -408,7 +409,9 @@ def render_regions(doc, regs, stem, img_dir):
     paths = []
     for n, (pno, r) in enumerate(regs, 1):
         pg = doc[pno]
-        clip = pymupdf.Rect(45, max(r[1] - 8, 30), pg.rect.width - 45, min(r[3] + 8, pg.rect.height - 30))
+        W, H = pg.rect.width, pg.rect.height
+        # at least the text column (x 45..W-45), wider when the figure or its captions stick out into the margin
+        clip = pymupdf.Rect(max(min(45, r[0] - 4), 5), max(r[1], 30), min(max(W - 45, r[2] + 4), W - 5), min(r[3], H - 30))
         data = pg.get_pixmap(dpi=DPI, clip=clip).tobytes('png')
         p = img_dir / f'{stem}-{n}.png'
         if not p.exists() or p.read_bytes() != data:  # rewrite only on change (friendlier to synced folders)
@@ -417,10 +420,17 @@ def render_regions(doc, regs, stem, img_dir):
     return paths
 
 
+# a line that starts something new below a figure: next source, next task, the question itself
+STOP_BELOW = re.compile(r'^(Źródło\s*\d|Zadanie\b|Tabela\b|Mapa\b|Wykres|Tekst\b|Fragment\b|Materiał|Temat\b)')
+
+
 def regions(seg_lines, only_with_images):
-    """Page crops for an item: around its figures (union of figure boxes + margin for title/legend),
-    or the whole text region when the item is visual only by heading keyword. Sibling subtasks sharing
-    the same figures get byte-identical crops (deduplicated by git)."""
+    """Page crops for an item: around its figures, or the whole source text region when the item is visual
+    only by heading keyword. Sibling subtasks sharing the same figures get byte-identical crops (deduplicated by git).
+
+    Figure crops: vertically the union of the figure boxes, plus the title lines directly above (no gap, <= 50 pt) and the
+    caption/legend lines that follow the figure without a gap, up to the next source, task header or instruction
+    (no half-cut lines, no next source); horizontally the text column, widened to any figure/caption in the margin."""
     by_page = defaultdict(list)
     for l in seg_lines:
         by_page[l['page']].append(l)
@@ -430,9 +440,34 @@ def regions(seg_lines, only_with_images):
         if only_with_images:
             if not imgs:
                 continue
-            regs.append((pno, [0, min(l['y0'] for l in imgs) - 30, 0, max(l['y1'] for l in imgs) + 45]))
+            top, bot = min(l['y0'] for l in imgs), max(l['y1'] for l in imgs)
+            txt = [l for l in ls if not l['img']]
+            above, first = [], top
+            for l in sorted((l for l in txt if l['y1'] <= top + 2), key=lambda l: -l['y1']):
+                if first - l['y1'] > 20 or top - l['y0'] > 55 or CITATION.search(l['text']):
+                    break  # title lines sit right above the figure; stop at a gap or the previous source's citation
+                above.append(l)
+                first = min(first, l['y0'])
+            top = first
+            inside = [l for l in txt if l['y0'] >= top - 1 and l['y0'] <= bot]  # incl. captions overlapping the box
+            last = max([bot] + [l['y1'] for l in inside])
+            below = sorted((l for l in txt if l['y0'] > bot), key=lambda l: l['y0'])
+            nxt = None
+            for l in below:
+                if l['y0'] - last > 16 or l['y1'] - bot > 90 or STOP_BELOW.match(l['text']) or INSTR.match(l['text']) \
+                   or QWORD.match(l['text']):
+                    nxt = l
+                    break
+                inside.append(l)
+                last = max(last, l['y1'])
+            prev = max((l['y1'] for l in txt if l['y1'] <= top), default=0)
+            # 4 pt padding, but never into the neighbouring line (no half-cut next heading / previous line)
+            bot = min(last + 4, nxt['y0'] - 1) if nxt else last + 4
+            xs = imgs + inside + above
+            regs.append((pno, [min(l['x0'] for l in xs), max(top - 4, prev + 1), max(l['x1'] for l in xs), bot]))
         else:
-            regs.append((pno, [0, min(l['y0'] for l in ls), 0, max(l['y1'] for l in ls)]))
+            regs.append((pno, [min(l['x0'] for l in ls), min(l['y0'] for l in ls) - 4, max(l['x1'] for l in ls),
+                               max(l['y1'] for l in ls) + 4]))
     return regs
 
 
@@ -569,14 +604,16 @@ def build_session(key, spec, raw, img_dir, report):
     seen, used_z = set(), set()
     W = report['warnings']
 
-    def visuals(item, vis_lines, heading_text):
+    def visuals(item, vis_lines, heading_text, crop_lines=None):
         has_img = any(l['img'] for l in vis_lines)
         kw = bool(re.search(r'\b(Mapa|Wykres|Wykresy|Diagram|Schemat|Infografika|Plan)\b', heading_text))
         item['needs_visual'] = has_img or kw
         item['visual_reason'] = 'image_in_task' if has_img else ('heading_keyword' if kw else None)
         item['images'] = []
         if item['needs_visual']:
-            item['images'] = render_regions(doc, regions(vis_lines, only_with_images=has_img), item['id'], img_dir)
+            # keyword-only visuals (vector chart/table without a raster image): crop the sources, not the question
+            src = vis_lines if has_img or not crop_lines else crop_lines
+            item['images'] = render_regions(doc, regions(src, only_with_images=has_img), item['id'], img_dir)
 
     for num, sub, pts, ls in segs:
         if pts is None and sub is None:  # group header: shared sources
@@ -653,7 +690,7 @@ def build_session(key, spec, raw, img_dir, report):
         item['auto_gradable'] = bool(key_norm) and typ in ('closed_abcd', 'true_false', 'matching', 'ordering') and \
             not item.get('requires_justification')
         heads = '\n'.join(l['text'] for l in ctx_lines + qlines if not l['img'] and re.match(r'^(Źródło|Fragment|Mapa|Wykres|Schemat|Tabela|Diagram|Infografika|Plan)', l['text']))
-        visuals(item, ctx_lines + qlines, heads)
+        visuals(item, ctx_lines + qlines, heads, crop_lines=ctx_lines or None)
         if adapted and item['needs_visual'] and 'Opis' in adapted.get(num, ''):
             item['adapted_660_text'] = adapted[num]
         item['source'] = dict(src, pages=sorted({l['page'] + 1 for l in ctx_lines + qlines}))
