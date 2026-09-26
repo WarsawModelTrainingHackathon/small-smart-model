@@ -675,14 +675,18 @@ def parse_660(path):
     return heads, {k: '\n'.join(v) for k, v in groups.items()}
 
 
-def build_session(key, spec, raw, img_dir, report):
+def build_session(key, spec, raw, img_dir, report, prefix=None, level='rozszerzony', line_hook=None):
+    """prefix/level/line_hook: used by prepare_matura_historia_archiwum.py for archival papers (line_hook rewrites
+    the arkusz lines, e.g. '(2 pkt)' headers and inline sub-tasks, before task splitting)."""
     year, session, formula, date, a_url, z_url, _ = spec
     doc = pymupdf.open(raw / f'{key}-arkusz.pdf')
     lines = page_lines(doc, key=key)
+    zas = parse_zasady(raw / f'{key}-zasady.pdf')
+    if line_hook:
+        lines = line_hook(lines, zas)
     first = next(i for i, l in enumerate(lines) if HEADER_RE.match(l['text']) and HEADER_RE.match(l['text']).group(1) == '1')
     lines = strip_answer_lines(lines[first:])
     segs = split_tasks(lines)
-    zas = parse_zasady(raw / f'{key}-zasady.pdf')
     items, group_ctx = [], {}
     adapted = None
     if spec[6] and (raw / f'{key}-660.docx').exists():
@@ -692,7 +696,7 @@ def build_session(key, spec, raw, img_dir, report):
             adapted = groups660
         report['adapted_660'][key] = 'used (task numbering/points identical)' if adapted else \
             f'not used: numbering differs ({len(std ^ heads660)} task/point mismatches)'
-    prefix = f'{year}-{session}' + ('-f2015' if formula == '2015' else '') + '-R'
+    prefix = prefix or f'{year}-{session}' + ('-f2015' if formula == '2015' else '') + '-R'
     seen, used_z = set(), set()
     W = report['warnings']
 
@@ -742,7 +746,7 @@ def build_session(key, spec, raw, img_dir, report):
         typ = classify(question, mp, bool(options))
         answer = z['answer'] if z else ''
         base = dict(id=f'{prefix}-zad{tid}', session_key=key, year=year, session=session, formula=formula,
-                    exam_date=date, level='rozszerzony', task=tid, group=num, max_points=mp, type=typ)
+                    exam_date=date, level=level, task=tid, group=num, max_points=mp, type=typ)
         src = dict(arkusz_url=a_url, zasady_url=z_url)
         if typ == 'essay':
             intro, topics, mats = split_essay(ctx_lines + qlines)
