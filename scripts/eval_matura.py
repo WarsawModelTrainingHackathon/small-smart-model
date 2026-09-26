@@ -262,7 +262,7 @@ def main(argv=None):
     p.add_argument('--adapter', help='PEFT LoRA adapter dir')
     p.add_argument('--load-4bit', action='store_true', help='bitsandbytes nf4 (evaluate like the submitted model)')
     p.add_argument('--data', default=mf.DEFAULT_DATA)
-    p.add_argument('--split', default='dev', choices=['dev', 'test'])
+    p.add_argument('--split', default='dev', choices=['dev', 'test', 'train'])
     p.add_argument('--limit', type=int)
     p.add_argument('--types', help='comma list of item types to keep')
     p.add_argument('--ids', help='comma list of item ids to keep')

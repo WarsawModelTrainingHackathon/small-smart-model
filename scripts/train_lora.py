@@ -137,7 +137,12 @@ def run(a):
     out.mkdir(parents=True, exist_ok=True)
     data = mf.load_data(a.data, splits=['train', 'dev'])  # never the test split
     assert 'test' not in data
-    train = select_examples(data['train'], not a.closed_only, a.include_essays)
+    if a.targets_jsonl:
+        # self-distillation: train on our own graded answers instead of the CKE example answers
+        tmap = {r['id']: r['target'] for r in map(json.loads, Path(a.targets_jsonl).read_text(encoding='utf-8').splitlines()) if r.get('target')}
+        train = [(it, tmap[it['id']]) for it in data['train'] if it['id'] in tmap]
+    else:
+        train = select_examples(data['train'], not a.closed_only, a.include_essays)
     dev_items = data['dev']
     dev_closed = [it for it in dev_items if mf.auto_gradable(it)]
     dev_targets = select_examples(dev_items, not a.closed_only, False)
@@ -291,6 +296,7 @@ def parse_args(argv=None):
     p.add_argument('--image-max-soft-tokens', type=int, default=560, choices=em.IMAGE_SOFT_TOKENS)
     p.add_argument('--closed-only', action='store_true', help='train on closed items only')
     p.add_argument('--include-essays', action='store_true', help='(no example answers exist: currently a no-op)')
+    p.add_argument('--targets-jsonl', help='JSONL {id, target}: train only on these train items with these targets (self-distillation)')
     p.add_argument('--no-gradient-checkpointing', dest='gradient_checkpointing', action='store_false')
     p.add_argument('--select-by', default='closed_then_loss', choices=['closed_then_loss', 'loss'])
     p.add_argument('--dev-max-new-tokens', type=int, default=512)
