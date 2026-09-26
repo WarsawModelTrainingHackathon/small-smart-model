@@ -8,6 +8,7 @@
 #   "accelerate==1.15.0",
 #   "bitsandbytes==0.50.2; sys_platform == 'linux'",
 #   "pillow==12.3.0",
+#   "tantivy==0.26.2",
 # ]
 # ///
 """Evaluate a (Gemma 4) model on the matura z historii benchmark.
