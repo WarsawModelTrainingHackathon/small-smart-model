@@ -105,11 +105,11 @@ def download(url, dest):
 
 
 def clean(s):
-    s = s.replace(' ', ' ').replace('­', '').replace('', '•')
+    s = s.replace(' ', ' ').replace('­', '').replace('', '•').replace('\uf085', '†')  # Symbol-font PUA dagger (genealogy trees)
     return re.sub(r'[ \t]+', ' ', s).strip()
 
 
-def page_lines(doc, start_page=0):
+def page_lines(doc, start_page=0, key=None):
     """Yield content lines (and significant image markers) in reading order with positions."""
     out = []
     for pno in range(start_page, len(doc)):
@@ -164,11 +164,89 @@ def page_lines(doc, start_page=0):
             items.append(dict(page=pno, y0=r.y0, y1=r.y1, x0=r.x0, x1=r.x1, text='[OBRAZ]', img=True, rect=[r.x0, r.y0, r.x1, r.y1]))
         # stable reading order: text order from pymupdf sort, images inserted by y
         text_items = [i for i in items if not i['img']]
+        for ov in LAYOUT_OVERRIDES.get((key, pno + 1), []):
+            text_items = apply_layout_override(pg, ov, text_items, [i for i in items if i['img']])
         for im in (i for i in items if i['img']):
             k = next((n for n, t in enumerate(text_items) if t['y0'] > im['y0'] + 1), len(text_items))
             text_items.insert(k, im)
         out.extend(text_items)
     return out
+
+
+# Explicit per-page layout overrides for text that pymupdf's reading order mangles, verified against the PDF block
+# coordinates (1-based page numbers; y bands in pt). Inside a band the text is rebuilt from words:
+#  - 'columns': two side-by-side columns, split at x; left column first, then right, each top to bottom.
+#  - 'boxes': a genealogy tree drawn as boxes (drawn rectangles / image blocks); one line per row of boxes,
+#    "[box] | [box]", rows top to bottom; the box images in the band give a single [OBRAZ] marker.
+LAYOUT_OVERRIDES = {
+    # zad15: Wersja A (x 76-294, the critical mazurka) and Wersja B (x 303-522) printed side by side; pymupdf
+    # interleaved them so the A text followed the "Wersja B:" label (key 15.2 = A looked wrong).
+    ('2024-maj', 18): [dict(y=(270, 462), mode='columns', split=298)],
+    # zad11: tree of French kings (boxes y 91-347, legend box x 416-524); dates were detached from rulers.
+    ('2024-maj', 14): [dict(y=(88, 350), mode='boxes')],
+    # zad5: Przemyślid tree, boxes are image blocks y 116-632 (11 [OBRAZ] markers, dates detached from rulers).
+    ('2025-maj', 8): [dict(y=(110, 635), mode='boxes')],
+    # zad13: stamp captions B (x 71-224) and C (x 252-508) on one physical line at y 466.
+    ('2026-maj', 14): [dict(y=(463, 491), mode='columns', split=240, labels=('B', 'C'), join=True)],
+}
+
+
+def apply_layout_override(pg, ov, text_items, img_items):
+    y0, y1 = ov['y']
+    keep = [t for t in text_items if not (y0 <= t['y0'] <= y1)]
+    pos = next((n for n, t in enumerate(text_items) if y0 <= t['y0'] <= y1), len(text_items))
+    pos = sum(1 for t in text_items[:pos] if not (y0 <= t['y0'] <= y1))
+    words = [w for w in pg.get_text('words') if y0 <= w[1] <= y1 and 60 < (w[0] + w[2]) / 2 < pg.rect.width - 58]
+    pno = text_items[0]['page'] if text_items else pg.number
+
+    def lines_of(ws):
+        g = defaultdict(list)
+        for w in ws:
+            g[(w[5], w[6])].append(w)
+        out = []
+        for ls in g.values():
+            ls.sort(key=lambda w: w[0])
+            out.append(dict(page=pno, y0=min(w[1] for w in ls), y1=max(w[3] for w in ls), x0=ls[0][0],
+                            x1=ls[-1][2], text=clean(' '.join(w[4] for w in ls)), img=False, nl=True))
+        return sorted(out, key=lambda l: (round(l['y0']), l['x0']))
+
+    if ov['mode'] == 'columns':
+        cols = [lines_of([w for w in words if (w[0] + w[2]) / 2 < ov['split']]),
+                lines_of([w for w in words if (w[0] + w[2]) / 2 >= ov['split']])]
+        if ov.get('join'):  # each column is one caption
+            cols = [[dict(c[0], text=' '.join(l['text'] for l in c))] if c else [] for c in cols]
+        for lab, col in zip(ov.get('labels', ()), cols):  # caption columns belong to figures labelled e.g. B, C
+            if col:
+                col[0]['text'] = f'{lab} – {col[0]["text"]}'
+        new = cols[0] + cols[1]
+    else:
+        rects = [d['rect'] for d in pg.get_drawings() if d['rect'].width > 30 and d['rect'].height > 12 and
+                 y0 <= d['rect'].y0 <= y1] + [i and pymupdf.Rect(i['rect']) for i in img_items if y0 <= i['y0'] <= y1]
+        boxes, loose = defaultdict(list), []
+        for w in words:
+            c = pymupdf.Point((w[0] + w[2]) / 2, (w[1] + w[3]) / 2)
+            inr = [r for r in rects if c in r]
+            if inr:
+                r = min(inr, key=lambda r: r.width * r.height)
+                boxes[(round(r.x0), round(r.y0))].append(w)
+            else:
+                loose.append(w)
+        bl = []
+        for (bx, by), ws in boxes.items():
+            t = ' '.join(l['text'] for l in lines_of(ws))
+            bl.append(dict(page=pno, y0=by, y1=by, x0=bx, x1=bx, text=f'[{t}]', img=False, nl=True))
+        rows = []
+        for b in sorted(bl, key=lambda b: b['y0']):
+            if rows and b['y0'] - rows[-1][0]['y0'] < 10:
+                rows[-1].append(b)
+            else:
+                rows.append([b])
+        new = [dict(r[0], text=' | '.join(b['text'] for b in sorted(r, key=lambda b: b['x0']))) for r in rows]
+        new = sorted(new + lines_of(loose), key=lambda l: l['y0'])
+        band_imgs = sorted((i for i in img_items if y0 <= i['y0'] <= y1), key=lambda i: i['y0'])
+        for i in band_imgs[1:]:
+            i['hide'] = True  # the boxes themselves; one [OBRAZ] for the whole tree
+    return keep[:pos] + new + keep[pos:]
 
 
 def strip_answer_lines(lines):
@@ -189,18 +267,20 @@ def strip_answer_lines(lines):
 
 def join_text(lines):
     """Join physical lines into paragraphs-ish text; keep list-like lines on their own."""
-    out = []
+    out, last_nl = [], False
     for l in lines:
         t = l['text']
+        prev_nl, last_nl = last_nl, l.get('nl', False)  # lines from a layout override stand on their own
         if l['img']:
-            out.append('\n[OBRAZ]\n')
+            if not l.get('hide'):
+                out.append('\n[OBRAZ]\n')
             continue
         if out and not out[-1].endswith('\n'):
             prev = out[-1]
             if prev.endswith('-') and not prev.endswith(' -') and re.match(r'[a-ząćęłńóśźż]', t):
                 out[-1] = prev[:-1] + t
                 continue
-            if re.match(r'^([A-F]\.|\d+\.|•|–|Źródło|Fragment|Temat|Rozstrzygnięcie|Uzasadnienie|P$|F$|Tak$|Nie$)', t) or \
+            if l.get('nl') or prev_nl or re.match(r'^([A-F]\.|\d+\.|•|–|Źródło|Fragment|Temat|Rozstrzygnięcie|Uzasadnienie|P$|F$|Tak$|Nie$)', t) or \
                re.search(r'[.:;!?”"]$', prev) and (t[:1].isupper() or t[:1].isdigit()):
                 out.append('\n' + t)
             else:
@@ -586,7 +666,7 @@ def parse_660(path):
 def build_session(key, spec, raw, img_dir, report):
     year, session, formula, date, a_url, z_url, _ = spec
     doc = pymupdf.open(raw / f'{key}-arkusz.pdf')
-    lines = page_lines(doc)
+    lines = page_lines(doc, key=key)
     first = next(i for i, l in enumerate(lines) if HEADER_RE.match(l['text']) and HEADER_RE.match(l['text']).group(1) == '1')
     lines = strip_answer_lines(lines[first:])
     segs = split_tasks(lines)
