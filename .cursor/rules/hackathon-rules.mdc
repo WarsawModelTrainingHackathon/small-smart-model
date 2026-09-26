@@ -1,0 +1,31 @@
+---
+description: Warsaw Model Trainers official constraints — history matura, 8 GB, offline exam, SOURCE.md, submission.
+alwaysApply: true
+---
+
+# Hackathon rules (binding)
+
+Source of truth: `docs/context/hackathon-rules.md`. Do not invent extra organizer policy.
+
+**Task:** small **open-weights** model on the **Polish history (historia) matura**. Venue Kolektyw3, 25–27 Sep 2026.
+
+## Hard constraints
+
+- Each model as run on the exam: **≤ 8 GB on disk**. Quantized OK. Several models OK, each ≤ 8 GB. **LoRA adapters and RAG knowledge bases do not count.**
+- **Exam is offline:** no ChatGPT/Claude/Gemini or other closed APIs, **no web search**. Local RAG + tools OK.
+- Closed LLM APIs **are allowed while building** (e.g. synthetic data).
+- **Training ends Sun 11:00**; exam is provided then. Exam script uses `TEAM_KEY` and sends **answers only**.
+- Submit **base model** and **trained model** results (progress track). With several models, baseline = highest-scoring model **alone**.
+- Own pre-hackathon fine-tunes **cannot** be declared as the bare base (disqualification). Public already-tuned history models are OK; that score is the benchmark.
+- Graded work starts Fri 18:00. Repo for jury **before Sun 11:00**. Roster **Sat 12:00**.
+- Inference must be fast: **a few minutes** for the full exam **and** presentation on stage.
+
+## Repo and prizes
+
+- No copyrighted scans/unlicensed datasets in git. List sources + a **fetch/process script**. No paywall/login/ToS bypass.
+- Wikipedia / derived data: **CC BY-SA-compatible**. Model licence follows the HF card.
+- `SOURCE.md` must contain exactly: `Made during the Warsaw Model Trainers hackathon, Kolektyw3, 25–27.09.2026` (required for any prize).
+- Prize tracks: best matura score · best progress vs base · smallest model with **≥ 35%** ("Mały, ale wariat").
+- Harness-only (RAG, prompts, agents, tools) can compete. System prompts / few-shot / CoT count as harness.
+
+Submission format: announced Saturday — do not guess a format.
