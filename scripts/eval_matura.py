@@ -287,7 +287,7 @@ def main(argv=None):
     p.add_argument('--device')
     p.add_argument('--wiki', nargs='?', const=str(wiki_bm25.DEFAULT_CORPUS),
                    help='BM25 Polish-Wikipedia jsonl; flag alone uses harness/wiki/minicorpus.jsonl')
-    p.add_argument('--wiki-k', type=int, default=3)
+    p.add_argument('--wiki-k', type=int, default=2)
     p.add_argument('--wiki-essays', action='store_true', help='also retrieve for essay items (default: skip)')
     a = p.parse_args(argv)
 
