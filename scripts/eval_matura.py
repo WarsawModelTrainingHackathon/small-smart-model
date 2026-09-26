@@ -241,7 +241,7 @@ def _hit(h):
                 score=None if score is None else round(float(score), 4))
 
 
-def retrieve(items, index_dir, k, out):
+def retrieve(items, index_dir, k, out, skip_types=()):
     """Retrieve once per item, before any generation -> {id: [{title, text, score}, ...]} (rank order).
 
     Records (query + full passages) are appended to out/retrieval.jsonl and reused on resume, so an item is
@@ -257,10 +257,11 @@ def retrieve(items, index_dir, k, out):
         with open(path, 'a', encoding='utf-8') as f:
             for it in need:
                 t1 = time.time()
-                query = build_query(it)
-                hits = [_hit(h) for h in (index.search(query, k=k) or [])][:k]
+                skipped = it['type'] if it['type'] in skip_types else None
+                query = '' if skipped else build_query(it)
+                hits = [] if skipped else [_hit(h) for h in (index.search(query, k=k) or [])][:k]
                 rec = dict(id=it['id'], query=query, query_source=source, k=k, seconds=round(time.time() - t1, 3),
-                           passages=hits)
+                           passages=hits, rag_skipped=skipped)
                 f.write(json.dumps(rec, ensure_ascii=False) + '\n')
                 f.flush()
                 cache[it['id']] = rec
@@ -288,12 +289,14 @@ def rag_stats(out, item_ids, max_chars):
                 mean_used=round(sum(r['used'] for r in rows) / len(rows), 2),
                 mean_block_chars=round(sum(r['chars'] for r in rows) / len(rows), 1),
                 mean_top_score=round(sum(top) / len(top), 4) if top else None,
+                skipped_items=sum(bool(r.get('rag_skipped')) for r in recs),
                 retrieval_seconds=round(sum(r.get('seconds', 0) for r in recs), 1))
 
 
 def rag_config_key(rag):
-    """What must match to resume a run dir: RAG on/off, k, char budget, index (by folder name)."""
-    return None if not rag else (Path(rag['index']).name, rag['k'], rag['max_chars'])
+    """What must match to resume a run dir: RAG settings and any task types with context disabled."""
+    return None if not rag else (Path(rag['index']).name, rag['k'], rag['max_chars'],
+                                 tuple(rag.get('skip_types', ())))
 
 
 # --------------------------------------------------------------------------- io
@@ -387,7 +390,12 @@ def main(argv=None):
     p.add_argument('--rag-k', type=int, default=5, help='passages retrieved per item')
     p.add_argument('--rag-max-chars', type=int, default=mf.DEFAULT_RAG_MAX_CHARS,
                    help='max characters of the Wikipedia block in the prompt (header included)')
+    p.add_argument('--rag-skip-types', default='',
+                   help='comma-separated item types to answer without Wikipedia context, e.g. essay')
     a = p.parse_args(argv)
+    rag_skip_types = sorted({t.strip() for t in a.rag_skip_types.split(',') if t.strip()})
+    if rag_skip_types and not a.rag_index:
+        p.error('--rag-skip-types requires --rag-index')
     if a.rag_index:
         if a.rag_k < 1:
             p.error('--rag-k must be >= 1')
@@ -399,6 +407,8 @@ def main(argv=None):
     rag_tag = None
     if a.rag_index:
         rag_tag = f'rag{a.rag_k}' + ('' if a.rag_max_chars == mf.DEFAULT_RAG_MAX_CHARS else f'c{a.rag_max_chars}')
+        if rag_skip_types:
+            rag_tag += '-skip' + '-'.join(rag_skip_types)
     label = a.label or '-'.join(x for x in [Path(a.model).name, Path(a.adapter).name if a.adapter else None,
                                              '4bit' if a.load_4bit else None, a.split,
                                              'text' if a.text_only else None, 'think' if a.thinking == 'on' else None,
@@ -408,7 +418,8 @@ def main(argv=None):
     out = Path(a.output or f'runs/eval/{label}')
     out.mkdir(parents=True, exist_ok=True)
     items = select_items(a)
-    rag = dict(index=str(Path(a.rag_index).resolve()), k=a.rag_k, max_chars=a.rag_max_chars) if a.rag_index else None
+    rag = (dict(index=str(Path(a.rag_index).resolve()), k=a.rag_k, max_chars=a.rag_max_chars,
+                skip_types=rag_skip_types) if a.rag_index else None)
     run = dict(label=label, model=a.model, adapter=a.adapter, load_4bit=a.load_4bit, split=a.split,
                text_only=a.text_only, thinking=a.thinking, image_max_soft_tokens=a.image_max_soft_tokens,
                max_new_tokens=a.max_new_tokens, essay_max_new_tokens=a.essay_max_new_tokens, essays=a.essays,
@@ -435,7 +446,7 @@ def main(argv=None):
     passages = None
     if rag:
         if todo:
-            passages = retrieve(todo, a.rag_index, a.rag_k, out)  # all retrieval happens before the LLM is loaded
+            passages = retrieve(todo, a.rag_index, a.rag_k, out, rag_skip_types)
         run['rag_stats'] = rag_stats(out, run['item_ids'], a.rag_max_chars)
         write_json(out / 'run.json', run)
     if todo:
