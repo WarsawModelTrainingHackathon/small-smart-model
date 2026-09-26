@@ -34,6 +34,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import matura_format as mf  # noqa: E402
 import matura_grading as mg  # noqa: E402
+import wiki_bm25  # noqa: E402
 
 IMAGE_SOFT_TOKENS = (70, 140, 280, 560, 1120)
 
@@ -284,6 +285,10 @@ def main(argv=None):
     p.add_argument('--judge-4bit', action='store_true')
     p.add_argument('--attn', default='sdpa')
     p.add_argument('--device')
+    p.add_argument('--wiki', nargs='?', const=str(wiki_bm25.DEFAULT_CORPUS),
+                   help='BM25 Polish-Wikipedia jsonl; flag alone uses harness/wiki/minicorpus.jsonl')
+    p.add_argument('--wiki-k', type=int, default=3)
+    p.add_argument('--wiki-essays', action='store_true', help='also retrieve for essay items (default: skip)')
     a = p.parse_args(argv)
 
     label = a.label or '-'.join(x for x in [Path(a.model).name, Path(a.adapter).name if a.adapter else None,
@@ -292,11 +297,16 @@ def main(argv=None):
     out = Path(a.output or f'runs/eval/{label}')
     out.mkdir(parents=True, exist_ok=True)
     items = select_items(a)
+    wiki_hits = None
+    if a.wiki:
+        wiki_bm25.attach_rag(items, corpus=a.wiki, k=a.wiki_k, skip_essays=not a.wiki_essays)
+        wiki_hits = {it['id']: it.get('rag_passage_ids', []) for it in items}
     run = dict(label=label, model=a.model, adapter=a.adapter, load_4bit=a.load_4bit, split=a.split,
                text_only=a.text_only, thinking=a.thinking, image_max_soft_tokens=a.image_max_soft_tokens,
                max_new_tokens=a.max_new_tokens, essay_max_new_tokens=a.essay_max_new_tokens, essays=a.essays,
                data=str(a.data), data_sha256=hashlib.sha256(Path(a.data).read_bytes()).hexdigest(),
-               item_ids=[it['id'] for it in items])
+               wiki=a.wiki, wiki_k=a.wiki_k if a.wiki else None,
+               item_ids=[it['id'] for it in items], wiki_hits=wiki_hits)
     if a.regrade:
         if not (out / 'generations.jsonl').exists():
             raise SystemExit(f'--regrade: no {out}/generations.jsonl')
@@ -304,7 +314,7 @@ def main(argv=None):
 
     old = json.loads((out / 'run.json').read_text(encoding='utf-8')) if (out / 'run.json').exists() else None
     if old:
-        for k in ('model', 'adapter', 'load_4bit', 'text_only', 'thinking', 'split'):
+        for k in ('model', 'adapter', 'load_4bit', 'text_only', 'thinking', 'split', 'wiki'):
             if old.get(k) != run[k]:
                 raise SystemExit(f'{out} holds a run with {k}={old.get(k)!r}, not {run[k]!r}; use another --output')
     write_json(out / 'run.json', run)

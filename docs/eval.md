@@ -8,6 +8,7 @@ Files:
 | `scripts/matura_grading.py` | closed-item auto grading with CKE partial credit, LLM judge for open items + essays, report aggregation |
 | `scripts/eval_matura.py` | CLI: generate → grade → `report.json` + `report.md` (PEP 723, `uv run`) |
 | `scripts/compare_runs.py` | side-by-side table of several runs, per-item diffs |
+| `scripts/wiki_bm25.py` + `fetch_wiki_minicorpus.py` | optional BM25 over a small Polish Wikipedia slice (harness, not training) |
 | `tests/` | CPU tests: parsing/grading on real CKE items + end-to-end smoke on a tiny random Gemma 4 |
 
 ## Protocol (what the numbers mean)
@@ -79,6 +80,16 @@ uv run scripts/eval_matura.py --model outputs/submission-4bit --data $DATA --spl
 # 5) compare
 python scripts/compare_runs.py runs/eval/base-4bit-test runs/eval/lora-4bit-test --items --md runs/compare.md
 ```
+
+Wiki BM25 (CPU corpus; still needs GPU for the model). Rebuild: `python3 scripts/fetch_wiki_minicorpus.py`. Then:
+
+```bash
+uv run scripts/eval_matura.py --model google/gemma-4-12B-it --load-4bit --data $DATA \
+    --split dev --wiki --label base-4bit-dev-wiki --ids \
+    2024-maj-R-zad3.1,2024-maj-R-zad7,2024-maj-R-zad12.1,2024-maj-R-zad19.2,2024-maj-R-zad5.1,2024-maj-R-zad24,2024-maj-R-zad25,2024-maj-R-zad1,2024-maj-R-zad11.2
+```
+
+Compare those ids to `base-dev` before a full-dev wiki run. `--wiki` with no path uses `harness/wiki/minicorpus.jsonl`.
 
 Other flags: `--text-only` (no images, uses `adapted_660_text`), `--thinking on` (Gemma thinking mode, adds
 `--thinking-budget` new tokens), `--image-max-soft-tokens 70|140|280|560|1120` (default 560), `--batch-size`,

@@ -121,6 +121,11 @@ def user_text(item, text_only=False):
     context = (item.get('context') or '').strip()
     if context:
         parts.append('Materiały do zadania:\n' + context)
+    rag = (item.get('rag_context') or '').strip()
+    if rag:
+        parts.append(
+            'Fragmenty z Wikipedii (pomocnicze, CC BY-SA; to NIE jest źródło z arkusza — '
+            'jeśli hałasują, ignoruj je i trzymaj się materiałów CKE):\n' + rag)
     # `question` already contains the options / statements text: never append them again.
     parts.append(f"Zadanie {item.get('task', '')} ({item.get('max_points', 1)} pkt).\n" + (item.get('question') or '').strip())
     parts.append(instruction(item))
