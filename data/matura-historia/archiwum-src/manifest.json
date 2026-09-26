@@ -1,5 +1,5 @@
 {
- "description": "Archival Polish matura HISTORY (historia) papers + official keys/scoring rules, downloaded for the hackathon dataset (download + catalogue only; not parsed). Complements datasets/local/matura-historia (formula 2015 May 2015-2023, formula 2023 May 2023-2026, pokazowy/diagnostyczne/probne already there).",
+ "description": "Archival Polish matura HISTORY (historia) papers + official keys/scoring rules, downloaded for the hackathon dataset (download + catalogue; the parsed subset is listed under dataset_status). Complements datasets/local/matura-historia (formula 2015 May 2015-2023, formula 2023 May 2023-2026, pokazowy/diagnostyczne/probne already there).",
  "downloaded": "2026-09-26",
  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
  "naming": "raw/<year>-<session>-<formula>-<level>-<kind>[-suffix].pdf",
@@ -3698,5 +3698,145 @@
   ],
   "dedup_and_variants": "No file is byte-identical to anything in datasets/local/matura-historia. Deaf (-ns) variants mostly reuse the standard tasks with simplified wording - treat as near-duplicates of P when splitting train/test. 2025/2026 informators and their dwujęzyczne versions overlap heavily with each other and with the 2023 informator (same sample tasks re-used). Zbiór zadań f2015: tasks in cz1 + start of cz2, then 'Wskazówki do rozwiązania zadań' and solutions in cz2.",
   "point_totals": "stara P = 100 pts / 120 min; stara R = 50 pts / 180 min (20 test + 10 sources + 20 essay); 2005-06 A1 = 100 pts / 120 min, A2 = 50 pts / 150 min; formula 2015 R = 50 pts / 180 min; formula 2023 R = 60 pts."
+ },
+ "dataset_status": {
+  "note": "Which archive papers are in data/matura-historia/data.json (TRAIN split only), built by scripts/prepare_matura_historia_archiwum.py; see data/matura-historia/QC.md (archival section).",
+  "shipped": {
+   "2010-maj-stara-P": {
+    "items": 63,
+    "parsed_points": 100,
+    "official_max": 100
+   },
+   "2010-maj-stara-R": {
+    "items": 29,
+    "parsed_points": 50,
+    "official_max": 50
+   },
+   "2011-maj-stara-P": {
+    "items": 60,
+    "parsed_points": 100,
+    "official_max": 100
+   },
+   "2011-maj-stara-R": {
+    "items": 28,
+    "parsed_points": 50,
+    "official_max": 50
+   },
+   "2012-czerwiec-stara-P": {
+    "items": 61,
+    "parsed_points": 100,
+    "official_max": 100
+   },
+   "2012-czerwiec-stara-R": {
+    "items": 29,
+    "parsed_points": 50,
+    "official_max": 50
+   },
+   "2012-maj-stara-P": {
+    "items": 67,
+    "parsed_points": 100,
+    "official_max": 100
+   },
+   "2012-maj-stara-R": {
+    "items": 30,
+    "parsed_points": 50,
+    "official_max": 50
+   },
+   "2013-maj-stara-P": {
+    "items": 67,
+    "parsed_points": 100,
+    "official_max": 100
+   },
+   "2013-maj-stara-R": {
+    "items": 31,
+    "parsed_points": 50,
+    "official_max": 50
+   },
+   "2014-maj-stara-P": {
+    "items": 73,
+    "parsed_points": 100,
+    "official_max": 100
+   },
+   "2014-maj-stara-R": {
+    "items": 26,
+    "parsed_points": 50,
+    "official_max": 50
+   },
+   "2015-maj-stara-P": {
+    "items": 57,
+    "parsed_points": 100,
+    "official_max": 100
+   },
+   "2015-maj-stara-R": {
+    "items": 26,
+    "parsed_points": 50,
+    "official_max": 50
+   },
+   "2016-maj-stara-P": {
+    "items": 47,
+    "parsed_points": 100,
+    "official_max": 100
+   },
+   "2016-maj-stara-R": {
+    "items": 28,
+    "parsed_points": 50,
+    "official_max": 50
+   },
+   "2017-maj-stara-P": {
+    "items": 64,
+    "parsed_points": 100,
+    "official_max": 100
+   },
+   "2017-maj-stara-R": {
+    "items": 28,
+    "parsed_points": 50,
+    "official_max": 50
+   },
+   "2018-maj-stara-P": {
+    "items": 61,
+    "parsed_points": 100,
+    "official_max": 100
+   },
+   "2018-maj-stara-R": {
+    "items": 30,
+    "parsed_points": 50,
+    "official_max": 50
+   },
+   "2019-maj-stara-P": {
+    "items": 58,
+    "parsed_points": 100,
+    "official_max": 100
+   },
+   "2019-maj-stara-R": {
+    "items": 30,
+    "parsed_points": 50,
+    "official_max": 50
+   },
+   "2020-maj-stara-P": {
+    "items": 54,
+    "parsed_points": 100,
+    "official_max": 100
+   },
+   "2020-maj-stara-R": {
+    "items": 31,
+    "parsed_points": 50,
+    "official_max": 50
+   }
+  },
+  "dropped": {
+   "2013-grudzien-przykladowy-f2015": "multi-part tasks: sub-tasks N.1/N.2 are inline lines in the arkusz and grouped under one Rozwiązanie/Schemat block in the zasady; the parser merged them into one item per task (empty context, mixed types); not validated, dropped",
+   "2014-grudzien-probny-f2015": "multi-part tasks: sub-tasks N.1/N.2 are inline lines in the arkusz and in the zasady; the parser merged them into one item per task (empty context, mixed types); not validated, dropped",
+   "2024-maj-f2015": "leak check: 34/39 items near-duplicate dev/test items (same sources as dev 2024-maj); whole session dropped"
+  },
+  "not_parsed": [
+   "2003 pilot (all)",
+   "2005-2009 stara (A1/A2, P/R, incl. solved papers 2006-2008 and grudzień 2005 / styczeń 2006 / listopad 2006)",
+   "all deaf-candidate (-ns) variants",
+   "informators 2005, 2008, 2015, 2023, 2025, 2026 (incl. dwujęzyczne)",
+   "zbiór zadań f2015 cz1/cz2",
+   "material dodatkowy f2023 (ikonografia, wypracowanie)",
+   "2024-maj-f2015 karta odpowiedzi"
+  ],
+  "leak_dropped_items": 49
  }
 }
