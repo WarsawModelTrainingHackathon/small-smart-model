@@ -85,6 +85,49 @@ Other flags: `--text-only` (no images, uses `adapted_660_text`), `--thinking on`
 `--limit`, `--types`, `--ids`. Runs are resumable: re-running the same command continues `generations.jsonl`.
 Use the **dev** split for decisions; look at **test** only for the final numbers.
 
+## Optional Wikipedia RAG (`--rag-index`)
+
+A local retrieval index is allowed at the exam (offline, not counted in the 8 GB model limit).
+`scripts/wiki_rag.py` provides `WikiIndex(index_dir).search(query, k) -> [{title, text, score}]` and optionally
+`build_query(item)`; the eval imports it **only** when `--rag-index` is given.
+
+```bash
+uv run scripts/eval_matura.py --model google/gemma-4-12B-it --load-4bit --data $DATA --split dev \
+    --rag-index /team/wiki/plwiki-20231101-v2 --rag-k 5 --rag-max-chars 3000
+```
+
+`--rag-skip-types essay` keeps retrieval for other item types and gives essays the original no-RAG prompt. In the
+matched `sd-r16` dev runs, RAG scored 49.33/60 overall and 11.33/15 on essays; no RAG scored 40/60 overall and
+12/15 on essays. Combining the RAG points for other types with the no-RAG essay score gives a dev-estimated 50/60
+(83.33%). That hybrid is calculated from the saved paired runs; rerun the combined command to produce its standalone
+report before treating the estimate as a fresh run result. The best single recorded dev result remains base Gemma
+with RAG at 50.33/60, so the SD-R16 hybrid has not yet shown a higher score.
+
+```bash
+uv run scripts/eval_matura.py --model google/gemma-4-12B-it --adapter /team/runs/train/sd-r16/best_adapter \
+    --load-4bit --data $DATA --split dev --rag-index /team/wiki/plwiki-20231101-v2 --rag-k 5 --rag-max-chars 3000 \
+    --rag-skip-types essay --label sd-r16-dev-hybrid
+```
+
+* Retrieval runs once per item, for all items to generate, **before** the LLM is loaded (the index is then released).
+  Query: `WikiIndex.build_query(item)` or `wiki_rag.build_query(item)` if present, else a local fallback
+  (question + source text, whitespace-collapsed, 1000 chars).
+* Prompt: the passages go into the user text **before** the exam materials (images stay first in multimodal mode):
+  `Pomocnicze fragmenty z Wikipedii (mogą być nieistotne; odpowiadaj na podstawie źródeł z zadania i własnej wiedzy):`
+  then one `[i] Tytuł: tekst` line per passage in rank order. The whole block is at most `--rag-max-chars`
+  (header included); the passage crossing the budget is cut at a word with `…`, later ones are dropped.
+  Without passages the prompt is byte-identical to the non-RAG prompt (tested), so existing adapters are unaffected.
+  Training can reuse it: `mf.build_messages(item, text_only, passages=hits, rag_max_chars=...)`.
+* `--rag-skip-types` is a comma-separated list of item types that receive no retrieval context. Skipped items are
+  recorded in `retrieval.jsonl`; their prompts remain identical to the no-RAG prompts.
+* Outputs: `retrieval.jsonl` (query + full passages per item; reused on resume, never retrieved twice),
+  `generations.jsonl` rows get `rag: {hits: [{title, score}], used, chars}`, `run.json` / `report.json` get
+  `rag` (index, k, max_chars, skip_types) + `rag_stats`, `report.md` gets a `rag` line. A RAG run dir cannot be
+  resumed with a different skip-types policy, k, budget or index (use another `--output`). `--regrade` never
+  re-retrieves.
+* Dependencies of `wiki_rag.py` must be importable in the eval environment (add them to the PEP 723 header of
+  `scripts/eval_matura.py` when running with `uv run`).
+
 ## Tests (CPU, no downloads)
 
 ```bash

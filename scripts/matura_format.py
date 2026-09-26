@@ -29,6 +29,12 @@ SYSTEM_PROMPT = (
 
 NO_IMAGE_NOTE = '[Materiał graficzny do tego zadania nie jest dostępny – korzystaj z opisu i własnej wiedzy.]'
 
+# Optional retrieval (RAG) block, prepended to the user text only when passages are given.
+RAG_HEADER = ('Pomocnicze fragmenty z Wikipedii (mogą być nieistotne; odpowiadaj na podstawie źródeł '
+              'z zadania i własnej wiedzy):')
+DEFAULT_RAG_MAX_CHARS = 3000
+MIN_RAG_TRUNCATED_CHARS = 100  # a passage cut below this many chars of text is dropped instead
+
 
 # --------------------------------------------------------------------------- data
 
@@ -112,8 +118,65 @@ def image_paths(item):
     return [str(root / p) for p in (item.get('images') or [])]
 
 
-def user_text(item, text_only=False):
+def _one_line(s):
+    return re.sub(r'\s+', ' ', str(s or '')).strip()
+
+
+def _passage_fields(p):
+    if isinstance(p, str):
+        return '', _one_line(p)
+    return _one_line(p.get('title')), _one_line(p.get('text'))
+
+
+def _passage_line(i, title, text):
+    return f'[{i}] {title}: {text}' if title else f'[{i}] {text}'
+
+
+def fit_passages(passages, max_chars=DEFAULT_RAG_MAX_CHARS):
+    """Passages that fit a RAG block of at most `max_chars` characters (header included) -> [(title, text)].
+
+    `passages`: retrieval hits in rank order, dicts with `title` / `text` (a plain string = text only).
+    Whitespace is collapsed (one line per passage). Greedy in rank order: the passage that crosses the
+    budget is cut at a word boundary and ends with '…' (dropped if under MIN_RAG_TRUNCATED_CHARS would remain),
+    later passages are dropped.
+    """
+    budget = (max_chars or 0) - len(RAG_HEADER) - 1
+    out, used = [], 0
+    for p in passages or []:
+        title, text = _passage_fields(p)
+        if not text:
+            continue
+        overhead = (1 if out else 0) + len(_passage_line(len(out) + 1, title, ''))
+        room = budget - used - overhead
+        if len(text) <= room:
+            out.append((title, text))
+            used += overhead + len(text)
+            continue
+        if room >= MIN_RAG_TRUNCATED_CHARS:
+            cut = text[:room - 1]
+            space = cut.rfind(' ')
+            if space > 0.6 * len(cut):
+                cut = cut[:space]
+            out.append((title, cut.rstrip(' ,;:–-') + '…'))
+        break
+    return out
+
+
+def passages_block(passages, max_chars=DEFAULT_RAG_MAX_CHARS):
+    """'Pomocnicze fragmenty z Wikipedii (...):\\n[1] Tytuł: tekst\\n[2] ...' (<= max_chars), or '' if nothing fits."""
+    fitted = fit_passages(passages, max_chars)
+    if not fitted:
+        return ''
+    return RAG_HEADER + '\n' + '\n'.join(_passage_line(i, t, x) for i, (t, x) in enumerate(fitted, 1))
+
+
+def user_text(item, text_only=False, passages=None, rag_max_chars=DEFAULT_RAG_MAX_CHARS):
+    """User-turn text. With `passages` (retrieval hits) a labelled Wikipedia block comes first, before
+    the exam materials; without them (None / empty) the text is exactly the non-RAG prompt."""
     parts = []
+    rag = passages_block(passages, rag_max_chars) if passages else ''
+    if rag:
+        parts.append(rag)
     has_images = bool(item.get('images'))
     if has_images and text_only:
         adapted = (item.get('adapted_660_text') or '').strip()
@@ -127,12 +190,16 @@ def user_text(item, text_only=False):
     return '\n\n'.join(parts)
 
 
-def build_messages(item, text_only=False, system_prompt=SYSTEM_PROMPT):
-    """Chat messages; image parts are placeholders `{'type': 'image'}` in the order of image_paths()."""
+def build_messages(item, text_only=False, system_prompt=SYSTEM_PROMPT, passages=None,
+                   rag_max_chars=DEFAULT_RAG_MAX_CHARS):
+    """Chat messages; image parts are placeholders `{'type': 'image'}` in the order of image_paths().
+
+    Optional `passages` (retrieval hits) go into the single text part, ahead of the exam materials.
+    """
     content = []
     if not text_only:
         content += [{'type': 'image'} for _ in image_paths(item)]
-    content.append({'type': 'text', 'text': user_text(item, text_only)})
+    content.append({'type': 'text', 'text': user_text(item, text_only, passages, rag_max_chars)})
     msgs = []
     if system_prompt:
         msgs.append({'role': 'system', 'content': [{'type': 'text', 'text': system_prompt}]})
@@ -140,10 +207,12 @@ def build_messages(item, text_only=False, system_prompt=SYSTEM_PROMPT):
     return msgs
 
 
-def render_prompt(processor, item, text_only=False, thinking=False):
+def render_prompt(processor, item, text_only=False, thinking=False, passages=None,
+                  rag_max_chars=DEFAULT_RAG_MAX_CHARS):
     """Prompt string through the model's own chat template (generation prompt included)."""
-    return processor.apply_chat_template(build_messages(item, text_only), tokenize=False,
-                                         add_generation_prompt=True, enable_thinking=bool(thinking))
+    msgs = build_messages(item, text_only, passages=passages, rag_max_chars=rag_max_chars)
+    return processor.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True,
+                                         enable_thinking=bool(thinking))
 
 
 # --------------------------------------------------------------------------- targets (training)
