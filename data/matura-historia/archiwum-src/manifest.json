@@ -1,0 +1,3702 @@
+{
+ "description": "Archival Polish matura HISTORY (historia) papers + official keys/scoring rules, downloaded for the hackathon dataset (download + catalogue only; not parsed). Complements datasets/local/matura-historia (formula 2015 May 2015-2023, formula 2023 May 2023-2026, pokazowy/diagnostyczne/probne already there).",
+ "downloaded": "2026-09-26",
+ "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+ "naming": "raw/<year>-<session>-<formula>-<level>-<kind>[-suffix].pdf",
+ "vocab": {
+  "formula": {
+   "stara": "formuła do 2014 (\"stara matura\"), incl. 2015-2020 sessions held for repeaters/technikum",
+   "pilotaz": "pre-2005 pilot \"nowa matura\" exams run by OKE Wrocław (2003)",
+   "f2015": "formuła 2015",
+   "f2023": "formuła 2023"
+  },
+  "level": {
+   "P": "poziom podstawowy",
+   "R": "poziom rozszerzony",
+   "PR": "one document covering both levels",
+   "A1": "2005-2006 Arkusz I (= poziom podstawowy; rozszerzony candidates also wrote it)",
+   "A2": "2005-2006 Arkusz II (poziom rozszerzony add-on, sources + essay)",
+   "A1-ns / P-ns": "variant for deaf candidates (dla niesłyszących), same key layout",
+   "A2a/A2b/A2c, A3a/A3b/A3c": "2003 pilot: epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991",
+   "R-dwujezyczny": "bilingual-class history informator",
+   "all": "general document for all subjects"
+  },
+  "kind": {
+   "arkusz": "exam paper",
+   "zasady": "separate answer key / model odpowiedzi / kryteria / zasady oceniania",
+   "rozwiazany": "solved paper: the full arkusz with model answers typed in (2006-2008), no separate point rubric",
+   "karta": "answer sheet (karta odpowiedzi)",
+   "informator": "informator with sample tasks + solutions",
+   "aneks": "aneks to informatory",
+   "zbior-zadan": "CKE task bank",
+   "material-dodatkowy": "CKE additional material with example answers"
+  }
+ },
+ "counts": {
+  "files": 142,
+  "bytes": 343130823,
+  "pages": 4152
+ },
+ "sessions": {
+  "2003-maj-pilotaz": {
+   "A1": "with key",
+   "A2a": "with key",
+   "A2b": "with key",
+   "A2c": "with key",
+   "A3a": "with key",
+   "A3b": "with key",
+   "A3c": "with key"
+  },
+  "2003-styczen-pilotaz": {
+   "A1": "with key",
+   "A2a": "with key",
+   "A2b": "with key",
+   "A2c": "with key",
+   "A3a": "with key",
+   "A3b": "with key",
+   "A3c": "with key"
+  },
+  "2005-grudzien-diagnostyczny-stara": {
+   "A1": "with key",
+   "A2": "with key"
+  },
+  "2005-maj-stara": {
+   "A1": "with key",
+   "A1-ns": "with key",
+   "A2": "with key"
+  },
+  "2006-listopad-probny-stara": {
+   "P": "with key",
+   "R": "with key"
+  },
+  "2006-maj-stara": {
+   "A1": "with key",
+   "A1-ns": "with key",
+   "A2": "with key"
+  },
+  "2006-styczen-stara": {
+   "A1": "with key",
+   "A2": "with key"
+  },
+  "2007-maj-stara": {
+   "P": "with key",
+   "P-ns": "with key",
+   "R": "with key"
+  },
+  "2008-maj-stara": {
+   "P": "with key",
+   "P-ns": "with key",
+   "R": "with key"
+  },
+  "2009-maj-stara": {
+   "P": "with key",
+   "P-ns": "with key",
+   "R": "with key"
+  },
+  "2010-maj-stara": {
+   "P": "with key",
+   "R": "with key"
+  },
+  "2011-maj-stara": {
+   "P": "with key",
+   "R": "with key"
+  },
+  "2012-czerwiec-stara": {
+   "P": "with key",
+   "R": "with key"
+  },
+  "2012-maj-stara": {
+   "P": "with key",
+   "P-ns": "with key",
+   "R": "with key"
+  },
+  "2013-grudzien-przykladowy-f2015": {
+   "R": "with key"
+  },
+  "2013-maj-stara": {
+   "P": "with key",
+   "P-ns": "with key",
+   "R": "with key"
+  },
+  "2014-grudzien-probny-f2015": {
+   "R": "with key"
+  },
+  "2014-maj-stara": {
+   "P": "with key",
+   "R": "with key"
+  },
+  "2015-maj-stara": {
+   "P": "with key",
+   "R": "with key"
+  },
+  "2016-maj-stara": {
+   "P": "with key",
+   "R": "with key"
+  },
+  "2017-maj-stara": {
+   "P": "with key",
+   "R": "with key"
+  },
+  "2018-maj-stara": {
+   "P": "with key",
+   "R": "with key"
+  },
+  "2019-maj-stara": {
+   "P": "with key",
+   "R": "with key"
+  },
+  "2020-maj-stara": {
+   "P": "with key",
+   "R": "with key"
+  },
+  "2024-maj-f2015": {
+   "R": "with key"
+  }
+ },
+ "files": [
+  {
+   "file": "raw/2003-maj-pilotaz-A1-arkusz.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/A1.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/A1.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-styczen-2003/",
+   "sha256": "2e78c81629ff9fd5410609dda64e4114bf120a3803a618984eac22066d36f902",
+   "bytes": 825432,
+   "pages": 12,
+   "year": 2003,
+   "session": "maj",
+   "formula": "pilotaz",
+   "level": "A1",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2003-maj-pilotaz-A1-zasady.pdf"
+   ],
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991",
+    "text layer drops Polish diacritics (ą,ę,ś,ż,ć missing) - needs OCR or re-extraction"
+   ],
+   "text_layer": {
+    "chars_per_page": 1150,
+    "low_text_pages": 1,
+    "images": 5,
+    "diacritic_ratio": 0.0097
+   }
+  },
+  {
+   "file": "raw/2003-maj-pilotaz-A1-zasady.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/mA1.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/mA1.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-styczen-2003/",
+   "sha256": "83e1b884404694f871254e7f9ab2ef14dc7f2038a8772e786a5e8f5e2c1b3002",
+   "bytes": 168503,
+   "pages": 3,
+   "year": 2003,
+   "session": "maj",
+   "formula": "pilotaz",
+   "level": "A1",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991",
+    "text layer drops Polish diacritics (ą,ę,ś,ż,ć missing) - needs OCR or re-extraction"
+   ],
+   "text_layer": {
+    "chars_per_page": 1478,
+    "low_text_pages": 0,
+    "images": 0,
+    "diacritic_ratio": 0.0196
+   }
+  },
+  {
+   "file": "raw/2003-maj-pilotaz-A2a-arkusz.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/A2A.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/A2A.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-styczen-2003/",
+   "sha256": "996b982da88d9674ae14d31504f2b126df4b333e611c06d8ed775b0bff1cac9e",
+   "bytes": 158915,
+   "pages": 12,
+   "year": 2003,
+   "session": "maj",
+   "formula": "pilotaz",
+   "level": "A2a",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2003-maj-pilotaz-A2a-zasady.pdf"
+   ],
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991",
+    "text layer drops Polish diacritics (ą,ę,ś,ż,ć missing) - needs OCR or re-extraction"
+   ],
+   "text_layer": {
+    "chars_per_page": 2198,
+    "low_text_pages": 1,
+    "images": 3,
+    "diacritic_ratio": 0.0107
+   }
+  },
+  {
+   "file": "raw/2003-maj-pilotaz-A2a-zasady.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/mA2A.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/mA2A.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-styczen-2003/",
+   "sha256": "06e1dfbd6058b7e704ac93cc1a28b164c2d7b1c9aa35b425c51dd97581ddc097",
+   "bytes": 172601,
+   "pages": 3,
+   "year": 2003,
+   "session": "maj",
+   "formula": "pilotaz",
+   "level": "A2a",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991",
+    "text layer drops Polish diacritics (ą,ę,ś,ż,ć missing) - needs OCR or re-extraction"
+   ],
+   "text_layer": {
+    "chars_per_page": 1414,
+    "low_text_pages": 0,
+    "images": 1,
+    "diacritic_ratio": 0.0513
+   }
+  },
+  {
+   "file": "raw/2003-maj-pilotaz-A2b-arkusz.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/A2B.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/A2B.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-styczen-2003/",
+   "sha256": "2dcb0fd6e8b78395f3fec1367b5bf814a9c5e6accc716542e4ddc156d385c889",
+   "bytes": 135894,
+   "pages": 12,
+   "year": 2003,
+   "session": "maj",
+   "formula": "pilotaz",
+   "level": "A2b",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2003-maj-pilotaz-A2b-zasady.pdf"
+   ],
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991",
+    "text layer drops Polish diacritics (ą,ę,ś,ż,ć missing) - needs OCR or re-extraction"
+   ],
+   "text_layer": {
+    "chars_per_page": 2172,
+    "low_text_pages": 1,
+    "images": 2,
+    "diacritic_ratio": 0.01
+   }
+  },
+  {
+   "file": "raw/2003-maj-pilotaz-A2b-zasady.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/mA2B.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/mA2B.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-styczen-2003/",
+   "sha256": "bf1a683291b35912060050e741d586b328d3f33c1f56cdf8c0b8ae0f56ed73f1",
+   "bytes": 146675,
+   "pages": 3,
+   "year": 2003,
+   "session": "maj",
+   "formula": "pilotaz",
+   "level": "A2b",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991",
+    "text layer drops Polish diacritics (ą,ę,ś,ż,ć missing) - needs OCR or re-extraction"
+   ],
+   "text_layer": {
+    "chars_per_page": 1263,
+    "low_text_pages": 1,
+    "images": 0,
+    "diacritic_ratio": 0.0324
+   }
+  },
+  {
+   "file": "raw/2003-maj-pilotaz-A2c-arkusz.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/A2C.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/A2C.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-styczen-2003/",
+   "sha256": "362292bea8ce9997b52dfe5e48f78b4350c1218b6155717f5f4da3df40a5d6f5",
+   "bytes": 146505,
+   "pages": 12,
+   "year": 2003,
+   "session": "maj",
+   "formula": "pilotaz",
+   "level": "A2c",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2003-maj-pilotaz-A2c-zasady.pdf"
+   ],
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991",
+    "text layer drops Polish diacritics (ą,ę,ś,ż,ć missing) - needs OCR or re-extraction"
+   ],
+   "text_layer": {
+    "chars_per_page": 2810,
+    "low_text_pages": 1,
+    "images": 2,
+    "diacritic_ratio": 0.0095
+   }
+  },
+  {
+   "file": "raw/2003-maj-pilotaz-A2c-zasady.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/mA2C.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/mA2C.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-styczen-2003/",
+   "sha256": "be9bd9b5fd809ddf15581066aeda4738877449984eee3aaa6070646a0a04b911",
+   "bytes": 161637,
+   "pages": 4,
+   "year": 2003,
+   "session": "maj",
+   "formula": "pilotaz",
+   "level": "A2c",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991",
+    "text layer drops Polish diacritics (ą,ę,ś,ż,ć missing) - needs OCR or re-extraction"
+   ],
+   "text_layer": {
+    "chars_per_page": 2300,
+    "low_text_pages": 0,
+    "images": 0,
+    "diacritic_ratio": 0.0524
+   }
+  },
+  {
+   "file": "raw/2003-maj-pilotaz-A3a-arkusz.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/A3A.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/A3A.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-styczen-2003/",
+   "sha256": "5c3519acc96a05029670fa62cce5f0a6aa816ef4af5741412dbcdb0e89bac9fb",
+   "bytes": 45960,
+   "pages": 8,
+   "year": 2003,
+   "session": "maj",
+   "formula": "pilotaz",
+   "level": "A3a",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2003-maj-pilotaz-A3a-zasady.pdf"
+   ],
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991",
+    "text layer drops Polish diacritics (ą,ę,ś,ż,ć missing) - needs OCR or re-extraction"
+   ],
+   "text_layer": {
+    "chars_per_page": 2873,
+    "low_text_pages": 1,
+    "images": 0,
+    "diacritic_ratio": 0.0005
+   }
+  },
+  {
+   "file": "raw/2003-maj-pilotaz-A3a-zasady.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/mA3A.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/mA3A.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-styczen-2003/",
+   "sha256": "4abe2ecc0ef27f7e8c12e6aa559e7290cc9ef1358cf26587a7c5cd5d6f33d626",
+   "bytes": 165677,
+   "pages": 3,
+   "year": 2003,
+   "session": "maj",
+   "formula": "pilotaz",
+   "level": "A3a",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991",
+    "text layer drops Polish diacritics (ą,ę,ś,ż,ć missing) - needs OCR or re-extraction"
+   ],
+   "text_layer": {
+    "chars_per_page": 1642,
+    "low_text_pages": 0,
+    "images": 0,
+    "diacritic_ratio": 0.0505
+   }
+  },
+  {
+   "file": "raw/2003-maj-pilotaz-A3b-arkusz.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/A3B.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/A3B.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-styczen-2003/",
+   "sha256": "7ce3d2aefb4417cebd9cf102c74a0605ede8dc324ce1130accb7a8a0eb09ed28",
+   "bytes": 43277,
+   "pages": 8,
+   "year": 2003,
+   "session": "maj",
+   "formula": "pilotaz",
+   "level": "A3b",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2003-maj-pilotaz-A3b-zasady.pdf"
+   ],
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991",
+    "text layer drops Polish diacritics (ą,ę,ś,ż,ć missing) - needs OCR or re-extraction"
+   ],
+   "text_layer": {
+    "chars_per_page": 2996,
+    "low_text_pages": 1,
+    "images": 0,
+    "diacritic_ratio": 0.0006
+   }
+  },
+  {
+   "file": "raw/2003-maj-pilotaz-A3b-zasady.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/mA3B.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/mA3B.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-styczen-2003/",
+   "sha256": "153c24d4fed2c6ea221939e4927b56bde854412f82778125fbcd79abfa80d4b1",
+   "bytes": 172037,
+   "pages": 3,
+   "year": 2003,
+   "session": "maj",
+   "formula": "pilotaz",
+   "level": "A3b",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991",
+    "text layer drops Polish diacritics (ą,ę,ś,ż,ć missing) - needs OCR or re-extraction"
+   ],
+   "text_layer": {
+    "chars_per_page": 1749,
+    "low_text_pages": 0,
+    "images": 0,
+    "diacritic_ratio": 0.0544
+   }
+  },
+  {
+   "file": "raw/2003-maj-pilotaz-A3c-arkusz.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/A3C.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/A3C.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-styczen-2003/",
+   "sha256": "ddebb2b080a7be533214e6989edd3d4a72e254320f31b7f2f9dbdbb12df15a57",
+   "bytes": 38320,
+   "pages": 8,
+   "year": 2003,
+   "session": "maj",
+   "formula": "pilotaz",
+   "level": "A3c",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2003-maj-pilotaz-A3c-zasady.pdf"
+   ],
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991",
+    "text layer drops Polish diacritics (ą,ę,ś,ż,ć missing) - needs OCR or re-extraction"
+   ],
+   "text_layer": {
+    "chars_per_page": 2858,
+    "low_text_pages": 1,
+    "images": 0,
+    "diacritic_ratio": 0.0007
+   }
+  },
+  {
+   "file": "raw/2003-maj-pilotaz-A3c-zasady.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/mA3C.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/em2k3/mA3C.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-styczen-2003/",
+   "sha256": "3715b03cd399666cc4bf8d75202333951103b935036594612b1f018139dcf810",
+   "bytes": 179819,
+   "pages": 3,
+   "year": 2003,
+   "session": "maj",
+   "formula": "pilotaz",
+   "level": "A3c",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991",
+    "text layer drops Polish diacritics (ą,ę,ś,ż,ć missing) - needs OCR or re-extraction"
+   ],
+   "text_layer": {
+    "chars_per_page": 1844,
+    "low_text_pages": 0,
+    "images": 0,
+    "diacritic_ratio": 0.0521
+   }
+  },
+  {
+   "file": "raw/2003-styczen-pilotaz-A1-arkusz.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a1.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a1.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-maj-2003/",
+   "sha256": "249e6c779d71024eba005ab1765c3b0c9225f6f0f7e782839314b39682918414",
+   "bytes": 405987,
+   "pages": 12,
+   "year": 2003,
+   "session": "styczen",
+   "formula": "pilotaz",
+   "level": "A1",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2003-styczen-pilotaz-A1-zasady.pdf"
+   ],
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991"
+   ],
+   "text_layer": {
+    "chars_per_page": 1106,
+    "low_text_pages": 3,
+    "images": 6,
+    "diacritic_ratio": 0.0165
+   }
+  },
+  {
+   "file": "raw/2003-styczen-pilotaz-A1-zasady.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a1_sch.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a1_sch.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-maj-2003/",
+   "sha256": "a113e96b06ff344c4b5843ca065a50725afb4142ad7b8c7460150ba3040ec240",
+   "bytes": 157124,
+   "pages": 3,
+   "year": 2003,
+   "session": "styczen",
+   "formula": "pilotaz",
+   "level": "A1",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991"
+   ],
+   "text_layer": {
+    "chars_per_page": 1654,
+    "low_text_pages": 0,
+    "images": 2,
+    "diacritic_ratio": 0.0326
+   }
+  },
+  {
+   "file": "raw/2003-styczen-pilotaz-A2a-arkusz.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a2a.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a2a.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-maj-2003/",
+   "sha256": "96eb4c36fca45757d2afa154108c267a314a52a620fef828501a45116fe5f2e2",
+   "bytes": 1554325,
+   "pages": 12,
+   "year": 2003,
+   "session": "styczen",
+   "formula": "pilotaz",
+   "level": "A2a",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2003-styczen-pilotaz-A2a-zasady.pdf"
+   ],
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991"
+   ],
+   "text_layer": {
+    "chars_per_page": 1906,
+    "low_text_pages": 2,
+    "images": 3,
+    "diacritic_ratio": 0.0296
+   }
+  },
+  {
+   "file": "raw/2003-styczen-pilotaz-A2a-zasady.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a2a_sch.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a2a_sch.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-maj-2003/",
+   "sha256": "24b1fe388d1f592cc37ab501c3ca52a65549d64b4b5db349003b2df9b5a89101",
+   "bytes": 179619,
+   "pages": 3,
+   "year": 2003,
+   "session": "styczen",
+   "formula": "pilotaz",
+   "level": "A2a",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991"
+   ],
+   "text_layer": {
+    "chars_per_page": 2208,
+    "low_text_pages": 0,
+    "images": 0,
+    "diacritic_ratio": 0.0492
+   }
+  },
+  {
+   "file": "raw/2003-styczen-pilotaz-A2b-arkusz.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a2b.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a2b.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-maj-2003/",
+   "sha256": "a363726e66099fbdf93831053fceee3dbea0cd2b513314686b6e67e465fce770",
+   "bytes": 877991,
+   "pages": 15,
+   "year": 2003,
+   "session": "styczen",
+   "formula": "pilotaz",
+   "level": "A2b",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2003-styczen-pilotaz-A2b-zasady.pdf"
+   ],
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991"
+   ],
+   "text_layer": {
+    "chars_per_page": 2374,
+    "low_text_pages": 1,
+    "images": 2,
+    "diacritic_ratio": 0.023
+   }
+  },
+  {
+   "file": "raw/2003-styczen-pilotaz-A2b-zasady.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a2b_sch.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a2b_sch.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-maj-2003/",
+   "sha256": "9ca76bddbf69e3f1665931bece3fd157f9b78496e3967654303e0c70c4214550",
+   "bytes": 206870,
+   "pages": 4,
+   "year": 2003,
+   "session": "styczen",
+   "formula": "pilotaz",
+   "level": "A2b",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991"
+   ],
+   "text_layer": {
+    "chars_per_page": 2248,
+    "low_text_pages": 0,
+    "images": 0,
+    "diacritic_ratio": 0.0534
+   }
+  },
+  {
+   "file": "raw/2003-styczen-pilotaz-A2c-arkusz.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a2c.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a2c.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-maj-2003/",
+   "sha256": "699956bbfb0d69b440bab3aae12a68f277841f8ca9be0e0144c81e4e2472bb0b",
+   "bytes": 365535,
+   "pages": 12,
+   "year": 2003,
+   "session": "styczen",
+   "formula": "pilotaz",
+   "level": "A2c",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2003-styczen-pilotaz-A2c-zasady.pdf"
+   ],
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991"
+   ],
+   "text_layer": {
+    "chars_per_page": 2692,
+    "low_text_pages": 1,
+    "images": 2,
+    "diacritic_ratio": 0.0219
+   }
+  },
+  {
+   "file": "raw/2003-styczen-pilotaz-A2c-zasady.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a2c_sch.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a2c_sch.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-maj-2003/",
+   "sha256": "5b38dbdbe8d5eb44181df55711329941d26827d58deea935660344beaf5e06a2",
+   "bytes": 178581,
+   "pages": 4,
+   "year": 2003,
+   "session": "styczen",
+   "formula": "pilotaz",
+   "level": "A2c",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991"
+   ],
+   "text_layer": {
+    "chars_per_page": 1943,
+    "low_text_pages": 0,
+    "images": 0,
+    "diacritic_ratio": 0.0555
+   }
+  },
+  {
+   "file": "raw/2003-styczen-pilotaz-A3a-arkusz.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a3a.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a3a.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-maj-2003/",
+   "sha256": "f807a2dfade6f6d9c82f9517c1f3e709129d417e2f07df480d426b3817857520",
+   "bytes": 192478,
+   "pages": 8,
+   "year": 2003,
+   "session": "styczen",
+   "formula": "pilotaz",
+   "level": "A3a",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2003-styczen-pilotaz-A3a-zasady.pdf"
+   ],
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991"
+   ],
+   "text_layer": {
+    "chars_per_page": 3221,
+    "low_text_pages": 2,
+    "images": 0,
+    "diacritic_ratio": 0.0034
+   }
+  },
+  {
+   "file": "raw/2003-styczen-pilotaz-A3a-zasady.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a3a_sch.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a3a_sch.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-maj-2003/",
+   "sha256": "179e71ffe3accc1abc99b7fbfd5a87ec307731a733bc532dcbb0acdc530b762d",
+   "bytes": 203087,
+   "pages": 4,
+   "year": 2003,
+   "session": "styczen",
+   "formula": "pilotaz",
+   "level": "A3a",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991"
+   ],
+   "text_layer": {
+    "chars_per_page": 1820,
+    "low_text_pages": 0,
+    "images": 0,
+    "diacritic_ratio": 0.0558
+   }
+  },
+  {
+   "file": "raw/2003-styczen-pilotaz-A3b-arkusz.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a3b.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a3b.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-maj-2003/",
+   "sha256": "357931147af0bd17ed1cfddaf1edc436c72edda55d2030b7468976b5e9647d9d",
+   "bytes": 191850,
+   "pages": 8,
+   "year": 2003,
+   "session": "styczen",
+   "formula": "pilotaz",
+   "level": "A3b",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2003-styczen-pilotaz-A3b-zasady.pdf"
+   ],
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991"
+   ],
+   "text_layer": {
+    "chars_per_page": 3261,
+    "low_text_pages": 2,
+    "images": 0,
+    "diacritic_ratio": 0.0025
+   }
+  },
+  {
+   "file": "raw/2003-styczen-pilotaz-A3b-zasady.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a3b_sch.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a3b_sch.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-maj-2003/",
+   "sha256": "ab4396df30d782ae29b35768e65aad5a694bbe1d52b46d75b7f8735226a0d528",
+   "bytes": 202537,
+   "pages": 4,
+   "year": 2003,
+   "session": "styczen",
+   "formula": "pilotaz",
+   "level": "A3b",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991"
+   ],
+   "text_layer": {
+    "chars_per_page": 1906,
+    "low_text_pages": 0,
+    "images": 0,
+    "diacritic_ratio": 0.0483
+   }
+  },
+  {
+   "file": "raw/2003-styczen-pilotaz-A3c-arkusz.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a3c.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a3c.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-maj-2003/",
+   "sha256": "6020b152c0f3f965228bdeaedc35e0d087fec412e229485c0b8f645fad85e622",
+   "bytes": 133693,
+   "pages": 8,
+   "year": 2003,
+   "session": "styczen",
+   "formula": "pilotaz",
+   "level": "A3c",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2003-styczen-pilotaz-A3c-zasady.pdf"
+   ],
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991"
+   ],
+   "text_layer": {
+    "chars_per_page": 3215,
+    "low_text_pages": 2,
+    "images": 0,
+    "diacritic_ratio": 0.0022
+   }
+  },
+  {
+   "file": "raw/2003-styczen-pilotaz-A3c-zasady.pdf",
+   "source_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a3c_sch.pdf",
+   "listed_url": "https://oke.wroc.pl/wp-content/uploads/library/File/pdfy/2k31/his/a3c_sch.pdf",
+   "source_page": "https://oke.wroc.pl/archiwum/egzamin-maturalny-maj-2003/",
+   "sha256": "656899088fb12363870116acaff5a87fb985e4c09b17d4bac99262dea368b847",
+   "bytes": 189311,
+   "pages": 3,
+   "year": 2003,
+   "session": "styczen",
+   "formula": "pilotaz",
+   "level": "A3c",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "OKE Wrocław pilot \"nowa matura\" (pre-2005); A2/A3 have epoch variants a=starożytność i średniowiecze, b=nowożytność do 1815, c=XIX-XX w. do 1991"
+   ],
+   "text_layer": {
+    "chars_per_page": 2209,
+    "low_text_pages": 0,
+    "images": 0,
+    "diacritic_ratio": 0.0516
+   }
+  },
+  {
+   "file": "raw/2005-grudzien-diagnostyczny-stara-A1-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/arkusze05grudzien/mh_a1.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/arkusze05grudzien/mh_a1.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2006-2/arkusze-diagnostyczne-2005/",
+   "sha256": "4ec675dcf918a7b07c98259adea4d4464162e76de67d18df42c6e5ffa8e0296b",
+   "bytes": 3218558,
+   "pages": 32,
+   "year": 2005,
+   "session": "grudzien-diagnostyczny",
+   "formula": "stara",
+   "level": "A1",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2005-grudzien-diagnostyczny-stara-A1-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 1769,
+    "low_text_pages": 2,
+    "images": 18,
+    "diacritic_ratio": 0.0364
+   }
+  },
+  {
+   "file": "raw/2005-grudzien-diagnostyczny-stara-A1-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/arkusze05grudzien/mh_model_a1.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/arkusze05grudzien/mh_model_a1.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2006-2/arkusze-diagnostyczne-2005/",
+   "sha256": "74ce1a4d8e055a2e45c1b25fb2bb88fd72a92a95dd2b267c41d38c353aa22060",
+   "bytes": 142181,
+   "pages": 6,
+   "year": 2005,
+   "session": "grudzien-diagnostyczny",
+   "formula": "stara",
+   "level": "A1",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1547,
+    "low_text_pages": 0,
+    "images": 0,
+    "diacritic_ratio": 0.0353
+   }
+  },
+  {
+   "file": "raw/2005-grudzien-diagnostyczny-stara-A2-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/arkusze05grudzien/mh_a2.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/arkusze05grudzien/mh_a2.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2006-2/arkusze-diagnostyczne-2005/",
+   "sha256": "5b796dedde41bbcdc05efda958554f97c4f49ef7246cc5911fa71071718ca80d",
+   "bytes": 430173,
+   "pages": 20,
+   "year": 2005,
+   "session": "grudzien-diagnostyczny",
+   "formula": "stara",
+   "level": "A2",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2005-grudzien-diagnostyczny-stara-A2-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 3100,
+    "low_text_pages": 2,
+    "images": 2,
+    "diacritic_ratio": 0.0135
+   }
+  },
+  {
+   "file": "raw/2005-grudzien-diagnostyczny-stara-A2-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/arkusze05grudzien/mh_model_a2.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/arkusze05grudzien/mh_model_a2.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2006-2/arkusze-diagnostyczne-2005/",
+   "sha256": "b7ef8e22681234d850818d39df117d56ea245c71822a373fd3276f895828ed1e",
+   "bytes": 123895,
+   "pages": 5,
+   "year": 2005,
+   "session": "grudzien-diagnostyczny",
+   "formula": "stara",
+   "level": "A2",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1707,
+    "low_text_pages": 0,
+    "images": 0,
+    "diacritic_ratio": 0.0487
+   }
+  },
+  {
+   "file": "raw/2005-informator-stara-PR-informator.pdf",
+   "source_url": "https://www.oke.poznan.pl/pliki/informatory/historia.pdf",
+   "listed_url": "https://www.oke.poznan.pl/pliki/informatory/historia.pdf",
+   "source_page": "https://www.oke.poznan.pl/pliki/informatory/historia.pdf (found via web search; OKE Poznań file store)",
+   "sha256": "401519011bce99db43584fef9b074a8de2c60de4479ce9aa7339c956fcf1f075",
+   "bytes": 4735064,
+   "pages": 92,
+   "year": 2005,
+   "session": "informator",
+   "formula": "stara",
+   "level": "PR",
+   "kind": "informator",
+   "key_present": true,
+   "key_note": "sample/bank tasks with solutions and scoring inside the same document",
+   "notes": [
+    "Informator maturalny od 2005 roku z historii (CKE/OKE Warszawa 2003); fetched with curl (python TLS chain issue)"
+   ],
+   "text_layer": {
+    "chars_per_page": 1718,
+    "low_text_pages": 11,
+    "images": 38,
+    "diacritic_ratio": 0.0349
+   }
+  },
+  {
+   "file": "raw/2005-maj-stara-A1-arkusz.pdf",
+   "source_url": "https://www.oke.poznan.pl/pliki/arkusze/matura2005/hist_A1.pdf",
+   "listed_url": "https://www.oke.poznan.pl/pliki/arkusze/matura2005/hist_A1.pdf",
+   "source_page": "https://oke.poznan.pl/cms,813,rok_2005.htm",
+   "sha256": "74502a387de3701d136bf63a55a76125d81d9ad5a7836345f76dee37577cd455",
+   "bytes": 6669627,
+   "pages": 32,
+   "year": 2005,
+   "session": "maj",
+   "formula": "stara",
+   "level": "A1",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2005-maj-stara-A1-zasady.pdf"
+   ],
+   "notes": [
+    "Arkusz I (poziom podstawowy; also part 1 of rozszerzony). CKE link 404 -> OKE Poznań mirror (fetched with curl: python TLS chain verification failed on oke.poznan.pl)"
+   ],
+   "text_layer": {
+    "chars_per_page": 1424,
+    "low_text_pages": 1,
+    "images": 31,
+    "diacritic_ratio": 0.031
+   }
+  },
+  {
+   "file": "raw/2005-maj-stara-A1-ns-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/Matura2005arkusze/hist_a1_%20glusi.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/Matura2005arkusze/hist_a1_%20glusi.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2005-2/",
+   "sha256": "eb141a93c787e38463f7d9129efa317f90b43413c675602e241dbc463cc117f0",
+   "bytes": 654579,
+   "pages": 24,
+   "year": 2005,
+   "session": "maj",
+   "formula": "stara",
+   "level": "A1-ns",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2005-maj-stara-A1-ns-zasady.pdf"
+   ],
+   "notes": [
+    "Arkusz I dla niesłyszących"
+   ],
+   "text_layer": {
+    "chars_per_page": 1138,
+    "low_text_pages": 2,
+    "images": 30,
+    "diacritic_ratio": 0.0279
+   }
+  },
+  {
+   "file": "raw/2005-maj-stara-A1-ns-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/Matura2005arkusze/hist_model_a1_%20glusi.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/Matura2005arkusze/hist_model_a1_%20glusi.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2005-2/",
+   "sha256": "023c67deb1199a33539bc759094b01451389e56afcb8b2312430451183806ae6",
+   "bytes": 133247,
+   "pages": 7,
+   "year": 2005,
+   "session": "maj",
+   "formula": "stara",
+   "level": "A1-ns",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1351,
+    "low_text_pages": 0,
+    "images": 10,
+    "diacritic_ratio": 0.0378
+   }
+  },
+  {
+   "file": "raw/2005-maj-stara-A1-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/Matura_odp_2005/historia_a1_model.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/Matura_odp_2005/historia_a1_model.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2005-2/",
+   "sha256": "9f3d99caa374e79e5be6b3489b629f8e0d7fc59a6e27c0355f620f6f04049537",
+   "bytes": 134731,
+   "pages": 6,
+   "year": 2005,
+   "session": "maj",
+   "formula": "stara",
+   "level": "A1",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1701,
+    "low_text_pages": 0,
+    "images": 0,
+    "diacritic_ratio": 0.0425
+   }
+  },
+  {
+   "file": "raw/2005-maj-stara-A2-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/Matura2005/hist_a2.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/Matura2005/hist_a2.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2005-2/",
+   "sha256": "20c63c419d8ce564fa9add26a0c5543d0e329ed4f6ce430d3da5e3e9ad4519e0",
+   "bytes": 564540,
+   "pages": 20,
+   "year": 2005,
+   "session": "maj",
+   "formula": "stara",
+   "level": "A2",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2005-maj-stara-A2-zasady.pdf"
+   ],
+   "notes": [
+    "Arkusz II (poziom rozszerzony, part 2)"
+   ],
+   "text_layer": {
+    "chars_per_page": 2539,
+    "low_text_pages": 1,
+    "images": 1,
+    "diacritic_ratio": 0.0202
+   }
+  },
+  {
+   "file": "raw/2005-maj-stara-A2-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/Matura_odp_2005/hist_a2_model.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/Matura_odp_2005/hist_a2_model.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2005-2/",
+   "sha256": "82dcd2e7d9ed68cee364fd870f350fd28b3bc577575dc944f0ad6c68c4f998df",
+   "bytes": 144320,
+   "pages": 6,
+   "year": 2005,
+   "session": "maj",
+   "formula": "stara",
+   "level": "A2",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1877,
+    "low_text_pages": 0,
+    "images": 0,
+    "diacritic_ratio": 0.0509
+   }
+  },
+  {
+   "file": "raw/2006-listopad-probny-stara-P-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/06_mp/hist_pp.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/06_mp/hist_pp.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2007-2/matura-probna-listopad-2006/",
+   "sha256": "8c5be8646414cb97e65881c2c152acd9bc0906a8c24e3ccc3039cd7895ad80a9",
+   "bytes": 2372687,
+   "pages": 26,
+   "year": 2006,
+   "session": "listopad-probny",
+   "formula": "stara",
+   "level": "P",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2006-listopad-probny-stara-P-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 1355,
+    "low_text_pages": 1,
+    "images": 16,
+    "diacritic_ratio": 0.0288
+   }
+  },
+  {
+   "file": "raw/2006-listopad-probny-stara-P-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/06_mp/hist_oc_pp.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/06_mp/hist_oc_pp.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2007-2/matura-probna-listopad-2006/",
+   "sha256": "d9d2997002655694120903f91815f3176b077cb68caeb77d958fbe5622c86a9d",
+   "bytes": 171297,
+   "pages": 6,
+   "year": 2006,
+   "session": "listopad-probny",
+   "formula": "stara",
+   "level": "P",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1806,
+    "low_text_pages": 0,
+    "images": 0,
+    "diacritic_ratio": 0.0347
+   }
+  },
+  {
+   "file": "raw/2006-listopad-probny-stara-R-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/06_mp/hist_pr.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/06_mp/hist_pr.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2007-2/matura-probna-listopad-2006/",
+   "sha256": "140ce36bce8bcc187e9f39bba306c338a36b48da54c19cf30d80c64f46e776f8",
+   "bytes": 3990372,
+   "pages": 24,
+   "year": 2006,
+   "session": "listopad-probny",
+   "formula": "stara",
+   "level": "R",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2006-listopad-probny-stara-R-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 2079,
+    "low_text_pages": 1,
+    "images": 15,
+    "diacritic_ratio": 0.0191
+   }
+  },
+  {
+   "file": "raw/2006-listopad-probny-stara-R-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/06_mp/hist_oc_pr.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/06_mp/hist_oc_pr.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2007-2/matura-probna-listopad-2006/",
+   "sha256": "684824d55d505580c3ec06cc0592f458c45bd251a09e0c0716bc67a8f2733e42",
+   "bytes": 145049,
+   "pages": 6,
+   "year": 2006,
+   "session": "listopad-probny",
+   "formula": "stara",
+   "level": "R",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1868,
+    "low_text_pages": 0,
+    "images": 0,
+    "diacritic_ratio": 0.0443
+   }
+  },
+  {
+   "file": "raw/2006-maj-stara-A1-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/Matura2006/mhi_a1_a.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/Matura2006/mhi_a1_a.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2006-2/maj-2006/",
+   "sha256": "3fcdbb5a7f26c3173255def9156f2952171072460d16eefe7677d90404974399",
+   "bytes": 3941120,
+   "pages": 29,
+   "year": 2006,
+   "session": "maj",
+   "formula": "stara",
+   "level": "A1",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2006-maj-stara-A1-rozwiazany.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 1615,
+    "low_text_pages": 1,
+    "images": 23,
+    "diacritic_ratio": 0.0275
+   }
+  },
+  {
+   "file": "raw/2006-maj-stara-A1-ns-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/Matura2006/a1_hist_niesl.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/Matura2006/a1_hist_niesl.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2006-2/maj-2006/",
+   "sha256": "efa7f38ed0ec2a4b222bb7696b60f2771ec180e984ad429635291554c1a30bd5",
+   "bytes": 1322854,
+   "pages": 20,
+   "year": 2006,
+   "session": "maj",
+   "formula": "stara",
+   "level": "A1-ns",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2006-maj-stara-A1-ns-rozwiazany.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 1326,
+    "low_text_pages": 1,
+    "images": 8,
+    "diacritic_ratio": 0.0269
+   }
+  },
+  {
+   "file": "raw/2006-maj-stara-A1-ns-rozwiazany.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/Matura2006/a1_hist_niesl_rozw.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/Matura2006/a1_hist_niesl_rozw.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2006-2/maj-2006/",
+   "sha256": "961ad2bbeb7b8159b0fee1f41242e9f74190f06a3f32e21e0c5ae2a46cb2d375",
+   "bytes": 1339261,
+   "pages": 20,
+   "year": 2006,
+   "session": "maj",
+   "formula": "stara",
+   "level": "A1-ns",
+   "kind": "rozwiazany",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "solved arkusz ('przykład rozwiązania'): full paper with model answers typed in blue italics; no separate point-by-point scoring rules"
+   ],
+   "text_layer": {
+    "chars_per_page": 1028,
+    "low_text_pages": 1,
+    "images": 8,
+    "diacritic_ratio": 0.0402
+   }
+  },
+  {
+   "file": "raw/2006-maj-stara-A1-rozwiazany.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/Matura2006/mhi_a1_a_rozw.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/Matura2006/mhi_a1_a_rozw.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2006-2/maj-2006/",
+   "sha256": "4e63c507d1b4623570836fabc90388576c31317290ca5b3d50b8baa9c228101b",
+   "bytes": 3948379,
+   "pages": 29,
+   "year": 2006,
+   "session": "maj",
+   "formula": "stara",
+   "level": "A1",
+   "kind": "rozwiazany",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "solved arkusz ('przykład rozwiązania'): full paper with model answers typed in blue italics; no separate point-by-point scoring rules"
+   ],
+   "text_layer": {
+    "chars_per_page": 1205,
+    "low_text_pages": 2,
+    "images": 23,
+    "diacritic_ratio": 0.0395
+   }
+  },
+  {
+   "file": "raw/2006-maj-stara-A2-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/Matura2006/a2_hist.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/Matura2006/a2_hist.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2006-2/maj-2006/",
+   "sha256": "ad8abd4fa8b52961d79d19b95153bf365028fc7cbc50c843bcaa4996e6ca883a",
+   "bytes": 1319579,
+   "pages": 21,
+   "year": 2006,
+   "session": "maj",
+   "formula": "stara",
+   "level": "A2",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2006-maj-stara-A2-rozwiazany.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 2502,
+    "low_text_pages": 1,
+    "images": 5,
+    "diacritic_ratio": 0.0194
+   }
+  },
+  {
+   "file": "raw/2006-maj-stara-A2-rozwiazany.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/Matura2006/a2_hist_rozw.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/Matura2006/a2_hist_rozw.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2006-2/maj-2006/",
+   "sha256": "44f3f2ec3f9ddfc4a38f22bfa0b0e9e75d6ded6e9f530fdd4bf160a30ebdc0cb",
+   "bytes": 1358343,
+   "pages": 22,
+   "year": 2006,
+   "session": "maj",
+   "formula": "stara",
+   "level": "A2",
+   "kind": "rozwiazany",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "solved arkusz ('przykład rozwiązania'): full paper with model answers typed in blue italics; no separate point-by-point scoring rules"
+   ],
+   "text_layer": {
+    "chars_per_page": 1848,
+    "low_text_pages": 1,
+    "images": 5,
+    "diacritic_ratio": 0.0516
+   }
+  },
+  {
+   "file": "raw/2006-styczen-stara-A1-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/Arkusz2006styczen/historia_a1.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/Arkusz2006styczen/historia_a1.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2006-2/sesja-zimowa-2006-r/",
+   "sha256": "1776869f7a922cf99e90fcae6b1f6fc186f6c4516ad5f3ec86b83b363d04c876",
+   "bytes": 1034186,
+   "pages": 24,
+   "year": 2006,
+   "session": "styczen",
+   "formula": "stara",
+   "level": "A1",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2006-styczen-stara-A1-zasady.pdf"
+   ],
+   "notes": [
+    "sesja zimowa 2006"
+   ],
+   "text_layer": {
+    "chars_per_page": 1697,
+    "low_text_pages": 1,
+    "images": 12,
+    "diacritic_ratio": 0.026
+   }
+  },
+  {
+   "file": "raw/2006-styczen-stara-A1-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/Arkusz2006styczen/hist_mod_%20a1.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/Arkusz2006styczen/hist_mod_%20a1.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2006-2/sesja-zimowa-2006-r/",
+   "sha256": "c8e5ca5f51cfc1cbbb4489de60d834acb0993dc12c4cbf700bb3dda561db42c2",
+   "bytes": 180177,
+   "pages": 10,
+   "year": 2006,
+   "session": "styczen",
+   "formula": "stara",
+   "level": "A1",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1464,
+    "low_text_pages": 0,
+    "images": 0,
+    "diacritic_ratio": 0.0391
+   }
+  },
+  {
+   "file": "raw/2006-styczen-stara-A2-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/Arkusz2006styczen/historia_a2.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/Arkusz2006styczen/historia_a2.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2006-2/sesja-zimowa-2006-r/",
+   "sha256": "cb1348bcff5f58dbe119152cd660deb8e5b89dafd5e1dafaa6e53b7106a198f9",
+   "bytes": 1309153,
+   "pages": 20,
+   "year": 2006,
+   "session": "styczen",
+   "formula": "stara",
+   "level": "A2",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2006-styczen-stara-A2-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 2698,
+    "low_text_pages": 1,
+    "images": 6,
+    "diacritic_ratio": 0.0212
+   }
+  },
+  {
+   "file": "raw/2006-styczen-stara-A2-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/Arkusz2006styczen/hist_mod_a2.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/Arkusz2006styczen/hist_mod_a2.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2006-2/sesja-zimowa-2006-r/",
+   "sha256": "fc93dde92f5f34a10b888ba155c32f585026ecee9cff8fdebbc62d98b4c5767a",
+   "bytes": 153596,
+   "pages": 7,
+   "year": 2006,
+   "session": "styczen",
+   "formula": "stara",
+   "level": "A2",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1695,
+    "low_text_pages": 0,
+    "images": 0,
+    "diacritic_ratio": 0.0512
+   }
+  },
+  {
+   "file": "raw/2007-maj-stara-P-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/mat2_07/his_pp.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/mat2_07/his_pp.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2007-2/maj-2007/",
+   "sha256": "215643cfdc60c9bdeeb09ade7293f2509f6e1d9fc4047d4b5586ac5c94342c6f",
+   "bytes": 2524693,
+   "pages": 30,
+   "year": 2007,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2007-maj-stara-P-rozwiazany.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 1513,
+    "low_text_pages": 1,
+    "images": 26,
+    "diacritic_ratio": 0.0315
+   }
+  },
+  {
+   "file": "raw/2007-maj-stara-P-ns-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/mat2_07/hist_pp_ns.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/mat2_07/hist_pp_ns.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2007-2/maj-2007/",
+   "sha256": "0dd509a5018b66c96cc801f9cb80ccabb3a0c07bdfeaad2114e573d25e206017",
+   "bytes": 1525885,
+   "pages": 22,
+   "year": 2007,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P-ns",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2007-maj-stara-P-ns-rozwiazany.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 1139,
+    "low_text_pages": 1,
+    "images": 15,
+    "diacritic_ratio": 0.0293
+   }
+  },
+  {
+   "file": "raw/2007-maj-stara-P-ns-rozwiazany.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/mat2_07/historia_ns_rozw.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/mat2_07/historia_ns_rozw.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2007-2/maj-2007/",
+   "sha256": "b311dcbd2d76e50f817da03bb10d901fc45b9b5c9b778950cb827d888ca9f58f",
+   "bytes": 1615659,
+   "pages": 22,
+   "year": 2007,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P-ns",
+   "kind": "rozwiazany",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "solved arkusz ('przykład rozwiązania'): full paper with model answers typed in blue italics; no separate point-by-point scoring rules"
+   ],
+   "text_layer": {
+    "chars_per_page": 898,
+    "low_text_pages": 1,
+    "images": 15,
+    "diacritic_ratio": 0.0417
+   }
+  },
+  {
+   "file": "raw/2007-maj-stara-P-rozwiazany.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/mat2_07/his_pp_rozw.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/mat2_07/his_pp_rozw.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2007-2/maj-2007/",
+   "sha256": "4c461e5c6c54596ce5f0417102de9a3de7f945ad27e9d7f909f6f63b8946bc2b",
+   "bytes": 2560026,
+   "pages": 30,
+   "year": 2007,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "rozwiazany",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "solved arkusz ('przykład rozwiązania'): full paper with model answers typed in blue italics; no separate point-by-point scoring rules"
+   ],
+   "text_layer": {
+    "chars_per_page": 1257,
+    "low_text_pages": 1,
+    "images": 26,
+    "diacritic_ratio": 0.0423
+   }
+  },
+  {
+   "file": "raw/2007-maj-stara-R-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/mat2_07/his_pr.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/mat2_07/his_pr.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2007-2/maj-2007/",
+   "sha256": "b468c39722019372a1cb4cbfcfc23406b25d02d8b18c14b831c42a6a3114dbd2",
+   "bytes": 1221002,
+   "pages": 23,
+   "year": 2007,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2007-maj-stara-R-rozwiazany.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 2370,
+    "low_text_pages": 1,
+    "images": 15,
+    "diacritic_ratio": 0.0155
+   }
+  },
+  {
+   "file": "raw/2007-maj-stara-R-rozwiazany.pdf",
+   "source_url": "https://cke.gov.pl/images/stories/mat2_07/his_pr_rozw.pdf",
+   "listed_url": "https://cke.gov.pl/images/stories/mat2_07/his_pr_rozw.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2007-2/maj-2007/",
+   "sha256": "d6af6be4268c7b7f24bd0716dc466827b78d85d126c4fd7466ab256ec8741cf7",
+   "bytes": 1301814,
+   "pages": 27,
+   "year": 2007,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "rozwiazany",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "solved arkusz ('przykład rozwiązania'): full paper with model answers typed in blue italics; no separate point-by-point scoring rules"
+   ],
+   "text_layer": {
+    "chars_per_page": 1683,
+    "low_text_pages": 1,
+    "images": 15,
+    "diacritic_ratio": 0.0487
+   }
+  },
+  {
+   "file": "raw/2008-informator-stara-PR-informator.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Informatory/2008/historia_a.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Informatory/2008/historia_a.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/informatory/",
+   "sha256": "6368194efb41bede74442a4056239eb4cda3dc6af855f480428f99c7ff8fd924",
+   "bytes": 7472343,
+   "pages": 92,
+   "year": 2008,
+   "session": "informator",
+   "formula": "stara",
+   "level": "PR",
+   "kind": "informator",
+   "key_present": true,
+   "key_note": "sample/bank tasks with solutions and scoring inside the same document",
+   "notes": [
+    "Informator o egzaminie maturalnym z historii od 2010 (published 2008)"
+   ],
+   "text_layer": {
+    "chars_per_page": 1577,
+    "low_text_pages": 9,
+    "images": 46,
+    "diacritic_ratio": 0.0372
+   }
+  },
+  {
+   "file": "raw/2008-maj-stara-P-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2008/hist_pp.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2008/hist_pp.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2008-2/",
+   "sha256": "457c7d47acc856bd611b88edfc39f03803eb50d47af8b38e619b6bff0016bf21",
+   "bytes": 4981688,
+   "pages": 30,
+   "year": 2008,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2008-maj-stara-P-rozwiazany.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 1293,
+    "low_text_pages": 1,
+    "images": 23,
+    "diacritic_ratio": 0.0276
+   }
+  },
+  {
+   "file": "raw/2008-maj-stara-P-ns-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2008/hist_pp_ns.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2008/hist_pp_ns.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2008-2/",
+   "sha256": "9ff00e231a6a938a06ee20403b3fe62489c54f3696b770dcdc32d5d6fff6361b",
+   "bytes": 4014557,
+   "pages": 23,
+   "year": 2008,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P-ns",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2008-maj-stara-P-ns-rozwiazany.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 1170,
+    "low_text_pages": 1,
+    "images": 19,
+    "diacritic_ratio": 0.0288
+   }
+  },
+  {
+   "file": "raw/2008-maj-stara-P-ns-rozwiazany.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2008/hist_pp_ns_rozw.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2008/hist_pp_ns_rozw.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2008-2/",
+   "sha256": "f8c2e50f9de65bdaff7d161a0dd9721d1e2171b20839da8476116b3763f0bcf9",
+   "bytes": 4086261,
+   "pages": 23,
+   "year": 2008,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P-ns",
+   "kind": "rozwiazany",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "solved arkusz ('przykład rozwiązania'): full paper with model answers typed in blue italics; no separate point-by-point scoring rules"
+   ],
+   "text_layer": {
+    "chars_per_page": 883,
+    "low_text_pages": 2,
+    "images": 19,
+    "diacritic_ratio": 0.0424
+   }
+  },
+  {
+   "file": "raw/2008-maj-stara-P-rozwiazany.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2008/hist_pp_rozw.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2008/hist_pp_rozw.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2008-2/",
+   "sha256": "73a7adbf0c84dac7472ddc74dc45929c7fb593262724856371bddfeb663bc3e1",
+   "bytes": 5016061,
+   "pages": 30,
+   "year": 2008,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "rozwiazany",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "solved arkusz ('przykład rozwiązania'): full paper with model answers typed in blue italics; no separate point-by-point scoring rules"
+   ],
+   "text_layer": {
+    "chars_per_page": 1060,
+    "low_text_pages": 1,
+    "images": 23,
+    "diacritic_ratio": 0.0378
+   }
+  },
+  {
+   "file": "raw/2008-maj-stara-R-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2008/hist_pr.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2008/hist_pr.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2008-2/",
+   "sha256": "543166e87bc2418f1527675ea6bc8596e358a3f70461ba1c7f36bff768bfc8c5",
+   "bytes": 2221476,
+   "pages": 27,
+   "year": 2008,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2008-maj-stara-R-rozwiazany.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 1971,
+    "low_text_pages": 2,
+    "images": 12,
+    "diacritic_ratio": 0.0196
+   }
+  },
+  {
+   "file": "raw/2008-maj-stara-R-rozwiazany.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2008/hist_pr_rozw.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2008/hist_pr_rozw.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2008-2/",
+   "sha256": "75224ffa11ca912b312d70c33e8673081d1f2426adf5037d0c3b3965cb1c390b",
+   "bytes": 2295632,
+   "pages": 30,
+   "year": 2008,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "rozwiazany",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "solved arkusz ('przykład rozwiązania'): full paper with model answers typed in blue italics; no separate point-by-point scoring rules"
+   ],
+   "text_layer": {
+    "chars_per_page": 1676,
+    "low_text_pages": 2,
+    "images": 12,
+    "diacritic_ratio": 0.0501
+   }
+  },
+  {
+   "file": "raw/2009-maj-stara-P-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2009/historia_pp.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2009/historia_pp.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2009-2/maj-2009/",
+   "sha256": "89bc975b08e132b5b399578869eb7eb77a29bd813b081354d7ead2dde85b55da",
+   "bytes": 4049953,
+   "pages": 28,
+   "year": 2009,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2009-maj-stara-PR-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 1616,
+    "low_text_pages": 1,
+    "images": 25,
+    "diacritic_ratio": 0.0311
+   }
+  },
+  {
+   "file": "raw/2009-maj-stara-P-ns-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2009/historia_pp_ns.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2009/historia_pp_ns.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2009-2/maj-2009/",
+   "sha256": "cda7b9080c69f76be4f6a543e34088a0694128469ea0280f39e00209d5d94c0f",
+   "bytes": 2656267,
+   "pages": 24,
+   "year": 2009,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P-ns",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2009-maj-stara-P-ns-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 1093,
+    "low_text_pages": 1,
+    "images": 19,
+    "diacritic_ratio": 0.0293
+   }
+  },
+  {
+   "file": "raw/2009-maj-stara-P-ns-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2009/KLUCZE/pozostale/historia_ns.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2009/KLUCZE/pozostale/historia_ns.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2009-2/klucze-punktowania-maj-2009/",
+   "sha256": "71fe245518be33cf10212c80bfcd9c1e737a8db697e9157124235cc61b0705d9",
+   "bytes": 181131,
+   "pages": 6,
+   "year": 2009,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P-ns",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 999,
+    "low_text_pages": 2,
+    "images": 0,
+    "diacritic_ratio": 0.0385
+   }
+  },
+  {
+   "file": "raw/2009-maj-stara-PR-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2009/KLUCZE/historia.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2009/KLUCZE/historia.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2009-2/klucze-punktowania-maj-2009/",
+   "sha256": "a5a8c216b570963d674be5696acb5b972335f529b884a65400c2266df3fe1886",
+   "bytes": 274297,
+   "pages": 31,
+   "year": 2009,
+   "session": "maj",
+   "formula": "stara",
+   "level": "PR",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "notes": [
+    "single key file for both levels (to verify)"
+   ],
+   "text_layer": {
+    "chars_per_page": 1448,
+    "low_text_pages": 4,
+    "images": 0,
+    "diacritic_ratio": 0.04
+   }
+  },
+  {
+   "file": "raw/2009-maj-stara-R-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2009/historia_pr.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2009/historia_pr.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2009-2/maj-2009/",
+   "sha256": "5a1e5e4ee8928c190137203850e51dc3312f28486a385b26743daaea892a54e8",
+   "bytes": 2711440,
+   "pages": 28,
+   "year": 2009,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2009-maj-stara-PR-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 2033,
+    "low_text_pages": 1,
+    "images": 13,
+    "diacritic_ratio": 0.0189
+   }
+  },
+  {
+   "file": "raw/2010-informator-stara-all-aneks.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Informatory/2009-2014/aneks_2010v2.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Informatory/2009-2014/aneks_2010v2.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/informatory/",
+   "sha256": "e876ebbbd1a55126066d62c1044453537a472d11be97a311e5b042e3b2f5fa4a",
+   "bytes": 1330331,
+   "pages": 211,
+   "year": 2010,
+   "session": "informator",
+   "formula": "stara",
+   "level": "all",
+   "kind": "aneks",
+   "key_present": false,
+   "notes": [
+    "general aneks to all informatory (2010), linked under each subject"
+   ],
+   "text_layer": {
+    "chars_per_page": 1667,
+    "low_text_pages": 63,
+    "images": 12,
+    "diacritic_ratio": 0.0349
+   }
+  },
+  {
+   "file": "raw/2010-maj-stara-P-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Historia/historia_pp.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Historia/historia_pp.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2010-2/maj-2010/",
+   "sha256": "87919b436d766290f03545982ff7e79f42ab6a0e2d4724fc579f53703f12d71f",
+   "bytes": 2493562,
+   "pages": 30,
+   "year": 2010,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2010-maj-stara-P-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 1533,
+    "low_text_pages": 5,
+    "images": 177,
+    "diacritic_ratio": 0.0311
+   }
+  },
+  {
+   "file": "raw/2010-maj-stara-P-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Historia/historia_klucz_pp.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Historia/historia_klucz_pp.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2010-2/klucze-punktowania-maj-2010/",
+   "sha256": "610aa187e6d60dd35bdc2a1e4756dacf7ba759af437a143006f16a7e13674eec",
+   "bytes": 192684,
+   "pages": 18,
+   "year": 2010,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1442,
+    "low_text_pages": 1,
+    "images": 1,
+    "diacritic_ratio": 0.0373
+   }
+  },
+  {
+   "file": "raw/2010-maj-stara-R-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Historia/historia_pr.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Historia/historia_pr.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2010-2/maj-2010/",
+   "sha256": "5c90d0d343897ba069b8c16d9c84e57055210f5d3cf21cdaf521c50d3edd8b9d",
+   "bytes": 6176529,
+   "pages": 26,
+   "year": 2010,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2010-maj-stara-R-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 2320,
+    "low_text_pages": 3,
+    "images": 171,
+    "diacritic_ratio": 0.0156
+   }
+  },
+  {
+   "file": "raw/2010-maj-stara-R-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Historia/historia_klucz_pr.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Historia/historia_klucz_pr.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2010-2/klucze-punktowania-maj-2010/",
+   "sha256": "60249af7e727a134296476f0b85dd7ade2b4f09b51fdcb28d795af9ceec2daa9",
+   "bytes": 211836,
+   "pages": 12,
+   "year": 2010,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1832,
+    "low_text_pages": 1,
+    "images": 1,
+    "diacritic_ratio": 0.0473
+   }
+  },
+  {
+   "file": "raw/2011-maj-stara-P-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/P/historia_pp.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/P/historia_pp.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2011-2/maj-2011/",
+   "sha256": "5896844d4e21b7fc5c3f44d9e08c467f5a4d1117890283675848579e87afb081",
+   "bytes": 3820269,
+   "pages": 30,
+   "year": 2011,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2011-maj-stara-P-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 1414,
+    "low_text_pages": 3,
+    "images": 186,
+    "diacritic_ratio": 0.0285
+   }
+  },
+  {
+   "file": "raw/2011-maj-stara-P-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/kryteria/historia_model_pp.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/kryteria/historia_model_pp.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2011-2/maj-2011/",
+   "sha256": "e8c60d6d09fe6aaf605fa4d7fe4164c1bdbc0b35bcde1c4c1e691ba52e687c8d",
+   "bytes": 156741,
+   "pages": 14,
+   "year": 2011,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1369,
+    "low_text_pages": 0,
+    "images": 11,
+    "diacritic_ratio": 0.032
+   }
+  },
+  {
+   "file": "raw/2011-maj-stara-R-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/R/historia_pr.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/R/historia_pr.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2011-2/maj-2011/",
+   "sha256": "6f9990d3e739592a2315584c6d3d300f7e7ddf0a84d56db3a72209b9860e1cb7",
+   "bytes": 1586753,
+   "pages": 26,
+   "year": 2011,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2011-maj-stara-R-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 2447,
+    "low_text_pages": 2,
+    "images": 172,
+    "diacritic_ratio": 0.0181
+   }
+  },
+  {
+   "file": "raw/2011-maj-stara-R-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/kryteria/historia_model_pr.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/kryteria/historia_model_pr.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2011-2/maj-2011/",
+   "sha256": "36b7fdde2ccf4e78ae562c2122dcf03fba913fa283c93c9fa6b26a2363db8ed5",
+   "bytes": 155772,
+   "pages": 9,
+   "year": 2011,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1635,
+    "low_text_pages": 0,
+    "images": 10,
+    "diacritic_ratio": 0.0392
+   }
+  },
+  {
+   "file": "raw/2012-czerwiec-stara-P-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/czerwiec/historia/historia_pp.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/czerwiec/historia/historia_pp.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2012-2/czerwiec-2012/",
+   "sha256": "0d4b9ff8ec80d9de364c8fdfbb9160a029f68e15d146f2ba7dfe8fdc3f54441b",
+   "bytes": 1950896,
+   "pages": 28,
+   "year": 2012,
+   "session": "czerwiec",
+   "formula": "stara",
+   "level": "P",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2012-czerwiec-stara-P-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 1794,
+    "low_text_pages": 1,
+    "images": 178,
+    "diacritic_ratio": 0.0297
+   }
+  },
+  {
+   "file": "raw/2012-czerwiec-stara-P-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/czerwiec/klucze/historia_06_pp_klucz.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/czerwiec/klucze/historia_06_pp_klucz.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2012-2/czerwiec-2012/",
+   "sha256": "27bdb33ea21cc4f3da18e967dd49d9a4c814f31d681f494012b30a3c57c2cf87",
+   "bytes": 174967,
+   "pages": 15,
+   "year": 2012,
+   "session": "czerwiec",
+   "formula": "stara",
+   "level": "P",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1413,
+    "low_text_pages": 0,
+    "images": 1,
+    "diacritic_ratio": 0.0325
+   }
+  },
+  {
+   "file": "raw/2012-czerwiec-stara-R-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/czerwiec/historia/historia_pr.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/czerwiec/historia/historia_pr.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2012-2/czerwiec-2012/",
+   "sha256": "53a6e76e64d8bca9b978ae1a8c4492549f6b46cb66247b5c3d82ac676bca684a",
+   "bytes": 1371581,
+   "pages": 23,
+   "year": 2012,
+   "session": "czerwiec",
+   "formula": "stara",
+   "level": "R",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2012-czerwiec-stara-R-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 2782,
+    "low_text_pages": 1,
+    "images": 201,
+    "diacritic_ratio": 0.0161
+   }
+  },
+  {
+   "file": "raw/2012-czerwiec-stara-R-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/czerwiec/klucze/historia_06_pr_klucz.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/czerwiec/klucze/historia_06_pr_klucz.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2012-2/czerwiec-2012/",
+   "sha256": "a6d0e60d02d2d8d84033cc2b9a29ab47d61fffb3d48f767b13432d039832d12e",
+   "bytes": 146195,
+   "pages": 11,
+   "year": 2012,
+   "session": "czerwiec",
+   "formula": "stara",
+   "level": "R",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1779,
+    "low_text_pages": 0,
+    "images": 1,
+    "diacritic_ratio": 0.0418
+   }
+  },
+  {
+   "file": "raw/2012-maj-stara-P-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/hist/historia_pp.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/hist/historia_pp.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2012-2/maj-2012/",
+   "sha256": "68e61a3df2c367cd606b2e93d15318c13eeac6c42519d28937898c6039f30a8c",
+   "bytes": 2996120,
+   "pages": 28,
+   "year": 2012,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2012-maj-stara-P-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 1862,
+    "low_text_pages": 2,
+    "images": 177,
+    "diacritic_ratio": 0.0336
+   }
+  },
+  {
+   "file": "raw/2012-maj-stara-P-ns-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/hist/historia%20ns_pp.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/hist/historia%20ns_pp.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2012-2/maj-2012/",
+   "sha256": "1655c8742f5dd619cddaff3f6a44845104469665de1fcb1baaea46d9fa9a6629",
+   "bytes": 2708512,
+   "pages": 24,
+   "year": 2012,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P-ns",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2012-maj-stara-P-ns-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 1252,
+    "low_text_pages": 1,
+    "images": 195,
+    "diacritic_ratio": 0.0254
+   }
+  },
+  {
+   "file": "raw/2012-maj-stara-P-ns-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/klucze/historia_ns_klucz.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/klucze/historia_ns_klucz.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2012-2/maj-2012/",
+   "sha256": "f29ff3b95febce2ebd6f33d92cf7b11f6b1404b963862d85f822a29dbf6eff1f",
+   "bytes": 170454,
+   "pages": 15,
+   "year": 2012,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P-ns",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1272,
+    "low_text_pages": 0,
+    "images": 1,
+    "diacritic_ratio": 0.0305
+   }
+  },
+  {
+   "file": "raw/2012-maj-stara-P-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/klucze/historia_pp_klucz.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/klucze/historia_pp_klucz.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2012-2/maj-2012/",
+   "sha256": "b7d6798dd35469617586551369edbc303c770788acc542a9be6fc9dc004258b9",
+   "bytes": 174647,
+   "pages": 16,
+   "year": 2012,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1375,
+    "low_text_pages": 1,
+    "images": 1,
+    "diacritic_ratio": 0.0341
+   }
+  },
+  {
+   "file": "raw/2012-maj-stara-R-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/hist/historia_pr.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/hist/historia_pr.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2012-2/maj-2012/",
+   "sha256": "7c772241cf5fb23c950d5f72de7971b2f18ce0cfc11852613323dfb8ec541c22",
+   "bytes": 3317173,
+   "pages": 24,
+   "year": 2012,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2012-maj-stara-R-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 2411,
+    "low_text_pages": 1,
+    "images": 176,
+    "diacritic_ratio": 0.0167
+   }
+  },
+  {
+   "file": "raw/2012-maj-stara-R-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/klucze/historia_pr_klucz.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/klucze/historia_pr_klucz.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2012-2/maj-2012/",
+   "sha256": "300b46ab3b700354583d8212a76cd49e92d3b5b272b03a1c413bfa9168e22711",
+   "bytes": 171282,
+   "pages": 11,
+   "year": 2012,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1741,
+    "low_text_pages": 1,
+    "images": 1,
+    "diacritic_ratio": 0.0417
+   }
+  },
+  {
+   "file": "raw/2013-grudzien-przykladowy-f2015-R-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Przykladowe_arkusze/2015/historia_PR/historia_PR_A1.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Przykladowe_arkusze/2015/historia_PR/historia_PR_A1.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/materialy-dodatkowe/przykladowe-arkusze/historia-poziom-rozszerzony/",
+   "sha256": "76440a5cddbbe78cfebf0262afbbbdf7f867d7bdf1f20d0af86171749965c596",
+   "bytes": 3917171,
+   "pages": 32,
+   "year": 2013,
+   "session": "grudzien-przykladowy",
+   "formula": "f2015",
+   "level": "R",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2013-grudzien-przykladowy-f2015-R-zasady.pdf"
+   ],
+   "notes": [
+    "CKE przykładowy zestaw zadań (A1), grudzień 2013, formula 2015"
+   ],
+   "text_layer": {
+    "chars_per_page": 2091,
+    "low_text_pages": 2,
+    "images": 45,
+    "diacritic_ratio": 0.026
+   }
+  },
+  {
+   "file": "raw/2013-grudzien-przykladowy-f2015-R-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Przykladowe_arkusze/2015/historia_PR/historia_model_PR_A1_A2_A3_A4_A7.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Przykladowe_arkusze/2015/historia_PR/historia_model_PR_A1_A2_A3_A4_A7.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/materialy-dodatkowe/przykladowe-arkusze/historia-poziom-rozszerzony/",
+   "sha256": "b3be058ff1c363062f770f2dcc624e187c267fd5311fcdc387fa929ce4f681d8",
+   "bytes": 345655,
+   "pages": 33,
+   "year": 2013,
+   "session": "grudzien-przykladowy",
+   "formula": "f2015",
+   "level": "R",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 2804,
+    "low_text_pages": 0,
+    "images": 1,
+    "diacritic_ratio": 0.0547
+   }
+  },
+  {
+   "file": "raw/2013-maj-stara-P-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/historia_PP.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/historia_PP.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2013-2/",
+   "sha256": "eb8cc83c69152a76ef7a57cb34452eb5a47f528af3a37319257faf358360e372",
+   "bytes": 1446050,
+   "pages": 27,
+   "year": 2013,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2013-maj-stara-P-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 1879,
+    "low_text_pages": 1,
+    "images": 176,
+    "diacritic_ratio": 0.0303
+   }
+  },
+  {
+   "file": "raw/2013-maj-stara-P-ns-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/historia_NS_PP.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/historia_NS_PP.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2013-2/",
+   "sha256": "517cd50eca1a5138108c8ae8c65a92dae8f4ef9ca32ff85d2b8daae51e50ed5a",
+   "bytes": 1714287,
+   "pages": 20,
+   "year": 2013,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P-ns",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2013-maj-stara-P-ns-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 1436,
+    "low_text_pages": 1,
+    "images": 185,
+    "diacritic_ratio": 0.0303
+   }
+  },
+  {
+   "file": "raw/2013-maj-stara-P-ns-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/Kryteria-Oceniania/historia_model_NS_PP.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/Kryteria-Oceniania/historia_model_NS_PP.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2013-2/",
+   "sha256": "91a6808ea9fb5ac672559a1adda2390719e1a08062e7912b49fd362d751be785",
+   "bytes": 355892,
+   "pages": 15,
+   "year": 2013,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P-ns",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1431,
+    "low_text_pages": 0,
+    "images": 1,
+    "diacritic_ratio": 0.039
+   }
+  },
+  {
+   "file": "raw/2013-maj-stara-P-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/Kryteria-Oceniania/historia_model_PP.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/Kryteria-Oceniania/historia_model_PP.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2013-2/",
+   "sha256": "fb55224de68a9d3a436182f765f08aae266b01bd0475d78cc9474c62ea236f44",
+   "bytes": 359514,
+   "pages": 17,
+   "year": 2013,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1462,
+    "low_text_pages": 1,
+    "images": 1,
+    "diacritic_ratio": 0.0377
+   }
+  },
+  {
+   "file": "raw/2013-maj-stara-R-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/historia_PR.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/historia_PR.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2013-2/",
+   "sha256": "7f91d531878f6eaa8516ede4cee17db5daa5db74e97fdc859600f07e03f51d4d",
+   "bytes": 3211767,
+   "pages": 27,
+   "year": 2013,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2013-maj-stara-R-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 2483,
+    "low_text_pages": 2,
+    "images": 29,
+    "diacritic_ratio": 0.0178
+   }
+  },
+  {
+   "file": "raw/2013-maj-stara-R-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/Kryteria-Oceniania/historia_model_PR.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/Kryteria-Oceniania/historia_model_PR.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2013-2/",
+   "sha256": "cd7306f97af4e96f4ec3ec15fff34d702e48fcce40df6e1cfd2343609d2f5199",
+   "bytes": 379977,
+   "pages": 12,
+   "year": 2013,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1796,
+    "low_text_pages": 1,
+    "images": 1,
+    "diacritic_ratio": 0.0477
+   }
+  },
+  {
+   "file": "raw/2014-grudzien-probny-f2015-R-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/egzamin_probny_2015/historia_pr/A1Historia_PR_arkusz.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/egzamin_probny_2015/historia_pr/A1Historia_PR_arkusz.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/materialy-dodatkowe/probny-egzamin/historia-poziom-rozszerzony/",
+   "sha256": "a1fcfca265c19e78b9f7cc44ab92d28d8410055e9c1d384a3f271b0b8c616614",
+   "bytes": 3973088,
+   "pages": 39,
+   "year": 2014,
+   "session": "grudzien-probny",
+   "formula": "f2015",
+   "level": "R",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2014-grudzien-probny-f2015-R-zasady.pdf"
+   ],
+   "notes": [
+    "CKE przykładowy arkusz / próbny egzamin 18 grudnia 2014 (formula 2015), A1 variant"
+   ],
+   "text_layer": {
+    "chars_per_page": 1926,
+    "low_text_pages": 1,
+    "images": 19,
+    "diacritic_ratio": 0.0202
+   }
+  },
+  {
+   "file": "raw/2014-grudzien-probny-f2015-R-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/egzamin_probny_2015/historia_pr/A1A2A3A4A7Historia_PR_model_odpowiedzi.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/egzamin_probny_2015/historia_pr/A1A2A3A4A7Historia_PR_model_odpowiedzi.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/materialy-dodatkowe/probny-egzamin/historia-poziom-rozszerzony/",
+   "sha256": "def8a547476f0ef7db9641b6661a6c301bc58ae583d2c16a254773dec4ed49c6",
+   "bytes": 496659,
+   "pages": 38,
+   "year": 2014,
+   "session": "grudzien-probny",
+   "formula": "f2015",
+   "level": "R",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 2623,
+    "low_text_pages": 0,
+    "images": 1,
+    "diacritic_ratio": 0.0555
+   }
+  },
+  {
+   "file": "raw/2014-maj-stara-P-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2014/historia_PP_A1.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2014/historia_PP_A1.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2014-2/",
+   "sha256": "549beb92d30de3933144066a206923e5efe7961ae2533124cee793aed563166f",
+   "bytes": 6037556,
+   "pages": 29,
+   "year": 2014,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2014-maj-stara-P-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 2244,
+    "low_text_pages": 1,
+    "images": 1577,
+    "diacritic_ratio": 0.0312
+   }
+  },
+  {
+   "file": "raw/2014-maj-stara-P-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2014/odpowiedzi/Historia_PP.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2014/odpowiedzi/Historia_PP.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2014-2/",
+   "sha256": "81df60479dd614d9ff7c26ae6a9d300b68e1137345176222a1eefeec567b89bc",
+   "bytes": 259705,
+   "pages": 20,
+   "year": 2014,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1569,
+    "low_text_pages": 1,
+    "images": 1,
+    "diacritic_ratio": 0.0465
+   }
+  },
+  {
+   "file": "raw/2014-maj-stara-R-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2014/historia_PR_A1.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2014/historia_PR_A1.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2014-2/",
+   "sha256": "f2df36c6d6b2c4e82523e05b3f8464cba5d5a8c6043bc4f9a7186367b6c31daf",
+   "bytes": 8030476,
+   "pages": 26,
+   "year": 2014,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2014-maj-stara-R-zasady.pdf"
+   ],
+   "text_layer": {
+    "chars_per_page": 2578,
+    "low_text_pages": 1,
+    "images": 1551,
+    "diacritic_ratio": 0.0166
+   }
+  },
+  {
+   "file": "raw/2014-maj-stara-R-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2014/odpowiedzi/Historia_PR.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2014/odpowiedzi/Historia_PR.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2014-2/",
+   "sha256": "0575c2b33f77c8d0dccfcae1b653f036470458b270091eb9a82783f1a45ba822",
+   "bytes": 249717,
+   "pages": 12,
+   "year": 2014,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1823,
+    "low_text_pages": 1,
+    "images": 1,
+    "diacritic_ratio": 0.0477
+   }
+  },
+  {
+   "file": "raw/2015-informator-f2015-R-informator.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Informatory/2015/Historia.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Informatory/2015/Historia.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/informatory/",
+   "sha256": "e4bab46d86237ccbc4e6e8141405043e060dc7ae980b34e510e87fb78c9416d8",
+   "bytes": 5918668,
+   "pages": 138,
+   "year": 2015,
+   "session": "informator",
+   "formula": "f2015",
+   "level": "R",
+   "kind": "informator",
+   "key_present": true,
+   "key_note": "sample/bank tasks with solutions and scoring inside the same document",
+   "notes": [
+    "Informator o egzaminie maturalnym z historii od roku szkolnego 2014/2015 (year = first exam year)"
+   ],
+   "text_layer": {
+    "chars_per_page": 2160,
+    "low_text_pages": 4,
+    "images": 55,
+    "diacritic_ratio": 0.0455
+   }
+  },
+  {
+   "file": "raw/2015-maj-stara-P-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/MHI-P1_1P-152.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/MHI-P1_1P-152.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2015-2/",
+   "sha256": "b86e0474129b0d868b7660316e923eed8b7c62bb93e910ba9d61064e0e19c319",
+   "bytes": 6018863,
+   "pages": 32,
+   "year": 2015,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2015-maj-stara-P-zasady.pdf"
+   ],
+   "notes": [
+    "stara formuła (do 2014) session for repeaters / technikum"
+   ],
+   "text_layer": {
+    "chars_per_page": 2010,
+    "low_text_pages": 1,
+    "images": 1138,
+    "diacritic_ratio": 0.031
+   }
+  },
+  {
+   "file": "raw/2015-maj-stara-P-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/odpowiedzi/MHI-P1-S.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/odpowiedzi/MHI-P1-S.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2015-2/",
+   "sha256": "3184e5d3299415c76ed8fc405ab04a7a2edcd12eae9b2c55ec83478a2e7a8508",
+   "bytes": 265017,
+   "pages": 18,
+   "year": 2015,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1512,
+    "low_text_pages": 0,
+    "images": 1,
+    "diacritic_ratio": 0.0398
+   }
+  },
+  {
+   "file": "raw/2015-maj-stara-R-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/MHI-R1_1P-152.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/MHI-R1_1P-152.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2015-2/",
+   "sha256": "548b2316490dbf10d53e49ff733916be8c231220111e50322abb04e6c733be8e",
+   "bytes": 4843242,
+   "pages": 23,
+   "year": 2015,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2015-maj-stara-R-zasady.pdf"
+   ],
+   "notes": [
+    "stara formuła (do 2014) session for repeaters / technikum"
+   ],
+   "text_layer": {
+    "chars_per_page": 2578,
+    "low_text_pages": 1,
+    "images": 1532,
+    "diacritic_ratio": 0.0163
+   }
+  },
+  {
+   "file": "raw/2015-maj-stara-R-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/odpowiedzi/MHI-R1-S.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/odpowiedzi/MHI-R1-S.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2015-2/",
+   "sha256": "caee9b89cdbc94f8f2908f06602657f0430ed077943129a3e0e0877d60aeaf71",
+   "bytes": 298076,
+   "pages": 11,
+   "year": 2015,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1864,
+    "low_text_pages": 0,
+    "images": 1,
+    "diacritic_ratio": 0.0489
+   }
+  },
+  {
+   "file": "raw/2016-maj-stara-P-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/MHI-P1_1P-162.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/MHI-P1_1P-162.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2016-2/",
+   "sha256": "7c17a26ed0e8e706e4450a53b5c6b2c6c408d579ecc555a82a0310b8dc0c1f9f",
+   "bytes": 3296841,
+   "pages": 32,
+   "year": 2016,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2016-maj-stara-P-zasady.pdf"
+   ],
+   "notes": [
+    "stara formuła (do 2014) session for repeaters / technikum"
+   ],
+   "text_layer": {
+    "chars_per_page": 1785,
+    "low_text_pages": 1,
+    "images": 13,
+    "diacritic_ratio": 0.0436
+   }
+  },
+  {
+   "file": "raw/2016-maj-stara-P-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/zasady_oceniania/MHI-P1-S.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/zasady_oceniania/MHI-P1-S.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2016-2/",
+   "sha256": "3c1917e952e617d9a063a63f5eb4acd96629d90d7795d489d7df59270493c633",
+   "bytes": 247201,
+   "pages": 16,
+   "year": 2016,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1252,
+    "low_text_pages": 0,
+    "images": 1,
+    "diacritic_ratio": 0.0367
+   }
+  },
+  {
+   "file": "raw/2016-maj-stara-R-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/MHI-R1_1P-162.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/MHI-R1_1P-162.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2016-2/",
+   "sha256": "fa33e43c95cd452678269cf513786a402d83b4f7dd653985a822f7435302d32b",
+   "bytes": 4230243,
+   "pages": 26,
+   "year": 2016,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2016-maj-stara-R-zasady.pdf"
+   ],
+   "notes": [
+    "stara formuła (do 2014) session for repeaters / technikum"
+   ],
+   "text_layer": {
+    "chars_per_page": 1937,
+    "low_text_pages": 1,
+    "images": 1101,
+    "diacritic_ratio": 0.0218
+   }
+  },
+  {
+   "file": "raw/2016-maj-stara-R-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/zasady_oceniania/MHI-R1-S.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/zasady_oceniania/MHI-R1-S.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2016-2/",
+   "sha256": "af0bb45f5e64ac2a8c5436306b04d5d02dbcf2f1b17fae9de5f166bad1bf601c",
+   "bytes": 281166,
+   "pages": 11,
+   "year": 2016,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1515,
+    "low_text_pages": 0,
+    "images": 1,
+    "diacritic_ratio": 0.0472
+   }
+  },
+  {
+   "file": "raw/2017-maj-stara-P-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/historia/MHI-P1_1P-172.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/historia/MHI-P1_1P-172.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2017-2/",
+   "sha256": "c8733a9c81d86f7da86198e9095b78cf8116d072724efcc92712cbaae6dec396",
+   "bytes": 15950537,
+   "pages": 32,
+   "year": 2017,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2017-maj-stara-P-zasady.pdf"
+   ],
+   "notes": [
+    "stara formuła (do 2014) session for repeaters / technikum"
+   ],
+   "text_layer": {
+    "chars_per_page": 1434,
+    "low_text_pages": 1,
+    "images": 40,
+    "diacritic_ratio": 0.0259
+   }
+  },
+  {
+   "file": "raw/2017-maj-stara-P-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/zasady_oceniania/MHI-P1-S.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/zasady_oceniania/MHI-P1-S.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2017-2/",
+   "sha256": "b41264792ce62cb27389fc72b2c141f2a5c014317f00a6643732e4ad3434d377",
+   "bytes": 236602,
+   "pages": 18,
+   "year": 2017,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1350,
+    "low_text_pages": 1,
+    "images": 1,
+    "diacritic_ratio": 0.0437
+   }
+  },
+  {
+   "file": "raw/2017-maj-stara-R-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/historia/MHI-R1_1P-172.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/historia/MHI-R1_1P-172.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2017-2/",
+   "sha256": "8d8f57ff34cf68df6dbabc6f269c1b17b67b8640f9e073b671d1366631bb8783",
+   "bytes": 5268579,
+   "pages": 27,
+   "year": 2017,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2017-maj-stara-R-zasady.pdf"
+   ],
+   "notes": [
+    "stara formuła (do 2014) session for repeaters / technikum"
+   ],
+   "text_layer": {
+    "chars_per_page": 2344,
+    "low_text_pages": 1,
+    "images": 17,
+    "diacritic_ratio": 0.0182
+   }
+  },
+  {
+   "file": "raw/2017-maj-stara-R-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/zasady_oceniania/MHI-R1-S.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/zasady_oceniania/MHI-R1-S.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2017-2/",
+   "sha256": "b8d0667e5aec6ecf75b026701219a9427a81a917270e6c19a1357b1922fcd788",
+   "bytes": 255589,
+   "pages": 12,
+   "year": 2017,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1465,
+    "low_text_pages": 0,
+    "images": 1,
+    "diacritic_ratio": 0.0504
+   }
+  },
+  {
+   "file": "raw/2018-maj-stara-P-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/historia/MHI-P1_1P-182.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/historia/MHI-P1_1P-182.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2018-2/",
+   "sha256": "2a572177bb5ad097b3ca9ba56d4da7df6f8ebbaeeed5b6860d0f6d69e023e0aa",
+   "bytes": 10166910,
+   "pages": 33,
+   "year": 2018,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2018-maj-stara-P-zasady.pdf"
+   ],
+   "notes": [
+    "stara formuła (do 2014) session for repeaters / technikum"
+   ],
+   "text_layer": {
+    "chars_per_page": 1646,
+    "low_text_pages": 1,
+    "images": 32,
+    "diacritic_ratio": 0.0286
+   }
+  },
+  {
+   "file": "raw/2018-maj-stara-P-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/Zasady_ocenienia/MHI-P1_1P-182_zasady_oceniania.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/Zasady_ocenienia/MHI-P1_1P-182_zasady_oceniania.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2018-2/",
+   "sha256": "ba605818b1fee4b42eff09f0b194450cb2013c99d25f8be74c471124825a4bb2",
+   "bytes": 231127,
+   "pages": 17,
+   "year": 2018,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1437,
+    "low_text_pages": 0,
+    "images": 1,
+    "diacritic_ratio": 0.0431
+   }
+  },
+  {
+   "file": "raw/2018-maj-stara-R-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/historia/MHI-R1_1P-182.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/historia/MHI-R1_1P-182.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2018-2/",
+   "sha256": "49cb1c9bc15a4cf0169f5438e9e1342ab5627a4af8a85367ef934a02ece0b0b2",
+   "bytes": 4256261,
+   "pages": 29,
+   "year": 2018,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2018-maj-stara-R-zasady.pdf"
+   ],
+   "notes": [
+    "stara formuła (do 2014) session for repeaters / technikum"
+   ],
+   "text_layer": {
+    "chars_per_page": 2379,
+    "low_text_pages": 1,
+    "images": 20,
+    "diacritic_ratio": 0.0137
+   }
+  },
+  {
+   "file": "raw/2018-maj-stara-R-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/Zasady_ocenienia/MHI-R1_1P-182_zasady_oceniania.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/Zasady_ocenienia/MHI-R1_1P-182_zasady_oceniania.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2018-2/",
+   "sha256": "c367c3d0a3300783a9c46067132e36e7863b63742ec8e94871a2285c0ed7ca00",
+   "bytes": 240577,
+   "pages": 12,
+   "year": 2018,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1646,
+    "low_text_pages": 0,
+    "images": 1,
+    "diacritic_ratio": 0.0496
+   }
+  },
+  {
+   "file": "raw/2019-maj-stara-P-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/historia/MHI-P1_1P-192.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/historia/MHI-P1_1P-192.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2019-2/",
+   "sha256": "3ac27915dbb44f17c6ded54dd81c0b4975275e85d172858012603ddbf748fae8",
+   "bytes": 9256706,
+   "pages": 28,
+   "year": 2019,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2019-maj-stara-P-zasady.pdf"
+   ],
+   "notes": [
+    "stara formuła (do 2014) session for repeaters / technikum"
+   ],
+   "text_layer": {
+    "chars_per_page": 1883,
+    "low_text_pages": 1,
+    "images": 22,
+    "diacritic_ratio": 0.0289
+   }
+  },
+  {
+   "file": "raw/2019-maj-stara-P-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/Zasady_ocenienia/MHI-P1_1P-192_model.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/Zasady_ocenienia/MHI-P1_1P-192_model.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2019-2/",
+   "sha256": "e807a16f66e2ccc7ba658c59fe770392cbb74b7f534cd1c12e0f57177003d770",
+   "bytes": 227396,
+   "pages": 17,
+   "year": 2019,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1314,
+    "low_text_pages": 0,
+    "images": 1,
+    "diacritic_ratio": 0.0433
+   }
+  },
+  {
+   "file": "raw/2019-maj-stara-R-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/historia/MHI-R1_1P-192.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/historia/MHI-R1_1P-192.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2019-2/",
+   "sha256": "746b69f4b50ac911150c52f3b3ea400c548a64ee732b6b1a2e04a1f0fcb0eb04",
+   "bytes": 4002325,
+   "pages": 27,
+   "year": 2019,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2019-maj-stara-R-zasady.pdf"
+   ],
+   "notes": [
+    "stara formuła (do 2014) session for repeaters / technikum"
+   ],
+   "text_layer": {
+    "chars_per_page": 2885,
+    "low_text_pages": 1,
+    "images": 12,
+    "diacritic_ratio": 0.0167
+   }
+  },
+  {
+   "file": "raw/2019-maj-stara-R-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/Zasady_ocenienia/MHI-R1_1P-192_model.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/Zasady_ocenienia/MHI-R1_1P-192_model.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2019-2/",
+   "sha256": "9dfb5f6d7e2ab82825fd0a16e0d419196fae85b770d7c55c4dc50a896eadd600",
+   "bytes": 236389,
+   "pages": 11,
+   "year": 2019,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1634,
+    "low_text_pages": 0,
+    "images": 1,
+    "diacritic_ratio": 0.0513
+   }
+  },
+  {
+   "file": "raw/2020-maj-stara-P-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/historia/MHI-P1_1P-202s.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/historia/MHI-P1_1P-202s.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2020-2/",
+   "sha256": "3cf6c53ddd3c3af4d98a395be9343411acfb70c122d508bb1d85fb34a96e2265",
+   "bytes": 10511107,
+   "pages": 28,
+   "year": 2020,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2020-maj-stara-P-zasady.pdf"
+   ],
+   "notes": [
+    "stara formuła (do 2014) session for repeaters / technikum"
+   ],
+   "text_layer": {
+    "chars_per_page": 1269,
+    "low_text_pages": 5,
+    "images": 41,
+    "diacritic_ratio": 0.0259
+   }
+  },
+  {
+   "file": "raw/2020-maj-stara-P-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/Zasady_oceniania/MHI-PP-202s_zasady.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/Zasady_oceniania/MHI-PP-202s_zasady.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2020-2/",
+   "sha256": "8aec1531767607762d0fb97c32a4fd9a0a4221acf2152175a1a90f425fa6a3e7",
+   "bytes": 206266,
+   "pages": 18,
+   "year": 2020,
+   "session": "maj",
+   "formula": "stara",
+   "level": "P",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1167,
+    "low_text_pages": 0,
+    "images": 9,
+    "diacritic_ratio": 0.0343
+   }
+  },
+  {
+   "file": "raw/2020-maj-stara-R-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/historia/MHI-R1_1R-202s.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/historia/MHI-R1_1R-202s.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2020-2/",
+   "sha256": "449e9d235c85ea0e0fe1ce1b065a38f46b840750ad86a95347f41ecbbcc7482f",
+   "bytes": 6427167,
+   "pages": 36,
+   "year": 2020,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2020-maj-stara-R-zasady.pdf"
+   ],
+   "notes": [
+    "stara formuła (do 2014) session for repeaters / technikum"
+   ],
+   "text_layer": {
+    "chars_per_page": 2094,
+    "low_text_pages": 6,
+    "images": 17,
+    "diacritic_ratio": 0.0152
+   }
+  },
+  {
+   "file": "raw/2020-maj-stara-R-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/Zasady_oceniania/MHI-PR-202s_zasady.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/Zasady_oceniania/MHI-PR-202s_zasady.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2020-2/",
+   "sha256": "3ac087cd901f5331441b0f3d44613506c31df5db2928bec9fb33d1bbbfe82dc2",
+   "bytes": 198722,
+   "pages": 13,
+   "year": 2020,
+   "session": "maj",
+   "formula": "stara",
+   "level": "R",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1483,
+    "low_text_pages": 0,
+    "images": 7,
+    "diacritic_ratio": 0.046
+   }
+  },
+  {
+   "file": "raw/2023-informator-f2023-R-dwujezyczny-informator.pdf",
+   "source_url": "https://www.oke.waw.pl/wp-content/uploads/OKE_WARSZAWA/EM/EM_2023/Informatory/2023_2024/Informator_od2023_dwujezyczny_historia.pdf",
+   "listed_url": "https://www.oke.waw.pl/wp-content/uploads/OKE_WARSZAWA/EM/EM_2023/Informatory/2023_2024/Informator_od2023_dwujezyczny_historia.pdf",
+   "source_page": "OKE Warszawa file store (found via web search)",
+   "sha256": "175b16f3e662ccce0db650a5e48ee0cc8c84bd2e5e05c7e434c771eb1205e284",
+   "bytes": 2862489,
+   "pages": 142,
+   "year": 2023,
+   "session": "informator",
+   "formula": "f2023",
+   "level": "R-dwujezyczny",
+   "kind": "informator",
+   "key_present": true,
+   "key_note": "sample/bank tasks with solutions and scoring inside the same document",
+   "notes": [
+    "bilingual history informator od 2023 (CKE 2022)"
+   ],
+   "text_layer": {
+    "chars_per_page": 1352,
+    "low_text_pages": 14,
+    "images": 81,
+    "diacritic_ratio": 0.0091
+   }
+  },
+  {
+   "file": "raw/2023-informator-f2023-R-informator.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Informatory/Informator_EM2023_historia.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Informatory/Informator_EM2023_historia.pdf",
+   "source_page": "(unlinked on current CKE pages; found via web search)",
+   "sha256": "e7f2ef23ec0459b1ca755bddf545284c8109087850ca5bfc6710ecd9d4540aa3",
+   "bytes": 8991696,
+   "pages": 136,
+   "year": 2023,
+   "session": "informator",
+   "formula": "f2023",
+   "level": "R",
+   "kind": "informator",
+   "key_present": true,
+   "key_note": "sample/bank tasks with solutions and scoring inside the same document",
+   "notes": [
+    "original Informator o egzaminie maturalnym z historii od roku szkolnego 2022/2023 (CKE 2021)"
+   ],
+   "text_layer": {
+    "chars_per_page": 1789,
+    "low_text_pages": 10,
+    "images": 54,
+    "diacritic_ratio": 0.0404
+   }
+  },
+  {
+   "file": "raw/2024-maj-f2015-R-arkusz.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2024/Historia/EHIP-R0-100-A-2405-arkusz.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2024/Historia/EHIP-R0-100-A-2405-arkusz.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/2024-2-2/",
+   "sha256": "b8a03c1a10b1300febfd51c4146fdfe9c13003f040c0f827f1416ed6ffbce7e4",
+   "bytes": 3797644,
+   "pages": 40,
+   "year": 2024,
+   "session": "maj",
+   "formula": "f2015",
+   "level": "R",
+   "kind": "arkusz",
+   "key_present": true,
+   "key_files": [
+    "raw/2024-maj-f2015-R-zasady.pdf"
+   ],
+   "notes": [
+    "EHIP-R0-100-A-2405, formula 2015 May 2024"
+   ],
+   "text_layer": {
+    "chars_per_page": 1892,
+    "low_text_pages": 4,
+    "images": 41,
+    "diacritic_ratio": 0.0227
+   }
+  },
+  {
+   "file": "raw/2024-maj-f2015-R-karta.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2024/Historia/EHIP-R0-100-A-2405-karta.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2024/Historia/EHIP-R0-100-A-2405-karta.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/2024-2-2/",
+   "sha256": "9c6b1d37ebf24a743cfadf6915b0ba2301487b0e1678934ded771f7061f08690",
+   "bytes": 1404883,
+   "pages": 2,
+   "year": 2024,
+   "session": "maj",
+   "formula": "f2015",
+   "level": "R",
+   "kind": "karta",
+   "key_present": null,
+   "text_layer": {
+    "chars_per_page": 330,
+    "low_text_pages": 1,
+    "images": 0,
+    "diacritic_ratio": 0.0106
+   }
+  },
+  {
+   "file": "raw/2024-maj-f2015-R-zasady.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2024/Historia/EHIP-R0-100-2405-zasady.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2024/Historia/EHIP-R0-100-2405-zasady.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/2024-2-2/",
+   "sha256": "607151cbf8862128cde63834f64d3d043a25c83ffc69388f043bd6e9baaaa046",
+   "bytes": 406494,
+   "pages": 26,
+   "year": 2024,
+   "session": "maj",
+   "formula": "f2015",
+   "level": "R",
+   "kind": "zasady",
+   "key_present": true,
+   "is_key": true,
+   "text_layer": {
+    "chars_per_page": 1924,
+    "low_text_pages": 0,
+    "images": 14,
+    "diacritic_ratio": 0.0504
+   }
+  },
+  {
+   "file": "raw/2025-informator-f2023-R-dwujezyczny-informator.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Informatory/2024/Informator_EM2024_dwujezyczny_historia_w%20roku%202024_2025.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Informatory/2024/Informator_EM2024_dwujezyczny_historia_w%20roku%202024_2025.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2023/informatory/",
+   "sha256": "db6d4961d3a94ffcd224b293a25f224b6c5b2876b19255b1bac7c0565d564fa8",
+   "bytes": 2754569,
+   "pages": 144,
+   "year": 2025,
+   "session": "informator",
+   "formula": "f2023",
+   "level": "R-dwujezyczny",
+   "kind": "informator",
+   "key_present": true,
+   "key_note": "sample/bank tasks with solutions and scoring inside the same document",
+   "notes": [
+    "bilingual history, 2024/2025"
+   ],
+   "text_layer": {
+    "chars_per_page": 1332,
+    "low_text_pages": 16,
+    "images": 81,
+    "diacritic_ratio": 0.0092
+   }
+  },
+  {
+   "file": "raw/2025-informator-f2023-R-informator.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Informatory/2024/Informator_EM2024_historia_2024_2025.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Informatory/2024/Informator_EM2024_historia_2024_2025.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2023/informatory/",
+   "sha256": "039def57cf94e0c9bef7448aa1aab32310b9ecc6020aca6b11bd48edea183aca",
+   "bytes": 5245867,
+   "pages": 122,
+   "year": 2025,
+   "session": "informator",
+   "formula": "f2023",
+   "level": "R",
+   "kind": "informator",
+   "key_present": true,
+   "key_note": "sample/bank tasks with solutions and scoring inside the same document",
+   "notes": [
+    "Informator EM2024: historia w roku szkolnym 2024/2025 (LO i technikum); year = exam year"
+   ],
+   "text_layer": {
+    "chars_per_page": 1830,
+    "low_text_pages": 7,
+    "images": 48,
+    "diacritic_ratio": 0.0406
+   }
+  },
+  {
+   "file": "raw/2026-informator-f2023-R-dwujezyczny-informator.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Informatory/2024/Informator_EM2025_dwujezyczny_historia_od%20roku%202025_2026.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Informatory/2024/Informator_EM2025_dwujezyczny_historia_od%20roku%202025_2026.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2023/informatory/",
+   "sha256": "5a99c849d32a5838a498fb4738c5f8a4d4c95a3326ce8f88e5f965324d4e4bef",
+   "bytes": 2817520,
+   "pages": 144,
+   "year": 2026,
+   "session": "informator",
+   "formula": "f2023",
+   "level": "R-dwujezyczny",
+   "kind": "informator",
+   "key_present": true,
+   "key_note": "sample/bank tasks with solutions and scoring inside the same document",
+   "notes": [
+    "bilingual history, od 2025/2026"
+   ],
+   "text_layer": {
+    "chars_per_page": 1332,
+    "low_text_pages": 16,
+    "images": 81,
+    "diacritic_ratio": 0.0091
+   }
+  },
+  {
+   "file": "raw/2026-informator-f2023-R-informator.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Informatory/2024/Informator_EM2025_historia_2025_2026.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Informatory/2024/Informator_EM2025_historia_2025_2026.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2023/informatory/",
+   "sha256": "62f4087a85359c31d34ee8cb3cfa8bd12f71a87feb169eb511e408533342d455",
+   "bytes": 5246028,
+   "pages": 122,
+   "year": 2026,
+   "session": "informator",
+   "formula": "f2023",
+   "level": "R",
+   "kind": "informator",
+   "key_present": true,
+   "key_note": "sample/bank tasks with solutions and scoring inside the same document",
+   "notes": [
+    "Informator EM2025: historia od roku szkolnego 2025/2026 (LO) / 2026/2027 (technikum); year = first exam year"
+   ],
+   "text_layer": {
+    "chars_per_page": 1828,
+    "low_text_pages": 8,
+    "images": 48,
+    "diacritic_ratio": 0.0406
+   }
+  },
+  {
+   "file": "raw/nd-materialy-f2023-R-material-dodatkowy-ikonografia.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/historia/Material_dodatkowy_historia_ikonografia.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/historia/Material_dodatkowy_historia_ikonografia.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2023/materialy-dodatkowe/historia-materialy-dodatkowe/",
+   "sha256": "4089f514ee06a97d6751cb425b6722b49dd91d17559d6f944123438378d47e02",
+   "bytes": 1337250,
+   "pages": 25,
+   "year": "nd",
+   "session": "materialy",
+   "formula": "f2023",
+   "level": "R",
+   "kind": "material-dodatkowy",
+   "key_present": true,
+   "key_note": "commentary with example answers, not a full scored paper",
+   "text_layer": {
+    "chars_per_page": 1608,
+    "low_text_pages": 0,
+    "images": 29,
+    "diacritic_ratio": 0.0375
+   }
+  },
+  {
+   "file": "raw/nd-materialy-f2023-R-material-dodatkowy-wypracowanie.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/historia/Material_dodatkowy_historia_wypracowanie.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/historia/Material_dodatkowy_historia_wypracowanie.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2023/materialy-dodatkowe/historia-materialy-dodatkowe/",
+   "sha256": "0ba26d9d27cafea6c367693ffc5d8c0d157a7c4774a37f9a9ad4ac2a84981aff",
+   "bytes": 428511,
+   "pages": 27,
+   "year": "nd",
+   "session": "materialy",
+   "formula": "f2023",
+   "level": "R",
+   "kind": "material-dodatkowy",
+   "key_present": true,
+   "key_note": "commentary with example answers, not a full scored paper",
+   "text_layer": {
+    "chars_per_page": 2442,
+    "low_text_pages": 0,
+    "images": 19,
+    "diacritic_ratio": 0.0461
+   }
+  },
+  {
+   "file": "raw/nd-zbior-zadan-f2015-R-zbior-zadan-cz1.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Materialy/Zbiory_zadan/Matura_Zbi%C3%B3r_zada%C5%84_Historia_cz_I.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Materialy/Zbiory_zadan/Matura_Zbi%C3%B3r_zada%C5%84_Historia_cz_I.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/materialy-dodatkowe/materialy-dla-uczniow-i-nauczycieli/zbiory-zadan/",
+   "sha256": "4453b223d73ef5d1162d988ef082990bbbd53cc118a925e213eec103a6d3e0dd",
+   "bytes": 22629297,
+   "pages": 92,
+   "year": "nd",
+   "session": "zbior-zadan",
+   "formula": "f2015",
+   "level": "R",
+   "kind": "zbior-zadan",
+   "key_present": true,
+   "key_note": "sample/bank tasks with solutions and scoring inside the same document (solutions are in part 2)",
+   "text_layer": {
+    "chars_per_page": 1583,
+    "low_text_pages": 1,
+    "images": 133,
+    "diacritic_ratio": 0.0515
+   }
+  },
+  {
+   "file": "raw/nd-zbior-zadan-f2015-R-zbior-zadan-cz2.pdf",
+   "source_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Materialy/Zbiory_zadan/Matura_Zbi%C3%B3r_zada%C5%84_Historia_Cz_II.pdf",
+   "listed_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Materialy/Zbiory_zadan/Matura_Zbi%C3%B3r_zada%C5%84_Historia_Cz_II.pdf",
+   "source_page": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/materialy-dodatkowe/materialy-dla-uczniow-i-nauczycieli/zbiory-zadan/",
+   "sha256": "8434726f7c1de0c4a83dd317ceb5d3535d5a52ffa0d8d961c482450f898758f7",
+   "bytes": 34205787,
+   "pages": 313,
+   "year": "nd",
+   "session": "zbior-zadan",
+   "formula": "f2015",
+   "level": "R",
+   "kind": "zbior-zadan",
+   "key_present": true,
+   "key_note": "sample/bank tasks with solutions and scoring inside the same document",
+   "text_layer": {
+    "chars_per_page": 2130,
+    "low_text_pages": 4,
+    "images": 200,
+    "diacritic_ratio": 0.0506
+   }
+  }
+ ],
+ "not_found": [
+  {
+   "item": "2005 maj Arkusz I on cke.gov.pl",
+   "status": "CKE link /images/stories/Matura2005arkusze/hist_A1.pdf returns 404 (also the ZIP); file taken from the OKE Poznań mirror instead (same exam code MHI-P1A1P-052)."
+  },
+  {
+   "item": "2007 and 2008 maj (stara) separate scoring rules / klucze punktowania",
+   "status": "Not published anywhere found (CKE, OKE Poznań, OKE Wrocław, OKE Łomża all only link the 'przykład rozwiązania' = solved arkusz). Dataset has the solved papers (kind=rozwiazany) instead, incl. 2006 maj and deaf variants."
+  },
+  {
+   "item": "2010 and 2011 maj (stara) deaf (niesłyszący) variants",
+   "status": "Not listed on CKE / OKE Poznań pages for those years."
+  },
+  {
+   "item": "2014 maj (stara) deaf variant",
+   "status": "Not listed."
+  },
+  {
+   "item": "Old-formula June (dodatkowy) sessions other than czerwiec 2012",
+   "status": "Only czerwiec 2012 historia is published (CKE + OKE Łomża). No other June historia papers found."
+  },
+  {
+   "item": "Old-formula August (poprawkowy) sessions",
+   "status": "None for historia: August poprawka covers only obligatory subjects; OKE Łomża sierpień 2012/2014 pages contain no historia."
+  },
+  {
+   "item": "Old-formula CKE/OKE próbne beyond grudzień 2005 (diagnostyczny), styczeń 2006 (sesja zimowa) and listopad 2006 (próbna)",
+   "status": "No other official historia próbne found on CKE or the OKE sites; later CKE próbne (listopad 2009/2010) were mathematics only. OKE-branded próbne of that era (with commercial partners) are not on OKE sites."
+  },
+  {
+   "item": "Formula 2015 / 2023 June (dodatkowy) and August (poprawkowy) historia sessions",
+   "status": "Not published by CKE or any OKE site checked (CKE publishes only the May session; August poprawka is only for obligatory subjects). Nothing official found."
+  },
+  {
+   "item": "Formula 2015 May 2025+ historia",
+   "status": "Not found (formula 2015 session page exists for 2024 only)."
+  },
+  {
+   "item": "OKE Łódź (oke.lodz.pl)",
+   "status": "Domain unreachable (connection refused, 2026-09-26); OKE Łódź moved to egzaminy.gov.pl/okelodz (not crawled, other OKEs only mirror CKE papers)."
+  },
+  {
+   "item": "OKE Kraków file manager categories (filemgmt/viewcat.php?cid=96 etc.)",
+   "status": "Returns an error page; its year pages only mirror CKE arkusze (often without keys)."
+  },
+  {
+   "item": "OKE Gdańsk archive (cms.oke.gda.pl)",
+   "status": "Unreachable; current oke.gda.pl has no archival matura historia."
+  },
+  {
+   "item": "Informator for formula 2023, published 2021, earlier revisions",
+   "status": "Found and downloaded (Informator_EM2023_historia.pdf, not linked from current CKE pages). No other revisions looked for."
+  }
+ ],
+ "parser_notes": {
+  "exam_structure_old_formula": {
+   "2005-2006 (A1/A2 arkusze)": "Arkusz I (MHI-P1A1P-05x/06x, 120 min, 100 pts, ~34-40 tasks: short sources + questions across all epochs) = poziom podstawowy. Arkusz II (MHI-R1A1P, 150 min, 50 pts): one theme; part 1 = source analysis tasks (30 pts), part 2 = one extended-answer essay (20 pts). Rozszerzony candidates wrote BOTH A1 and A2. Task numbering in A2 continues from A1 (e.g. 35-51 in 2005, 41-60 in 2005-12/2006-01).",
+   "2007-2014 and 2015-2020 stara": "P (MHI-P1_1P-YYs, 120 min, 100 pts, ~28-40 numbered tasks, most with lettered sub-parts A/B/C; from ~2015 sub-tasks numbered 2.1, 2.2). R (MHI-R1_1P, 180 min, 50 pts): CZĘŚĆ I test (20 pts), CZĘŚĆ II analiza źródeł (10 pts, sources labelled Źródło A/B/...), CZĘŚĆ III wypracowanie (20 pts, choose 1 of 2-3 topics, scored by levels I-IV).",
+   "2003 pilot (OKE Wrocław)": "Arkusz I (60 min; key says 90 raw pts divided by 3 in Jan, 30 pts in May), Arkusz II (90 min, 40 pts) and Arkusz III (90 min, 30 pts) each in 3 epoch variants (a/b/c) - candidate chose one epoch. Continuous task numbering across I->II->III.",
+   "session code": "Last 3 digits of the arkusz code = YY + session digit (2 = May, 1 = January/winter, 3 = June), e.g. MHI-P1_1P-123 = czerwiec 2012. 7P = deaf variant."
+  },
+  "sources": "No separate source booklet in any old-formula paper: all sources (texts, maps, images, tables) are printed inside the arkusz next to their task. R part II sources (Źródło A, B...) are shared by several tasks. Informatyka-style separate attachments do not occur for historia. 2005 A1 also exists as a ZIP on CKE/OKE Poznań (not downloaded).",
+  "answer_key_formats": {
+   "2003 pilot": "Plain numbered paragraphs ('32. ... - 1 pkt. Łącznie maksymalnie 2 pkt.'), per-task point rules in prose.",
+   "2005-2006 (+ grudzień 2005, styczeń 2006, listopad 2006 próbna)": "Table 'MODEL ODPOWIEDZI I SCHEMAT OCENIANIA': columns = nr zadania | część zadania (A/B) | model odpowiedzi | punkty za część | punkty za całe zadanie; rows often split across pages; general scoring rules on page 1; essay level descriptors (I-IV, 0-20 pts) at the end of A2 key. pymupdf find_tables() detects these tables.",
+   "2006 maj, 2007, 2008 (+ deaf variants)": "NO separate rubric: 'przykład rozwiązania' = the full arkusz with model answers typed in blue italics inside the answer spaces (kind=rozwiazany). Answers must be extracted as the text that is absent from the blank arkusz (diff against the matching *-arkusz.pdf, or use span colour/italic font flags). Max points only from '(n pkt)' in task headers; R essay part contains a model essay, no level criteria.",
+   "2009": "Single 'KLUCZ PUNKTOWANIA ODPOWIEDZI' file for BOTH levels (P first, 'POZIOM ROZSZERZONY' starts ~halfway); per task: area of standards + requirement + '0-n' + 'Zdający otrzymuje ... punkt' + 'Poprawne odpowiedzi:'. Deaf key separate.",
+   "2010-2014": "'Kryteria oceniania odpowiedzi' / 'Rozwiązania zadań i schemat punktowania': per task 'Zadanie N. (0-k)', sub-parts 'A. (0-1)', a table row with Obszar standardów | Opis wymagań (standard code e.g. II 5), then 'Poprawna odpowiedź:' or 'Przykłady poprawnych odpowiedzi:' (bullet list) and 'n p. - za ...' lines. R essay: 4 levels per topic - Poziom I (1-5 p.), II (6-10), III (11-15), IV (16-20); 0 if below level I.",
+   "2015-2020 stara": "Same family as formula 2015 zasady: 'Zadanie N. (0-k)' + requirement text + 'Schemat punktowania' (n p. / 0 p.) + 'Poprawna odpowiedź' / 'Przykładowe odpowiedzi'; sub-tasks N.1, N.2. Close to the existing formula-2015 parser.",
+   "formula 2015 extras (grudzień 2013 przykładowy, grudzień 2014 próbny, 2024 maj EHIP)": "Standard formula-2015 'Rozwiązania zadań i schematy punktowania' / 'Zasady oceniania' - existing f2015 parser should work; 2024 EHIP has a separate karta odpowiedzi."
+  },
+  "text_layer_issues": [
+   "2003 pilot PDFs: Polish diacritics are partly or wholly missing in the text layer (esp. maj 2003 arkusze and styczeń 2003 A3 arkusze: 'Prosz sprawdzi' for 'Proszę sprawdzić'); needs OCR or font-mapping fix.",
+   "Older PDFs (2005-2009) extract with spaced diacritics from pypdf ('zg łoś', 'Sprawd ź'); pymupdf extraction is clean - prefer pymupdf.",
+   "All other files have a usable text layer (no scanned-only files detected); pictures/maps are embedded images."
+  ],
+  "dedup_and_variants": "No file is byte-identical to anything in datasets/local/matura-historia. Deaf (-ns) variants mostly reuse the standard tasks with simplified wording - treat as near-duplicates of P when splitting train/test. 2025/2026 informators and their dwujęzyczne versions overlap heavily with each other and with the 2023 informator (same sample tasks re-used). Zbiór zadań f2015: tasks in cz1 + start of cz2, then 'Wskazówki do rozwiązania zadań' and solutions in cz2.",
+  "point_totals": "stara P = 100 pts / 120 min; stara R = 50 pts / 180 min (20 test + 10 sources + 20 essay); 2005-06 A1 = 100 pts / 120 min, A2 = 50 pts / 150 min; formula 2015 R = 50 pts / 180 min; formula 2023 R = 60 pts."
+ }
+}
