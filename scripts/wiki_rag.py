@@ -168,15 +168,23 @@ _DATE_OR_QUOTE = re.compile(r"\b(?:1[0-9]{3}|20[0-2][0-9]|[0-9]{3})\b|„[^”]{
 def build_query(item: dict) -> str:
     """Build a retrieval query from the question and source text only.
 
-    Keep the complete question (including multiple-choice options), remove empty
-    answer scaffolds, image placeholders, URLs and bibliographic lines, then add
-    a small set of named entities and dates from the assigned source. The gold
-    answer, key and scoring fields are deliberately never read.
+    Use the question (including multiple-choice options), or the sole selected
+    essay theme when one is marked. Remove empty answer scaffolds, image
+    placeholders, URLs and bibliographic lines, then add a short source excerpt
+    for generic questions. Gold answers, keys and scoring fields are never read.
     """
     question = str(item.get("question") or "")
     question = re.sub(r"(?im)^\s*(?:Rozstrzygnięcie|Uzasadnienie|Odpowiedź|Wydarzenie)\s*:\s*.*$", " ", question)
     question = question.replace("[OBRAZ]", " ")
     question = re.sub(r"\s+", " ", question).strip()
+
+    # Essay prompts often prepend generic instructions (including the minimum
+    # word count) before a single selected theme. Search the theme itself so
+    # boilerplate terms like "temat" and "wyrazów" do not dominate BM25.
+    if str(item.get("type") or "").lower() == "essay":
+        topic_markers = list(re.finditer(r"\bTemat\s+\d+\s*[.:—-]\s*", question, re.I))
+        if len(topic_markers) == 1:
+            question = question[topic_markers[0].end():].strip()
 
     context = str(item.get("context") or "")
     context = _CITATION_LINE.sub(" ", context)
