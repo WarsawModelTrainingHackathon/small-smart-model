@@ -131,8 +131,11 @@ def encode(processor, items, text_only=False, thinking=False, image_max_soft_tok
     if not text_only and any(it.get('images') for it in items) and not with_images:
         raise ValueError('mixed image / no-image batch; group items with batches()')
     if with_images:
+        # the image token budget is a Gemma 4 image-processor option; other VLMs (e.g. Qwen3-VL) reject it
+        ip = getattr(processor, 'image_processor', None)
+        kw = {'images_kwargs': {'max_soft_tokens': image_max_soft_tokens}} if hasattr(ip, 'max_soft_tokens') else {}
         enc = processor(text=prompts, images=[load_images(it) for it in items], return_tensors='pt', padding=True,
-                        add_special_tokens=False, images_kwargs={'max_soft_tokens': image_max_soft_tokens})
+                        add_special_tokens=False, **kw)
     else:
         enc = tokenizer_of(processor)(prompts, return_tensors='pt', padding=True, add_special_tokens=False)
     enc.pop('num_soft_tokens_per_image', None)
