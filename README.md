@@ -21,6 +21,18 @@ Model sizes on disk: base 4-bit 7.71 GB; submitted merged 4-bit checkpoint 7.78 
 
 Caveats. Open questions and essays are graded by an LLM judge (the same local Gemma, rubric = CKE *zasady oceniania* + example answer), not by human examiners, so absolute numbers are approximate. Every row uses the same judge and the same items, so the comparisons between rows are fair. For reference, the organisers' benchmark gives the untouched Gemma 4 12B 76.7% on the 2023 paper with images; we measured 76.1%.
 
+## Category "Mały, ale wariat" (smallest model with at least 35%)
+
+Same test and judge, all models 4-bit nf4 with the local Wikipedia RAG:
+
+| Model | Size on disk (4-bit) | Test score |
+|---|---|---|
+| **`Qwen/Qwen3-VL-4B-Instruct`**, untouched, our small-model entry | **2.89 GB** | 51.3 / 120 = **42.8%** (May 2025: 43.3%, May 2026: 42.2%) |
+| `Qwen/Qwen3-VL-2B-Instruct` + distillation from our Gemma answers | 1.58 GB | 26.4% (untouched: 20.0%) |
+| `google/gemma-4-E2B-it`, untouched | 7.46 GB | 51.4% (distilled: 44.2%) |
+
+`gemma-4-E2B` has only 2 B "effective" parameters, but its large per-layer embedding tables stay in bf16, so it is almost as big on disk as the 12B model.
+
 ## What we did and why
 
 1. **Data** (`scripts/prepare_matura_historia*.py`). The scripts download official CKE papers and scoring rules (URLs and SHA-256 in `sources/cke-manifest.json` and `sources/cke-archive-manifest.json`) and parse them into ~1,800 scored tasks with keys, rubrics and figure crops. The sources are formula 2023 (2023–2026), formula 2015 (2015–2023) and the old formula (2005–2020, podstawowy and rozszerzony), plus informatory and próbne. Whole sessions are held out: dev = May 2024, test = May 2025 + May 2026. `scripts/check_matura_historia_leaks.py` removes near-duplicates of dev/test from train. See `sources/DATASET.md` and `sources/QC.md`: all 123 dev/test items were checked by hand against the PDFs. **No CKE PDFs or images are in this branch.** Run the scripts to fetch them.
