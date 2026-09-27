@@ -1,0 +1,1116 @@
+{
+  "description": "Matura z historii (poziom rozszerzony), official CKE papers + zasady oceniania; one item per scored (sub)task, essays split per topic.",
+  "source_pages": {
+    "2023": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2023/arkusze/",
+    "2015": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/arkusze/",
+    "md23": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2023/materialy-dodatkowe/",
+    "md15": "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/materialy-dodatkowe/"
+  },
+  "user_agent": "Mozilla/5.0 (compatible; matura-historia-dataset/1.0; educational research)",
+  "formulas": {
+    "2015": "formuła 2015 (2015–2023)",
+    "2023": "formuła 2023 (2023–)"
+  },
+  "split_policy": "Whole sessions held out: test = 2026-maj + 2025-maj (two most recent May sessions, formula 2023); dev = 2024-maj; train = all other sessions (formula 2015 May papers, mock/diagnostic/demo papers, 2023-maj). Train items that near-duplicate a dev/test item are dropped (see leak_check).",
+  "split_sessions": {
+    "train": [
+      "2010-maj-stara-P",
+      "2010-maj-stara-R",
+      "2011-maj-stara-P",
+      "2011-maj-stara-R",
+      "2012-czerwiec-stara-P",
+      "2012-czerwiec-stara-R",
+      "2012-maj-stara-P",
+      "2012-maj-stara-R",
+      "2013-maj-stara-P",
+      "2013-maj-stara-R",
+      "2014-maj-stara-P",
+      "2014-maj-stara-R",
+      "2015-maj-f2015",
+      "2015-maj-stara-P",
+      "2015-maj-stara-R",
+      "2016-maj-f2015",
+      "2016-maj-stara-P",
+      "2016-maj-stara-R",
+      "2017-maj-f2015",
+      "2017-maj-stara-P",
+      "2017-maj-stara-R",
+      "2018-maj-f2015",
+      "2018-maj-stara-P",
+      "2018-maj-stara-R",
+      "2019-maj-f2015",
+      "2019-maj-stara-P",
+      "2019-maj-stara-R",
+      "2020-kwiecien-probny-f2015",
+      "2020-maj-f2015",
+      "2020-maj-stara-P",
+      "2020-maj-stara-R",
+      "2021-maj-f2015",
+      "2021-marzec-diagnostyczny-f2015",
+      "2022-grudzien-diagnostyczny",
+      "2022-maj-f2015",
+      "2022-marzec-pokazowy",
+      "2023-maj",
+      "2023-maj-f2015",
+      "2024-grudzien-diagnostyczny",
+      "2026-styczen-probny"
+    ],
+    "dev": [
+      "2024-maj"
+    ],
+    "test": [
+      "2025-maj",
+      "2026-maj"
+    ]
+  },
+  "counts": {
+    "train": 1672,
+    "dev": 42,
+    "test": 81
+  },
+  "type_counts": {
+    "train": {
+      "open_short": 1256,
+      "open_long": 82,
+      "true_false": 62,
+      "closed_abcd": 124,
+      "essay": 94,
+      "matching": 49,
+      "ordering": 5
+    },
+    "dev": {
+      "open_short": 32,
+      "closed_abcd": 3,
+      "matching": 1,
+      "true_false": 2,
+      "open_long": 1,
+      "essay": 3
+    },
+    "test": {
+      "open_short": 57,
+      "matching": 3,
+      "closed_abcd": 6,
+      "true_false": 7,
+      "open_long": 2,
+      "essay": 6
+    }
+  },
+  "needs_visual": {
+    "train": 691,
+    "dev": 30,
+    "test": 49
+  },
+  "auto_gradable": {
+    "train": 201,
+    "dev": 6,
+    "test": 15
+  },
+  "points": {
+    "train": 3519,
+    "dev": 90,
+    "test": 180
+  },
+  "session_max_points": {
+    "2015-maj-f2015": 50,
+    "2016-maj-f2015": 50,
+    "2017-maj-f2015": 50,
+    "2018-maj-f2015": 50,
+    "2019-maj-f2015": 50,
+    "2020-kwiecien-probny-f2015": 50,
+    "2020-maj-f2015": 50,
+    "2021-marzec-diagnostyczny-f2015": 50,
+    "2021-maj-f2015": 50,
+    "2022-maj-f2015": 50,
+    "2023-maj-f2015": 50,
+    "2022-marzec-pokazowy": 60,
+    "2022-grudzien-diagnostyczny": 60,
+    "2023-maj": 60,
+    "2024-maj": 60,
+    "2024-grudzien-diagnostyczny": 60,
+    "2025-maj": 60,
+    "2026-styczen-probny": 60,
+    "2026-maj": 60,
+    "2010-maj-stara-P": 100,
+    "2010-maj-stara-R": 50,
+    "2011-maj-stara-P": 100,
+    "2011-maj-stara-R": 50,
+    "2012-czerwiec-stara-P": 100,
+    "2012-czerwiec-stara-R": 50,
+    "2012-maj-stara-P": 100,
+    "2012-maj-stara-R": 50,
+    "2013-maj-stara-P": 100,
+    "2013-maj-stara-R": 50,
+    "2014-maj-stara-P": 100,
+    "2014-maj-stara-R": 50,
+    "2015-maj-stara-P": 100,
+    "2015-maj-stara-R": 50,
+    "2016-maj-stara-P": 100,
+    "2016-maj-stara-R": 50,
+    "2017-maj-stara-P": 100,
+    "2017-maj-stara-R": 50,
+    "2018-maj-stara-P": 100,
+    "2018-maj-stara-R": 50,
+    "2019-maj-stara-P": 100,
+    "2019-maj-stara-R": 50,
+    "2020-maj-stara-P": 100,
+    "2020-maj-stara-R": 50
+  },
+  "sessions": {
+    "2015-maj-f2015": {
+      "items": 35,
+      "zasady_tasks": 31,
+      "max_points": 50,
+      "arkusz_sha256": "c98d10a84f1d410bac74715528ff7f9485226bce93cd421b2793a8ba397f286d",
+      "zasady_sha256": "cd9482100637e067057f4df89854693dff5ea2abe3a55047e96ce3fa296dbf93"
+    },
+    "2016-maj-f2015": {
+      "items": 36,
+      "zasady_tasks": 32,
+      "max_points": 50,
+      "arkusz_sha256": "80ce4290fee272b2070d271d1e61a4ec6b5ed1dbbc71b7e0f6042afd741c8b2b",
+      "zasady_sha256": "3fe4447b7d518223768168c140caa4e0831c58fef2b1e463bf483637780f7478"
+    },
+    "2017-maj-f2015": {
+      "items": 38,
+      "zasady_tasks": 34,
+      "max_points": 50,
+      "arkusz_sha256": "158d8baa717b2c75dbd9a9d460146b729c26d233119551c85d55b3daa888700d",
+      "zasady_sha256": "a138a77300d075a90356b92f0254a16a73eb7350b073c15ac103a4930a4cc9ff"
+    },
+    "2018-maj-f2015": {
+      "items": 40,
+      "zasady_tasks": 36,
+      "max_points": 50,
+      "arkusz_sha256": "21ba48aa594cb57f861eba4d0db26954fbff40f978408801f0fae286d406cdc7",
+      "zasady_sha256": "d032a391262f6f4182e509255648ba9b5c38886f0ae15f7fd3123b6c55b56273"
+    },
+    "2019-maj-f2015": {
+      "items": 39,
+      "zasady_tasks": 35,
+      "max_points": 50,
+      "arkusz_sha256": "3695964ab4e29766df2ccae5f6e8129d212d59ebf20c5c55981b214ea8b860c3",
+      "zasady_sha256": "78c982a573a7aad0218f6b74750a7c3198884c4d69a5fda3c72db22427f42253"
+    },
+    "2020-kwiecien-probny-f2015": {
+      "items": 38,
+      "zasady_tasks": 34,
+      "max_points": 50,
+      "arkusz_sha256": "5fc31fc9b3e78da0cbfd9729d3730960b105abf62553559bd7f10d8482e464ff",
+      "zasady_sha256": "d96d20fc04f82dea67a00b005b2500e272dbc7b9287617731a0e5d477a408e18"
+    },
+    "2020-maj-f2015": {
+      "items": 42,
+      "zasady_tasks": 38,
+      "max_points": 50,
+      "arkusz_sha256": "d09d02f223d3de788b8c2854044912db32dda33a8578a6dca02e22faae34cf96",
+      "zasady_sha256": "373b15f3c8c6fe70860ad412ded94cf22b21ee10b086dd08b6f1a0a057766804"
+    },
+    "2021-marzec-diagnostyczny-f2015": {
+      "items": 42,
+      "zasady_tasks": 38,
+      "max_points": 50,
+      "arkusz_sha256": "c3684d79164c185b512df7672f5de460021637c4bc117e843bd7f8f735a0cf20",
+      "zasady_sha256": "9db977ddc01f8f16d0aeac16f816890a94b12410e58cb380047a010be172e930"
+    },
+    "2021-maj-f2015": {
+      "items": 40,
+      "zasady_tasks": 36,
+      "max_points": 50,
+      "arkusz_sha256": "52774eda5b8f7d3991b6c8c185707a6d32ef20ab8b73e3278a44726439d4a056",
+      "zasady_sha256": "e5801328b77db543794b768bf6a24670e65381a50a175d1397e13944cbd9aebd"
+    },
+    "2022-maj-f2015": {
+      "items": 40,
+      "zasady_tasks": 36,
+      "max_points": 50,
+      "arkusz_sha256": "a5f66e51a0b8c3e55df2a1eea99c8748cfbc05686d65749002c0db2b75124702",
+      "zasady_sha256": "543f92f310db22646ef68b9c17ac6db0b526f95c07f2f7b81a372d7963a51084"
+    },
+    "2023-maj-f2015": {
+      "items": 37,
+      "zasady_tasks": 33,
+      "max_points": 50,
+      "arkusz_sha256": "d343e49b95f60d554a0eac1ce59c6223a8f3da20317f499def965ae713515da8",
+      "zasady_sha256": "32eb6f6036f1192e14f3d1daa6c1db4e574c62e79f3ff00b4f649cb146b18044"
+    },
+    "2022-marzec-pokazowy": {
+      "items": 37,
+      "zasady_tasks": 35,
+      "max_points": 60,
+      "arkusz_sha256": "32c76fcb5175a23cb6ae7ac024bb9289b03a2c965de90d9fd0e1e1c22fecacbb",
+      "zasady_sha256": "560876ff0bf6cfb903411928315a79fbcbb16e08a7a52c65b48c24e880b70c67"
+    },
+    "2022-grudzien-diagnostyczny": {
+      "items": 38,
+      "zasady_tasks": 36,
+      "max_points": 60,
+      "arkusz_sha256": "526b40f90aeee06fcf98245eac1f0ab3c13a9e7c12d912dc0a3ebced3cefee85",
+      "zasady_sha256": "66e5ccd8238d6f933aa9b8080552eca416cf7dde6a9bcca345aa3ce1330fab35"
+    },
+    "2023-maj": {
+      "items": 39,
+      "zasady_tasks": 37,
+      "max_points": 60,
+      "arkusz_sha256": "17926d105216589b23a5630eca0a179b8c8d957dcc3b1b88713b399da645a61e",
+      "zasady_sha256": "64acaefce9554c67434bca06045224154fc8079e84cc557f0a3a42d30eb5f9ae"
+    },
+    "2024-maj": {
+      "items": 42,
+      "zasady_tasks": 40,
+      "max_points": 60,
+      "arkusz_sha256": "ad66a7c4f212ee1248661141971afae21060a28586086cc57460247a64463d21",
+      "zasady_sha256": "95c275b9546611c1f8cd45b7973c436625fd0ee5643b778dcc8bb566db56cd4c"
+    },
+    "2024-grudzien-diagnostyczny": {
+      "items": 39,
+      "zasady_tasks": 37,
+      "max_points": 60,
+      "arkusz_sha256": "68ce10f00ccd95d14e891a25627060fff8043052244036c71f9e9e2c8eed72d5",
+      "zasady_sha256": "23a2296ecd65b325faff9d40d6509b000589ddfe5a60007f0da6e6466b693682"
+    },
+    "2025-maj": {
+      "items": 40,
+      "zasady_tasks": 38,
+      "max_points": 60,
+      "arkusz_sha256": "622f0aca89b8698af852d3a35a19dc7e12664ffefbf4846c8e931252a58f1b0c",
+      "zasady_sha256": "8803887d6713c470fa49b05f1cfbd18edbd14e7ec280685d44f9a019c47d14bf"
+    },
+    "2026-styczen-probny": {
+      "items": 40,
+      "zasady_tasks": 38,
+      "max_points": 60,
+      "arkusz_sha256": "1ddeca5760a0d93bb3020904bc6faff5d668cd62c78973fb344f086194c1bb2f",
+      "zasady_sha256": "272c40d0524a815acc75f829f707a4fb8ce69740cc6f5e6a01d9370401045856"
+    },
+    "2026-maj": {
+      "items": 41,
+      "zasady_tasks": 39,
+      "max_points": 60,
+      "arkusz_sha256": "c0a15c43154232e8ad393574f83c31cab14948bb891c908bfae3b895fbb6d401",
+      "zasady_sha256": "89acbcf197ac39fa0095c3b36f4c4aa8ebb8c6a02a95b4d5e6442f8eb19d5d5d"
+    }
+  },
+  "parse_warnings": [
+    "2017-maj-f2015: zad 20 points: arkusz 1, zasady header 2, zasady scoring levels max 1; kept arkusz",
+    "2017-maj-f2015: zad 21 points: arkusz 1, zasady header 2, zasady scoring levels max 1; kept arkusz",
+    "2020-kwiecien-probny-f2015: zad 21 points: arkusz 1, zasady header 1, zasady scoring levels max 2; kept arkusz",
+    "2020-kwiecien-probny-f2015: essay is zad 27 in arkusz but zad 26@12 in zasady (matched)",
+    "2022-marzec-pokazowy: zad 11.2 points: arkusz 2, zasady header 1, zasady scoring levels max 2; kept arkusz",
+    "2022-marzec-pokazowy: zad 15.1 points: arkusz 2, zasady header 1, zasady scoring levels max 2; kept arkusz",
+    "2025-maj: essay is zad 25 in arkusz but zad 26 in zasady (matched)",
+    "2026-styczen-probny: zad 7.1 points: arkusz 2, zasady header 1, zasady scoring levels max 2; kept arkusz",
+    "2026-styczen-probny: zad 23 points: arkusz 2, zasady header 2, zasady scoring levels max 1; kept arkusz"
+  ],
+  "adapted_660_versions": {
+    "2021-marzec-diagnostyczny-f2015": {
+      "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2021/EHIP-R0-660-2103.docx",
+      "status": "not used: numbering differs (24 task/point mismatches)"
+    },
+    "2022-marzec-pokazowy": {
+      "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/pokazowe/Historia/MHIP-R0-660-2305.docx",
+      "status": "not used: numbering differs (25 task/point mismatches)"
+    },
+    "2022-grudzien-diagnostyczny": {
+      "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/diagnostyczne_12/historia/MHIP-R0-660-2212.docx",
+      "status": "used (task numbering/points identical)"
+    },
+    "2023-maj": {
+      "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/Historia/MHIP-R0-660-2305.docx",
+      "status": "used (task numbering/points identical)"
+    },
+    "2024-grudzien-diagnostyczny": {
+      "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2024/Historia/MHIP-R0-660-A-2412-arkusz.docx",
+      "status": "used (task numbering/points identical)"
+    }
+  },
+  "adapted_660_items": 59,
+  "not_available": "CKE publishes only main-term (May) papers plus mock/diagnostic/demo papers; June (dodatkowy) and August (poprawkowy) historia papers are not on cke.gov.pl. Formula 2015 and 2023 historia exist only at poziom rozszerzony.",
+  "fields": {
+    "choice_group": "null for normal items; the same string (e.g. \"2024-maj-essay\") for alternative items of which the examinee answers ONE (the essay topics). A session score counts one item per choice_group.",
+    "context": "shared sources for the task group + sources preceding the instruction (text; [OBRAZ] marks a figure)",
+    "question": "instruction and answer scaffold (dotted answer lines removed)",
+    "answer": "raw solution / accepted answers text from zasady oceniania",
+    "answer_key": "normalized key for closed types (letter, list, or {statement/item: value}); null if not parsed",
+    "scoring": "raw scoring rule text (points per criterion) from zasady oceniania",
+    "images": "PNG crops (150 dpi) of the task region(s) containing figures, relative to dataset dir",
+    "adapted_660_text": "only some visual items: text of the same task group from the official adapted paper for blind students (660), where figures are described in words (\"Opis ...\"); wording may differ slightly"
+  },
+  "known_issues": [
+    "Text order follows PDF layout; tables are linearized cell by cell and can be hard to read (figure crops include them).",
+    "context/question split is heuristic (first instruction line after the last source citation); a few items keep a lead sentence in context or question.",
+    "needs_visual = raster figure (or multi-colour vector chart, or Mapa/Wykres/Diagram/Schemat heading) inside the task group; flagged for every subtask of a group with a figure, even when a given subtask can be answered from the text alone.",
+    "type is heuristic: open_short vs open_long is by points (>=3 -> open_long); closed tasks that also demand a justification have requires_justification=true and auto_gradable=false.",
+    "matching keys can be free text with alternatives (\"A / B\") and optional parts in [brackets]; grade them with normalisation, not exact match.",
+    "Essays (wypracowanie) are split one item per topic; answer is empty and the full scoring block (requirements + criteria, raw text) is in scoring_raw.",
+    "max_points comes from the arkusz; CKE zasady contain a few inconsistent point headers/levels (listed in parse_warnings). Counting one item per choice_group, every session sums to exactly 50 (formula 2015) or 60 (formula 2023); the build fails otherwise."
+  ],
+  "archival": {
+    "description": "Archival CKE papers added to TRAIN only by scripts/prepare_matura_historia_archiwum.py. PDFs of the parsed sessions are in raw-archiwum/ (full archive: archiwum-src/); URLs and SHA-256 per session below.",
+    "sessions": {
+      "2010-maj-stara-P": {
+        "items": 63,
+        "zasady_tasks": 63,
+        "max_points": 100,
+        "arkusz_sha256": "87919b436d766290f03545982ff7e79f42ab6a0e2d4724fc579f53703f12d71f",
+        "zasady_sha256": "610aa187e6d60dd35bdc2a1e4756dacf7ba759af437a143006f16a7e13674eec",
+        "formula": "stara",
+        "level": "podstawowy",
+        "official_max": 100,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Historia/historia_pp.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Historia/historia_klucz_pp.pdf"
+      },
+      "2010-maj-stara-R": {
+        "items": 29,
+        "zasady_tasks": 28,
+        "max_points": 50,
+        "arkusz_sha256": "5c90d0d343897ba069b8c16d9c84e57055210f5d3cf21cdaf521c50d3edd8b9d",
+        "zasady_sha256": "60249af7e727a134296476f0b85dd7ade2b4f09b51fdcb28d795af9ceec2daa9",
+        "formula": "stara",
+        "level": "rozszerzony",
+        "official_max": 50,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Historia/historia_pr.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Historia/historia_klucz_pr.pdf"
+      },
+      "2011-maj-stara-P": {
+        "items": 60,
+        "zasady_tasks": 60,
+        "max_points": 100,
+        "arkusz_sha256": "5896844d4e21b7fc5c3f44d9e08c467f5a4d1117890283675848579e87afb081",
+        "zasady_sha256": "e8c60d6d09fe6aaf605fa4d7fe4164c1bdbc0b35bcde1c4c1e691ba52e687c8d",
+        "formula": "stara",
+        "level": "podstawowy",
+        "official_max": 100,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/P/historia_pp.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/kryteria/historia_model_pp.pdf"
+      },
+      "2011-maj-stara-R": {
+        "items": 28,
+        "zasady_tasks": 27,
+        "max_points": 50,
+        "arkusz_sha256": "6f9990d3e739592a2315584c6d3d300f7e7ddf0a84d56db3a72209b9860e1cb7",
+        "zasady_sha256": "36b7fdde2ccf4e78ae562c2122dcf03fba913fa283c93c9fa6b26a2363db8ed5",
+        "formula": "stara",
+        "level": "rozszerzony",
+        "official_max": 50,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/R/historia_pr.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/kryteria/historia_model_pr.pdf"
+      },
+      "2012-czerwiec-stara-P": {
+        "items": 65,
+        "zasady_tasks": 65,
+        "max_points": 100,
+        "arkusz_sha256": "0d4b9ff8ec80d9de364c8fdfbb9160a029f68e15d146f2ba7dfe8fdc3f54441b",
+        "zasady_sha256": "27bdb33ea21cc4f3da18e967dd49d9a4c814f31d681f494012b30a3c57c2cf87",
+        "formula": "stara",
+        "level": "podstawowy",
+        "official_max": 100,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/czerwiec/historia/historia_pp.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/czerwiec/klucze/historia_06_pp_klucz.pdf"
+      },
+      "2012-czerwiec-stara-R": {
+        "items": 29,
+        "zasady_tasks": 28,
+        "max_points": 50,
+        "arkusz_sha256": "53a6e76e64d8bca9b978ae1a8c4492549f6b46cb66247b5c3d82ac676bca684a",
+        "zasady_sha256": "a6d0e60d02d2d8d84033cc2b9a29ab47d61fffb3d48f767b13432d039832d12e",
+        "formula": "stara",
+        "level": "rozszerzony",
+        "official_max": 50,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/czerwiec/historia/historia_pr.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/czerwiec/klucze/historia_06_pr_klucz.pdf"
+      },
+      "2012-maj-stara-P": {
+        "items": 67,
+        "zasady_tasks": 67,
+        "max_points": 100,
+        "arkusz_sha256": "68e61a3df2c367cd606b2e93d15318c13eeac6c42519d28937898c6039f30a8c",
+        "zasady_sha256": "b7d6798dd35469617586551369edbc303c770788acc542a9be6fc9dc004258b9",
+        "formula": "stara",
+        "level": "podstawowy",
+        "official_max": 100,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/hist/historia_pp.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/klucze/historia_pp_klucz.pdf"
+      },
+      "2012-maj-stara-R": {
+        "items": 30,
+        "zasady_tasks": 29,
+        "max_points": 50,
+        "arkusz_sha256": "7c772241cf5fb23c950d5f72de7971b2f18ce0cfc11852613323dfb8ec541c22",
+        "zasady_sha256": "300b46ab3b700354583d8212a76cd49e92d3b5b272b03a1c413bfa9168e22711",
+        "formula": "stara",
+        "level": "rozszerzony",
+        "official_max": 50,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/hist/historia_pr.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/klucze/historia_pr_klucz.pdf"
+      },
+      "2013-maj-stara-P": {
+        "items": 67,
+        "zasady_tasks": 67,
+        "max_points": 100,
+        "arkusz_sha256": "eb8cc83c69152a76ef7a57cb34452eb5a47f528af3a37319257faf358360e372",
+        "zasady_sha256": "fb55224de68a9d3a436182f765f08aae266b01bd0475d78cc9474c62ea236f44",
+        "formula": "stara",
+        "level": "podstawowy",
+        "official_max": 100,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/historia_PP.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/Kryteria-Oceniania/historia_model_PP.pdf"
+      },
+      "2013-maj-stara-R": {
+        "items": 31,
+        "zasady_tasks": 30,
+        "max_points": 50,
+        "arkusz_sha256": "7f91d531878f6eaa8516ede4cee17db5daa5db74e97fdc859600f07e03f51d4d",
+        "zasady_sha256": "cd7306f97af4e96f4ec3ec15fff34d702e48fcce40df6e1cfd2343609d2f5199",
+        "formula": "stara",
+        "level": "rozszerzony",
+        "official_max": 50,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/historia_PR.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/Kryteria-Oceniania/historia_model_PR.pdf"
+      },
+      "2014-maj-stara-P": {
+        "items": 73,
+        "zasady_tasks": 73,
+        "max_points": 100,
+        "arkusz_sha256": "549beb92d30de3933144066a206923e5efe7961ae2533124cee793aed563166f",
+        "zasady_sha256": "81df60479dd614d9ff7c26ae6a9d300b68e1137345176222a1eefeec567b89bc",
+        "formula": "stara",
+        "level": "podstawowy",
+        "official_max": 100,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2014/historia_PP_A1.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2014/odpowiedzi/Historia_PP.pdf"
+      },
+      "2014-maj-stara-R": {
+        "items": 26,
+        "zasady_tasks": 25,
+        "max_points": 50,
+        "arkusz_sha256": "f2df36c6d6b2c4e82523e05b3f8464cba5d5a8c6043bc4f9a7186367b6c31daf",
+        "zasady_sha256": "0575c2b33f77c8d0dccfcae1b653f036470458b270091eb9a82783f1a45ba822",
+        "formula": "stara",
+        "level": "rozszerzony",
+        "official_max": 50,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2014/historia_PR_A1.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2014/odpowiedzi/Historia_PR.pdf"
+      },
+      "2015-maj-stara-P": {
+        "items": 57,
+        "zasady_tasks": 57,
+        "max_points": 100,
+        "arkusz_sha256": "b86e0474129b0d868b7660316e923eed8b7c62bb93e910ba9d61064e0e19c319",
+        "zasady_sha256": "3184e5d3299415c76ed8fc405ab04a7a2edcd12eae9b2c55ec83478a2e7a8508",
+        "formula": "stara",
+        "level": "podstawowy",
+        "official_max": 100,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/MHI-P1_1P-152.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/odpowiedzi/MHI-P1-S.pdf"
+      },
+      "2015-maj-stara-R": {
+        "items": 26,
+        "zasady_tasks": 25,
+        "max_points": 50,
+        "arkusz_sha256": "548b2316490dbf10d53e49ff733916be8c231220111e50322abb04e6c733be8e",
+        "zasady_sha256": "caee9b89cdbc94f8f2908f06602657f0430ed077943129a3e0e0877d60aeaf71",
+        "formula": "stara",
+        "level": "rozszerzony",
+        "official_max": 50,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/MHI-R1_1P-152.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/odpowiedzi/MHI-R1-S.pdf"
+      },
+      "2016-maj-stara-P": {
+        "items": 48,
+        "zasady_tasks": 48,
+        "max_points": 100,
+        "arkusz_sha256": "7c17a26ed0e8e706e4450a53b5c6b2c6c408d579ecc555a82a0310b8dc0c1f9f",
+        "zasady_sha256": "3c1917e952e617d9a063a63f5eb4acd96629d90d7795d489d7df59270493c633",
+        "formula": "stara",
+        "level": "podstawowy",
+        "official_max": 100,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/MHI-P1_1P-162.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/zasady_oceniania/MHI-P1-S.pdf"
+      },
+      "2016-maj-stara-R": {
+        "items": 28,
+        "zasady_tasks": 27,
+        "max_points": 50,
+        "arkusz_sha256": "fa33e43c95cd452678269cf513786a402d83b4f7dd653985a822f7435302d32b",
+        "zasady_sha256": "af0bb45f5e64ac2a8c5436306b04d5d02dbcf2f1b17fae9de5f166bad1bf601c",
+        "formula": "stara",
+        "level": "rozszerzony",
+        "official_max": 50,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/MHI-R1_1P-162.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/zasady_oceniania/MHI-R1-S.pdf"
+      },
+      "2017-maj-stara-P": {
+        "items": 64,
+        "zasady_tasks": 64,
+        "max_points": 100,
+        "arkusz_sha256": "c8733a9c81d86f7da86198e9095b78cf8116d072724efcc92712cbaae6dec396",
+        "zasady_sha256": "b41264792ce62cb27389fc72b2c141f2a5c014317f00a6643732e4ad3434d377",
+        "formula": "stara",
+        "level": "podstawowy",
+        "official_max": 100,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/historia/MHI-P1_1P-172.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/zasady_oceniania/MHI-P1-S.pdf"
+      },
+      "2017-maj-stara-R": {
+        "items": 28,
+        "zasady_tasks": 27,
+        "max_points": 50,
+        "arkusz_sha256": "8d8f57ff34cf68df6dbabc6f269c1b17b67b8640f9e073b671d1366631bb8783",
+        "zasady_sha256": "b8d0667e5aec6ecf75b026701219a9427a81a917270e6c19a1357b1922fcd788",
+        "formula": "stara",
+        "level": "rozszerzony",
+        "official_max": 50,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/historia/MHI-R1_1P-172.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/zasady_oceniania/MHI-R1-S.pdf"
+      },
+      "2018-maj-stara-P": {
+        "items": 64,
+        "zasady_tasks": 64,
+        "max_points": 100,
+        "arkusz_sha256": "2a572177bb5ad097b3ca9ba56d4da7df6f8ebbaeeed5b6860d0f6d69e023e0aa",
+        "zasady_sha256": "ba605818b1fee4b42eff09f0b194450cb2013c99d25f8be74c471124825a4bb2",
+        "formula": "stara",
+        "level": "podstawowy",
+        "official_max": 100,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/historia/MHI-P1_1P-182.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/Zasady_ocenienia/MHI-P1_1P-182_zasady_oceniania.pdf"
+      },
+      "2018-maj-stara-R": {
+        "items": 30,
+        "zasady_tasks": 29,
+        "max_points": 50,
+        "arkusz_sha256": "49cb1c9bc15a4cf0169f5438e9e1342ab5627a4af8a85367ef934a02ece0b0b2",
+        "zasady_sha256": "c367c3d0a3300783a9c46067132e36e7863b63742ec8e94871a2285c0ed7ca00",
+        "formula": "stara",
+        "level": "rozszerzony",
+        "official_max": 50,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/historia/MHI-R1_1P-182.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/Zasady_ocenienia/MHI-R1_1P-182_zasady_oceniania.pdf"
+      },
+      "2019-maj-stara-P": {
+        "items": 58,
+        "zasady_tasks": 58,
+        "max_points": 100,
+        "arkusz_sha256": "3ac27915dbb44f17c6ded54dd81c0b4975275e85d172858012603ddbf748fae8",
+        "zasady_sha256": "e807a16f66e2ccc7ba658c59fe770392cbb74b7f534cd1c12e0f57177003d770",
+        "formula": "stara",
+        "level": "podstawowy",
+        "official_max": 100,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/historia/MHI-P1_1P-192.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/Zasady_ocenienia/MHI-P1_1P-192_model.pdf"
+      },
+      "2019-maj-stara-R": {
+        "items": 31,
+        "zasady_tasks": 30,
+        "max_points": 50,
+        "arkusz_sha256": "746b69f4b50ac911150c52f3b3ea400c548a64ee732b6b1a2e04a1f0fcb0eb04",
+        "zasady_sha256": "9dfb5f6d7e2ab82825fd0a16e0d419196fae85b770d7c55c4dc50a896eadd600",
+        "formula": "stara",
+        "level": "rozszerzony",
+        "official_max": 50,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/historia/MHI-R1_1P-192.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/Zasady_ocenienia/MHI-R1_1P-192_model.pdf"
+      },
+      "2020-maj-stara-P": {
+        "items": 55,
+        "zasady_tasks": 55,
+        "max_points": 100,
+        "arkusz_sha256": "3cf6c53ddd3c3af4d98a395be9343411acfb70c122d508bb1d85fb34a96e2265",
+        "zasady_sha256": "8aec1531767607762d0fb97c32a4fd9a0a4221acf2152175a1a90f425fa6a3e7",
+        "formula": "stara",
+        "level": "podstawowy",
+        "official_max": 100,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/historia/MHI-P1_1P-202s.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/Zasady_oceniania/MHI-PP-202s_zasady.pdf"
+      },
+      "2020-maj-stara-R": {
+        "items": 31,
+        "zasady_tasks": 30,
+        "max_points": 50,
+        "arkusz_sha256": "449e9d235c85ea0e0fe1ce1b065a38f46b840750ad86a95347f41ecbbcc7482f",
+        "zasady_sha256": "3ac087cd901f5331441b0f3d44613506c31df5db2928bec9fb33d1bbbfe82dc2",
+        "formula": "stara",
+        "level": "rozszerzony",
+        "official_max": 50,
+        "arkusz_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/historia/MHI-R1_1R-202s.pdf",
+        "zasady_url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/Zasady_oceniania/MHI-PR-202s_zasady.pdf"
+      }
+    },
+    "skipped": {
+      "2013-grudzien-przykladowy-f2015": "multi-part tasks: sub-tasks N.1/N.2 are inline lines in the arkusz and grouped under one Rozwiązanie/Schemat block in the zasady; the parser merged them into one item per task (empty context, mixed types); not validated, dropped",
+      "2014-grudzien-probny-f2015": "multi-part tasks: sub-tasks N.1/N.2 are inline lines in the arkusz and in the zasady; the parser merged them into one item per task (empty context, mixed types); not validated, dropped",
+      "2024-maj-f2015": "leak check: 34/39 items near-duplicate dev/test items (same sources as dev 2024-maj); whole session dropped"
+    },
+    "parse_warnings": [
+      "2010-maj-stara-P: karta odpowiedzi text from p.29 dropped",
+      "2010-maj-stara-R: karta odpowiedzi text from p.25 dropped",
+      "2011-maj-stara-P: karta odpowiedzi text from p.29 dropped",
+      "2011-maj-stara-R: karta odpowiedzi text from p.25 dropped",
+      "2016-maj-stara-P: zad 6.1 points: score box 1, zasady header 3, scoring levels 1; kept 1",
+      "2016-maj-stara-P: zad 6.1 points: score box 1, zasady header 3, scoring levels 1; kept 1",
+      "2016-maj-stara-P: zad 6.1 points: arkusz 1, zasady header 3, zasady scoring levels max 1; kept arkusz",
+      "2016-maj-stara-P: zad 23 points: arkusz 2, zasady header 3, zasady scoring levels max 2; kept arkusz",
+      "2016-maj-stara-P: zad 27 points: arkusz 2, zasady header 7, zasady scoring levels max 2; kept arkusz",
+      "2016-maj-stara-R: zad 18 points: arkusz 1, zasady header 2, zasady scoring levels max 1; kept arkusz",
+      "2017-maj-stara-P: zad 10.1 points: no score box; 6 makes the arkusz total 7",
+      "2017-maj-stara-P: zad 10.2 points: no score box; 1 makes the arkusz total 7",
+      "2017-maj-stara-P: zad 14.1 points: no score box; 1 makes the arkusz total 3",
+      "2017-maj-stara-P: zad 14.2 points: no score box; 1 makes the arkusz total 3",
+      "2017-maj-stara-P: zad 14.3 points: no score box; 1 makes the arkusz total 3",
+      "2017-maj-stara-P: zad 10.1 points: arkusz 6, zasady header 6, zasady scoring levels max 1; kept arkusz",
+      "2017-maj-stara-P: zad 14.1 points: arkusz 1, zasady header 2, zasady scoring levels max 1; kept arkusz",
+      "2017-maj-stara-R: zad 4 points: arkusz 1, zasady header 2, zasady scoring levels max 1; kept arkusz",
+      "2017-maj-stara-R: zad 5 points: arkusz 1, zasady header 2, zasady scoring levels max 1; kept arkusz",
+      "2017-maj-stara-R: essay is zad 27 in arkusz but zad 24@20 in zasady (matched)",
+      "2019-maj-stara-P: zad 23.1 points: no score box; 2 makes the arkusz total 3",
+      "2019-maj-stara-P: zad 23.2 points: no score box; 1 makes the arkusz total 3",
+      "2019-maj-stara-P: zad 23.1 points: arkusz 2, zasady header 1, zasady scoring levels max 2; kept arkusz",
+      "2019-maj-stara-P: zad 23.2 points: arkusz 1, zasady header 2, zasady scoring levels max 1; kept arkusz",
+      "2019-maj-stara-R: zasady zad 8.2 is arkusz zad 8 (single sub-task number; matched)",
+      "2019-maj-stara-R: zad 26: essay has no topic-count line; added the standard one (2 topics)"
+    ],
+    "items": 1078,
+    "points": 2024,
+    "type_counts": {
+      "open_short": 850,
+      "matching": 40,
+      "open_long": 78,
+      "essay": 24,
+      "ordering": 5,
+      "closed_abcd": 59,
+      "true_false": 22
+    },
+    "level_counts": {
+      "podstawowy": 732,
+      "rozszerzony": 346
+    },
+    "era_counts": {
+      "stara 2010-2014": 564,
+      "stara 2015-2020 (retake sessions)": 514
+    },
+    "era_type_counts": {
+      "stara 2010-2014": {
+        "essay": 12,
+        "matching": 23,
+        "open_long": 36,
+        "open_short": 490,
+        "ordering": 3
+      },
+      "stara 2015-2020 (retake sessions)": {
+        "closed_abcd": 59,
+        "essay": 12,
+        "matching": 17,
+        "open_long": 42,
+        "open_short": 360,
+        "ordering": 2,
+        "true_false": 22
+      }
+    },
+    "era_level_counts": {
+      "stara 2010-2014": {
+        "podstawowy": 391,
+        "rozszerzony": 173
+      },
+      "stara 2015-2020 (retake sessions)": {
+        "podstawowy": 341,
+        "rozszerzony": 173
+      }
+    },
+    "formula_counts": {
+      "stara": 1078
+    },
+    "needs_visual": 360,
+    "auto_gradable": 102,
+    "leak_check": {
+      "rule": "drop a train item if its normalised question or context has difflib ratio >= 0.8 with the question or context of a dev/test item (texts >= 80 chars), or its context+question shares a passage >= 200 chars with a dev/test item.",
+      "checked": 1127,
+      "dropped": 49,
+      "dropped_items": [
+        {
+          "id": "2024-maj-f2015-R-zad1",
+          "held_out": "2024-maj-R-zad1",
+          "why": "shared text 743"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad2",
+          "held_out": "2024-maj-R-zad2",
+          "why": "shared text 890"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad3",
+          "held_out": "2024-maj-R-zad3.2",
+          "why": "shared text 683"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad4",
+          "held_out": "2024-maj-R-zad4",
+          "why": "shared text 253"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad5",
+          "held_out": "2024-maj-R-zad5.1",
+          "why": "shared text 952"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad6",
+          "held_out": "2024-maj-R-zad6",
+          "why": "shared text 258"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad7",
+          "held_out": "2024-maj-R-zad7",
+          "why": "shared text 1277"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad8.1",
+          "held_out": "2024-maj-R-zad8.1",
+          "why": "shared text 742"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad8.2",
+          "held_out": "2024-maj-R-zad8.1",
+          "why": "shared text 742"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad9",
+          "held_out": "2024-maj-R-zad9",
+          "why": "shared text 496"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad10",
+          "held_out": "2024-maj-R-zad10",
+          "why": "shared text 320"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad11.1",
+          "held_out": "2024-maj-R-zad11.1",
+          "why": "shared text 1225"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad11.2",
+          "held_out": "2024-maj-R-zad11.1",
+          "why": "shared text 1225"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad12.1",
+          "held_out": "2024-maj-R-zad12.1",
+          "why": "shared text 710"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad12.2",
+          "held_out": "2024-maj-R-zad12.2",
+          "why": "shared text 768"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad12.3",
+          "held_out": "2024-maj-R-zad12.3",
+          "why": "shared text 874"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad13",
+          "held_out": "2024-maj-R-zad13",
+          "why": "shared text 211"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad14",
+          "held_out": "2024-maj-R-zad14.1",
+          "why": "shared text 921"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad15.1",
+          "held_out": "2024-maj-R-zad15.1",
+          "why": "shared text 1273"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad15.2",
+          "held_out": "2024-maj-R-zad15.1",
+          "why": "shared text 1273"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad16",
+          "held_out": "2024-maj-R-zad16.1",
+          "why": "shared text 1251"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad17.1",
+          "held_out": "2024-maj-R-zad17.1",
+          "why": "shared text 785"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad17.2",
+          "held_out": "2024-maj-R-zad17.2",
+          "why": "shared text 635"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad18",
+          "held_out": "2024-maj-R-zad18",
+          "why": "shared text 254"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad19.1",
+          "held_out": "2024-maj-R-zad19.1",
+          "why": "shared text 647"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad19.2",
+          "held_out": "2024-maj-R-zad19.2",
+          "why": "shared text 357"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad20.1",
+          "held_out": "2024-maj-R-zad20.1",
+          "why": "shared text 1305"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad20.2",
+          "held_out": "2024-maj-R-zad20.1",
+          "why": "shared text 1305"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad21",
+          "held_out": "2024-maj-R-zad21",
+          "why": "shared text 226"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad22.1",
+          "held_out": "2024-maj-R-zad22.1",
+          "why": "shared text 2794"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad22.2",
+          "held_out": "2024-maj-R-zad22.2",
+          "why": "shared text 3003"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad23.1",
+          "held_out": "2024-maj-R-zad23.1",
+          "why": "shared text 202"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad23.2",
+          "held_out": "2024-maj-R-zad23.2",
+          "why": "shared text 267"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad24",
+          "held_out": "2024-maj-R-zad24",
+          "why": "shared text 898"
+        },
+        {
+          "id": "2012-czerwiec-stara-P-zad10.1",
+          "held_out": "2024-maj-R-zad5.1",
+          "why": "shared text 492"
+        },
+        {
+          "id": "2012-czerwiec-stara-P-zad10.2",
+          "held_out": "2024-maj-R-zad5.1",
+          "why": "shared text 492"
+        },
+        {
+          "id": "2012-czerwiec-stara-P-zad10.3",
+          "held_out": "2024-maj-R-zad5.1",
+          "why": "shared text 492"
+        },
+        {
+          "id": "2012-czerwiec-stara-P-zad17",
+          "held_out": "2024-maj-R-zad8.1",
+          "why": "shared text 322"
+        },
+        {
+          "id": "2016-maj-stara-P-zad17",
+          "held_out": "2025-maj-R-zad9.1",
+          "why": "shared text 382"
+        },
+        {
+          "id": "2018-maj-stara-P-zad9.1",
+          "held_out": "2024-maj-R-zad7",
+          "why": "shared text 317"
+        },
+        {
+          "id": "2018-maj-stara-P-zad9.2",
+          "held_out": "2024-maj-R-zad7",
+          "why": "shared text 317"
+        },
+        {
+          "id": "2018-maj-stara-P-zad9.3",
+          "held_out": "2024-maj-R-zad7",
+          "why": "shared text 317"
+        },
+        {
+          "id": "2019-maj-stara-R-zad2.1",
+          "held_out": "2025-maj-R-zad7.1",
+          "why": "question ratio 0.829"
+        },
+        {
+          "id": "2020-maj-stara-P-zad10",
+          "held_out": "2024-maj-R-zad7",
+          "why": "shared text 278"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad25-t1",
+          "held_out": null,
+          "why": "session 2024-maj-f2015: 34/39 items leak, whole session dropped"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad25-t2",
+          "held_out": null,
+          "why": "session 2024-maj-f2015: 34/39 items leak, whole session dropped"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad25-t3",
+          "held_out": null,
+          "why": "session 2024-maj-f2015: 34/39 items leak, whole session dropped"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad25-t4",
+          "held_out": null,
+          "why": "session 2024-maj-f2015: 34/39 items leak, whole session dropped"
+        },
+        {
+          "id": "2024-maj-f2015-R-zad25-t5",
+          "held_out": null,
+          "why": "session 2024-maj-f2015: 34/39 items leak, whole session dropped"
+        }
+      ]
+    }
+  },
+  "leak_check": {
+    "rule": "drop a train item if its normalised question or context has difflib ratio >= 0.8 with the question or context of a dev/test item (texts >= 80 chars), or its context+question shares a passage >= 200 chars with a dev/test item. Applied to every TRAIN item (core + archival) by prepare_matura_historia_archiwum.py; re-check with scripts/check_matura_historia_leaks.py.",
+    "core_train_checked": 620,
+    "core_train_dropped": 26,
+    "core_dropped_items": [
+      {
+        "id": "2015-maj-f2015-R-zad12",
+        "held_out": "2024-maj-R-zad15.1",
+        "why": "shared text 428"
+      },
+      {
+        "id": "2017-maj-f2015-R-zad6",
+        "held_out": "2024-maj-R-zad7",
+        "why": "shared text 416"
+      },
+      {
+        "id": "2017-maj-f2015-R-zad10",
+        "held_out": "2025-maj-R-zad7.1",
+        "why": "question ratio 0.831"
+      },
+      {
+        "id": "2019-maj-f2015-R-zad2.1",
+        "held_out": "2026-maj-R-zad17",
+        "why": "question ratio 0.839"
+      },
+      {
+        "id": "2019-maj-f2015-R-zad10",
+        "held_out": "2025-maj-R-zad23",
+        "why": "question ratio 0.875"
+      },
+      {
+        "id": "2020-kwiecien-probny-f2015-R-zad7",
+        "held_out": "2025-maj-R-zad9.1",
+        "why": "shared text 242"
+      },
+      {
+        "id": "2020-kwiecien-probny-f2015-R-zad13.1",
+        "held_out": "2024-maj-R-zad16.1",
+        "why": "shared text 424"
+      },
+      {
+        "id": "2020-kwiecien-probny-f2015-R-zad13.2",
+        "held_out": "2024-maj-R-zad16.1",
+        "why": "shared text 424"
+      },
+      {
+        "id": "2021-marzec-diagnostyczny-f2015-R-zad2.1",
+        "held_out": "2026-maj-R-zad3.1",
+        "why": "question ratio 0.819"
+      },
+      {
+        "id": "2021-marzec-diagnostyczny-f2015-R-zad4.1",
+        "held_out": "2026-maj-R-zad17",
+        "why": "question ratio 0.931"
+      },
+      {
+        "id": "2021-marzec-diagnostyczny-f2015-R-zad24.2",
+        "held_out": "2026-maj-R-zad17",
+        "why": "question ratio 0.887"
+      },
+      {
+        "id": "2021-maj-f2015-R-zad15",
+        "held_out": "2026-maj-R-zad17",
+        "why": "question ratio 0.84"
+      },
+      {
+        "id": "2022-maj-f2015-R-zad4",
+        "held_out": "2026-maj-R-zad17",
+        "why": "question ratio 0.853"
+      },
+      {
+        "id": "2022-maj-f2015-R-zad5.1",
+        "held_out": "2024-maj-R-zad7",
+        "why": "shared text 450"
+      },
+      {
+        "id": "2022-maj-f2015-R-zad5.2",
+        "held_out": "2024-maj-R-zad7",
+        "why": "shared text 450"
+      },
+      {
+        "id": "2022-maj-f2015-R-zad7.1",
+        "held_out": "2025-maj-R-zad5.1",
+        "why": "question ratio 0.914"
+      },
+      {
+        "id": "2022-maj-f2015-R-zad13",
+        "held_out": "2026-maj-R-zad17",
+        "why": "question ratio 0.924"
+      },
+      {
+        "id": "2022-maj-f2015-R-zad21.1",
+        "held_out": "2026-maj-R-zad17",
+        "why": "question ratio 0.938"
+      },
+      {
+        "id": "2022-marzec-pokazowy-R-zad6.1",
+        "held_out": "2024-maj-R-zad7",
+        "why": "shared text 411"
+      },
+      {
+        "id": "2022-marzec-pokazowy-R-zad6.2",
+        "held_out": "2024-maj-R-zad7",
+        "why": "shared text 411"
+      },
+      {
+        "id": "2022-marzec-pokazowy-R-zad10",
+        "held_out": "2025-maj-R-zad23",
+        "why": "question ratio 0.882"
+      },
+      {
+        "id": "2022-marzec-pokazowy-R-zad20",
+        "held_out": "2026-maj-R-zad24",
+        "why": "question ratio 0.981"
+      },
+      {
+        "id": "2022-grudzien-diagnostyczny-R-zad14.1",
+        "held_out": "2024-maj-R-zad11.1",
+        "why": "question ratio 0.929"
+      },
+      {
+        "id": "2024-grudzien-diagnostyczny-R-zad18",
+        "held_out": "2024-maj-R-zad18",
+        "why": "question ratio 0.941"
+      },
+      {
+        "id": "2024-grudzien-diagnostyczny-R-zad19.1",
+        "held_out": "2025-maj-R-zad12",
+        "why": "question ratio 0.805"
+      },
+      {
+        "id": "2026-styczen-probny-R-zad16",
+        "held_out": "2025-maj-R-zad18",
+        "why": "question ratio 0.973"
+      }
+    ],
+    "archival_checked": 1127,
+    "archival_dropped": 49
+  }
+}
