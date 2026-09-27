@@ -1,5 +1,6 @@
 """End-to-end CPU smoke test of scripts/eval_matura.py on a tiny random Gemma 4 model."""
 import json
+from pathlib import Path
 
 import pytest
 
@@ -29,6 +30,14 @@ def test_eval_smoke_resume_regrade(tiny_model, mini_data, tmp_path):
     # re-grade from saved generations only
     rep3 = run(tiny_model, mini_data, out, '--split', 'dev', '--limit', '5', '--regrade')
     assert rep3['summary']['n_generations'] == 5
+
+
+def test_eval_train_split_limit(tiny_model, mini_data, tmp_path):
+    n_train = len(json.loads(Path(mini_data).read_text())['train'])
+    assert n_train >= 1
+    out = tmp_path / 'train'
+    rep = run(tiny_model, mini_data, out, '--split', 'train', '--limit', '1', '--label', 'tiny-train')
+    assert rep['meta']['split'] == 'train' and rep['summary']['n_generations'] == 1
 
 
 def test_eval_test_split_text_only_closed(tiny_model, mini_data, tmp_path):
