@@ -11,10 +11,9 @@ so fine-tuning reinforces good answers in the model's own style instead of the s
 """
 import argparse
 import json
-import re
 from pathlib import Path
 
-THINK = re.compile(r'<\|channel\>.*?<channel\|>', re.S)
+import matura_format as mf
 
 
 def read(path):
@@ -34,7 +33,8 @@ def main():
         pts, mx = g.get('points'), g.get('max_points') or 0
         ok = pts is not None and mx and (pts >= mx if g['type'] != 'essay' else pts >= a.essay_min * mx)
         s = stats.setdefault(g['type'], [0, 0]); s[1] += 1
-        text = THINK.sub('', gens.get(g['id'], '')).strip()
+        # Use the same thinking / end-of-turn cleanup as grading and evaluation.
+        text = mf.strip_thinking(gens.get(g['id'], ''))
         if ok and text:
             s[0] += 1
             kept.append(dict(id=g['id'], type=g['type'], target=text))

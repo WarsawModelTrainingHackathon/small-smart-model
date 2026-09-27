@@ -87,11 +87,16 @@ def encode_example(processor, item, target, a, device):
     tok = em.tokenizer_of(processor)
     enc, _ = em.encode(processor, [item], text_only=a.text_only, thinking=False,
                        image_max_soft_tokens=a.image_max_soft_tokens, device='cpu')
-    tgt = tok(target + end_of_turn(tok) + '\n', add_special_tokens=False, return_tensors='pt')['input_ids']
+    target_ids = tok(target, add_special_tokens=False, return_tensors='pt')['input_ids']
+    end_ids = tok(end_of_turn(tok) + '\n', add_special_tokens=False, return_tensors='pt')['input_ids']
     n_prompt = enc['input_ids'].shape[1]
     if n_prompt + 8 > a.max_len:
         return None
-    tgt = tgt[:, :a.max_len - n_prompt]
+    # Keep the end-of-turn token even when a long self-distilled answer must be clipped.
+    # Without it, the model is trained on an unfinished continuation and may not learn to stop.
+    target_budget = a.max_len - n_prompt
+    target_ids = target_ids[:, :max(0, target_budget - end_ids.shape[1])]
+    tgt = torch.cat([target_ids, end_ids], dim=1)
     enc['input_ids'] = torch.cat([enc['input_ids'], tgt], 1)
     enc['attention_mask'] = torch.cat([enc['attention_mask'], torch.ones_like(tgt)], 1)
     if 'mm_token_type_ids' in enc:

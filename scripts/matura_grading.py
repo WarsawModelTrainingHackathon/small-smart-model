@@ -3,8 +3,8 @@
 * Closed items (closed_abcd / true_false / matching) with a key: graded automatically from
   the LAST 'Odpowiedź:' line (scripts/matura_format.py), with partial credit where the CKE
   scoring text gives it ("2 pkt – trzy prawidłowe wskazania, 1 pkt – dwa ...").
-* Closed items that require a justification: 0 if the choice is wrong, otherwise the judge
-  scores the justification.
+* Closed items that require a justification: 0 if no answer-key component is correct; otherwise
+  the judge scores the response and its justification against the CKE rubric.
 * Open items and essays: LLM judge with the CKE rubric (scoring / scoring_raw) and the
   example answer, returning JSON {"points": int, "reason": str}.
 
@@ -26,8 +26,14 @@ import matura_format as mf
 # --------------------------------------------------------------------------- partial credit
 
 _NUM = {
-    'jedn': 1, 'jeden': 1, 'dw': 2, 'dwa': 2, 'dwie': 2, 'dwóch': 2, 'trzy': 3, 'trzech': 3, 'czter': 4,
-    'pięć': 5, 'pięciu': 5, 'sześć': 6, 'sześciu': 6,
+    'jeden': 1, 'jedna': 1, 'jednego': 1, 'jednej': 1, 'jednym': 1, 'jedno': 1,
+    'dwa': 2, 'dwie': 2, 'dwoch': 2, 'dwu': 2, 'dwoje': 2, 'dwojga': 2, 'dwoma': 2, 'dwiema': 2,
+    'trzy': 3, 'trzech': 3, 'trzem': 3, 'trzema': 3, 'troje': 3,
+    'cztery': 4, 'czterech': 4, 'czterem': 4, 'czterema': 4, 'czterej': 4,
+    'piec': 5, 'pieciu': 5, 'piecioro': 5,
+    'szesc': 6, 'szesciu': 6, 'szescioro': 6,
+    'siedem': 7, 'siedmiu': 7, 'osiem': 8, 'osmiu': 8,
+    'dziewiec': 9, 'dziewieciu': 9, 'dziesiec': 10, 'dziesieciu': 10,
 }
 _POINTS_LINE = re.compile(r'^\s*(\d+)\s*(?:p\.|pkt\.?|punkt\w*)\s*[–—-]\s*(.*)$', re.I)
 
@@ -42,11 +48,9 @@ def _counts_in(text, n_parts):
         if word.isdigit() and 0 < int(word) <= 10:
             found.add(int(word))
             continue
-        for stem, v in _NUM.items():
-            if word.startswith(stem) and (len(stem) > 3 or word in ('dwa', 'dwie', 'dwóch', 'dwu', 'jedną', 'jedna',
-                                                                     'jeden', 'jednej', 'jednego', 'czterech', 'cztery')):
-                found.add(v)
-                break
+        value = _NUM.get(mf.normalize(word))
+        if value is not None:
+            found.add(value)
     return found
 
 
@@ -244,7 +248,7 @@ def grade_records(items_by_id, generations, judge):
             rec.update(grade_closed(item, text))
             rec['parsed'] = rec['parsed'] if not isinstance(rec['parsed'], set) else list(rec['parsed'])
             if not mf.auto_gradable(item):
-                if rec['n_correct'] < rec['n_parts'] and rec['n_parts'] == 1:
+                if rec['n_correct'] == 0:
                     rec.update(points=0, method='auto-wrong-choice')
                 else:
                     rec.update(points=None, method='judge')
@@ -310,7 +314,8 @@ def summarize(graded, items_by_id, essay_policy='mean'):
         elif essay_policy == 'best':
             p = max(pts)
         elif essay_policy == 'first':
-            p = sorted(rs, key=lambda r: r['id'])[0]['points']
+            # Preserve the input order used by eval_matura.py --essays one.
+            p = rs[0]['points']
         else:
             p = sum(pts) / len(pts)
         units.append((p, max(r['max_points'] for r in rs), mf.ESSAY, rs[0]['session_key'], any(r['needs_visual'] for r in rs)))

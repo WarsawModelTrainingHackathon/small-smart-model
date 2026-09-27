@@ -94,6 +94,7 @@ tail -f runs/train/qlora-r16.log
 * Base in nf4 4-bit + bf16 compute, LoRA on the language-model `q,k,v,o,gate,up,down` projections,
   assistant-only loss, gradient checkpointing, micro-batch 1 × grad-accum 8.
 * Targets: closed items → short reasoning + `Odpowiedź: ...` line; open items → the CKE example answer; essays skipped.
+  Targets longer than `--max-len` are clipped while retaining the end-of-turn token.
 * After each epoch: dev closed items generated + graded with the benchmark parser, and dev loss on all dev targets;
   `best_adapter/` = best dev (closed points, then dev loss). `report.json` has the full history.
   Dev has only 6 auto-gradable items (8 pts) → treat the dev closed score as noisy; the dev loss is the tie-break.
