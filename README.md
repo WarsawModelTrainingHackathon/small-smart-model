@@ -2,7 +2,7 @@
 
 **Team Żabka (z-abka)**, Warsaw Model Trainers hackathon, Kolektyw3, 25–27.09.2026 (see [SOURCE.md](SOURCE.md)).
 
-**PL, w skrócie:** `google/gemma-4-12B-it` skwantyzowana do 4 bitów (7,7 GB na dysku, limit 8 GB), dostrojona przez **samodestylację** (QLoRA na własnych odpowiedziach modelu, które dostały pełne punkty według kluczy CKE) i uzupełniona o **lokalną polską Wikipedię** (RAG, offline). Na odłożonych maturach CKE z maja 2025 i 2026 wynik rośnie z **76,1%** (model bez zmian) do **81,4%** (sam trening) i do ponad **82%** (trening + Wikipedia).
+**PL, w skrócie:** `google/gemma-4-12B-it` skwantyzowana do 4 bitów (7,7 GB na dysku, limit 8 GB), dostrojona przez **samodestylację** (QLoRA na własnych odpowiedziach modelu, które dostały pełne punkty według kluczy CKE) i uzupełniona o **lokalną polską Wikipedię** (RAG, offline). Na odłożonych maturach CKE z maja 2025 i 2026 wynik rośnie z **76,1%** (model bez zmian) do **81,4%** (sam trening) i do **84,2%** (trening + Wikipedia, +8,1 pkt proc.). Dev (maj 2024): 83,9%.
 
 ## Results
 
@@ -13,7 +13,9 @@ Internal held-out test: the full CKE *historia, poziom rozszerzony* papers from 
 | `gemma-4-12B-it`, untouched (**base**) | 91.3 / 120 = **76.1%** | 98.3 / 120 = **81.9%** |
 | First QLoRA on CKE example answers (rejected) | 69.0 / 120 = 57.5% | – |
 | Self-distillation, round 1 (426 targets) | 94.3 / 120 = 78.6% | 99.3 / 120 = 82.8% |
-| **Self-distillation, round 2 (1183 targets)**, submitted | 97.7 / 120 = **81.4%** | *filled in before the exam* |
+| **Self-distillation, round 2 (1183 targets)**, submitted | 97.7 / 120 = **81.4%** | 101.0 / 120 = **84.2%** |
+
+Submitted configuration (fine-tuned 4-bit model + Wikipedia RAG) on dev (May 2024): 50.3 / 60 = 83.9%. Speed on one L40S, batch 16: both test papers (81 items) generate in about 7 minutes including model load and retrieval, so about 3–4 minutes per paper.
 
 Model sizes on disk: base 4-bit 7.71 GB; submitted merged 4-bit checkpoint 7.78 GB (limit 8 GB). The Wikipedia index does not count toward the limit.
 
