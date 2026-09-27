@@ -1,0 +1,28 @@
+---
+description: Warsaw Model Trainers official constraints — history matura, 8 GB / 8.8 GB, answers.json, SOURCE.md.
+alwaysApply: true
+---
+
+# Hackathon rules (binding)
+
+Source of truth: `docs/context/hackathon-rules.md` (Saturday 26 Sep updates). Do not invent organiser policy.
+
+**Task:** open-weights model on **Polish history (historia) matura only** — **not geography**. Kolektyw3, 25–27 Sep 2026.
+
+## Hard constraints
+
+- **Base** (quantized, as run): **≤ 8 GB on disk**. Parameter count free. After **fine-tuning**: **≤ 8.8 GB** (8 GB + 10%). No extra copies, voting ensembles, or precision inflation. RAG knowledge bases are not the weight blob.
+- **Exam delivery:** download **json + PNG** package; run harness **locally** (laptop / Forgehand / Modal / AWS); upload **`answers.json` only**. Organisers do **not** query a team HTTP server. `k3exam.py` is **withdrawn**.
+- Guide: https://matura-json-guide.ania-olchowik.chatgpt.site/ — keep `exam_id` and all question `id`s; Polish **string** answers; essay = topic + ≥300 words.
+- **Offline answers:** no ChatGPT/Claude/Gemini or web search in the solution. Closed APIs **OK while building**.
+- **Training ends Sun 11:00**; then the real pack (`exam_id` ≠ mock). Repo for jury before then. Roster Sat 12:00.
+- Submit **base** and **trained** for the progress track. Baseline = highest-scoring **untouched** model alone. Own pre-hackathon FT cannot pose as base.
+- All **three prize tracks** allowed; **one submission per track**.
+- Stage: short presentation. Scoring is `answers.json`, not a live demo URL.
+
+## Repo
+
+- No copyrighted dumps in git. Sources + fetch script. Wikipedia CC BY-SA-compatible.
+- `SOURCE.md` exact line: `Made during the Warsaw Model Trainers hackathon, Kolektyw3, 25–27.09.2026`
+
+Tracks: best score · best progress vs base · smallest with **≥ 35%**.
