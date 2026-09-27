@@ -1,0 +1,8 @@
+runs/
+outputs/
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+# the dataset lives on branch data/matura-historia; use a worktree, never commit it here
+data/
