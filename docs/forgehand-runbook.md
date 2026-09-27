@@ -101,6 +101,25 @@ tail -f runs/train/qlora-r16.log
 * `--max-seconds` is a hard time budget (the epoch ends early and is still evaluated). OOM → `--image-max-soft-tokens 280`
   or `--max-len 3072`; `--text-only` trains without images.
 
+### Optional: matching recovery from CKE keys
+
+If the self-distillation JSONL has no high-scoring `matching` targets, create a separate train-only mixture that keeps
+all self-distilled targets and adds CKE targets only for missing matching items:
+
+```bash
+uv run scripts/build_hybrid_targets.py --data $DATA \
+    --self-distill runs/sft/self_distill.jsonl \
+    --output runs/sft/self_distill-plus-matching.jsonl
+uv run scripts/train_lora.py --data $DATA --targets-jsonl runs/sft/self_distill-plus-matching.jsonl \
+    --output runs/train/sd-r16-plus-matching --epochs 2 --lr 1e-4 --lora-r 16 --lora-alpha 32 \
+    --grad-accum 8 --max-len 4096 --image-max-soft-tokens 560 --max-seconds 4200
+```
+
+Keep this as a new adapter. Compare it with the self-distill adapter on **dev** using the same 4-bit and grading
+protocol; retain it only if matching improves without lowering total or essay points. The helper rejects targets whose
+IDs are outside train and never reads dev/test examples. A separate CKE supplement for true/false requires its own dev
+experiment; do not broaden this into full CKE-answer SFT.
+
 ## 5. Evaluate the adapter (4-bit, same as the submission)
 
 ```bash
